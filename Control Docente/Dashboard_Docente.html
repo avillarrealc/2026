@@ -93,7 +93,7 @@
     .grade-tabs {
       display: flex;
       gap: 10px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       background: rgba(15, 23, 42, 0.6);
       padding: 6px;
       border-radius: 12px;
@@ -102,18 +102,18 @@
 
     .tab-btn {
       flex: 1;
-      padding: 0.9rem 1.2rem;
+      padding: 0.85rem 1.2rem;
       border-radius: 8px;
       border: none;
       background: transparent;
       color: #94a3b8;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 700;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       transition: all 0.2s ease;
     }
 
@@ -140,41 +140,64 @@
       box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
     }
 
-    /* BANNER INFO */
-    .grade-banner {
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    /* SESSION SELECTOR BAR */
+    .session-bar {
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      padding: 1.2rem 1.6rem;
+      padding: 1rem 1.4rem;
       margin-bottom: 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 12px;
     }
 
-    .banner-left h2 {
-      font-size: 1.2rem;
+    .session-picker-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .session-picker-box label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .session-select {
+      background: #0f172a;
       color: white;
+      border: 1px solid #3b82f6;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+      max-width: 420px;
+    }
+
+    .btn-new-session {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      transition: all 0.2s ease;
     }
-
-    .banner-left p {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      margin-top: 4px;
-    }
-
-    .banner-badge {
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+    .btn-new-session:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-2px);
     }
 
     /* STATS CARDS */
@@ -244,7 +267,20 @@
     .sheet-header-box h3 {
       font-size: 1.1rem;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    .pill-tipo {
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .pill-regular { background: #3b82f6; color: white; }
+    .pill-practica { background: #10b981; color: white; }
 
     .table-container {
       overflow-x: auto;
@@ -348,6 +384,93 @@
     }
     .btn-csv:hover { background: #059669; }
 
+    /* MODAL NUEVA SESIÓN */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal-box {
+      background: #1e293b;
+      color: white;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .form-input, .form-select {
+      background: #0f172a;
+      border: 1px solid #475569;
+      border-radius: 8px;
+      padding: 10px 12px;
+      color: white;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: #3b82f6;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .btn-cancel {
+      background: #475569;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-confirm {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
     #loadingOverlay {
       display: flex;
       justify-content: center;
@@ -367,7 +490,7 @@
     <header class="header-bar">
       <div class="header-title">
         <h1>📊 Panel Docente IEJAGA 2026</h1>
-        <p>Control Centralizado de Clases · Grados 9°, 10° y 11° · La Estrella</p>
+        <p>Control de Clases y Prácticas · Grados 9°, 10° y 11° · La Estrella</p>
       </div>
       <div class="cloud-pill" id="cloudStatus">
         <span>☁️</span> <span id="cloudStatusText">Conectado a Google Drive</span>
@@ -387,28 +510,33 @@
       </button>
     </nav>
 
-    <!-- BANNER DE LA CLASE ACTIVA DEL GRADO -->
-    <section class="grade-banner" id="gradeBanner">
-      <div class="banner-left">
-        <h2 id="bannerTitle">Grado 9° · Clase 9</h2>
-        <p id="bannerTopic">Tema: Listas en Python: Indexación y Corchetes</p>
+    <!-- SESSION SELECTOR BAR -->
+    <section class="session-bar">
+      <div class="session-picker-box">
+        <label for="sessionSelect">Sesión a Controlar:</label>
+        <select class="session-select" id="sessionSelect" onchange="switchSession(this.value)">
+          <!-- Populated dynamically -->
+        </select>
       </div>
-      <div class="banner-badge" id="bannerTotalAvance">
-        0 / 3 Grupos Impartidos
-      </div>
+      <button class="btn-new-session" onclick="openNewSessionModal()">
+        <span>➕</span> Nueva Clase o Práctica
+      </button>
     </section>
 
     <!-- STATS CARDS POR GRUPO -->
     <section class="stats-grid" id="statsGrid">
-      <!-- Rendered dynamically for active grade -->
+      <!-- Rendered dynamically -->
     </section>
 
     <!-- TABLE CARD -->
     <main class="sheet-card">
       <div class="sheet-header-box">
-        <h3 id="tableTitle">Registro de Salón · Grado 9°</h3>
+        <h3 id="tableTitle">
+          <span id="headerSessionName">Clase 9</span>
+          <span class="pill-tipo pill-regular" id="headerPillTipo">Regular</span>
+        </h3>
         <button class="btn-csv" onclick="downloadCurrentCSV()">
-          <span>📥</span> Descargar CSV
+          <span>📥</span> Descargar CSV del Grado
         </button>
       </div>
 
@@ -437,8 +565,43 @@
 
   </div>
 
+  <!-- MODAL NUEVA CLASE O SESIÓN DE PRÁCTICA -->
+  <div class="modal-overlay" id="newSessionModal">
+    <div class="modal-box">
+      <div class="modal-title">
+        <span>➕</span> Agregar Nueva Sesión
+      </div>
+
+      <div class="form-group">
+        <label>Tipo de Sesión:</label>
+        <select class="form-select" id="newSessionTipo">
+          <option value="regular">📘 Clase Teórico-Práctica Regular</option>
+          <option value="practica">🛠️ Clase de Práctica / Laboratorio en Sala</option>
+          <option value="evaluacion">🎯 Reto ABR / Evaluación Formativa</option>
+          <option value="refuerzo">🔄 Taller de Refuerzo / Nivelación</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Título o Tema de la Clase/Práctica:</label>
+        <input type="text" class="form-input" id="newSessionTitulo" placeholder="Ej: Práctica 2: Reto de Algoritmos en Colab">
+      </div>
+
+      <div class="form-group">
+        <label>Fecha Base Programada (DD-MM-AAAA):</label>
+        <input type="text" class="form-input" id="newSessionFecha" placeholder="Ej: 15-09-2026">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeNewSessionModal()">Cancelar</button>
+        <button class="btn-confirm" onclick="confirmNewSession()">Crear y Guardar en Drive</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     let activeGrade = 'g9';
+    let currentSessionIndex = 0;
     let allGradesData = null;
 
     function initDashboard() {
@@ -448,41 +611,100 @@
           .withFailureHandler(onDataError)
           .loadAllGradesData();
       } else {
-        // Datos locales de prueba
+        // Fallback local
         allGradesData = {
           g9: {
             nombre: "Grado 9°",
             materia: "Fundamentos de Programación (Python)",
-            claseActual: 9,
-            temaClase: "Clase 9: Listas en Python: Indexación y Corchetes",
-            fechaBase: "08-09-2026",
-            grupos: [
-              { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
-              { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
-              { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+            gruposBase: ["9°1", "9°2", "9°3"],
+            horariosBase: {
+              "9°1": "Martes (1° y 2° hora)",
+              "9°2": "Miércoles (3° y 4° hora)",
+              "9°3": "Jueves (5° y 6° hora)"
+            },
+            sesiones: [
+              {
+                id: "g9-c8",
+                tipo: "regular",
+                numero: 8,
+                titulo: "Clase 8: Introducción a Colecciones de Datos",
+                fechaBase: "01-09-2026",
+                grupos: [
+                  { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "01-09-2026", impartida: true, classroom: "Calificada", entregas: "34/34", obs: "Completada" },
+                  { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "02-09-2026", impartida: true, classroom: "Calificada", entregas: "33/33", obs: "Completada" },
+                  { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "03-09-2026", impartida: true, classroom: "Calificada", entregas: "35/35", obs: "Completada" }
+                ]
+              },
+              {
+                id: "g9-c9",
+                tipo: "regular",
+                numero: 9,
+                titulo: "Clase 9: Listas en Python: Indexación y Corchetes",
+                fechaBase: "08-09-2026",
+                grupos: [
+                  { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Lista para impartir" },
+                  { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Lista para impartir" },
+                  { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Lista para impartir" }
+                ]
+              },
+              {
+                id: "g9-p1",
+                tipo: "practica",
+                numero: "P1",
+                titulo: "Práctica en Sala 1: Retos de Listas en Google Colab",
+                fechaBase: "11-09-2026",
+                grupos: [
+                  { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "15-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Ejercicios de refuerzo" },
+                  { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "16-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Ejercicios de refuerzo" },
+                  { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "17-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Ejercicios de refuerzo" }
+                ]
+              }
             ]
           },
           g10: {
             nombre: "Grado 10°",
             materia: "El Proyecto Arduino y Circuitos en Tinkercad",
-            claseActual: 9,
-            temaClase: "Clase 9: Entradas Digitales con Pulsadores en Arduino",
-            fechaBase: "08-09-2026",
-            grupos: [
-              { grupo: "10°1", horario: "Lunes (3° y 4° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada para lunes 07-09" },
-              { grupo: "10°2", horario: "Miércoles (1° y 2° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/31", obs: "Programada para miércoles 09-09" },
-              { grupo: "10°3", horario: "Viernes (3° y 4° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/30", obs: "Programada para viernes 11-09" }
+            gruposBase: ["10°1", "10°2", "10°3"],
+            horariosBase: {
+              "10°1": "Lunes (3° y 4° hora)",
+              "10°2": "Miércoles (1° y 2° hora)",
+              "10°3": "Viernes (3° y 4° hora)"
+            },
+            sesiones: [
+              {
+                id: "g10-c9",
+                tipo: "regular",
+                numero: 9,
+                titulo: "Clase 9: Entradas Digitales con Pulsadores en Arduino",
+                fechaBase: "08-09-2026",
+                grupos: [
+                  { grupo: "10°1", horario: "Lunes (3° y 4° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada" },
+                  { grupo: "10°2", horario: "Miércoles (1° y 2° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/31", obs: "Programada" },
+                  { grupo: "10°3", horario: "Viernes (3° y 4° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/30", obs: "Programada" }
+                ]
+              }
             ]
           },
           g11: {
             nombre: "Grado 11°",
             materia: "Producción Audiovisual y Página de Ventas",
-            claseActual: 11,
-            temaClase: "Clase 11: Guion Técnico y Storyboard para Video Comercial",
-            fechaBase: "07-09-2026",
-            grupos: [
-              { grupo: "11°1", horario: "Lunes (1° y 2° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/28", obs: "Programada para lunes 07-09" },
-              { grupo: "11°2", horario: "Jueves (3° y 4° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/29", obs: "Programada para jueves 10-09" }
+            gruposBase: ["11°1", "11°2"],
+            horariosBase: {
+              "11°1": "Lunes (1° y 2° hora)",
+              "11°2": "Jueves (3° y 4° hora)"
+            },
+            sesiones: [
+              {
+                id: "g11-c11",
+                tipo: "regular",
+                numero: 11,
+                titulo: "Clase 11: Guion Técnico y Storyboard para Video Comercial",
+                fechaBase: "07-09-2026",
+                grupos: [
+                  { grupo: "11°1", horario: "Lunes (1° y 2° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/28", obs: "Programada" },
+                  { grupo: "11°2", horario: "Jueves (3° y 4° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/29", obs: "Programada" }
+                ]
+              }
             ]
           }
         };
@@ -494,7 +716,8 @@
       allGradesData = data;
       document.getElementById('loadingOverlay').style.display = 'none';
       document.getElementById('gradeTable').style.display = 'table';
-      renderCurrentGrade();
+      populateSessionPicker();
+      renderCurrentSession();
       setCloudStatus('☁️ Sincronizado con Drive');
     }
 
@@ -505,31 +728,68 @@
 
     function switchGrade(gradeKey) {
       activeGrade = gradeKey;
+      currentSessionIndex = 0;
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       if (gradeKey === 'g9') document.getElementById('tabG9').classList.add('active');
       if (gradeKey === 'g10') document.getElementById('tabG10').classList.add('active');
       if (gradeKey === 'g11') document.getElementById('tabG11').classList.add('active');
 
-      renderCurrentGrade();
+      populateSessionPicker();
+      renderCurrentSession();
     }
 
-    function renderCurrentGrade() {
-      const data = allGradesData[activeGrade];
-      if (!data) return;
+    function populateSessionPicker() {
+      const select = document.getElementById('sessionSelect');
+      select.innerHTML = '';
 
-      // Banner
-      document.getElementById('bannerTitle').textContent = `${data.nombre} · ${data.materia}`;
-      document.getElementById('bannerTopic').textContent = `${data.temaClase} (Fecha Base: ${data.fechaBase})`;
-      document.getElementById('tableTitle').textContent = `Registro de Salón · ${data.nombre}`;
+      const gradeObj = allGradesData[activeGrade];
+      if (!gradeObj || !gradeObj.sesiones) return;
+
+      gradeObj.sesiones.forEach((ses, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        const icon = ses.tipo === 'practica' ? '🛠️' : '📘';
+        opt.textContent = `${icon} ${ses.titulo}`;
+        select.appendChild(opt);
+      });
+
+      // Default to last or current active class
+      if (currentSessionIndex >= gradeObj.sesiones.length) {
+        currentSessionIndex = gradeObj.sesiones.length - 1;
+      }
+      select.value = currentSessionIndex;
+    }
+
+    function switchSession(index) {
+      currentSessionIndex = parseInt(index);
+      renderCurrentSession();
+    }
+
+    function renderCurrentSession() {
+      const gradeObj = allGradesData[activeGrade];
+      if (!gradeObj || !gradeObj.sesiones || !gradeObj.sesiones[currentSessionIndex]) return;
+
+      const ses = gradeObj.sesiones[currentSessionIndex];
+
+      // Header labels
+      document.getElementById('headerSessionName').textContent = ses.titulo;
+      const pill = document.getElementById('headerPillTipo');
+      if (ses.tipo === 'practica') {
+        pill.textContent = 'Práctica en Sala';
+        pill.className = 'pill-tipo pill-practica';
+      } else {
+        pill.textContent = 'Clase Regular';
+        pill.className = 'pill-tipo pill-regular';
+      }
 
       // Stats
-      renderStats(data);
+      renderStats(ses);
 
-      // Table
+      // Table rows
       const tbody = document.getElementById('tableBody');
       tbody.innerHTML = '';
 
-      data.grupos.forEach((row, index) => {
+      ses.grupos.forEach((row, index) => {
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
@@ -561,17 +821,30 @@
       });
     }
 
-    function renderStats(data) {
+    function renderStats(ses) {
       const statsGrid = document.getElementById('statsGrid');
       statsGrid.innerHTML = '';
 
       let doneCount = 0;
-      data.grupos.forEach(g => { if (g.impartida) doneCount++; });
-      const percent = Math.round((doneCount / data.grupos.length) * 100);
+      ses.grupos.forEach(g => { if (g.impartida) doneCount++; });
+      const percent = Math.round((doneCount / ses.grupos.length) * 100);
 
-      document.getElementById('bannerTotalAvance').textContent = `${doneCount} / ${data.grupos.length} Grupos Impartidos (${percent}%)`;
+      // Summary Card
+      const summaryCard = document.createElement('div');
+      summaryCard.className = 'stat-card';
+      summaryCard.style.borderTop = '4px solid var(--accent-blue)';
+      summaryCard.innerHTML = `
+        <div class="stat-header">
+          <span>Avance Sesión</span>
+          <span>📈</span>
+        </div>
+        <div class="stat-status">${doneCount} / ${ses.grupos.length} Grupos</div>
+        <div class="stat-date">${percent}% Impartida</div>
+      `;
+      statsGrid.appendChild(summaryCard);
 
-      data.grupos.forEach(g => {
+      // Per Group Cards
+      ses.grupos.forEach(g => {
         const card = document.createElement('div');
         card.className = 'stat-card';
         card.style.borderTop = g.impartida ? '4px solid var(--accent-emerald)' : '4px solid var(--accent-amber)';
@@ -591,17 +864,19 @@
     }
 
     function toggleRowImpartida(index) {
-      const g = allGradesData[activeGrade].grupos[index];
+      const ses = allGradesData[activeGrade].sesiones[currentSessionIndex];
+      const g = ses.grupos[index];
       g.impartida = !g.impartida;
       if (g.impartida && g.classroom === 'Borrador') {
         g.classroom = 'Publicada';
       }
-      renderCurrentGrade();
+      renderCurrentSession();
       syncActiveGrade();
     }
 
     function updateRowField(index, field, value) {
-      allGradesData[activeGrade].grupos[index][field] = value;
+      const ses = allGradesData[activeGrade].sesiones[currentSessionIndex];
+      ses.grupos[index][field] = value;
       syncActiveGrade();
     }
 
@@ -616,7 +891,7 @@
           .withFailureHandler((err) => {
             setCloudStatus('⚠️ Error al guardar');
           })
-          .saveGradeData(activeGrade, allGradesData[activeGrade]);
+          .saveAllGradeData(activeGrade, allGradesData[activeGrade]);
       } else {
         setTimeout(() => {
           setCloudStatus('☁️ Guardado local (Simulación)');
@@ -632,12 +907,72 @@
       else pill.classList.remove('saving');
     }
 
+    // MODAL LOGIC
+    function openNewSessionModal() {
+      const gradeObj = allGradesData[activeGrade];
+      document.getElementById('newSessionTitulo').value = '';
+      document.getElementById('newSessionFecha').value = new Date().toLocaleDateString('es-CO');
+      document.getElementById('newSessionModal').classList.add('active');
+    }
+
+    function closeNewSessionModal() {
+      document.getElementById('newSessionModal').classList.remove('active');
+    }
+
+    function confirmNewSession() {
+      const tipo = document.getElementById('newSessionTipo').value;
+      const titulo = document.getElementById('newSessionTitulo').value.trim();
+      const fechaBase = document.getElementById('newSessionFecha').value.trim() || 'Fecha pendiente';
+
+      if (!titulo) {
+        alert('Por favor escribe el título o tema de la clase o práctica.');
+        return;
+      }
+
+      const gradeObj = allGradesData[activeGrade];
+
+      // Auto generate group entries based on grade groups
+      const newGrupos = gradeObj.gruposBase.map(grpName => {
+        return {
+          grupo: grpName,
+          horario: gradeObj.horariosBase[grpName] || "Horario habitual",
+          fecha: fechaBase,
+          impartida: false,
+          classroom: "Borrador",
+          entregas: "0/30",
+          obs: "Programada"
+        };
+      });
+
+      const newSesion = {
+        id: `${activeGrade}-${Date.now()}`,
+        tipo: tipo,
+        titulo: titulo,
+        fechaBase: fechaBase,
+        grupos: newGrupos
+      };
+
+      gradeObj.sesiones.push(newSesion);
+      currentSessionIndex = gradeObj.sesiones.length - 1;
+
+      closeNewSessionModal();
+      populateSessionPicker();
+      renderCurrentSession();
+      syncActiveGrade();
+    }
+
+    // EXPORT TO CSV
     function downloadCurrentCSV() {
-      const data = allGradesData[activeGrade];
-      let csv = "Grupo,Horario,Fecha de Clase,¿Impartida?,Classroom,Entregas,Observaciones / Novedades\n";
-      data.grupos.forEach(g => {
-        const cleanObs = `"${(g.obs || '').replace(/"/g, '""')}"`;
-        csv += `${g.grupo},"${g.horario}",${g.fecha},${g.impartida ? 'TRUE' : 'FALSE'},${g.classroom},${g.entregas},${cleanObs}\n`;
+      const gradeObj = allGradesData[activeGrade];
+      let csv = "Tipo Sesión,Clase / Práctica,Fecha Base,Grupo,Horario,Fecha Impartida,¿Impartida?,Classroom,Entregas,Observaciones\n";
+      
+      gradeObj.sesiones.forEach(s => {
+        const tipoTag = s.tipo === 'practica' ? '[PRÁCTICA]' : '[REGULAR]';
+        const tituloClean = `"${s.titulo.replace(/"/g, '""')}"`;
+        s.grupos.forEach(g => {
+          const cleanObs = `"${(g.obs || '').replace(/"/g, '""')}"`;
+          csv += `${tipoTag},${tituloClean},${s.fechaBase},${g.grupo},"${g.horario}",${g.fecha},${g.impartida ? 'TRUE' : 'FALSE'},${g.classroom},${g.entregas},${cleanObs}\n`;
+        });
       });
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
