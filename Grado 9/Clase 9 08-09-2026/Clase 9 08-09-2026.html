@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Clase 9 08-09-2026 | Planeación para Google Docs</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background-color:#0f172a;color:#f8fafc;margin:0;padding:1.5rem 1rem 3rem 1rem;display:flex;flex-direction:column;align-items:center;}
+.action-bar{position:sticky;top:1rem;z-index:100;background:rgba(30,41,59,0.95);backdrop-filter:blur(12px);padding:0.85rem 1.8rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 15px 30px rgba(0,0,0,0.4);display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;}
+.btn-copy{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:white;border:none;padding:0.7rem 1.6rem;border-radius:999px;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all 0.2s ease;box-shadow:0 4px 14px rgba(37,99,235,0.4);}
+.btn-copy:hover{background:linear-gradient(135deg,#2563eb,#1e40af);transform:translateY(-2px);}
+.status-msg{color:#cbd5e1;font-size:0.9rem;}
+.doc-page{background:white;width:820px;min-height:1056px;padding:70px 75px;box-shadow:0 10px 40px rgba(0,0,0,0.3);border-radius:4px;font-family:Arial,sans-serif;font-size:10.5pt;line-height:1.35;color:#1e293b;}
+pre.code{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;padding:10px 12px;font-family:Consolas,monospace;font-size:9pt;color:#0f172a;white-space:pre-wrap;margin:8px 0 12px 0;}
+code.inline{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:monospace;color:#0284c7;}
+</style>
+</head>
+<body>
+<div class="action-bar">
+<button class="btn-copy" id="btnCopy" onclick="copyForDocs()"><span>📋</span> Copiar Formato para Google Docs</button>
+<span class="status-msg" id="statusMsg">Haz clic en el botón azul y luego presiona <strong>Ctrl + V</strong> en Google Docs.</span>
+</div>
+<div class="doc-page" id="docContent">
+<div style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#1e3a8a;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px;">Institución Educativa José Antonio Galán · La Estrella (Antioquia)</div>
+<div style="font-family:Arial,sans-serif;font-size:9pt;color:#64748b;margin-bottom:22px;border-bottom:2px solid #cbd5e1;padding-bottom:6px;">Área de Tecnología e Informática · Planeación Curricular de 90 Minutos · Grado 9° · Clase 08-09-2026</div>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:18px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">1. FICHA TÉCNICA</h1>
+<ul style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:14px;padding-left:22px;line-height:1.4;">
+<li style="margin-bottom:4px;"><strong>Grado y Unidad:</strong> Noveno (9°) — Unidad: FUNDAMENTOS DE PROGRAMACIÓN. ALGORITMOS. Período 2.</li>
+<li style="margin-bottom:4px;"><strong>Ámbito Conceptual:</strong> Introducción a lenguajes de programación (Python): creación de listas mediante corchetes, indexación de base cero, acceso por índice positivo y negativo ([-1]), conteo con len(), modificación directa de elementos, adición con .append() y corte de sublistas (slicing [inicio:fin]). Estructura estrictamente secuencial (sin condicionales ni bucles).</li>
+<li style="margin-bottom:4px;"><strong>Competencia:</strong> Diseño soluciones a problemas utilizando algoritmos básicos en un entorno visual interactivo. Desarrollo programas básicos en Python utilizando Google Colab para entender conceptos fundamentales de almacenamiento, organización y consulta de colecciones de datos.</li>
+<li style="margin-bottom:4px;"><strong>Indicadores de Desempeño:</strong>
+  <ul>
+    <li>Traduce problemas y colecciones del entorno en estructuras secuenciales de tipo lista en Python.</li>
+    <li>Implementa algoritmos en Google Colab aplicando indexación, modificación de elementos y métodos fundamentales (append, len, slicing).</li>
+    <li>Aplica el análisis de errores de sintaxis (corchetes, comas, comillas y límites de rango) en la depuración de código en vivo.</li>
+    <li>Trabaja colaborativamente en el aula asumiendo un rol activo según su estilo de aprendizaje, completando y entregando el reto en los 90 minutos de clase.</li>
+  </ul>
+</li>
+</ul>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:10px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">2. DESARROLLO DE LA CLASE (TABLA)</h1>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #cbd5e1;margin-top:10px;margin-bottom:20px;font-family:Arial,sans-serif;font-size:9pt;">
+<thead>
+<tr style="background-color:#1e3a8a;">
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:14%;">Momento</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:50%;">Actividad</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:12%;">Duración</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:24%;">Recursos</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color:#ffffff;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Inicio</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">El Gancho: La caja individual frente al estante de datos. Demostración interactiva en proyector: el Efecto Cero y las 3 reglas sagradas de una lista en Python. Apertura del cuaderno digital en Google Colab.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">15 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">PC Windows 11, Proyector/Video Beam, Diapositiva interactiva con simulador en vivo. Video YouTube: La Geekpedia de Ernesto - Listas en Python.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Desarrollo</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Práctica Guiada: Modelado con ejemplos universales de cafetería y números (alimentos, precios y turnos). Práctica guiada de indexación [0], conteo con len(), modificación directa, método .append() y corte con slicing [1:3]. Depuración guiada de errores comunes.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">25 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Google Colab en navegador, pantalla proyectada del docente, guía rápida de sintaxis.</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Reto ABR</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Reto auténtico e inédito: "El Sistema de Despacho de Rutas Integradas del Metro La Estrella". 5 micro-retos secuenciales aplicados a la flota de transporte municipal (San Agustín, Pan de Azúcar, La Ferrería, Ancón, El Romeral). Trabajo en equipos heterogéneos integrando los 4 roles de Kolb.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">40 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Google Colab individual/equipo, PCs con Windows 11, rúbrica de desempeño proyectada en aula.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Cierre</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Verificación técnica de las 5 salidas en Colab (Ejecutar Todo). Configuración de enlace público de lectura y entrega obligatoria en la tarea de Google Classroom. Cero tareas en casa.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">10 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Plataforma Google Classroom, lista de verificación visible.</td>
+</tr>
+</tbody>
+</table>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">3. GUION DEL DOCENTE</h1>
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Inicio - El Gancho: De la Cajita al Estante (15 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "¡Hola muchachos! ¿Cómo van? Miren esto tan bacano. En las clases pasadas vimos que una variable normal es como una cajita pequeña donde solo cabe una sola cosa a la vez. Si guardabas merienda = 'Empanada' y en la línea siguiente ponías merienda = 'Buñuelo', la empanada se borraba para siempre. Pero en la vida real, en la tienda de la esquina o en el colegio, necesitamos guardar muchas cosas juntas sin que nada se borre: los precios del día, las notas del salón, o las canciones de una playlist. Hoy vamos a armar nuestro primer estante inteligente en Python: una <strong>lista</strong>."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Miren la pantalla un segundo. Solo hay 3 reglas muy sencillas para que esto no les saque error:<br>
+1. <strong>Los corchetes [ ]:</strong> Son como las paredes de la canasta donde metemos los datos.<br>
+2. <strong>Las comas , :</strong> Separan cada elemento para que no queden pegados.<br>
+3. <strong>La trampa del cero (¡Ojo a esto!):</strong> En programación nadie empieza a contar en 1. La primera casilla de la fila siempre se llama <strong>cero</strong>. Si tenemos 4 cosas en la lista, sus puestos son el 0, el 1, el 2 y el 3. El puesto 4 no existe. Abran de una vez en sus computadores con Windows 11 la página <em>colab.research.google.com</em> con su correo del colegio y creen un cuaderno nuevo llamado 'Clase 08-09 Listas - Su Nombre'."</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Desarrollo - Práctica Guiada: 4 Trucos Fáciles con Listas (25 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Vamos a programar juntos en el cuaderno. Yo hago el código en el proyector y ustedes lo copian y le dan Play conmigo en Colab. Vamos a usar de ejemplo cosas ricas de la cafetería para que nadie se enrede."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Paso 1: Armar la lista y ver qué hay en cada puesto (Ojo con el cero):</p>
+<pre class="code"># 1. Armamos la canasta con 4 refrigerios
+refrigerios = ["Manzana", "Sándwich", "Yogur", "Galleta"]
+
+# Miramos qué hay en el primer puesto (0) y en el tercer puesto (2)
+print("Primer refrigerio (puesto 0):", refrigerios[0])
+print("Tercer refrigerio (puesto 2):", refrigerios[2])</pre>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#475569;margin-top:0;margin-bottom:8px;">Explicación del docente: "Miren la magia: refrigerios[0] nos muestra 'Manzana' porque es el primer puesto. Y refrigerios[2] nos muestra 'Yogur'. Si alguien escribe refrigerios[4], Python le grita IndexError porque esa casilla no existe en nuestra canasta."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Paso 2: Cambiar un producto y pegar otro al final con append:</p>
+<pre class="code"># 2. Cambiamos lo que había en el puesto 1 (cambiamos el Sándwich por Jugo)
+refrigerios[1] = "Jugo Natural"
+
+# 3. Pegamos un producto nuevo al final de la fila
+refrigerios.append("Ponqué")
+
+print("Lista con los cambios:", refrigerios)</pre>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#475569;margin-top:0;margin-bottom:8px;">Explicación del docente: "Fíjense: con el signo igual cambiamos lo que había en el puesto 1. Y la palabra mágica .append() significa 'pegar al final': mete el Ponqué de último en la fila sin que tengamos que saber cuántos iban."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Paso 3: Contar cuántos hay (len) y el atajo para ver el último ([-1]):</p>
+<pre class="code"># 4. Saber cuántas cosas hay en total en la canasta
+total = len(refrigerios)
+print("Total de refrigerios:", total)
+
+# 5. Ver el último sin tener que contar
+ultimo = refrigerios[-1]
+print("El último refrigerio de la fila es:", ultimo)</pre>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#475569;margin-top:0;margin-bottom:8px;">Explicación del docente: "len() viene de longitud y cuenta como cualquier persona: 1, 2, 3, 4 y 5. Y el truco de poner [-1] entre corchetes es un atajo genial: va directo a la última casilla de la fila, sin importar si la lista tiene 5 o 500 cosas."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Paso 4: Sacar un pedacito de la lista (el corte o slicing):</p>
+<pre class="code"># 6. Sacamos un combo con los del medio: desde el puesto 1 hasta el 3
+combo_medio = refrigerios[1:4]
+print("Combo del medio:", combo_medio)</pre>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#475569;margin-top:0;margin-bottom:12px;">Explicación del docente: "Ojo al corte: [1:4] agarra desde el puesto 1 hasta el 3. El número 4 de la derecha nunca entra en el combo; funciona como el freno de mano. ¿A todos les corrió sin errores en su pantalla? ¡De una! Ahora sí vamos a resolver el reto de verdad."</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Reto ABR - Instrucción en Vivo (40 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:12px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Muchachos, se acabó copiar de la pizarra. Ahora ustedes son los encargados de la pantalla de salida de los buses integrados en la Estación del Metro La Estrella. Imagínense que la gente en la fila necesita ver qué bus sale ya, cuál va para el barrio y cuál sale en hora pico. En sus mesas de trabajo de 3 o 4 van a resolver los 5 micro-retos. Cada reto va en una celda nueva con su título. No usamos cosas raras como if o ciclos; pura lógica paso a paso como acabamos de practicar. Tienen 40 minutos. ¡A poner a rodar esos buses!"</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Cierre - Verificación y Entrega (10 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:12px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Últimos 10 minutos muchachos. En Colab le dan arriba en 'Entorno de ejecución' y eligen 'Reiniciar y ejecutar todo'. Si las 5 salidas se ven limpias sin letreros rojos de error, van arriba al botón azul de 'Compartir', lo ponen en 'Cualquier persona con el enlace puede ser lector', copian ese link y lo pegan en la tarea de Google Classroom. Recuerden nuestra regla sagrada: cero tareas para la casa; la nota se queda ganada aquí en el salón."</p>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">4. EL RETO (ABR + INTEGRACIÓN DE KOLB)</h1>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;"><strong>Situación Real en La Estrella:</strong> En la Estación del Metro La Estrella necesitan que la pantalla informativa le muestre a la gente el orden de salida de los buses integrados que van hacia los barrios y veredas (San Agustín, Pan de Azúcar, La Ferrería, Ancón y El Romeral). El equipo de ustedes va a manejar esa pantalla en Google Colab con 5 celdas de código sencillas y ordenadas.</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;line-height:1.4;text-align:justify;"><strong>Los 5 Micro-retos de los Buses:</strong></p>
+<ul style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:10px;padding-left:20px;line-height:1.35;">
+<li><strong>Micro-reto 1 (Buses de la mañana):</strong> Crear la lista con 4 buses listos para salir: "San Agustín", "Pan de Azúcar", "La Ferrería" y "Ancón". Mostrar en pantalla cuál sale de primero (puesto 0) y cuál sale de tercero (puesto 2).</li>
+<li><strong>Micro-reto 2 (Arreglo en la calle y bus extra):</strong> Están arreglando la vía de la segunda ruta ("Pan de Azúcar", puesto 1), así que deben cambiarla por "La Tablaza". Además, hay mucha gente esperando en la fila, así que manden un bus extra al final para "Vereda El Romeral" usando .append(). Muestren la lista completa en pantalla.</li>
+<li><strong>Micro-reto 3 (Pregunta del jefe de estación):</strong> El supervisor les pregunta por radio: ¿Cuántos buses tenemos en servicio en este momento? Respondan usando len(). ¿Y cuál es el último bus que va a salir hoy? Sáquenlo de una usando el atajo de [-1].</li>
+<li><strong>Micro-reto 4 (Hora pico en la estación):</strong> Llegó la hora pico de estudiantes y trabajadores. Necesitamos despachar únicamente los buses del medio (desde el puesto 1 hasta el puesto 3). Saquen ese combo usando un corte [1:4] y muéstrenlo en pantalla.</li>
+<li><strong>Micro-reto 5 (El equipo de turno):</strong> Creen una lista vacía llamada despachadores = []. Agreguen con .append() el nombre de 3 compañeros de su equipo. Muestren cuántos son en total con len(), y quién abre el turno (puesto 0) y quién lo cierra (puesto -1).</li>
+</ul>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;font-weight:bold;">Solución de Referencia para el Docente:</p>
+<pre class="code"># ==========================================================
+# RETO ABR: PANTALLA DE BUSES METRO LA ESTRELLA (08-09-2026)
+# ==========================================================
+
+# MICRO-RETO 1: Buses listos para salir
+rutas = ["San Agustín", "Pan de Azúcar", "La Ferrería", "Ancón"]
+print("Primer bus en salir (puesto 0):", rutas[0])
+print("Tercer bus en salir (puesto 2):", rutas[2])
+
+# MICRO-RETO 2: Cambio por arreglo en vía y bus extra
+rutas[1] = "La Tablaza"
+rutas.append("Vereda El Romeral")
+print("Buses actualizados en pantalla:", rutas)
+
+# MICRO-RETO 3: Total de buses y el último en salir
+total_buses = len(rutas)
+ultimo_bus = rutas[-1]
+print("Total de buses en servicio:", total_buses)
+print("Último bus en despachar:", ultimo_bus)
+
+# MICRO-RETO 4: Despacho de hora pico (corte)
+buses_hora_pico = rutas[1:4]
+print("Buses del combo hora pico:", buses_hora_pico)
+
+# MICRO-RETO 5: Compañeros de turno
+despachadores = []
+despachadores.append("Mateo Gómez")
+despachadores.append("Valentina Ruiz")
+despachadores.append("Samuel Restrepo")
+print("Compañeros en el equipo:", len(despachadores))
+print("Abre el turno:", despachadores[0], "| Cierra el turno:", despachadores[-1])</pre>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;font-weight:bold;">Distribución por Estilos de Kolb (Todos juegan, nadie se queda por fuera):</p>
+<ul style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:14px;padding-left:22px;line-height:1.4;">
+<li style="margin-bottom:5px;"><strong>Divergente (El creativo):</strong> Se inventa los mensajes amables de print() para que los usuarios que leen la pantalla entiendan de una qué bus viene y a qué barrio va.</li>
+<li style="margin-bottom:5px;"><strong>Asimilador (El que pilla las trampas):</strong> Cuida que nadie se confunda con el puesto cero, revisa que len() cuente bien los 5 buses y explica por qué el corte [1:4] no agarra el número 4.</li>
+<li style="margin-bottom:5px;"><strong>Convergente (El piloto del teclado):</strong> Es el que digita el código en Colab con cuidado de no olvidar ninguna coma, comilla o corchete.</li>
+<li style="margin-bottom:5px;"><strong>Acomodador (El que prueba y entrega):</strong> Le da Play a cada celda para revisar que no salgan errores en rojo, saca el link público y asegura la entrega en Classroom a tiempo.</li>
+</ul>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">5. ACTIVIDAD EN CLASSROOM Y RÚBRICA</h1>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:10px;line-height:1.4;"><strong>Qué deben entregar los muchachos:</strong> El enlace público de su cuaderno de Google Colab (con permiso de 'Cualquier persona puede ser lector') pegado en la tarea de Classroom 'Clase 08-09: Despacho de Rutas con Listas'. El cuaderno debe tener las 5 celdas corriendo sin errores rojos.</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:8px;">Rúbrica Simplificada (Decreto 1290)</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #cbd5e1;margin-top:8px;margin-bottom:20px;font-family:Arial,sans-serif;font-size:8.5pt;">
+<thead>
+<tr style="background-color:#1e3a8a;">
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:18%;">Criterio</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:27%;">Superior</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:21%;">Alto</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:19%;">Básico</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:15%;">Bajo</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color:#ffffff;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Lógica y manejo de listas</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Aplica perfectamente corchetes, índice cero, índice [-1], modificación directa, .append() y corte [1:4] en los 5 micro-retos.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Resuelve las operaciones de listas con precisión cometiendo solo una imprecisión menor en el rango de corte o índice.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Aplica listas pero confunde el índice inicial cero o no logra implementar adecuadamente el corte o .append().</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">No logra crear ni manipular estructuras de listas en Python; código incompleto.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Ejecución técnica en Colab</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Las 5 celdas corren de forma limpia y consecutiva, generando salidas formateadas acordes a la logística de La Estrella.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">4 de las 5 celdas compilan y muestran las salidas esperadas con formato legible.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Solo 2 o 3 celdas ejecutan; persisten errores de comillas, comas o IndexError.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">El cuaderno no corre o no genera salidas válidas debido a errores de sintaxis bloqueantes.</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Autonomía y trabajo en aula</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Completa y entrega el enlace en Classroom antes de concluir los 90 min, evidenciando articulación en roles de Kolb.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Entrega dentro del tiempo de la sesión con evidencia de colaboración grupal.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Entrega justo al límite del timbre con apoyo docente constante o de forma parcial.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">No entrega el enlace en Classroom en la sesión de clase ni participa activamente en el aula.</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-family:Arial,sans-serif;font-size:9pt;color:#64748b;margin-top:0;margin-bottom:6px;line-height:1.4;"><strong>Recursos Verificados para el Docente y Estudiantes:</strong><br>
+• Video YouTube: Canal <em>La Geekpedia de Ernesto</em> - 'Curso de Python: Listas y Métodos'.<br>
+• Video YouTube: Canal <em>Soy Dalto</em> - 'Curso de Python desde Cero: Listas y Tuplas'.<br>
+• Documentación oficial: <em>docs.python.org/es/3/tutorial/datastructures.html</em>.<br>
+• Entorno de ejecución en la nube: <em>colab.research.google.com</em>.</p>
+</div>
+
+<script>
+async function copyForDocs(){
+const docContent=document.getElementById('docContent');
+const btn=document.getElementById('btnCopy');
+const msg=document.getElementById('statusMsg');
+try{
+const fullHtml='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'+docContent.innerHTML+'</body></html>';
+const blobHtml=new Blob([fullHtml],{type:'text/html'});
+const blobText=new Blob([docContent.innerText],{type:'text/plain'});
+const item=new ClipboardItem({'text/html':blobHtml,'text/plain':blobText});
+await navigator.clipboard.write([item]);
+btn.innerHTML='<span>✅</span> ¡Copiado con Éxito!';
+btn.style.background='#10b981';
+msg.innerHTML='<strong style="color:#34d399;">¡Formato copiado!</strong> Ve a Google Docs y presiona <strong>Ctrl + V</strong>.';
+setTimeout(()=>{btn.innerHTML='<span>📋</span> Copiar Formato para Google Docs';btn.style.background='linear-gradient(135deg,#3b82f6,#1d4ed8)';},4000);
+}catch(err){
+const range=document.createRange();range.selectNode(docContent);window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.execCommand('copy');window.getSelection().removeAllRanges();btn.innerHTML='<span>✅</span> ¡Copiado!';msg.innerHTML='<strong style="color:#34d399;">¡Listo!</strong> Pega con <strong>Ctrl + V</strong> en Google Docs.';
+}
+}
+</script>
+</body>
+</html>

@@ -65,11 +65,21 @@ Define una situación hipotética contextualizada en La Estrella.
 - Entregar siempre en formato Markdown limpio y profesional.
 
 # ENTREGABLES OBLIGATORIOS POR CLASE (ESTRICTO)
-Para cada clase se deben generar obligatoriamente DOS archivos HTML en la carpeta de la clase:
-1. **Planeación para Google Docs (`[Nombre Clase].html`):**
+Para cada clase se deben generar obligatoriamente DOS archivos HTML dentro de la carpeta correspondiente:
+- **Ruta y Nomenclatura:** `Grado [X]/Clase [N] [DD-MM-AAAA]/`
+  - Archivo 1: `Clase [N] [DD-MM-AAAA].html`
+  - Archivo 2: `Presentación clase [N] [DD-MM-AAAA].html`
+
+1. **Planeación para Google Docs (`Clase [N] [DD-MM-AAAA].html`):**
    - Debe incluir botón interactivo superior para "Copiar Formato para Google Docs".
    - Todas las tablas, filas, celdas y encabezados deben tener **estilos CSS en línea estrictos (`style="..."`)** con colores institucionales (azul `#1e3a8a`), bordes delimitados (`#cbd5e1`) y padding para que Google Docs conserve el formato al 100% al pegar.
-2. **Presentación Interactiva para Proyectar (`Presentación [Nombre Clase].html`):**
+   - Reducción del lenguaje técnico en los guiones y mensajes para los estudiantes, usando analogías cotidianas y explicaciones directas.
+
+2. **Presentación Interactiva para Proyectar (`Presentación clase [N] [DD-MM-AAAA].html`):**
+   - **Diapositiva inicial de Ficha y Competencia:** Al inicio (Diapositiva 2) debe incluir obligatoriamente los datos de la clase y la **competencia curricular a desarrollar**.
+   - **Componente Interactivo Funcional:** Incluir simulador o demostración interactiva en vivo con botones y controles dinámicos.
+   - **Diferenciación Didáctica Estricta:** El ejemplo del simulador interactivo y la práctica guiada **NUNCA** debe coincidir con el Reto ABR. Deben tener temáticas y datos diferentes para garantizar transferencia de conocimiento.
+   - **Descripción Narrativa del Reto:** Debe haber una diapositiva dedicada a describir la situación y misión del Reto ABR en La Estrella antes de presentar los micro-retos específicos.
    - **Tipografía grande y legible:** Usar fuentes grandes y fluidas con `clamp()` para que se lean con claridad desde el fondo del aula en un proyector o Video Beam.
    - **Diseño 100% responsivo y Cero Scroll:** El contenido debe ajustarse fluidamente a la altura de la pantalla (`100vh`) sin generar nunca barra de desplazamiento vertical.
    - **Evaluación en Diapositivas:** Mostrar el título como "Nivel Superior" (prohibido colocar el texto entre paréntesis "(Decreto 1290)" en las diapositivas de la presentación).

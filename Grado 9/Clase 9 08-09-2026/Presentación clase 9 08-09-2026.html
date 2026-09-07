@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 08-09-2026: Despacho de Rutas con Listas en Python | Grado 9° IEJAGA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: rgba(18, 24, 38, 0.75);
+      --bg-card-hover: rgba(28, 38, 58, 0.9);
+      --border-glow: rgba(99, 102, 241, 0.35);
+      --accent-primary: #6366f1;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(99, 102, 241, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-image: 
+        radial-gradient(circle at 12% 18%, rgba(99, 102, 241, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 88% 82%, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 60%);
+    }
+
+    /* BARRA SUPERIOR / CONTROLES */
+    header {
+      padding: 0.45rem 2rem;
+      height: 58px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 15, 29, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* TEMPORIZADOR EN VIVO */
+    .timer-widget {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 4px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .timer-phase-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a5b4fc;
+      letter-spacing: 0.5px;
+    }
+
+    .timer-display {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #38bdf8;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-timer {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.7rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-timer:hover {
+      background: var(--accent-primary);
+      transform: scale(1.1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-cyan);
+    }
+
+    /* CONTENEDOR PRINCIPAL DE DIAPOSITIVAS */
+    main {
+      flex: 1;
+      height: calc(100vh - 110px);
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 1.2rem 3rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(30px) scale(0.99);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0) scale(1);
+    }
+
+    /* TIPOGRAFÍA FLUIDA Y HERO TAGS */
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: clamp(4px, 0.8vh, 6px) clamp(12px, 1.2vw, 18px);
+      border-radius: 999px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      color: #a5b4fc;
+      font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: clamp(0.4rem, 1vh, 0.8rem);
+      width: fit-content;
+    }
+
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.2vw, 3.1rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: clamp(0.4rem, 0.9vh, 0.8rem);
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-desc {
+      font-size: clamp(1.02rem, 1.35vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 980px;
+      line-height: 1.45;
+      margin-bottom: clamp(0.8rem, 1.6vh, 1.4rem);
+    }
+
+    /* REJILLAS DE TARJETAS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(0.8rem, 1.4vw, 1.3rem);
+      width: 100%;
+    }
+
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: clamp(0.9rem, 1.4vw, 1.4rem);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+    }
+
+    .card-icon {
+      font-size: clamp(1.7rem, 2.3vw, 2.3rem);
+      margin-bottom: clamp(0.3rem, 0.7vh, 0.5rem);
+      display: inline-block;
+    }
+
+    .card-num {
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+      font-weight: 700;
+      margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+      color: var(--text-main);
+    }
+
+    .card-body {
+      font-size: clamp(0.92rem, 1.15vw, 1.1rem);
+      color: var(--text-muted);
+      line-height: 1.42;
+    }
+
+    .codebox {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-family: Consolas, monospace;
+      font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+      color: #38bdf8;
+      margin-top: 8px;
+    }
+
+    /* BADGES PILL */
+    .pill {
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      width: fit-content;
+    }
+    .pill-emerald { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .pill-cyan { background: rgba(6, 182, 212, 0.2); color: #38bdf8; }
+    .pill-amber { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .pill-rose { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+
+    /* ========================================================
+       COMPONENTE INTERACTIVO: SIMULADOR DE LISTAS EN VIVO (SLIDE 3)
+       ======================================================== */
+    .sim-container {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: clamp(0.9rem, 1.4vw, 1.4rem);
+      box-shadow: var(--glass-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sim-memory-rack {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      min-height: 90px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 12px;
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      overflow-x: auto;
+    }
+
+    .sim-slot {
+      position: relative;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border: 2px solid #3b82f6;
+      border-radius: 10px;
+      padding: 8px 14px;
+      min-width: 130px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .sim-slot:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+    }
+
+    .sim-slot.highlight {
+      border-color: #f59e0b;
+      background: linear-gradient(145deg, #78350f, #1e293b);
+      transform: scale(1.06);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    }
+
+    .sim-slot.slice-selected {
+      border-color: #10b981;
+      background: linear-gradient(145deg, #064e3b, #1e293b);
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    }
+
+    .sim-slot.slice-excluded {
+      opacity: 0.35;
+      border-color: #64748b;
+    }
+
+    .slot-idx-pos {
+      position: absolute;
+      top: -12px;
+      left: 10px;
+      background: #3b82f6;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+    }
+
+    .slot-idx-pos.zero-hero {
+      background: #ec4899;
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+    }
+
+    .slot-idx-neg {
+      position: absolute;
+      bottom: -12px;
+      right: 10px;
+      background: #8b5cf6;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+    }
+
+    .slot-value {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.95rem, 1.25vw, 1.2rem);
+      color: #ffffff;
+      margin: 10px 0;
+    }
+
+    .sim-controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      background: rgba(0,0,0,0.25);
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .sim-input {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      outline: none;
+    }
+
+    .sim-input:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .sim-btn {
+      background: linear-gradient(135deg, var(--accent-primary), #4f46e5);
+      color: white;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .sim-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }
+
+    .sim-btn-cyan {
+      background: linear-gradient(135deg, var(--accent-cyan), #0891b2);
+    }
+
+    .sim-btn-emerald {
+      background: linear-gradient(135deg, var(--accent-emerald), #059669);
+    }
+
+    .sim-btn-reset {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sim-console {
+      background: #020617;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-family: Consolas, monospace;
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sim-console-cmd {
+      color: #38bdf8;
+    }
+
+    .sim-console-out {
+      color: #34d399;
+      font-weight: bold;
+    }
+
+    /* SECCIÓN INTERACTIVA DE KOLB */
+    .kolb-tabs {
+      display: flex;
+      gap: clamp(6px, 1vw, 12px);
+      margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+      background: rgba(15, 23, 42, 0.7);
+      padding: 5px;
+      border-radius: 12px;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .kolb-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: clamp(6px, 1vh, 10px) clamp(12px, 1.4vw, 20px);
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .kolb-tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-primary), #4f46e5);
+      color: white;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.45);
+    }
+
+    .kolb-panel {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: clamp(1.2rem, 2vw, 2rem);
+      box-shadow: var(--glass-shadow);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .kolb-panel.active {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(1rem, 2vw, 2rem);
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checklist-card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 14px;
+      padding: clamp(0.9rem, 1.4vw, 1.4rem);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: clamp(5px, 0.8vh, 8px) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: clamp(0.92rem, 1.15vw, 1.1rem);
+      color: #cbd5e1;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+    }
+
+    .check-item:hover {
+      color: white;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: clamp(18px, 1.4vw, 22px);
+      height: clamp(18px, 1.4vw, 22px);
+      accent-color: var(--accent-emerald);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .check-item.done {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER Y NAVEGACIÓN */
+    footer {
+      height: clamp(48px, 6vh, 56px);
+      background: rgba(10, 15, 29, 0.9);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      position: sticky;
+      bottom: 0;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .dots-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      width: 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-cyan));
+    }
+
+    .nav-btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-nav {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: white;
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      background: var(--accent-primary);
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 900px) {
+      .slide { padding: 1.2rem; }
+      .slide-title { font-size: 1.8rem; }
+      .kolb-panel.active { grid-template-columns: 1fr; }
+      .timer-widget { padding: 4px 8px; }
+      .brand-subtitle { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <div class="brand">
+      <span class="brand-badge">Grado 9°</span>
+      <div>
+        <div class="brand-title">I.E. José Antonio Galán · La Estrella</div>
+        <div class="brand-subtitle">Tecnología e Informática · Clase 08-09-2026: Listas en Python</div>
+      </div>
+    </div>
+
+    <!-- LIVE 90 MIN TIMER -->
+    <div class="timer-widget">
+      <span class="timer-phase-badge" id="timerPhase">Inicio (15m)</span>
+      <span class="timer-display" id="timerDisplay">15:00</span>
+      <div class="timer-controls">
+        <button class="btn-timer" id="btnPlayPause" title="Iniciar/Pausar">▶</button>
+        <button class="btn-timer" id="btnResetTimer" title="Reiniciar">↻</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn-action" id="btnFullscreen" title="Pantalla completa (F)">
+        <span>⛶</span> Pantalla Completa
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN SLIDES CONTAINER -->
+  <main>
+    <div class="slides-container">
+
+      <!-- SLIDE 1: PORTADA -->
+      <section class="slide active" id="slide1">
+        <span class="hero-tag">🐍 Programación para Todos 2026</span>
+        <h1 class="slide-title">El Estante de Datos en Python<br><span class="gradient-text">Guardar Muchas Cosas sin Enredos</span></h1>
+        <p class="slide-desc">
+          Ya no guardamos una sola cosita en una cajita. Hoy aprendemos a armar un estante completo con corchetes, el truco del puesto cero y métodos fáciles en Google Colab.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-num">01</span>
+            <div class="card-icon">📦</div>
+            <div class="card-title">De la Caja al Estante</div>
+            <div class="card-body">Una variable normal guarda 1 solo dato. Una lista guarda montones de cosas en casillas numeradas desde el cero.</div>
+          </div>
+          <div class="card">
+            <span class="card-num">02</span>
+            <div class="card-icon">⚡</div>
+            <div class="card-title">4 Trucos Clave</div>
+            <div class="card-body">Ver quién está en el puesto [0], contar con len(), pegar al final con .append() y sacar un combo con corte [1:4].</div>
+          </div>
+          <div class="card">
+            <span class="card-num">03</span>
+            <div class="card-icon">🎯</div>
+            <div class="card-title">Cero Tareas en Casa</div>
+            <div class="card-body">El reto de los buses del Metro se resuelve y entrega en Google Classroom en los 90 minutos de clase.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: FICHA DE LA SESIÓN & COMPETENCIA -->
+      <section class="slide" id="slide2">
+        <span class="hero-tag">📋 Ficha de la Sesión · Grado 9°</span>
+        <h1 class="slide-title">Datos de la Clase & Competencia<br><span class="gradient-text">¿Qué Vamos a Aprender y Lograr Hoy?</span></h1>
+        <p class="slide-desc">
+          Sesión de 90 minutos de Tecnología e Informática orientada al desarrollo de pensamiento computacional y programación secuencial en Google Colab:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <div class="card-icon">🏫</div>
+            <div class="card-title">Datos del Área</div>
+            <div class="card-body">
+              • <strong>I.E. José Antonio Galán</strong> · La Estrella<br>
+              • <strong>Grado:</strong> Noveno (9°) · Período 2<br>
+              • <strong>Unidad:</strong> Fundamentos de Programación<br>
+              • <strong>Tema:</strong> Listas en Python (Secuencia)
+            </div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <div class="card-icon">🎯</div>
+            <div class="card-title">Competencia a Desarrollar</div>
+            <div class="card-body">
+              Diseño soluciones a problemas utilizando algoritmos básicos en un entorno visual interactivo. Desarrollo programas en Python con Google Colab para almacenar, organizar y consultar colecciones de datos.
+            </div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <div class="card-icon">🚀</div>
+            <div class="card-title">Lo que Sabrás Hacer Hoy</div>
+            <div class="card-body">
+              Aprenderás a crear listas con corchetes, consultar casillas con índices positivos y negativos [-1], agregar elementos con .append() y cortar sublistas sin errores de sintaxis.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: EL GANCHO / LAS 3 REGLAS DE ORO -->
+      <section class="slide" id="slide3">
+        <span class="hero-tag">👀 Momento 1: El Gancho (15 Minutos)</span>
+        <h2 class="slide-title">Las 3 Reglas de Oro<br><span class="gradient-text">¿Cómo Funcionan las Listas sin Enredos?</span></h2>
+        <p class="slide-desc">
+          En el cuaderno digital de Google Colab no hay que memorizar nada raro; solo hay que respetar estas 3 reglas sencillas:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="pill pill-cyan" style="margin-bottom: 8px;">Regla 1</span>
+            <div class="card-title">Los Corchetes [ ]</div>
+            <div class="card-body">
+              Son las paredes de la canasta donde echamos las cosas.
+            </div>
+            <div class="codebox">colores = ["Rojo", "Azul", "Verde"]</div>
+          </div>
+          <div class="card">
+            <span class="pill pill-emerald" style="margin-bottom: 8px;">Regla 2</span>
+            <div class="card-title">Las Comas ,</div>
+            <div class="card-body">
+              Separan cada elemento para que no queden pegados ni saquen error.
+            </div>
+            <div class="codebox">precios = [2500, 1800, 3200]</div>
+          </div>
+          <div class="card">
+            <span class="pill pill-rose" style="margin-bottom: 8px;">Regla 3 Sagrada</span>
+            <div class="card-title">La Trampa del Cero</div>
+            <div class="card-body">
+              En programación el primer puesto siempre es el cero. Si hay 3 datos, son 0, 1 y 2.
+            </div>
+            <div class="codebox">print(colores[0])  # Sale: Rojo</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: COMPONENTE INTERACTIVO - SIMULADOR DE LISTAS EN VIVO -->
+      <section class="slide" id="slide4">
+        <span class="hero-tag">🛠️ Momento 2: Simulador en Vivo (25 Minutos)</span>
+        <h2 class="slide-title">Simulador en Pantalla<br><span class="gradient-text">Prueba Puestos, Append y Cortes con Clics</span></h2>
+        
+        <div class="sim-container">
+          <!-- MEMORY RACK -->
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:0.82rem;font-weight:700;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:1px;">
+              🧺 Nuestra Canasta de Refrigerios: <code style="color:white;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px;">refrigerios</code> (total: <span id="simLenVal">4</span>)
+            </span>
+            <span style="font-size:0.8rem;color:var(--text-muted);">Toca cualquier casilla para ver qué hay adentro</span>
+          </div>
+
+          <div class="sim-memory-rack" id="simRack">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- CONTROLS -->
+          <div class="sim-controls-bar">
+            <!-- Append -->
+            <input type="text" class="sim-input" id="simAppendInput" placeholder="Ej: Ponqué" style="width: 170px;">
+            <button class="sim-btn sim-btn-emerald" id="btnSimAppend" onclick="simAppend()">
+              ➕ Pegar al final (.append)
+            </button>
+
+            <!-- Access by Index -->
+            <input type="number" class="sim-input" id="simIndexInput" placeholder="Puesto (ej: 0 ó -1)" style="width: 130px;">
+            <button class="sim-btn sim-btn-cyan" id="btnSimAccess" onclick="simAccess()">
+              🔍 Ver puesto [i]
+            </button>
+
+            <!-- Slicing -->
+            <div style="display:flex;align-items:center;gap:4px;">
+              <span style="font-size:0.85rem;color:#cbd5e1;font-family:monospace;">[</span>
+              <input type="number" class="sim-input" id="simSliceStart" value="1" style="width:50px;padding:4px 6px;text-align:center;">
+              <span style="font-size:0.85rem;color:#cbd5e1;font-family:monospace;">:</span>
+              <input type="number" class="sim-input" id="simSliceEnd" value="3" style="width:50px;padding:4px 6px;text-align:center;">
+              <span style="font-size:0.85rem;color:#cbd5e1;font-family:monospace;">]</span>
+            </div>
+            <button class="sim-btn" id="btnSimSlice" onclick="simSlice()">
+              ✂️ Sacar combo [desde:hasta]
+            </button>
+
+            <button class="sim-btn sim-btn-reset" onclick="resetSim()" style="margin-left:auto;">
+              ↺ Restaurar
+            </button>
+          </div>
+
+          <!-- CONSOLE FEEDBACK -->
+          <div class="sim-console">
+            <span class="sim-console-cmd" id="simConsoleCmd">&gt;&gt;&gt; refrigerios = ["Manzana", "Sándwich", "Yogur", "Galleta"]</span>
+            <span class="sim-console-out" id="simConsoleOut">len(refrigerios) = 4</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: EL RETO ABR - DESCRIPCIÓN Y MISIÓN EN LA ESTRELLA -->
+      <section class="slide" id="slide5">
+        <span class="hero-tag">🎯 Momento 3: El Reto ABR (40 Minutos)</span>
+        <h2 class="slide-title">Misión en el Metro La Estrella<br><span class="gradient-text">El Control de Buses Integrados</span></h2>
+        <p class="slide-desc">
+          En la Estación del Metro La Estrella la fila de la mañana se desordena cuando la gente no sabe qué ruta va a salir o cuándo mandan un bus extra. Su equipo va a programar la pantalla digital en Colab para solucionar este problema del municipio.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <div class="card-icon">🚍</div>
+            <div class="card-title">La Situación Real</div>
+            <div class="card-body">Miles de personas viajan hacia San Agustín, Pan de Azúcar, La Ferrería, Ancón y El Romeral. La pantalla debe estar al día.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <div class="card-icon">💻</div>
+            <div class="card-title">La Misión en Python</div>
+            <div class="card-body">Crear en Google Colab un programa ordenado en 5 celdas usando solo listas y secuencia. ¡Prohibido usar if o ciclos!</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <div class="card-icon">⏱️</div>
+            <div class="card-title">Regla de Oro</div>
+            <div class="card-body">Tienen 40 minutos en equipo. Se programa, se prueba y se entrega en Classroom antes del timbre. Cero tareas en casa.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: LOS 5 MICRO-RETOS A RESOLVER EN COLAB -->
+      <section class="slide" id="slide6">
+        <span class="hero-tag">💻 Tareas del Reto en Colab (40 Minutos)</span>
+        <h2 class="slide-title">Las 5 Salidas de la Pantalla<br><span class="gradient-text">Micro-retos Paso a Paso para la Flota</span></h2>
+        <p class="slide-desc">
+          En su cuaderno de Google Colab, cada micro-reto se resuelve en una celda separada con su título:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <span class="pill pill-cyan">Micro-reto 1</span>
+            <div class="card-title" style="margin-top: 6px;">Buses de la Mañana</div>
+            <div class="card-body">Armar lista con 4 buses. Mostrar en pantalla cuál sale de primero (puesto 0) y cuál de tercero (puesto 2).</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <span class="pill pill-emerald">Micro-reto 2</span>
+            <div class="card-title" style="margin-top: 6px;">Arreglo en Calle y Bus Extra</div>
+            <div class="card-body">Cambiar puesto 1 por "La Tablaza" por obras. Pegar "Vereda El Romeral" al final con .append().</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <span class="pill pill-amber">Micro-reto 3</span>
+            <div class="card-title" style="margin-top: 6px;">La Pregunta del Jefe</div>
+            <div class="card-body">Decir cuántos buses hay en total con len() y sacar el último bus de la fila con el atajo [-1].</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-rose);">
+            <span class="pill pill-rose">Micro-retos 4 y 5</span>
+            <div class="card-title" style="margin-top: 6px;">Hora Pico y Compañeros</div>
+            <div class="card-body">Sacar los buses del medio con corte [1:4]. Crear lista vacía y anotar a 3 compañeros del equipo.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: MODELO KOLB EN EQUIPO -->
+      <section class="slide" id="slide7">
+        <span class="hero-tag">👥 Trabajo en Mesa · Modelo Kolb</span>
+        <h2 class="slide-title">¿Cuál es Tu Misión en el Equipo?<br><span class="gradient-text">Todos Aportan, Nadie se Queda sin Hacer Nada</span></h2>
+        
+        <div class="kolb-tabs">
+          <button class="kolb-tab-btn active" onclick="showKolb('divergente')">🎨 Divergente</button>
+          <button class="kolb-tab-btn" onclick="showKolb('asimilador')">🧠 Asimilador</button>
+          <button class="kolb-tab-btn" onclick="showKolb('convergente')">⌨️ Convergente</button>
+          <button class="kolb-tab-btn" onclick="showKolb('acomodador')">🚀 Acomodador</button>
+        </div>
+
+        <!-- PANEL DIVERGENTE -->
+        <div class="kolb-panel active" id="kolb-divergente">
+          <div>
+            <span class="pill pill-rose" style="margin-bottom: 8px;">Creatividad y Mensajes</span>
+            <h3 class="card-title">El Creativo del Equipo</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Diseñas mensajes amables en los print() para que cualquier vecino de La Estrella entienda clarito qué bus viene y a qué barrio va.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #f43f5e; margin-bottom: 8px; font-size: 1.05rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Poner nombres reales de barrios de La Estrella.</div>
+            <div class="check-item"><input type="checkbox"> Escribir letreros amables y claros en los print.</div>
+            <div class="check-item"><input type="checkbox"> Ayudar a que todos en la mesa entiendan la idea.</div>
+          </div>
+        </div>
+
+        <!-- PANEL ASIMILADOR -->
+        <div class="kolb-panel" id="kolb-asimilador">
+          <div>
+            <span class="pill pill-amber" style="margin-bottom: 8px;">Lógica y Cero Trampas</span>
+            <h3 class="card-title">El que Pilla las Trampas</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Cuidas que nadie caiga en la trampa del cero, revisas que len() cuente bien los 5 buses y explicas por qué el corte [1:4] no se pasa.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #fbbf24; margin-bottom: 8px; font-size: 1.05rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Revisar que el primer puesto sea el cero y el último [-1].</div>
+            <div class="check-item"><input type="checkbox"> Comprobar que el corte [1:4] no agarre el número 4.</div>
+            <div class="check-item"><input type="checkbox"> Anotar comentarios con almohadilla (#) explicando el código.</div>
+          </div>
+        </div>
+
+        <!-- PANEL CONVERGENTE -->
+        <div class="kolb-panel" id="kolb-convergente">
+          <div>
+            <span class="pill pill-cyan" style="margin-bottom: 8px;">Teclado y Código</span>
+            <h3 class="card-title">El Piloto del Teclado</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Digitas en Google Colab con cuidado de no olvidar ninguna coma, comilla o corchete para que el código no saque errores.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #38bdf8; margin-bottom: 8px; font-size: 1.05rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Escribir corchetes y comas sin equivocarse.</div>
+            <div class="check-item"><input type="checkbox"> Usar bien .append() y len().</div>
+            <div class="check-item"><input type="checkbox"> Mantener el orden de las 5 celdas en Colab.</div>
+          </div>
+        </div>
+
+        <!-- PANEL ACOMODADOR -->
+        <div class="kolb-panel" id="kolb-acomodador">
+          <div>
+            <span class="pill pill-emerald" style="margin-bottom: 8px;">Pruebas y Entrega</span>
+            <h3 class="card-title">El que Prueba y Entrega</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Le das Play a cada celda para revisar que no salgan errores en rojo, sacas el link público y aseguras la entrega en Classroom a tiempo.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #34d399; margin-bottom: 8px; font-size: 1.05rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Darle Play a cada celda para revisar las salidas.</div>
+            <div class="check-item"><input type="checkbox"> Poner el enlace en 'Cualquier persona puede ser lector'.</div>
+            <div class="check-item"><input type="checkbox"> Subir el link a Google Classroom antes del timbre.</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SLIDE 8: CIERRE Y EVALUACIÓN -->
+      <section class="slide" id="slide8">
+        <span class="hero-tag">🏁 Momento 4: Cierre y Entrega (10 Minutos)</span>
+        <h2 class="slide-title">Chequeo Final Antes del Timbre<br><span class="gradient-text">Rumbo al Nivel Superior</span></h2>
+        <p class="slide-desc">
+          Antes de pegar el link en Google Classroom, denle clic a 'Ejecutar todo' en Google Colab y miren que salgan estos 5 resultados exactos:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="grid-column: span 2;">
+            <div class="card-title" style="margin-bottom: 6px;">Las 5 Salidas que Debe Mostrar tu Cuaderno:</div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 6px;">
+              <div class="codebox">1. Primer bus en salir (puesto 0): San Agustín | Tercer bus: La Ferrería</div>
+              <div class="codebox">2. Buses actualizados: ['San Agustín', 'La Tablaza', 'La Ferrería', 'Ancón', 'Vereda El Romeral']</div>
+              <div class="codebox">3. Total de buses en servicio: 5 | Último bus: Vereda El Romeral</div>
+              <div class="codebox">4. Buses del combo hora pico: ['La Tablaza', 'La Ferrería', 'Ancón']</div>
+              <div class="codebox">5. Compañeros en el equipo: 3 (Abre: [0] | Cierra: [-1])</div>
+            </div>
+          </div>
+          <div class="card">
+            <span class="pill pill-emerald" style="margin-bottom: 6px;">Nivel Superior</span>
+            <div class="card-title">Para Sacar la Mejor Nota</div>
+            <div class="card-body">
+              • Las 5 celdas corren sin letreros rojos.<br>
+              • Cada celda tiene su comentario.<br>
+              • Enlace pegado en Classroom a tiempo.<br>
+              • Cero tareas pendientes en la casa.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="dots-nav">
+      <div class="dot active" onclick="goToSlide(0)" title="Portada"></div>
+      <div class="dot" onclick="goToSlide(1)" title="Ficha & Competencia"></div>
+      <div class="dot" onclick="goToSlide(2)" title="El Gancho"></div>
+      <div class="dot" onclick="goToSlide(3)" title="Simulador Interactivo"></div>
+      <div class="dot" onclick="goToSlide(4)" title="Misión del Reto"></div>
+      <div class="dot" onclick="goToSlide(5)" title="5 Micro-retos"></div>
+      <div class="dot" onclick="goToSlide(6)" title="Roles de Kolb"></div>
+      <div class="dot" onclick="goToSlide(7)" title="Cierre & Nivel Superior"></div>
+    </div>
+
+    <div class="nav-btn-group">
+      <button class="btn-nav" id="btnPrev" onclick="prevSlide()" disabled>
+        <span>◀</span> Anterior
+      </button>
+      <button class="btn-nav" id="btnNext" onclick="nextSlide()">
+        Siguiente <span>▶</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // SLIDE LOGIC
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+
+    function updateSlides() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === currentSlide);
+      });
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === slides.length - 1;
+
+      // Auto-update timer phase based on current slide
+      if (currentSlide <= 2) setPhase('Inicio (15m)', 15 * 60);
+      else if (currentSlide === 3) setPhase('Desarrollo (25m)', 25 * 60);
+      else if (currentSlide >= 4 && currentSlide <= 6) setPhase('Reto ABR (40m)', 40 * 60);
+      else if (currentSlide === 7) setPhase('Cierre (10m)', 10 * 60);
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlides();
+    }
+
+    // KEYBOARD NAVIGATION
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullscreen();
+      }
+    });
+
+    // FULLSCREEN
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
+
+    // KOLB TABS
+    function showKolb(style) {
+      document.querySelectorAll('.kolb-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.kolb-panel').forEach(p => p.classList.remove('active'));
+      
+      event.currentTarget.classList.add('active');
+      document.getElementById(`kolb-${style}`).classList.add('active');
+    }
+
+    // CHECKBOX INTERACTION
+    document.querySelectorAll('.check-item').forEach(item => {
+      const cb = item.querySelector('input[type="checkbox"]');
+      item.addEventListener('click', (e) => {
+        if (e.target !== cb) cb.checked = !cb.checked;
+        item.classList.toggle('done', cb.checked);
+      });
+    });
+
+    // TIMER LOGIC
+    let timerDuration = 15 * 60;
+    let timerRemaining = timerDuration;
+    let timerRunning = false;
+    let timerInterval = null;
+
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerPhase = document.getElementById('timerPhase');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+
+    function renderTime() {
+      const mins = Math.floor(timerRemaining / 60);
+      const secs = timerRemaining % 60;
+      timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function setPhase(name, durationSeconds) {
+      if (!timerRunning) {
+        timerPhase.textContent = name;
+        timerDuration = durationSeconds;
+        timerRemaining = durationSeconds;
+        renderTime();
+      }
+    }
+
+    function toggleTimer() {
+      if (timerRunning) {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        btnPlayPause.textContent = '▶';
+      } else {
+        timerRunning = true;
+        btnPlayPause.textContent = '⏸';
+        timerInterval = setInterval(() => {
+          if (timerRemaining > 0) {
+            timerRemaining--;
+            renderTime();
+          } else {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            btnPlayPause.textContent = '▶';
+            playTone();
+          }
+        }, 1000);
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      btnPlayPause.textContent = '▶';
+      timerRemaining = timerDuration;
+      renderTime();
+    }
+
+    // Audio chime using Web Audio API (Offline & instant)
+    function playTone() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.15); // A5
+        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.8);
+      } catch (e) {
+        console.log('Audio not supported or disabled');
+      }
+    }
+
+    btnPlayPause.addEventListener('click', toggleTimer);
+    document.getElementById('btnResetTimer').addEventListener('click', resetTimer);
+
+    // ========================================================
+    // SIMULADOR INTERACTIVO DE LISTAS (LÓGICA JAVASCRIPT)
+    // ========================================================
+    const initialItems = ["Manzana", "Sándwich", "Yogur", "Galleta"];
+    let simList = [...initialItems];
+
+    const simRack = document.getElementById('simRack');
+    const simLenVal = document.getElementById('simLenVal');
+    const simConsoleCmd = document.getElementById('simConsoleCmd');
+    const simConsoleOut = document.getElementById('simConsoleOut');
+
+    function renderSimRack(highlightIndex = null, sliceRange = null) {
+      simRack.innerHTML = '';
+      simLenVal.textContent = simList.length;
+
+      simList.forEach((val, i) => {
+        const negIdx = i - simList.length;
+        const slot = document.createElement('div');
+        slot.className = 'sim-slot';
+
+        if (highlightIndex !== null && (highlightIndex === i || highlightIndex === negIdx)) {
+          slot.classList.add('highlight');
+        }
+
+        if (sliceRange !== null) {
+          if (i >= sliceRange[0] && i < sliceRange[1]) {
+            slot.classList.add('slice-selected');
+          } else {
+            slot.classList.add('slice-excluded');
+          }
+        }
+
+        slot.innerHTML = `
+          <span class="slot-idx-pos ${i === 0 ? 'zero-hero' : ''}">[${i}]</span>
+          <div class="slot-value">"${val}"</div>
+          <span class="slot-idx-neg">[${negIdx}]</span>
+        `;
+
+        slot.onclick = () => {
+          document.getElementById('simIndexInput').value = i;
+          simAccess(i);
+        };
+
+        simRack.appendChild(slot);
+      });
+    }
+
+    function simAppend() {
+      const input = document.getElementById('simAppendInput');
+      const val = input.value.trim() || 'Ponqué';
+      simList.push(val);
+      input.value = '';
+      renderSimRack(simList.length - 1);
+      simConsoleCmd.textContent = `>>> refrigerios.append("${val}")`;
+      simConsoleOut.textContent = `len(refrigerios) = ${simList.length} | Último: "${val}"`;
+    }
+
+    function simAccess(customIdx = null) {
+      const idxInput = document.getElementById('simIndexInput');
+      let idx = customIdx !== null ? customIdx : parseInt(idxInput.value);
+      if (isNaN(idx)) idx = 0;
+
+      let realPos = idx >= 0 ? idx : simList.length + idx;
+
+      if (realPos < 0 || realPos >= simList.length) {
+        simConsoleCmd.textContent = `>>> print(refrigerios[${idx}])`;
+        simConsoleOut.textContent = `¡Ojo! Error: Ese puesto no existe en la lista`;
+        simConsoleOut.style.color = '#f43f5e';
+        renderSimRack();
+        return;
+      }
+
+      simConsoleOut.style.color = '#34d399';
+      renderSimRack(idx);
+      simConsoleCmd.textContent = `>>> print(refrigerios[${idx}])`;
+      simConsoleOut.textContent = `Salida: "${simList[realPos]}"`;
+    }
+
+    function simSlice() {
+      const startInput = parseInt(document.getElementById('simSliceStart').value);
+      const endInput = parseInt(document.getElementById('simSliceEnd').value);
+
+      const start = isNaN(startInput) ? 0 : startInput;
+      const end = isNaN(endInput) ? simList.length : endInput;
+
+      const sliced = simList.slice(start, end);
+      renderSimRack(null, [start, end]);
+
+      simConsoleCmd.textContent = `>>> print(refrigerios[${start}:${end}])`;
+      simConsoleOut.textContent = `Salida: [${sliced.map(s => `"${s}"`).join(', ')}] (Ojo: el puesto ${end} no entra)`;
+      simConsoleOut.style.color = '#34d399';
+    }
+
+    function resetSim() {
+      simList = [...initialItems];
+      renderSimRack();
+      simConsoleCmd.textContent = `>>> refrigerios = ["Manzana", "Sándwich", "Yogur", "Galleta"]`;
+      simConsoleOut.textContent = `len(refrigerios) = 4`;
+      simConsoleOut.style.color = '#34d399';
+      document.getElementById('simIndexInput').value = '';
+      document.getElementById('simAppendInput').value = '';
+    }
+
+    // Inicializar simulador y vista
+    renderSimRack();
+    renderTime();
+  </script>
+</body>
+</html>
