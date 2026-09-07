@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Grupos | Clase 9 - I.E. José Antonio Galán</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --card-border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 1.5rem 1rem 3rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    /* HEADER BAR */
+    .header-bar {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1.4rem 1.8rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-title p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .cloud-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .cloud-pill.saving {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stat-card.c91 { border-top: 4px solid var(--accent-cyan); }
+    .stat-card.c92 { border-top: 4px solid var(--accent-emerald); }
+    .stat-card.c93 { border-top: 4px solid var(--accent-amber); }
+    .stat-card.total { border-top: 4px solid var(--accent-blue); }
+
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-status {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    .status-ok { color: #10b981; }
+    .status-wait { color: #f59e0b; }
+
+    .stat-date {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    /* SHEET CARD */
+    .sheet-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      color: #1e293b;
+      margin-bottom: 2rem;
+    }
+
+    .sheet-header-box {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-header-box h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .sheet-tag {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      padding: 1.2rem;
+    }
+
+    table.control-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      font-family: Arial, sans-serif;
+    }
+
+    table.control-table th {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #94a3b8;
+      font-size: 0.88rem;
+    }
+
+    table.control-table td {
+      padding: 10px 10px;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+    }
+
+    table.control-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    table.control-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .custom-check {
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border: 2px solid #94a3b8;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      vertical-align: middle;
+    }
+
+    .custom-check:checked {
+      background-color: #10b981;
+      border-color: #059669;
+    }
+
+    .custom-check:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .cell-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #1e293b;
+    }
+    .cell-input:focus {
+      outline: 2px solid #3b82f6;
+      border-color: transparent;
+    }
+
+    .select-status {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-weight: 600;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* LOADING OVERLAY */
+    #loadingOverlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      font-size: 1.1rem;
+      color: #64748b;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER BAR -->
+    <header class="header-bar">
+      <div class="header-title">
+        <h1>📋 Control de Grupos · Clase 9</h1>
+        <p>Tema: Listas en Python (Secuencia) · I.E. José Antonio Galán</p>
+      </div>
+      <div class="cloud-pill" id="cloudStatus">
+        <span>☁️</span> <span id="cloudStatusText">Conectado a Google Drive</span>
+      </div>
+    </header>
+
+    <!-- STATS CARDS -->
+    <section class="stats-grid">
+      <div class="stat-card total">
+        <div class="stat-header">
+          <span>Avance Clase 9</span>
+          <span>📈</span>
+        </div>
+        <div class="stat-status" id="statTotal">0 / 3 Grupos</div>
+        <div class="stat-date" id="statTotalPercent">0% Impartida</div>
+      </div>
+
+      <div class="stat-card c91">
+        <div class="stat-header">
+          <span>Grupo 9°1</span>
+          <span>Martes</span>
+        </div>
+        <div class="stat-status" id="stat91Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat91Date">Fecha: 08-09-2026</div>
+      </div>
+
+      <div class="stat-card c92">
+        <div class="stat-header">
+          <span>Grupo 9°2</span>
+          <span>Miércoles</span>
+        </div>
+        <div class="stat-status" id="stat92Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat92Date">Fecha: 09-09-2026</div>
+      </div>
+
+      <div class="stat-card c93">
+        <div class="stat-header">
+          <span>Grupo 9°3</span>
+          <span>Jueves</span>
+        </div>
+        <div class="stat-status" id="stat93Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat93Date">Fecha: 10-09-2026</div>
+      </div>
+    </section>
+
+    <!-- TABLE CARD -->
+    <main class="sheet-card">
+      <div class="sheet-header-box">
+        <h2>Control de Ejecución en Salón · Clase 9 (08-09-2026)</h2>
+        <span class="sheet-tag">Autoguardado en Drive</span>
+      </div>
+
+      <div class="table-container">
+        <div id="loadingOverlay">
+          <span>⏳</span> Cargando datos desde tu Google Drive...
+        </div>
+        <table class="control-table" id="groupTable" style="display: none;">
+          <thead>
+            <tr>
+              <th style="width: 8%; text-align: center;">Grupo</th>
+              <th style="width: 16%;">Horario Habitual</th>
+              <th style="width: 14%;">Fecha de Clase</th>
+              <th style="width: 12%; text-align: center;">¿Impartida?</th>
+              <th style="width: 14%;">Classroom</th>
+              <th style="width: 12%; text-align: center;">Entregas</th>
+              <th style="width: 24%;">Observaciones / Novedades</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rendered from Google Cloud -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    let groupData = [];
+
+    // 1. CARGA INICIAL DESDE GOOGLE DRIVE
+    function initApp() {
+      if (typeof google !== 'undefined' && google.script) {
+        google.script.run
+          .withSuccessHandler(onDataLoaded)
+          .withFailureHandler(onDataError)
+          .loadData();
+      } else {
+        // Modo prueba local sin Apps Script
+        groupData = [
+          { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
+          { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
+          { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+        ];
+        onDataLoaded(groupData);
+      }
+    }
+
+    function onDataLoaded(data) {
+      groupData = data;
+      document.getElementById('loadingOverlay').style.display = 'none';
+      document.getElementById('groupTable').style.display = 'table';
+      renderTable();
+      updateStats();
+      setCloudStatus('☁️ Sincronizado con Drive');
+    }
+
+    function onDataError(err) {
+      setCloudStatus('⚠️ Error de conexión');
+      alert('Error cargando datos de Google Drive: ' + err.message);
+    }
+
+    // 2. RENDER DE LA TABLA
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      groupData.forEach((row, index) => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td style="text-align: center; font-weight: 800; font-size: 1.1rem; color: #1e3a8a;">${row.grupo}</td>
+          <td style="color: #475569;">${row.horario}</td>
+          <td>
+            <input type="text" class="cell-input" value="${row.fecha}" onchange="updateField(${index}, 'fecha', this.value)">
+          </td>
+          <td style="text-align: center;">
+            <input type="checkbox" class="custom-check" ${row.impartida ? 'checked' : ''} onchange="toggleImpartida(${index})">
+          </td>
+          <td>
+            <select class="select-status" onchange="updateField(${index}, 'classroom', this.value)">
+              <option value="Borrador" ${row.classroom === 'Borrador' ? 'selected' : ''}>⏳ Borrador</option>
+              <option value="Programada" ${row.classroom === 'Programada' ? 'selected' : ''}>📅 Programada</option>
+              <option value="Publicada" ${row.classroom === 'Publicada' ? 'selected' : ''}>📢 Publicada</option>
+              <option value="Calificada" ${row.classroom === 'Calificada' ? 'selected' : ''}>✅ Calificada</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="cell-input" style="text-align: center;" value="${row.entregas}" onchange="updateField(${index}, 'entregas', this.value)">
+          </td>
+          <td>
+            <input type="text" class="cell-input" value="${row.obs}" placeholder="Novedades de la sesión..." onchange="updateField(${index}, 'obs', this.value)">
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // 3. ACTUALIZACIÓN REACTIVA Y ENVÍO A GOOGLE DRIVE
+    function toggleImpartida(index) {
+      groupData[index].impartida = !groupData[index].impartida;
+      if (groupData[index].impartida && groupData[index].classroom === 'Borrador') {
+        groupData[index].classroom = 'Publicada';
+      }
+      renderTable();
+      updateStats();
+      syncWithDrive();
+    }
+
+    function updateField(index, field, value) {
+      groupData[index][field] = value;
+      syncWithDrive();
+    }
+
+    function syncWithDrive() {
+      setCloudStatus('⏳ Guardando en Google Drive...', true);
+
+      if (typeof google !== 'undefined' && google.script) {
+        google.script.run
+          .withSuccessHandler((res) => {
+            setCloudStatus(`☁️ Guardado en Drive (${res.hora})`);
+          })
+          .withFailureHandler((err) => {
+            setCloudStatus('⚠️ Error al guardar');
+          })
+          .saveData(groupData);
+      } else {
+        setTimeout(() => {
+          setCloudStatus('☁️ Guardado localmente (Simulación)');
+        }, 600);
+      }
+    }
+
+    function setCloudStatus(msg, isSaving = false) {
+      const pill = document.getElementById('cloudStatus');
+      const text = document.getElementById('cloudStatusText');
+      text.textContent = msg;
+      if (isSaving) pill.classList.add('saving');
+      else pill.classList.remove('saving');
+    }
+
+    function updateStats() {
+      let count = 0;
+      groupData.forEach(g => { if (g.impartida) count++; });
+      const percent = Math.round((count / 3) * 100);
+
+      document.getElementById('statTotal').textContent = `${count} / 3 Grupos`;
+      document.getElementById('statTotalPercent').textContent = `${percent}% Impartida`;
+
+      // 9°1
+      const g1 = groupData[0];
+      const el1 = document.getElementById('stat91Status');
+      el1.textContent = g1.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el1.className = 'stat-status ' + (g1.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat91Date').textContent = `Fecha: ${g1.fecha}`;
+
+      // 9°2
+      const g2 = groupData[1];
+      const el2 = document.getElementById('stat92Status');
+      el2.textContent = g2.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el2.className = 'stat-status ' + (g2.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat92Date').textContent = `Fecha: ${g2.fecha}`;
+
+      // 9°3
+      const g3 = groupData[2];
+      const el3 = document.getElementById('stat93Status');
+      el3.textContent = g3.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el3.className = 'stat-status ' + (g3.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat93Date').textContent = `Fecha: ${g3.fecha}`;
+    }
+
+    // Iniciar app al cargar
+    window.onload = initApp;
+  </script>
+</body>
+</html>
