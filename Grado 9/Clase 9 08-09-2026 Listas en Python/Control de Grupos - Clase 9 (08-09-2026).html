@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Grupos | Clase 9 (08-09-2026) - I.E. José Antonio Galán</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --card-border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 2rem 1.5rem 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    /* HEADER BAR */
+    .header-bar {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-title p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+    }
+    .btn-success:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #334155;
+      color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+      color: white;
+    }
+
+    /* STATS SUMMARY CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stat-card.c91 { border-top: 4px solid var(--accent-cyan); }
+    .stat-card.c92 { border-top: 4px solid var(--accent-emerald); }
+    .stat-card.c93 { border-top: 4px solid var(--accent-amber); }
+    .stat-card.total { border-top: 4px solid var(--accent-blue); }
+
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-status {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    .status-ok { color: #10b981; }
+    .status-wait { color: #f59e0b; }
+
+    .stat-date {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    /* SHEET SIMULATION CANVAS */
+    .sheet-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      color: #1e293b;
+      margin-bottom: 2rem;
+    }
+
+    .sheet-header-box {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-header-box h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .sheet-tag {
+      background: rgba(255, 255, 255, 0.18);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      padding: 1.2rem;
+    }
+
+    table.control-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      font-family: Arial, sans-serif;
+    }
+
+    table.control-table th {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #94a3b8;
+      font-size: 0.88rem;
+    }
+
+    table.control-table td {
+      padding: 10px 10px;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+    }
+
+    table.control-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    table.control-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .custom-check {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border: 2px solid #94a3b8;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      vertical-align: middle;
+    }
+
+    .custom-check:checked {
+      background-color: #10b981;
+      border-color: #059669;
+    }
+
+    .custom-check:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .cell-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #1e293b;
+    }
+    .cell-input:focus {
+      outline: 2px solid #3b82f6;
+      border-color: transparent;
+    }
+
+    .select-status {
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-weight: 600;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid #3b82f6;
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    #copyContainer {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER BAR -->
+    <header class="header-bar">
+      <div class="header-title">
+        <h1>📋 Control de Grupos · Clase 9</h1>
+        <p>Tema: Listas en Python (Secuencia) · I.E. José Antonio Galán · Grado 9°</p>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="copyTableForGoogleSheets()">
+          <span>📋</span> Copiar para Google Sheets
+        </button>
+        <button class="btn btn-success" onclick="downloadCSV()">
+          <span>📥</span> Descargar .CSV
+        </button>
+        <button class="btn btn-secondary" onclick="resetDefaults()" title="Restablecer valores">
+          <span>↺</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- STATS CARDS -->
+    <section class="stats-grid">
+      <div class="stat-card total">
+        <div class="stat-header">
+          <span>Avance Clase 9</span>
+          <span>📈</span>
+        </div>
+        <div class="stat-status" id="statTotal">0 / 3 Grupos</div>
+        <div class="stat-date" id="statTotalPercent">0% Completado</div>
+      </div>
+
+      <div class="stat-card c91">
+        <div class="stat-header">
+          <span>Grupo 9°1</span>
+          <span>Martes</span>
+        </div>
+        <div class="stat-status" id="stat91Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat91Date">Fecha: 08-09-2026</div>
+      </div>
+
+      <div class="stat-card c92">
+        <div class="stat-header">
+          <span>Grupo 9°2</span>
+          <span>Miércoles</span>
+        </div>
+        <div class="stat-status" id="stat92Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat92Date">Fecha: 09-09-2026</div>
+      </div>
+
+      <div class="stat-card c93">
+        <div class="stat-header">
+          <span>Grupo 9°3</span>
+          <span>Jueves</span>
+        </div>
+        <div class="stat-status" id="stat93Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat93Date">Fecha: 10-09-2026</div>
+      </div>
+    </section>
+
+    <!-- MAIN TRACKING TABLE FOR THE 3 GROUPS -->
+    <main class="sheet-card">
+      <div class="sheet-header-box">
+        <h2>Control de Ejecución en Salón · Clase 9 (08-09-2026)</h2>
+        <span class="sheet-tag">3 Grupos de 9°</span>
+      </div>
+
+      <div class="table-container">
+        <table class="control-table" id="groupTable">
+          <thead>
+            <tr>
+              <th style="width: 8%; text-align: center;">Grupo</th>
+              <th style="width: 16%;">Horario Habitual</th>
+              <th style="width: 14%;">Fecha de Clase</th>
+              <th style="width: 12%; text-align: center;">¿Impartida?</th>
+              <th style="width: 14%;">Classroom</th>
+              <th style="width: 12%; text-align: center;">Entregas</th>
+              <th style="width: 24%;">Observaciones / Novedades</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+  <div class="toast" id="toastMsg">
+    <span>✅</span> ¡Copiado al portapapeles! Ve a Google Sheets y presiona <strong>Ctrl + V</strong>.
+  </div>
+
+  <div id="copyContainer"></div>
+
+  <script>
+    const defaultData = [
+      { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
+      { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
+      { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+    ];
+
+    let groupData = [];
+
+    function loadData() {
+      const saved = localStorage.getItem('iejaga_clase9_grupos_control');
+      if (saved) {
+        try {
+          groupData = JSON.parse(saved);
+        } catch (e) {
+          groupData = JSON.parse(JSON.stringify(defaultData));
+        }
+      } else {
+        groupData = JSON.parse(JSON.stringify(defaultData));
+      }
+      renderTable();
+      updateStats();
+    }
+
+    function saveData() {
+      localStorage.setItem('iejaga_clase9_grupos_control', JSON.stringify(groupData));
+      updateStats();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      groupData.forEach((row, index) => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td style="text-align: center; font-weight: 800; font-size: 1.05rem; color: #1e3a8a;">${row.grupo}</td>
+          <td style="color: #475569;">${row.horario}</td>
+          <td>
+            <input type="text" class="cell-input" value="${row.fecha}" onchange="updateField(${index}, 'fecha', this.value)">
+          </td>
+          <td style="text-align: center;">
+            <input type="checkbox" class="custom-check" ${row.impartida ? 'checked' : ''} onchange="toggleImpartida(${index})">
+          </td>
+          <td>
+            <select class="select-status" onchange="updateField(${index}, 'classroom', this.value)">
+              <option value="Borrador" ${row.classroom === 'Borrador' ? 'selected' : ''}>⏳ Borrador</option>
+              <option value="Programada" ${row.classroom === 'Programada' ? 'selected' : ''}>📅 Programada</option>
+              <option value="Publicada" ${row.classroom === 'Publicada' ? 'selected' : ''}>📢 Publicada</option>
+              <option value="Calificada" ${row.classroom === 'Calificada' ? 'selected' : ''}>✅ Calificada</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="cell-input" style="text-align: center;" value="${row.entregas}" onchange="updateField(${index}, 'entregas', this.value)">
+          </td>
+          <td>
+            <input type="text" class="cell-input" value="${row.obs}" placeholder="Novedades de la sesión..." onchange="updateField(${index}, 'obs', this.value)">
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function toggleImpartida(index) {
+      groupData[index].impartida = !groupData[index].impartida;
+      if (groupData[index].impartida && groupData[index].classroom === 'Borrador') {
+        groupData[index].classroom = 'Publicada';
+      }
+      saveData();
+      renderTable();
+    }
+
+    function updateField(index, field, value) {
+      groupData[index][field] = value;
+      saveData();
+    }
+
+    function updateStats() {
+      let count = 0;
+      groupData.forEach(g => { if (g.impartida) count++; });
+      const percent = Math.round((count / 3) * 100);
+
+      document.getElementById('statTotal').textContent = `${count} / 3 Grupos`;
+      document.getElementById('statTotalPercent').textContent = `${percent}% Impartida`;
+
+      // 9°1
+      const g1 = groupData[0];
+      const el1 = document.getElementById('stat91Status');
+      el1.textContent = g1.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el1.className = 'stat-status ' + (g1.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat91Date').textContent = `Fecha: ${g1.fecha}`;
+
+      // 9°2
+      const g2 = groupData[1];
+      const el2 = document.getElementById('stat92Status');
+      el2.textContent = g2.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el2.className = 'stat-status ' + (g2.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat92Date').textContent = `Fecha: ${g2.fecha}`;
+
+      // 9°3
+      const g3 = groupData[2];
+      const el3 = document.getElementById('stat93Status');
+      el3.textContent = g3.impartida ? '✅ Impartida' : '⏳ Pendiente';
+      el3.className = 'stat-status ' + (g3.impartida ? 'status-ok' : 'status-wait');
+      document.getElementById('stat93Date').textContent = `Fecha: ${g3.fecha}`;
+    }
+
+    function resetDefaults() {
+      if (confirm('¿Deseas restablecer los datos de los 3 grupos?')) {
+        groupData = JSON.parse(JSON.stringify(defaultData));
+        saveData();
+        renderTable();
+      }
+    }
+
+    function copyTableForGoogleSheets() {
+      const container = document.getElementById('copyContainer');
+
+      let html = `
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:10pt;border:1px solid #cbd5e1;width:100%;">
+          <thead>
+            <tr style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:center;">
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">Grupo</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;text-align:left;">Horario Habitual</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">Fecha de Clase</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">¿Impartida?</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">Classroom</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">Entregas</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;text-align:left;">Observaciones / Novedades</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      let tsv = "Grupo\tHorario Habitual\tFecha de Clase\t¿Impartida?\tClassroom\tEntregas\tObservaciones\n";
+
+      groupData.forEach(g => {
+        const checkVal = g.impartida ? "TRUE" : "FALSE";
+        const bg = g.impartida ? "background-color:#dcfce7;color:#166534;" : "background-color:#ffffff;color:#64748b;";
+
+        html += `
+          <tr>
+            <td style="border:1px solid #cbd5e1;text-align:center;font-weight:bold;color:#1e3a8a;padding:8px;">${g.grupo}</td>
+            <td style="border:1px solid #cbd5e1;padding:8px;">${g.horario}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;">${g.fecha}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;${bg}">${checkVal}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;">${g.classroom}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;">${g.entregas}</td>
+            <td style="border:1px solid #cbd5e1;padding:8px;">${g.obs}</td>
+          </tr>
+        `;
+
+        tsv += `${g.grupo}\t${g.horario}\t${g.fecha}\t${checkVal}\t${g.classroom}\t${g.entregas}\t${g.obs}\n`;
+      });
+
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        const blobHtml = new Blob([html], { type: 'text/html' });
+        const blobText = new Blob([tsv], { type: 'text/plain' });
+        const item = new ClipboardItem({
+          'text/html': blobHtml,
+          'text/plain': blobText
+        });
+        navigator.clipboard.write([item]).then(() => {
+          showToast();
+        }).catch(() => {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+    }
+
+    function fallbackCopy() {
+      const container = document.getElementById('copyContainer');
+      const range = document.createRange();
+      range.selectNodeContents(container);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+      showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toastMsg');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    function downloadCSV() {
+      let csv = "Grupo,Horario Habitual,Fecha de Clase,¿Impartida?,Classroom,Entregas,Observaciones / Novedades\n";
+      groupData.forEach(g => {
+        const cleanObs = `"${g.obs.replace(/"/g, '""')}"`;
+        csv += `${g.grupo},"${g.horario}",${g.fecha},${g.impartida ? 'TRUE' : 'FALSE'},${g.classroom},${g.entregas},${cleanObs}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', 'Control_Grupos_Clase_9_08-09-2026.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

@@ -66,9 +66,10 @@ Define una situación hipotética contextualizada en La Estrella.
 
 # ENTREGABLES OBLIGATORIOS POR CLASE (ESTRICTO)
 Para cada clase se deben generar obligatoriamente DOS archivos HTML dentro de la carpeta correspondiente:
-- **Ruta y Nomenclatura:** `Grado [X]/Clase [N] [DD-MM-AAAA]/`
+- **Ruta y Nomenclatura:** `Grado [X]/Clase [N] [DD-MM-AAAA] [Descripción del Tema]/`
   - Archivo 1: `Clase [N] [DD-MM-AAAA].html`
   - Archivo 2: `Presentación clase [N] [DD-MM-AAAA].html`
+  - Archivo de Control (Opcional/Recomendado): `Control de Grupos - Clase [N] ([DD-MM-AAAA]).html`
 
 1. **Planeación para Google Docs (`Clase [N] [DD-MM-AAAA].html`):**
    - Debe incluir botón interactivo superior para "Copiar Formato para Google Docs".
