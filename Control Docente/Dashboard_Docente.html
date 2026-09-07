@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Docente Multigrado 2026 | I.E. José Antonio Galán</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #8b5cf6;
+      --card-border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 1.5rem 1rem 3rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* HEADER */
+    .header-bar {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1.4rem 1.8rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-title p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .cloud-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    .cloud-pill.saving {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+    }
+
+    /* GRADE TABS */
+    .grade-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active.tab-g9 {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: white;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+
+    .tab-btn.active.tab-g10 {
+      background: linear-gradient(135deg, #059669, #047857);
+      color: white;
+      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.35);
+    }
+
+    .tab-btn.active.tab-g11 {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      color: white;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+    }
+
+    /* BANNER INFO */
+    .grade-banner {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .banner-left h2 {
+      font-size: 1.2rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .banner-left p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .banner-badge {
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-status {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    .status-ok { color: #10b981; }
+    .status-wait { color: #f59e0b; }
+
+    .stat-date {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      font-family: monospace;
+    }
+
+    /* TABLE CARD */
+    .sheet-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      color: #1e293b;
+      margin-bottom: 2rem;
+    }
+
+    .sheet-header-box {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .sheet-header-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      padding: 1.2rem;
+    }
+
+    table.control-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      font-family: Arial, sans-serif;
+    }
+
+    table.control-table th {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #94a3b8;
+      font-size: 0.88rem;
+    }
+
+    table.control-table td {
+      padding: 10px 10px;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+    }
+
+    table.control-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    table.control-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .custom-check {
+      appearance: none;
+      width: 26px;
+      height: 26px;
+      border: 2px solid #94a3b8;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      vertical-align: middle;
+    }
+
+    .custom-check:checked {
+      background-color: #10b981;
+      border-color: #059669;
+    }
+
+    .custom-check:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .cell-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #1e293b;
+    }
+    .cell-input:focus {
+      outline: 2px solid #3b82f6;
+      border-color: transparent;
+    }
+
+    .select-status {
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-weight: 600;
+      font-size: 0.82rem;
+      background: white;
+      cursor: pointer;
+    }
+
+    .btn-csv {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-csv:hover { background: #059669; }
+
+    #loadingOverlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      font-size: 1.1rem;
+      color: #64748b;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="header-bar">
+      <div class="header-title">
+        <h1>📊 Panel Docente IEJAGA 2026</h1>
+        <p>Control Centralizado de Clases · Grados 9°, 10° y 11° · La Estrella</p>
+      </div>
+      <div class="cloud-pill" id="cloudStatus">
+        <span>☁️</span> <span id="cloudStatusText">Conectado a Google Drive</span>
+      </div>
+    </header>
+
+    <!-- GRADE TABS (SELECTOR) -->
+    <nav class="grade-tabs">
+      <button class="tab-btn active tab-g9" id="tabG9" onclick="switchGrade('g9')">
+        <span>🐍</span> Grado 9° (3 Grupos)
+      </button>
+      <button class="tab-btn tab-g10" id="tabG10" onclick="switchGrade('g10')">
+        <span>⚡</span> Grado 10° (3 Grupos)
+      </button>
+      <button class="tab-btn tab-g11" id="tabG11" onclick="switchGrade('g11')">
+        <span>🎬</span> Grado 11° (2 Grupos)
+      </button>
+    </nav>
+
+    <!-- BANNER DE LA CLASE ACTIVA DEL GRADO -->
+    <section class="grade-banner" id="gradeBanner">
+      <div class="banner-left">
+        <h2 id="bannerTitle">Grado 9° · Clase 9</h2>
+        <p id="bannerTopic">Tema: Listas en Python: Indexación y Corchetes</p>
+      </div>
+      <div class="banner-badge" id="bannerTotalAvance">
+        0 / 3 Grupos Impartidos
+      </div>
+    </section>
+
+    <!-- STATS CARDS POR GRUPO -->
+    <section class="stats-grid" id="statsGrid">
+      <!-- Rendered dynamically for active grade -->
+    </section>
+
+    <!-- TABLE CARD -->
+    <main class="sheet-card">
+      <div class="sheet-header-box">
+        <h3 id="tableTitle">Registro de Salón · Grado 9°</h3>
+        <button class="btn-csv" onclick="downloadCurrentCSV()">
+          <span>📥</span> Descargar CSV
+        </button>
+      </div>
+
+      <div class="table-container">
+        <div id="loadingOverlay">
+          <span>⏳</span> Conectando con Google Drive...
+        </div>
+        <table class="control-table" id="gradeTable" style="display: none;">
+          <thead>
+            <tr>
+              <th style="width: 10%; text-align: center;">Grupo</th>
+              <th style="width: 18%;">Horario Habitual</th>
+              <th style="width: 14%;">Fecha de Clase</th>
+              <th style="width: 12%; text-align: center;">¿Impartida?</th>
+              <th style="width: 14%;">Classroom</th>
+              <th style="width: 10%; text-align: center;">Entregas</th>
+              <th style="width: 22%;">Observaciones / Novedad</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rendered from cloud -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    let activeGrade = 'g9';
+    let allGradesData = null;
+
+    function initDashboard() {
+      if (typeof google !== 'undefined' && google.script) {
+        google.script.run
+          .withSuccessHandler(onDataLoaded)
+          .withFailureHandler(onDataError)
+          .loadAllGradesData();
+      } else {
+        // Datos locales de prueba
+        allGradesData = {
+          g9: {
+            nombre: "Grado 9°",
+            materia: "Fundamentos de Programación (Python)",
+            claseActual: 9,
+            temaClase: "Clase 9: Listas en Python: Indexación y Corchetes",
+            fechaBase: "08-09-2026",
+            grupos: [
+              { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
+              { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
+              { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+            ]
+          },
+          g10: {
+            nombre: "Grado 10°",
+            materia: "El Proyecto Arduino y Circuitos en Tinkercad",
+            claseActual: 9,
+            temaClase: "Clase 9: Entradas Digitales con Pulsadores en Arduino",
+            fechaBase: "08-09-2026",
+            grupos: [
+              { grupo: "10°1", horario: "Lunes (3° y 4° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada para lunes 07-09" },
+              { grupo: "10°2", horario: "Miércoles (1° y 2° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/31", obs: "Programada para miércoles 09-09" },
+              { grupo: "10°3", horario: "Viernes (3° y 4° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/30", obs: "Programada para viernes 11-09" }
+            ]
+          },
+          g11: {
+            nombre: "Grado 11°",
+            materia: "Producción Audiovisual y Página de Ventas",
+            claseActual: 11,
+            temaClase: "Clase 11: Guion Técnico y Storyboard para Video Comercial",
+            fechaBase: "07-09-2026",
+            grupos: [
+              { grupo: "11°1", horario: "Lunes (1° y 2° hora)", fecha: "07-09-2026", impartida: false, classroom: "Borrador", entregas: "0/28", obs: "Programada para lunes 07-09" },
+              { grupo: "11°2", horario: "Jueves (3° y 4° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/29", obs: "Programada para jueves 10-09" }
+            ]
+          }
+        };
+        onDataLoaded(allGradesData);
+      }
+    }
+
+    function onDataLoaded(data) {
+      allGradesData = data;
+      document.getElementById('loadingOverlay').style.display = 'none';
+      document.getElementById('gradeTable').style.display = 'table';
+      renderCurrentGrade();
+      setCloudStatus('☁️ Sincronizado con Drive');
+    }
+
+    function onDataError(err) {
+      setCloudStatus('⚠️ Error de conexión');
+      alert('Error cargando datos de Drive: ' + err.message);
+    }
+
+    function switchGrade(gradeKey) {
+      activeGrade = gradeKey;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      if (gradeKey === 'g9') document.getElementById('tabG9').classList.add('active');
+      if (gradeKey === 'g10') document.getElementById('tabG10').classList.add('active');
+      if (gradeKey === 'g11') document.getElementById('tabG11').classList.add('active');
+
+      renderCurrentGrade();
+    }
+
+    function renderCurrentGrade() {
+      const data = allGradesData[activeGrade];
+      if (!data) return;
+
+      // Banner
+      document.getElementById('bannerTitle').textContent = `${data.nombre} · ${data.materia}`;
+      document.getElementById('bannerTopic').textContent = `${data.temaClase} (Fecha Base: ${data.fechaBase})`;
+      document.getElementById('tableTitle').textContent = `Registro de Salón · ${data.nombre}`;
+
+      // Stats
+      renderStats(data);
+
+      // Table
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      data.grupos.forEach((row, index) => {
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td style="text-align: center; font-weight: 800; font-size: 1.1rem; color: #1e3a8a;">${row.grupo}</td>
+          <td style="color: #475569;">${row.horario}</td>
+          <td>
+            <input type="text" class="cell-input" value="${row.fecha}" onchange="updateRowField(${index}, 'fecha', this.value)">
+          </td>
+          <td style="text-align: center;">
+            <input type="checkbox" class="custom-check" ${row.impartida ? 'checked' : ''} onchange="toggleRowImpartida(${index})">
+          </td>
+          <td>
+            <select class="select-status" onchange="updateRowField(${index}, 'classroom', this.value)">
+              <option value="Borrador" ${row.classroom === 'Borrador' ? 'selected' : ''}>⏳ Borrador</option>
+              <option value="Programada" ${row.classroom === 'Programada' ? 'selected' : ''}>📅 Programada</option>
+              <option value="Publicada" ${row.classroom === 'Publicada' ? 'selected' : ''}>📢 Publicada</option>
+              <option value="Calificada" ${row.classroom === 'Calificada' ? 'selected' : ''}>✅ Calificada</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="cell-input" style="text-align: center;" value="${row.entregas}" onchange="updateRowField(${index}, 'entregas', this.value)">
+          </td>
+          <td>
+            <input type="text" class="cell-input" value="${row.obs}" placeholder="Novedades de la sesión..." onchange="updateRowField(${index}, 'obs', this.value)">
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function renderStats(data) {
+      const statsGrid = document.getElementById('statsGrid');
+      statsGrid.innerHTML = '';
+
+      let doneCount = 0;
+      data.grupos.forEach(g => { if (g.impartida) doneCount++; });
+      const percent = Math.round((doneCount / data.grupos.length) * 100);
+
+      document.getElementById('bannerTotalAvance').textContent = `${doneCount} / ${data.grupos.length} Grupos Impartidos (${percent}%)`;
+
+      data.grupos.forEach(g => {
+        const card = document.createElement('div');
+        card.className = 'stat-card';
+        card.style.borderTop = g.impartida ? '4px solid var(--accent-emerald)' : '4px solid var(--accent-amber)';
+
+        card.innerHTML = `
+          <div class="stat-header">
+            <span>${g.grupo}</span>
+            <span>${g.impartida ? '✅' : '⏳'}</span>
+          </div>
+          <div class="stat-status ${g.impartida ? 'status-ok' : 'status-wait'}">
+            ${g.impartida ? 'Impartida' : 'Pendiente'}
+          </div>
+          <div class="stat-date">${g.fecha} · ${g.classroom}</div>
+        `;
+        statsGrid.appendChild(card);
+      });
+    }
+
+    function toggleRowImpartida(index) {
+      const g = allGradesData[activeGrade].grupos[index];
+      g.impartida = !g.impartida;
+      if (g.impartida && g.classroom === 'Borrador') {
+        g.classroom = 'Publicada';
+      }
+      renderCurrentGrade();
+      syncActiveGrade();
+    }
+
+    function updateRowField(index, field, value) {
+      allGradesData[activeGrade].grupos[index][field] = value;
+      syncActiveGrade();
+    }
+
+    function syncActiveGrade() {
+      setCloudStatus('⏳ Guardando en Drive...', true);
+
+      if (typeof google !== 'undefined' && google.script) {
+        google.script.run
+          .withSuccessHandler((res) => {
+            setCloudStatus(`☁️ Guardado en Drive (${res.hora})`);
+          })
+          .withFailureHandler((err) => {
+            setCloudStatus('⚠️ Error al guardar');
+          })
+          .saveGradeData(activeGrade, allGradesData[activeGrade]);
+      } else {
+        setTimeout(() => {
+          setCloudStatus('☁️ Guardado local (Simulación)');
+        }, 500);
+      }
+    }
+
+    function setCloudStatus(msg, isSaving = false) {
+      const pill = document.getElementById('cloudStatus');
+      const text = document.getElementById('cloudStatusText');
+      text.textContent = msg;
+      if (isSaving) pill.classList.add('saving');
+      else pill.classList.remove('saving');
+    }
+
+    function downloadCurrentCSV() {
+      const data = allGradesData[activeGrade];
+      let csv = "Grupo,Horario,Fecha de Clase,¿Impartida?,Classroom,Entregas,Observaciones / Novedades\n";
+      data.grupos.forEach(g => {
+        const cleanObs = `"${(g.obs || '').replace(/"/g, '""')}"`;
+        csv += `${g.grupo},"${g.horario}",${g.fecha},${g.impartida ? 'TRUE' : 'FALSE'},${g.classroom},${g.entregas},${cleanObs}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', `Control_${activeGrade.toUpperCase()}_2026.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    window.onload = initDashboard;
+  </script>
+</body>
+</html>
