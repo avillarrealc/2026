@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Clases | Grado 9° (2026) - I.E. José Antonio Galán</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --bg-slate: #f8fafc;
+      --card-border: #e2e8f0;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 2rem 1.5rem 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* ACTION BAR */
+    .header-bar {
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-title p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.7rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+    }
+    .btn-success:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #334155;
+      color: #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #475569;
+      color: white;
+    }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stat-card.c91 { border-top: 4px solid var(--accent-cyan); }
+    .stat-card.c92 { border-top: 4px solid var(--accent-emerald); }
+    .stat-card.c93 { border-top: 4px solid var(--accent-amber); }
+    .stat-card.total { border-top: 4px solid var(--accent-blue); }
+
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: #334155;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* SHEET SIMULATION CANVAS */
+    .sheet-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      overflow: hidden;
+      color: #1e293b;
+    }
+
+    .sheet-header-box {
+      background: #1e3a8a;
+      color: white;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sheet-header-box h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .sheet-tag {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      padding: 1rem;
+    }
+
+    table.control-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      font-family: Arial, sans-serif;
+    }
+
+    table.control-table th {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 10px;
+      text-align: left;
+      font-weight: 700;
+      border: 1px solid #94a3b8;
+      font-size: 0.88rem;
+    }
+
+    table.control-table td {
+      padding: 10px 10px;
+      border: 1px solid #cbd5e1;
+      vertical-align: middle;
+    }
+
+    table.control-table tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    table.control-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* CUSTOM CHECKBOX IN WEB INTERFACE */
+    .check-td {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .custom-check {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border: 2px solid #94a3b8;
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+      vertical-align: middle;
+    }
+
+    .custom-check:checked {
+      background-color: #10b981;
+      border-color: #059669;
+    }
+
+    .custom-check:checked::after {
+      content: '✓';
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .badge-status {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .badge-done { background: #dcfce7; color: #166534; }
+    .badge-partial { background: #fef3c7; color: #92400e; }
+    .badge-pending { background: #fee2e2; color: #991b1b; }
+
+    .obs-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: #1e293b;
+    }
+    .obs-input:focus {
+      outline: 2px solid #3b82f6;
+      border-color: transparent;
+    }
+
+    /* TOAST ALERT */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid #3b82f6;
+      font-size: 0.95rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* HIDDEN DOC COPY CONTAINER */
+    #copyContainer {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- ACTION BAR -->
+    <header class="header-bar">
+      <div class="header-title">
+        <h1>📊 Control de Clases · Grado 9°</h1>
+        <p>I.E. José Antonio Galán · Seguimiento de Ejecución en 9°1, 9°2 y 9°3 (2026)</p>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="copyTableForGoogleSheets()">
+          <span>📋</span> Copiar para Google Sheets
+        </button>
+        <button class="btn btn-success" onclick="downloadCSV()">
+          <span>📥</span> Descargar .CSV
+        </button>
+        <button class="btn btn-secondary" onclick="resetDefaults()" title="Restablecer valores por defecto">
+          <span>↺</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- STATS SUMMARY CARDS -->
+    <section class="stats-grid">
+      <div class="stat-card total">
+        <div class="stat-header">
+          <span>Avance Total Grado 9°</span>
+          <span>📈</span>
+        </div>
+        <div class="stat-num" id="statTotalPercent">0%</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="barTotal" style="width: 0%; background: #3b82f6;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card c91">
+        <div class="stat-header">
+          <span>Grupo 9°1</span>
+          <span id="statCount91">0/10</span>
+        </div>
+        <div class="stat-num" id="statPercent91">0%</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="bar91" style="width: 0%; background: #06b6d4;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card c92">
+        <div class="stat-header">
+          <span>Grupo 9°2</span>
+          <span id="statCount92">0/10</span>
+        </div>
+        <div class="stat-num" id="statPercent92">0%</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="bar92" style="width: 0%; background: #10b981;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card c93">
+        <div class="stat-header">
+          <span>Grupo 9°3</span>
+          <span id="statCount93">0/10</span>
+        </div>
+        <div class="stat-num" id="statPercent93">0%</div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="bar93" style="width: 0%; background: #f59e0b;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SPREADSHEET CARD -->
+    <main class="sheet-card">
+      <div class="sheet-header-box">
+        <h2>Período 2: Fundamentos de Programación (Python)</h2>
+        <span class="sheet-tag">1 Sesión Semanal · 90 Minutos</span>
+      </div>
+
+      <div class="table-container">
+        <table class="control-table" id="interactiveTable">
+          <thead>
+            <tr>
+              <th style="width: 8%; text-align: center;">N°</th>
+              <th style="width: 12%;">Fecha Base</th>
+              <th style="width: 32%;">Tema Curricular de la Clase</th>
+              <th style="width: 8%; text-align: center;">9°1</th>
+              <th style="width: 8%; text-align: center;">9°2</th>
+              <th style="width: 8%; text-align: center;">9°3</th>
+              <th style="width: 10%; text-align: center;">Estado</th>
+              <th style="width: 14%;">Observaciones / Novedad</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastMsg">
+    <span>✅</span> ¡Copiado al portapapeles! Ve a Google Sheets y presiona <strong>Ctrl + V</strong>.
+  </div>
+
+  <!-- HIDDEN HTML FORMATTED TABLE FOR COPYING DIRECTLY TO GOOGLE SHEETS -->
+  <div id="copyContainer"></div>
+
+  <script>
+    // DATA MODEL FOR PERIOD 2 (GRADE 9)
+    const initialClasses = [
+      { id: 1, fecha: "14-07-2026", tema: "Clase 1: Introducción a Python y print()", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 2, fecha: "21-07-2026", tema: "Clase 2: Variables y Tipos de Datos", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 3, fecha: "28-07-2026", tema: "Clase 3: Entrada de Datos con input()", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 4, fecha: "04-08-2026", tema: "Clase 4: Operadores y Cálculos en Python", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 5, fecha: "11-08-2026", tema: "Clase 5: Condicionales Simples (if)", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 6, fecha: "18-08-2026", tema: "Clase 6: Condicionales Dobles (if-else)", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 7, fecha: "25-08-2026", tema: "Clase 7: Algoritmos y Toma de Decisiones", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 8, fecha: "01-09-2026", tema: "Clase 8: Introducción a Colecciones de Datos", g91: true, g92: true, g93: true, obs: "Completada en los 3 grupos" },
+      { id: 9, fecha: "08-09-2026", tema: "Clase 9: Listas en Python: Indexación y Corchetes", g91: false, g92: false, g93: false, obs: "Material y Reto listos para impartir" },
+      { id: 10, fecha: "15-09-2026", tema: "Clase 10: Métodos de Listas: append() y Slicing", g91: false, g92: false, g93: false, obs: "Programada próxima semana" }
+    ];
+
+    let classData = [];
+
+    // Load from LocalStorage or default
+    function loadData() {
+      const saved = localStorage.getItem('iejaga_control_g9_2026');
+      if (saved) {
+        try {
+          classData = JSON.parse(saved);
+        } catch (e) {
+          classData = JSON.parse(JSON.stringify(initialClasses));
+        }
+      } else {
+        classData = JSON.parse(JSON.stringify(initialClasses));
+      }
+      renderTable();
+      updateStats();
+    }
+
+    function saveData() {
+      localStorage.setItem('iejaga_control_g9_2026', JSON.stringify(classData));
+      updateStats();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      classData.forEach((row, index) => {
+        const tr = document.createElement('tr');
+
+        // Status badge calculation
+        const doneCount = (row.g91 ? 1 : 0) + (row.g92 ? 1 : 0) + (row.g93 ? 1 : 0);
+        let badgeHtml = '';
+        if (doneCount === 3) {
+          badgeHtml = '<span class="badge-status badge-done">Completada</span>';
+        } else if (doneCount > 0) {
+          badgeHtml = `<span class="badge-status badge-partial">${doneCount}/3 Grupos</span>`;
+        } else {
+          badgeHtml = '<span class="badge-status badge-pending">Pendiente</span>';
+        }
+
+        tr.innerHTML = `
+          <td style="text-align: center; font-weight: bold; color: #1e3a8a;">${row.id}</td>
+          <td style="font-family: monospace; font-size: 0.88rem; color: #475569;">${row.fecha}</td>
+          <td style="font-weight: 600;">${row.tema}</td>
+          <td class="check-td">
+            <input type="checkbox" class="custom-check" ${row.g91 ? 'checked' : ''} onchange="toggleGroup(${index}, 'g91')">
+          </td>
+          <td class="check-td">
+            <input type="checkbox" class="custom-check" ${row.g92 ? 'checked' : ''} onchange="toggleGroup(${index}, 'g92')">
+          </td>
+          <td class="check-td">
+            <input type="checkbox" class="custom-check" ${row.g93 ? 'checked' : ''} onchange="toggleGroup(${index}, 'g93')">
+          </td>
+          <td style="text-align: center;">${badgeHtml}</td>
+          <td>
+            <input type="text" class="obs-input" value="${row.obs || ''}" placeholder="Ej: Visto el 09-09..." onchange="updateObs(${index}, this.value)">
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    function toggleGroup(index, groupKey) {
+      classData[index][groupKey] = !classData[index][groupKey];
+      saveData();
+      renderTable();
+    }
+
+    function updateObs(index, val) {
+      classData[index].obs = val;
+      saveData();
+    }
+
+    function updateStats() {
+      const totalRows = classData.length;
+      let count91 = 0, count92 = 0, count93 = 0;
+
+      classData.forEach(r => {
+        if (r.g91) count91++;
+        if (r.g92) count92++;
+        if (r.g93) count93++;
+      });
+
+      const p91 = Math.round((count91 / totalRows) * 100);
+      const p92 = Math.round((count92 / totalRows) * 100);
+      const p93 = Math.round((count93 / totalRows) * 100);
+      const pTotal = Math.round(((count91 + count92 + count93) / (totalRows * 3)) * 100);
+
+      document.getElementById('statTotalPercent').textContent = `${pTotal}%`;
+      document.getElementById('barTotal').style.width = `${pTotal}%`;
+
+      document.getElementById('statCount91').textContent = `${count91}/${totalRows}`;
+      document.getElementById('statPercent91').textContent = `${p91}%`;
+      document.getElementById('bar91').style.width = `${p91}%`;
+
+      document.getElementById('statCount92').textContent = `${count92}/${totalRows}`;
+      document.getElementById('statPercent92').textContent = `${p92}%`;
+      document.getElementById('bar92').style.width = `${p92}%`;
+
+      document.getElementById('statCount93').textContent = `${count93}/${totalRows}`;
+      document.getElementById('statPercent93').textContent = `${p93}%`;
+      document.getElementById('bar93').style.width = `${p93}%`;
+    }
+
+    function resetDefaults() {
+      if (confirm('¿Deseas restaurar la lista a los valores iniciales?')) {
+        classData = JSON.parse(JSON.stringify(initialClasses));
+        saveData();
+        renderTable();
+      }
+    }
+
+    // COPY TABLE FORMATTED STRICTLY FOR GOOGLE SHEETS
+    function copyTableForGoogleSheets() {
+      const container = document.getElementById('copyContainer');
+      
+      let html = `
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:10pt;border:1px solid #cbd5e1;width:100%;">
+          <thead>
+            <tr style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:center;">
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">N°</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;text-align:left;">Fecha Base</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;text-align:left;">Tema Curricular</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">9°1</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">9°2</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">9°3</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;">% Avance</th>
+              <th style="background-color:#1e3a8a;color:#ffffff;border:1px solid #94a3b8;padding:10px;text-align:left;">Observaciones / Novedades</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      let tsv = "N°\tFecha Base\tTema Curricular\t9°1\t9°2\t9°3\t% Avance\tObservaciones\n";
+
+      classData.forEach(row => {
+        const doneCount = (row.g91 ? 1 : 0) + (row.g92 ? 1 : 0) + (row.g93 ? 1 : 0);
+        const percent = Math.round((doneCount / 3) * 100);
+
+        const v91 = row.g91 ? "TRUE" : "FALSE";
+        const v92 = row.g92 ? "TRUE" : "FALSE";
+        const v93 = row.g93 ? "TRUE" : "FALSE";
+
+        const bg91 = row.g91 ? "background-color:#dcfce7;color:#166534;" : "background-color:#ffffff;color:#64748b;";
+        const bg92 = row.g92 ? "background-color:#dcfce7;color:#166534;" : "background-color:#ffffff;color:#64748b;";
+        const bg93 = row.g93 ? "background-color:#dcfce7;color:#166534;" : "background-color:#ffffff;color:#64748b;";
+
+        html += `
+          <tr>
+            <td style="border:1px solid #cbd5e1;text-align:center;font-weight:bold;color:#1e3a8a;padding:8px;">${row.id}</td>
+            <td style="border:1px solid #cbd5e1;padding:8px;">${row.fecha}</td>
+            <td style="border:1px solid #cbd5e1;font-weight:bold;padding:8px;">${row.tema}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;${bg91}">${v91}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;${bg92}">${v92}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;padding:8px;${bg93}">${v93}</td>
+            <td style="border:1px solid #cbd5e1;text-align:center;font-weight:bold;padding:8px;">${percent}%</td>
+            <td style="border:1px solid #cbd5e1;padding:8px;">${row.obs || ''}</td>
+          </tr>
+        `;
+
+        tsv += `${row.id}\t${row.fecha}\t${row.tema}\t${v91}\t${v92}\t${v93}\t${percent}%\t${row.obs || ''}\n`;
+      });
+
+      html += `</tbody></table>`;
+      container.innerHTML = html;
+
+      // Copy using Clipboard API with HTML & text/plain for Google Sheets
+      if (navigator.clipboard && window.ClipboardItem) {
+        const blobHtml = new Blob([html], { type: 'text/html' });
+        const blobText = new Blob([tsv], { type: 'text/plain' });
+        const item = new ClipboardItem({
+          'text/html': blobHtml,
+          'text/plain': blobText
+        });
+        navigator.clipboard.write([item]).then(() => {
+          showToast();
+        }).catch(() => {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+    }
+
+    function fallbackCopy() {
+      const container = document.getElementById('copyContainer');
+      const range = document.createRange();
+      range.selectNodeContents(container);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      sel.removeAllRanges();
+      showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toastMsg');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // DOWNLOAD CSV DIRECTLY
+    function downloadCSV() {
+      let csv = "N°,Fecha Base,Tema de la Clase,9°1,9°2,9°3,% Avance,Observaciones / Novedades\n";
+      classData.forEach(row => {
+        const doneCount = (row.g91 ? 1 : 0) + (row.g92 ? 1 : 0) + (row.g93 ? 1 : 0);
+        const percent = Math.round((doneCount / 3) * 100);
+        const cleanTema = `"${row.tema.replace(/"/g, '""')}"`;
+        const cleanObs = `"${(row.obs || '').replace(/"/g, '""')}"`;
+        csv += `${row.id},${row.fecha},${cleanTema},${row.g91 ? 'TRUE' : 'FALSE'},${row.g92 ? 'TRUE' : 'FALSE'},${row.g93 ? 'TRUE' : 'FALSE'},${percent}%,${cleanObs}\n`;
+      });
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute('download', 'Control_Clases_Grado_9_2026.csv');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Initialize
+    loadData();
+  </script>
+</body>
+</html>
