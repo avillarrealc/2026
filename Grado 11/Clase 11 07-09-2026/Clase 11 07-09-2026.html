@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clase 11 07-09-2026 | Planeación para Google Docs</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      margin: 0;
+      padding: 1.5rem 1rem 3rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* TOP ACTION BAR */
+    .action-bar {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      background: rgba(30, 41, 59, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-copy {
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      color: white;
+      border: none;
+      padding: 0.7rem 1.6rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-copy:hover {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.5);
+    }
+
+    .status-msg {
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    /* SHEET SIMULATOR */
+    .doc-page {
+      background: white;
+      width: 820px;
+      min-height: 1056px;
+      padding: 70px 75px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.35;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP ACTION BAR -->
+  <div class="action-bar">
+    <button class="btn-copy" id="btnCopy" onclick="copyForDocs()">
+      <span>📋</span> Copiar Formato para Google Docs
+    </button>
+    <span class="status-msg" id="statusMsg">Haz clic en el botón azul y luego presiona <strong>Ctrl + V</strong> en Google Docs.</span>
+  </div>
+
+  <!-- GOOGLE DOCS READY CONTENT WITH STRICT INLINE STYLES -->
+  <div class="doc-page" id="docContent">
+    <div style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #1e3a8a; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">
+      Institución Educativa José Antonio Galán · La Estrella (Antioquia)
+    </div>
+    <div style="font-family: Arial, sans-serif; font-size: 9pt; color: #64748b; margin-bottom: 22px; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">
+      Área de Tecnología e Informática · Planeación Curricular de 90 Minutos · Fecha: 07-09-2026
+    </div>
+
+    <h1 style="font-family: Arial, sans-serif; font-size: 13pt; font-weight: bold; color: #1e3a8a; margin-top: 18px; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
+      1. FICHA TÉCNICA
+    </h1>
+    <ul style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 14px; padding-left: 22px; line-height: 1.4;">
+      <li style="margin-bottom: 4px;"><strong>Grado y Unidad:</strong> Grado 11° - Unidad 2: Producción Audiovisual – Página de Ventas (Período 2).</li>
+      <li style="margin-bottom: 4px;"><strong>Ámbito Conceptual:</strong> Producción Audiovisual - Para publicidad (Rodaje de tomas y lenguaje de cámara con smartphone).</li>
+      <li style="margin-bottom: 4px;"><strong>Competencia:</strong> Creo contenido audiovisual atractivo para campañas publicitarias digitales. Planea y produce videos publicitarios con un enfoque en el público objetivo. Utiliza herramientas básicas de edición audiovisual e integra elementos visuales en campañas publicitarias.</li>
+    </ul>
+
+    <h1 style="font-family: Arial, sans-serif; font-size: 13pt; font-weight: bold; color: #1e3a8a; margin-top: 22px; margin-bottom: 10px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
+      2. DESARROLLO DE LA CLASE (TABLA)
+    </h1>
+
+    <!-- TABLA 1: DESARROLLO DE LA CLASE CON ESTILOS EN LÍNEA ESTRICTOS -->
+    <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; margin-top: 10px; margin-bottom: 20px; font-family: Arial, sans-serif; font-size: 9pt;">
+      <thead>
+        <tr style="background-color: #1e3a8a;">
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 9px 10px; border: 1px solid #94a3b8; width: 14%;">Momento</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 9px 10px; border: 1px solid #94a3b8; width: 50%;">Actividad</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 9px 10px; border: 1px solid #94a3b8; width: 12%;">Duración</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 9px 10px; border: 1px solid #94a3b8; width: 24%;">Recursos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #ffffff;">
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;"><strong>Inicio</strong></td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">El "Gancho": Demostración en vivo de lenguaje visual. Cómo 3 trucos de encuadre y luz convierten un video casero en un anuncio profesional.</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">15 min</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Video Beam / Celular del docente / YouTube (Canal: Aprendercine.com - "Tipos de planos cinematográficos con ejemplos")</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;"><strong>Desarrollo</strong></td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Masterclass Exprés de Cámara Móvil: Calibración técnica (lente limpio, bloqueo de enfoque/exposición AE/AF, luz frontal y postura de trípode humano) + Ensayo seco de 3 minutos con el Storyboard.</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">20 min</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Celulares de los estudiantes / Storyboard de Canva Pro en Windows 11</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;"><strong>Reto ABR</strong></td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">¡Silencio en el Set! Rodaje de los 4 Clips Oficiales: Grabación de las 4 escenas del Storyboard (Atención, Interés, Deseo y Acción) y transferencia al PC.</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">45 min</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Smartphone del equipo / Locaciones del aula o pasillos / PC con Windows 11 (WhatsApp Web o Google Drive)</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;"><strong>Cierre</strong></td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Control de Calidad y Entrega en Classroom: Organización de los 4 archivos de video brutos y subida a la tarea del día (Cero tareas en casa).</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">10 min</td>
+          <td style="padding: 8px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Google Classroom / Carpetas de Windows 11</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1 style="font-family: Arial, sans-serif; font-size: 13pt; font-weight: bold; color: #1e3a8a; margin-top: 22px; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
+      3. GUION DEL DOCENTE
+    </h1>
+
+    <h3 style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #2563eb; margin-top: 14px; margin-bottom: 6px;">
+      Inicio (El Gancho - 15 min):
+    </h3>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 8px; line-height: 1.4; text-align: justify;">
+      Diles a tus estudiantes: "¡Hola, muchachos! ¿Cómo vamos? En las clases anteriores hicimos el trabajo de los directores de cine: redactamos el guion AIDA y armamos el Storyboard en Canva para que ninguna escena se improvisara. Pero hoy se acaba el papel: ¡hoy prendemos cámaras y rodamos las 4 escenas reales de nuestro anuncio!
+    </p>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 12px; line-height: 1.4; text-align: justify;">
+      Miren este experimento aquí en vivo en la pantalla grande. Si yo cojo este termo o este cuaderno, pongo el celular temblando desde arriba y con una ventana brillante atrás, el producto parece basura y el video se ve barato. Pero miren si hago tres cosas distintas:<br>
+      1. Me pongo de espaldas a la ventana para que la luz le dé de frente al producto.<br>
+      2. Pongo el lente a la altura del objeto y me acerco a un Plano Detalle.<br>
+      3. Pego mis codos a las costillas para que el celular no tiemble ni un milímetro.<br>
+      ¿Qué pasa? El producto se ve como un comercial de 50 millones de pesos.<br><br>
+      Hoy cada equipo va a grabar las 4 tomas definitivas de su guion. Nada de videos largos de 2 minutos: son 4 clips corticos de 5 a 6 segundos cada uno, tal como los planearon en su Storyboard".
+    </p>
+
+    <h3 style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #2563eb; margin-top: 14px; margin-bottom: 6px;">
+      Desarrollo (Práctica Guiada y Técnica de Cámara - 20 min):
+    </h3>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 8px; line-height: 1.4; text-align: justify;">
+      Diles a tus estudiantes: "Abran en su PC de Windows 11 el Storyboard de Canva que entregaron la clase pasada. Antes de salir a grabar, el camarógrafo de cada grupo va a activar el protocolo de rodaje profesional en su celular:
+    </p>
+    <ul style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 12px; padding-left: 22px; line-height: 1.4;">
+      <li style="margin-bottom: 4px;"><strong>La regla de oro del lente:</strong> Pasen la camiseta suavemente por el lente de la cámara. El 80% de los videos borrosos de TikTok no son por mala cámara, sino por grasa de los dedos.</li>
+      <li style="margin-bottom: 4px;"><strong>Bloqueo AE/AF (Enfoque y Exposición):</strong> Abran la cámara en formato vertical (9:16). Toquen la pantalla sobre el rostro de su compañero o sobre el producto y dejen el dedo hundido 2 segundos hasta que salga un candadito amarillo que dice 'Bloqueo AE/AF'. Eso evita que la pantalla se aclare y se oscurezca sola cuando se muevan.</li>
+      <li style="margin-bottom: 4px;"><strong>El trípode humano:</strong> Nada de agarrar el celular con una sola mano estirada. Se agarra con ambas manos, codos pegados a las costillas y giran con la cintura.</li>
+      <li style="margin-bottom: 4px;"><strong>Ensayo seco (Dry Run):</strong> Tienen exactamente 3 minutos en sus puestos para hacer el ensayo sin grabar: el actor repite su frase con energía y el camarógrafo hace el movimiento con el celular apagado".</li>
+    </ul>
+
+    <h3 style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #2563eb; margin-top: 14px; margin-bottom: 6px;">
+      Reto ABR (Rodaje Oficial - 45 min):
+    </h3>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 8px; line-height: 1.4; text-align: justify;">
+      Diles a tus estudiantes: "¡Arranca el rodaje! Tienen 25 minutos para grabar en el salón o en la zona asignada del pasillo y 20 minutos para pasar los videos al computador. Ojo a la meta: cada equipo debe tener 4 clips de video grabados:<br>
+      - <strong>Toma 1 (Atención):</strong> El gancho visual impactante (3 a 5 seg).<br>
+      - <strong>Toma 2 (Interés):</strong> Plano medio de su compañero hablando o demostrando el problema (5 seg).<br>
+      - <strong>Toma 3 (Deseo):</strong> Plano detalle del producto o beneficio en acción (5 a 7 seg).<br>
+      - <strong>Toma 4 (Acción):</strong> El llamado a la acción final (3 a 5 seg).<br><br>
+      Hagan 2 o 3 repeticiones de cada toma y elijan la mejor. En cuanto terminen, se sientan en el computador y pasan los 4 archivos al PC usando WhatsApp Web, cable USB o subiéndolos a su Google Drive".
+    </p>
+
+    <h3 style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #2563eb; margin-top: 14px; margin-bottom: 6px;">
+      Cierre (Control de Calidad y Classroom - 10 min):
+    </h3>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 12px; line-height: 1.4; text-align: justify;">
+      Diles a tus estudiantes: "Últimos 10 minutos. Renombren los 4 archivos en su PC con Windows 11 para que en la próxima clase sepamos qué es cada cosa:<br>
+      <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0284c7;">Toma1_Atencion.mp4</code>, 
+      <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0284c7;">Toma2_Interes.mp4</code>, 
+      <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0284c7;">Toma3_Deseo.mp4</code> y 
+      <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; color: #0284c7;">Toma4_Accion.mp4</code>.<br>
+      Abran la tarea en Google Classroom y suban los 4 videos (o el enlace de la carpeta de Drive compartida). Recuerden nuestra regla sagrada: cero tareas en casa, todo se deja entregado aquí en la sala".
+    </p>
+
+    <h1 style="font-family: Arial, sans-serif; font-size: 13pt; font-weight: bold; color: #1e3a8a; margin-top: 22px; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
+      4. EL RETO (ABR + INTEGRACIÓN DE KOLB)
+    </h1>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 10px; line-height: 1.4; text-align: justify;">
+      <strong>Situación Hipotética:</strong> Un emprendimiento de confecciones y calzado de La Estrella les dio "Luz Verde" al revisar el Storyboard que hicieron en Canva. Sin embargo, antes de autorizar la edición y musicalización final, el cliente exige el "Material en Bruto" (los Rushes de cámara) de las 4 tomas para verificar que la iluminación sea clara, que los encuadres transmitan confianza y que los actores hablen con naturalidad frente a cámara.
+    </p>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 6px; font-weight: bold;">
+      Distribución de responsabilidades por Estilo de Kolb:
+    </p>
+    <ul style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 14px; padding-left: 22px; line-height: 1.4;">
+      <li style="margin-bottom: 5px;"><strong>Divergente (El Actor y Director de Arte):</strong> Se encarga de la puesta en escena. Prepara los gestos, la entonación convincente y la vestimenta; cuida que el fondo no tenga desorden del salón y aporta la chispa creativa para que el comercial conecte con la juventud de La Estrella.</li>
+      <li style="margin-bottom: 5px;"><strong>Asimilador (El Script y Continuista):</strong> Trabaja con el Storyboard abierto en pantalla. Cronometra con reloj en mano que cada toma no exceda los segundos fijados (máximo 6 segundos por clip) y verifica que la frase dicha por el actor coincida fielmente con el texto AIDA aprobado.</li>
+      <li style="margin-bottom: 5px;"><strong>Convergente (El Director de Fotografía / Camarógrafo):</strong> Aplica la técnica de captura móvil: limpia el lente, bloquea el enfoque táctil (AE/AF), asegura que la luz natural le dé de frente al sujeto (evitando contraluces) y mantiene la estabilidad con codos firmes.</li>
+      <li style="margin-bottom: 5px;"><strong>Acomodador (El Jefe de Producción y Datos):</strong> Lidera la logística del tiempo (alerta cuando queden 20 minutos para ir al PC), coordina la transferencia de los 4 archivos del celular al computador con Windows 11, los renombra con el estándar (<code>Toma1</code>, <code>Toma2</code>...) y lidera la entrega puntual en Google Classroom.</li>
+    </ul>
+
+    <h1 style="font-family: Arial, sans-serif; font-size: 13pt; font-weight: bold; color: #1e3a8a; margin-top: 22px; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;">
+      5. ACTIVIDAD EN CLASSROOM Y RÚBRICA
+    </h1>
+    <p style="font-family: Arial, sans-serif; font-size: 10pt; color: #1e293b; margin-top: 0; margin-bottom: 12px; line-height: 1.4;">
+      <strong>Entregable:</strong> Subir a la tarea de Google Classroom los 4 clips de video brutos en formato vertical (.MP4) correctamente nombrados (<code>Toma1_Atencion</code>, <code>Toma2_Interes</code>, <code>Toma3_Deseo</code>, <code>Toma4_Accion</code>) o el enlace a la carpeta de Google Drive que contenga los 4 archivos con acceso de lectura para el docente.
+    </p>
+
+    <h3 style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold; color: #2563eb; margin-top: 14px; margin-bottom: 8px;">
+      Rúbrica Simplificada (Decreto 1290)
+    </h3>
+
+    <!-- TABLA 2: RÚBRICA CON ESTILOS EN LÍNEA ESTRICTOS -->
+    <table border="1" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse; border: 1px solid #cbd5e1; margin-top: 8px; margin-bottom: 20px; font-family: Arial, sans-serif; font-size: 8.5pt;">
+      <thead>
+        <tr style="background-color: #1e3a8a;">
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #94a3b8; width: 20%;">Criterio</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #94a3b8; width: 25%;">Superior</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #94a3b8; width: 20%;">Alto</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #94a3b8; width: 20%;">Básico</th>
+          <th style="background-color: #1e3a8a; color: #ffffff; font-weight: bold; text-align: left; padding: 8px 10px; border: 1px solid #94a3b8; width: 15%;">Bajo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #ffffff;">
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;"><strong>Fidelidad al Storyboard y Tiempos</strong></td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Los 4 clips grabados corresponden exactamente a las 4 escenas del Storyboard y respetan la duración prevista (&lt; 25 s en total).</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Graba las 4 tomas pero alguna supera los tiempos previstos o altera levemente la estructura del guion.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Graba solo 2 o 3 tomas del Storyboard o los clips son muy largos y desorganizados.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">No siguió el Storyboard previo o no grabó las tomas requeridas.</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;"><strong>Técnica de Cámara (Encuadre, Luz y Estabilidad)</strong></td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Las tomas son estables, verticales (9:16), con buen enfoque, luz frontal clara y planos variados (Medio y Detalle).</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Las tomas son verticales y comprensibles, pero presentan ligeros problemas de temblor o luz mejorable.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Las tomas presentan mucho movimiento, partes oscuras o encuadres cortados sin aplicar la técnica.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Tomas borrosas, en formato incorrecto (horizontal) o inaudibles/inutilizables.</td>
+        </tr>
+        <tr style="background-color: #ffffff;">
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;"><strong>Gestión Técnica de Archivos</strong></td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Transfirió los 4 clips al PC, los nombró ordenadamente (<code>Toma1</code> a <code>Toma4</code>) y verificó su reproducción.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Transfirió los 4 clips al PC pero no los renombró con el formato solicitado.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">Transfirió solo algunos archivos con dificultad técnica al finalizar la sesión.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #ffffff;">No transfirió los archivos al computador de la sala.</td>
+        </tr>
+        <tr style="background-color: #f8fafc;">
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;"><strong>Cumplimiento en el Aula (Cero Tareas)</strong></td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">El equipo completó el rodaje, la transferencia y la entrega en Classroom dentro de los 90 minutos de clase.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Entregó en Classroom con un retraso menor dentro de la misma sesión de clase.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">Entregó de forma incompleta al sonar el timbre de la clase.</td>
+          <td style="padding: 7px 10px; border: 1px solid #cbd5e1; vertical-align: top; color: #1e293b; background-color: #f8fafc;">No aprovechó el tiempo de la sesión ni realizó la entrega en el aula.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    async function copyForDocs() {
+      const docContent = document.getElementById('docContent');
+      const btn = document.getElementById('btnCopy');
+      const msg = document.getElementById('statusMsg');
+
+      try {
+        const fullHtml = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>' + docContent.innerHTML + '</body></html>';
+        const typeHtml = 'text/html';
+        const typeText = 'text/plain';
+        const blobHtml = new Blob([fullHtml], { type: typeHtml });
+        const blobText = new Blob([docContent.innerText], { type: typeText });
+        
+        const clipboardItem = new ClipboardItem({
+          [typeHtml]: blobHtml,
+          [typeText]: blobText
+        });
+        
+        await navigator.clipboard.write([clipboardItem]);
+
+        btn.innerHTML = '<span>✅</span> ¡Copiado con Éxito!';
+        btn.style.background = '#10b981';
+        msg.innerHTML = '<strong style="color: #34d399;">¡Formato copiado!</strong> Ve a Google Docs y presiona <strong>Ctrl + V</strong>.';
+
+        setTimeout(() => {
+          btn.innerHTML = '<span>📋</span> Copiar Formato para Google Docs';
+          btn.style.background = 'linear-gradient(135deg, #3b82f6, #1d4ed8)';
+        }, 4000);
+      } catch (err) {
+        // Fallback para navegadores antiguos
+        const range = document.createRange();
+        range.selectNode(docContent);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        btn.innerHTML = '<span>✅</span> ¡Copiado!';
+        msg.innerHTML = '<strong style="color: #34d399;">¡Listo!</strong> Pega con <strong>Ctrl + V</strong> en Google Docs.';
+      }
+    }
+  </script>
+</body>
+</html>
