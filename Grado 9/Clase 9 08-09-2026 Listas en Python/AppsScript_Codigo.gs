@@ -14,14 +14,15 @@ function doGet() {
 // Carga los datos guardados en la nube de Google
 function loadData() {
   var props = PropertiesService.getUserProperties();
-  var raw = props.getProperty('CONTROL_CLASE_9_GRUPOS');
+  var raw = props.getProperty('CONTROL_CLASE_9_GRUPOS_V2');
   
   if (!raw) {
-    // Datos iniciales si es la primera vez que se abre
+    // Datos iniciales para los 4 grupos de 9°
     return [
       { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
       { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
-      { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+      { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" },
+      { grupo: "9°4", horario: "Viernes (1° y 2° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada para viernes 11-09" }
     ];
   }
   
@@ -32,7 +33,7 @@ function loadData() {
 function saveData(data) {
   // 1. Guardar en la memoria permanente de la cuenta de Google
   var props = PropertiesService.getUserProperties();
-  props.setProperty('CONTROL_CLASE_9_GRUPOS', JSON.stringify(data));
+  props.setProperty('CONTROL_CLASE_9_GRUPOS_V2', JSON.stringify(data));
 
   // 2. Actualizar o crear automáticamente el archivo CSV en tu Google Drive
   try {

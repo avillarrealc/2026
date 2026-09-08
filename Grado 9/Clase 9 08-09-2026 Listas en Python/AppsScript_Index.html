@@ -320,6 +320,15 @@
         <div class="stat-status" id="stat93Status">⏳ Pendiente</div>
         <div class="stat-date" id="stat93Date">Fecha: 10-09-2026</div>
       </div>
+
+      <div class="stat-card c94" style="border-top: 4px solid var(--accent-purple);">
+        <div class="stat-header">
+          <span>Grupo 9°4</span>
+          <span>Viernes</span>
+        </div>
+        <div class="stat-status" id="stat94Status">⏳ Pendiente</div>
+        <div class="stat-date" id="stat94Date">Fecha: 11-09-2026</div>
+      </div>
     </section>
 
     <!-- TABLE CARD -->
@@ -369,7 +378,8 @@
         groupData = [
           { grupo: "9°1", horario: "Martes (1° y 2° hora)", fecha: "08-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada para martes 08-09" },
           { grupo: "9°2", horario: "Miércoles (3° y 4° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada para miércoles 09-09" },
-          { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" }
+          { grupo: "9°3", horario: "Jueves (5° y 6° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada para jueves 10-09" },
+          { grupo: "9°4", horario: "Viernes (1° y 2° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada para viernes 11-09" }
         ];
         onDataLoaded(groupData);
       }
@@ -474,31 +484,55 @@
     function updateStats() {
       let count = 0;
       groupData.forEach(g => { if (g.impartida) count++; });
-      const percent = Math.round((count / 3) * 100);
+      const total = groupData.length;
+      const percent = Math.round((count / total) * 100);
 
-      document.getElementById('statTotal').textContent = `${count} / 3 Grupos`;
+      document.getElementById('statTotal').textContent = `${count} / ${total} Grupos`;
       document.getElementById('statTotalPercent').textContent = `${percent}% Impartida`;
 
       // 9°1
-      const g1 = groupData[0];
-      const el1 = document.getElementById('stat91Status');
-      el1.textContent = g1.impartida ? '✅ Impartida' : '⏳ Pendiente';
-      el1.className = 'stat-status ' + (g1.impartida ? 'status-ok' : 'status-wait');
-      document.getElementById('stat91Date').textContent = `Fecha: ${g1.fecha}`;
+      if (groupData[0]) {
+        const g1 = groupData[0];
+        const el1 = document.getElementById('stat91Status');
+        if (el1) {
+          el1.textContent = g1.impartida ? '✅ Impartida' : '⏳ Pendiente';
+          el1.className = 'stat-status ' + (g1.impartida ? 'status-ok' : 'status-wait');
+          document.getElementById('stat91Date').textContent = `Fecha: ${g1.fecha}`;
+        }
+      }
 
       // 9°2
-      const g2 = groupData[1];
-      const el2 = document.getElementById('stat92Status');
-      el2.textContent = g2.impartida ? '✅ Impartida' : '⏳ Pendiente';
-      el2.className = 'stat-status ' + (g2.impartida ? 'status-ok' : 'status-wait');
-      document.getElementById('stat92Date').textContent = `Fecha: ${g2.fecha}`;
+      if (groupData[1]) {
+        const g2 = groupData[1];
+        const el2 = document.getElementById('stat92Status');
+        if (el2) {
+          el2.textContent = g2.impartida ? '✅ Impartida' : '⏳ Pendiente';
+          el2.className = 'stat-status ' + (g2.impartida ? 'status-ok' : 'status-wait');
+          document.getElementById('stat92Date').textContent = `Fecha: ${g2.fecha}`;
+        }
+      }
 
       // 9°3
-      const g3 = groupData[2];
-      const el3 = document.getElementById('stat93Status');
-      el3.textContent = g3.impartida ? '✅ Impartida' : '⏳ Pendiente';
-      el3.className = 'stat-status ' + (g3.impartida ? 'status-ok' : 'status-wait');
-      document.getElementById('stat93Date').textContent = `Fecha: ${g3.fecha}`;
+      if (groupData[2]) {
+        const g3 = groupData[2];
+        const el3 = document.getElementById('stat93Status');
+        if (el3) {
+          el3.textContent = g3.impartida ? '✅ Impartida' : '⏳ Pendiente';
+          el3.className = 'stat-status ' + (g3.impartida ? 'status-ok' : 'status-wait');
+          document.getElementById('stat93Date').textContent = `Fecha: ${g3.fecha}`;
+        }
+      }
+
+      // 9°4
+      if (groupData[3]) {
+        const g4 = groupData[3];
+        const el4 = document.getElementById('stat94Status');
+        if (el4) {
+          el4.textContent = g4.impartida ? '✅ Impartida' : '⏳ Pendiente';
+          el4.className = 'stat-status ' + (g4.impartida ? 'status-ok' : 'status-wait');
+          document.getElementById('stat94Date').textContent = `Fecha: ${g4.fecha}`;
+        }
+      }
     }
 
     // Iniciar app al cargar
