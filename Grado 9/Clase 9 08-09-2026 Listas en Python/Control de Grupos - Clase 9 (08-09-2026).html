@@ -450,7 +450,9 @@
 
         tr.innerHTML = `
           <td style="text-align: center; font-weight: 800; font-size: 1.05rem; color: #1e3a8a;">${row.grupo}</td>
-          <td style="color: #475569;">${row.horario}</td>
+          <td>
+            <input type="text" class="cell-input" value="${row.horario || ''}" placeholder="Ej: Martes (1° y 2°)" onchange="updateField(${index}, 'horario', this.value)">
+          </td>
           <td>
             <input type="text" class="cell-input" value="${row.fecha}" onchange="updateField(${index}, 'fecha', this.value)">
           </td>
