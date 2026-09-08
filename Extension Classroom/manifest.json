@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Calificador IEJAGA - Paso a Classroom",
+  "version": "0.3.0",
+  "description": "Rellena notas y comentarios privados en la ventana de calificación de Google Classroom con los datos del calificador. Usted revisa y guarda.",
+  "permissions": ["clipboardRead", "activeTab", "scripting", "storage"],
+  "host_permissions": ["https://classroom.google.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pasar notas a Classroom"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://classroom.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

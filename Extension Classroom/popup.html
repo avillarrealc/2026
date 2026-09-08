@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { font-family: system-ui, sans-serif; width: 340px; padding: 12px; font-size: 13px; color: #0f172a; }
+  h3 { font-size: 14px; margin: 0 0 8px; }
+  textarea { width: 100%; height: 110px; font-size: 11px; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px; box-sizing: border-box; }
+  button { width: 100%; margin-top: 8px; padding: 9px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
+  #btn-rellenar { background: #1e3a8a; color: #fff; }
+  #btn-leer { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+  #estado { margin-top: 8px; font-size: 12px; white-space: pre-wrap; max-height: 220px; overflow-y: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; }
+  .aviso { font-size: 11px; color: #64748b; margin-top: 8px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <h3>Paso de notas a Classroom</h3>
+  <div style="font-size:12px; margin-bottom:6px;">1. En el calificador pulse <b>Copiar para extensión</b>.<br>2. Pegue aquí abajo.<br>3. Abra la calificación de la tarea en Classroom y pulse <b>Rellenar</b>.</div>
+  <textarea id="datos" placeholder='Pegue aquí el JSON copiado desde el calificador'></textarea>
+  <button id="btn-leer">Detectar campos de esta página</button>
+  <button id="btn-rellenar">Rellenar notas y comentarios</button>
+  <button id="btn-detener" style="background:#fff; color:#b91c1c; border:1px solid #fecaca;">Detener proceso automático</button>
+  <div id="estado">Sin datos.</div>
+  <div class="aviso">La extensión solo rellena. Usted revisa cada nota y comentario y pulsa Guardar o Devolver en Classroom. Si Google cambia la página y algo no se rellena, avise para ajustar los selectores en content.js.</div>
+  <script src="popup.js"></script>
+</body>
+</html>

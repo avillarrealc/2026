@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calificador Inteligente Classroom · IEJAGA 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --secondary: #0f172a;
+      --accent: #10b981;
+      --accent-hover: #059669;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    /* Top Navbar */
+    .navbar {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: white;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-logo {
+      background: rgba(255, 255, 255, 0.15);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .nav-title h1 {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .nav-title p {
+      font-size: 12px;
+      color: #93c5fd;
+      font-weight: 500;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .api-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .api-status:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+    .status-dot.active {
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 1360px;
+      margin: 24px auto;
+      padding: 0 20px;
+    }
+
+    /* Control Panel Card */
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      margin-bottom: 24px;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr auto;
+      gap: 18px;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 990px) {
+      .panel-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 14px;
+      font-family: inherit;
+      background: white;
+      color: #0f172a;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-accent:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: white;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    /* Extra Parameters Drawer */
+    .rubric-card {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .rubric-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .stat-pill {
+      background: white;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stat-pill .title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .stat-pill .num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* Action Bar above Table */
+    .table-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Table */
+    .table-container {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th {
+      background: #f8fafc;
+      padding: 14px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 14px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fdfefe; }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-turned-in { background: #dcfce7; color: #15803d; }
+    .badge-returned { background: #e0e7ff; color: #4338ca; }
+    .badge-missing { background: #fee2e2; color: #b91c1c; }
+    .badge-draft { background: #fef3c7; color: #b45309; }
+
+    .badge-superior { background: #d1fae5; color: #065f46; }
+    .badge-alto { background: #e0e7ff; color: #3730a3; }
+    .badge-basico { background: #fef3c7; color: #92400e; }
+    .badge-bajo { background: #fee2e2; color: #991b1b; }
+
+    /* Student Cell */
+    .student-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .student-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .student-info strong {
+      font-size: 14px;
+      color: #0f172a;
+    }
+    .student-info p {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Score input */
+    .score-input {
+      width: 68px;
+      padding: 8px 10px;
+      font-size: 15px;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-family: var(--font-mono);
+      color: var(--primary);
+    }
+    .score-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.15);
+    }
+
+    /* Comment Textarea */
+    .comment-area {
+      width: 100%;
+      min-height: 60px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 12px;
+      font-family: inherit;
+      resize: vertical;
+      line-height: 1.4;
+    }
+    .comment-area:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 3px solid white;
+      width: 16px;
+      height: 16px;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+    }
+    .spinner-dark {
+      border: 3px solid #e2e8f0;
+      border-top: 3px solid var(--primary);
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Progress Overlay */
+    .progress-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: #dbeafe;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 650px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    .modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 { font-size: 16px; font-weight: 800; }
+    .modal-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1e293b;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 2000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">🎓</div>
+      <div class="nav-title">
+        <h1>Calificador IA Google Classroom</h1>
+        <p>I.E. José Antonio Galán · La Estrella (Antioquia) · 2026</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="api-status" id="btn-api-key" onclick="abrirModalApiKey()">
+        <span class="status-dot" id="api-dot"></span>
+        <span id="api-text">Configurar Gemini API</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Panel de Selección -->
+    <section class="card">
+      <div class="panel-grid">
+        <div class="form-group">
+          <label>1. Selecciona el Curso / Grado</label>
+          <select id="select-curso" class="form-control" onchange="alCambiarCurso()">
+            <option value="">Cargando tus clases de Classroom...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>2. Selecciona la Actividad / Tarea</label>
+          <select id="select-actividad" class="form-control" disabled onchange="alCambiarActividad()">
+            <option value="">Selecciona primero un curso...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="btn-cargar-entregas" class="btn btn-primary" onclick="cargarEntregas()" disabled>
+            <span>📥 Cargar Entregas</span>
+          </button>
+          <button id="btn-nueva-tarea" class="btn btn-outline" onclick="abrirModalNuevaTarea()" title="Publicar una tarea nueva en Classroom desde aquí. Al ser creada por la app, las notas sí se guardan solas en borrador.">
+            <span>＋ Nueva tarea</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Criterios: instrucciones de Classroom + rúbrica + manual con prelación -->
+      <div class="rubric-card">
+        <div class="rubric-header" onclick="toggleConsigna()">
+          <span>⚙️ Base de calificación: instrucciones, rúbrica y criterios manuales (clic para desplegar)</span>
+          <span id="rubric-toggle-icon">▼</span>
+        </div>
+        <div id="rubric-body" style="display: none; margin-top: 10px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 700; color: #334155;">INSTRUCCIONES EN CLASSROOM (se leen solas)</label>
+              <div id="info-instrucciones" style="font-size: 12px; color: #334155; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px; min-height: 70px; max-height: 150px; overflow-y: auto; white-space: pre-wrap;">Seleccione una actividad para traer las instrucciones.</div>
+              <div id="info-materiales" style="font-size: 11px; color: #64748b; margin-top: 6px; white-space: pre-wrap;"></div>
+            </div>
+            <div>
+              <label style="font-size: 12px; font-weight: 700; color: #334155;">RÚBRICA ASOCIADA (si existe, solo referencia)</label>
+              <div id="info-rubrica" style="font-size: 12px; color: #334155; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 12px; min-height: 70px; max-height: 150px; overflow-y: auto; white-space: pre-wrap;">Sin rúbrica detectada.</div>
+            </div>
+          </div>
+          <label style="font-size: 12px; font-weight: 700; color: #1e3a8a;">CRITERIOS MANUALES (tienen prelación sobre lo anterior)</label>
+          <textarea id="txt-consigna" class="form-control" rows="3" oninput="actualizarFuenteCriterios()" placeholder="Opcional. Si escribe aquí, esto manda sobre las instrucciones y la rúbrica traídas de Classroom. Si lo deja vacío, se califica con las instrucciones y la rúbrica de la tarea."></textarea>
+          <div id="fuente-criterios" style="font-size: 11px; color: #64748b; margin-top: 6px;">Fuente actual: instrucciones de Classroom.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra de Progreso de la IA -->
+    <div id="progress-box" class="progress-box">
+      <div>
+        <strong id="progress-title">Evaluando entregas con Gemini IA...</strong>
+        <p id="progress-desc" style="font-size: 12px; color: #475569; margin-top: 2px;">Analizando código, salidas y elaborando retroalimentación bajo Decreto 1290...</p>
+        <div class="progress-bar-container">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Estadísticas -->
+    <section class="stats-bar" id="stats-section" style="display: none;">
+      <div class="stat-pill">
+        <span class="title">Total Alumnos</span>
+        <span class="num" id="stat-total">0</span>
+      </div>
+      <div class="stat-pill">
+        <span class="title">Entregadas</span>
+        <span class="num" style="color: #10b981;" id="stat-entregadas">0</span>
+      </div>
+      <div class="stat-pill">
+        <span class="title">Borradores Existentes</span>
+        <span class="num" style="color: #f59e0b;" id="stat-borradores">0</span>
+      </div>
+      <div class="stat-pill">
+        <span class="title">Promedio Calculado</span>
+        <span class="num" style="color: #1e3a8a;" id="stat-promedio">-</span>
+      </div>
+    </section>
+
+    <!-- Barra de Acciones de la Tabla -->
+    <div class="table-actions" id="actions-section" style="display: none;">
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+        <button class="btn btn-accent" id="btn-evaluar-ia" onclick="iniciarEvaluacionIA()">
+          <span>🤖 Evaluar Entregas con IA</span>
+        </button>
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: white; padding: 7px 12px; border-radius: 8px; border: 1px solid #cbd5e1;">
+          <span style="font-size: 12px; font-weight: 700; color: #475569;">🧠 MODELO IA:</span>
+          <select id="select-modelo-ia" style="border: none; background: transparent; font-size: 13px; font-weight: 700; color: var(--primary); outline: none; cursor: pointer; max-width: 260px;" onchange="alCambiarModeloIABarra()">
+            <option value="">Cargando modelos...</option>
+          </select>
+          <span id="modelos-fecha" style="font-size: 10px; color: #64748b;"></span>
+          <button type="button" class="btn btn-outline" style="padding: 3px 8px; font-size: 11px;" onclick="recargarModelosIA()" title="Volver a consultar la lista real de Google">↻</button>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: white; padding: 7px 12px; border-radius: 8px; border: 1px solid #cbd5e1;" title="En entregas de seguimiento guiado, limite la nota máxima. 5.0 = sin techo.">
+          <span style="font-size: 12px; font-weight: 700; color: #475569;">TECHO NOTA:</span>
+          <input id="input-techo" type="number" min="4.0" max="5.0" step="0.1" value="5.0" style="width: 58px; border: none; background: transparent; font-size: 14px; font-weight: 700; color: var(--primary); outline: none; text-align: center;" onchange="alCambiarTecho()">
+          <span style="font-size: 10px; color: #64748b;">5.0 sin techo</span>
+        </div>
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: white; padding: 7px 12px; border-radius: 8px; border: 1px solid #cbd5e1;">
+          <span style="font-size: 12px; font-weight: 700; color: #475569;">⇅ ORDENAR:</span>
+          <select id="select-ordenar" style="border: none; background: transparent; font-size: 13px; font-weight: 600; color: var(--primary); outline: none; cursor: pointer;" onchange="cambiarOrden()">
+            <option value="apellido">Por Apellido (A - Z)</option>
+            <option value="nombre">Por Nombre (A - Z)</option>
+            <option value="estado">Por Estado de Entrega</option>
+            <option value="grupo">Por Grupo / Matrícula</option>
+            <option value="nota">Por Nota (Mayor a Menor)</option>
+          </select>
+        </div>
+        <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: #f8fafc; padding: 8px 12px; border-radius: 8px; border: 1px solid #cbd5e1; user-select: none;">
+          <input type="checkbox" id="check-solo-matriculados" checked onchange="renderizarTabla()">
+          <span>Solo matriculados (<span id="count-matriculados">0</span>/<span id="count-total">0</span>)</span>
+        </label>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn btn-outline" onclick="exportarASheets()">
+          <span>📋 Copiar para Sheets</span>
+        </button>
+        <button class="btn btn-outline" onclick="copiarParaExtension()" title="Copia notas y comentarios en formato JSON para pegarlos en la extensión de paso a Classroom">
+          <span>🧩 Copiar para extensión</span>
+        </button>
+        <button class="btn btn-outline" id="btn-hoja-notas" onclick="crearHojaNotas()">
+          <span>📊 Hoja de notas</span>
+        </button>
+        <button class="btn btn-primary" id="btn-guardar-classroom" onclick="guardarEnClassroom(false)">
+          <span>💾 Publicar Notas en Classroom (Borrador)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabla de Estudiantes -->
+    <div class="table-container" id="table-section" style="display: none;">
+      <table id="tabla-entregas">
+        <thead>
+          <tr>
+            <th style="width: 40px;">#</th>
+            <th style="width: 260px;">Estudiante</th>
+            <th style="width: 140px;">Entrega / Archivo</th>
+            <th style="width: 100px;">Nota (1.0-5.0)</th>
+            <th style="width: 110px;">Nivel 1290</th>
+            <th>Comentario Formativo para Classroom</th>
+            <th style="width: 80px;">Ver</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-entregas">
+          <!-- Dinámico -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Modal API Key -->
+  <div class="modal-overlay" id="modal-api">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3>Configurar Google Gemini API Key</h3>
+        <span style="cursor: pointer; font-size: 18px;" onclick="cerrarModal('modal-api')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 12px;">Para calificar con ayuda de IA, use una clave de Google AI Studio:</p>
+        <ol style="margin-left: 20px; margin-bottom: 16px; font-size: 12px; color: #475569;">
+          <li>Entre a <strong>aistudio.google.com</strong> con su cuenta de Google.</li>
+          <li>Haga clic en <strong>Get API Key</strong> y seleccione <strong>Create API key in new project</strong>. No reutilice un proyecto viejo bloqueado.</li>
+          <li>Péguela a continuación y luego escoja el modelo de la lista real:</li>
+        </ol>
+        <input type="password" id="input-api-key" class="form-control" placeholder="Pegue su API Key completa">
+
+        <div style="margin-top: 12px; font-size: 11px; color: #64748b; line-height: 1.5; background: #f8fafc; padding: 10px 12px; border-radius: 8px; border: 1px solid #e2e8f0;">
+          Después de guardar, el modelo se escoge abajo junto al botón Evaluar Entregas, desde la lista real de Google.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="cerrarModal('modal-api')">Cancelar</button>
+        <button class="btn btn-primary" onclick="guardarApiKey()">Guardar Clave</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Nueva Tarea -->
+  <div class="modal-overlay" id="modal-tarea">
+    <div class="modal-content" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3>Publicar tarea nueva en Classroom</h3>
+        <span style="cursor: pointer; font-size: 18px;" onclick="cerrarModal('modal-tarea')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 12px; font-size: 12px; color: #475569;">Se publica en el curso seleccionado arriba. Al ser creada por la app, las notas sí se guardan solas en borrador.</p>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label>Título de la tarea</label>
+          <input id="input-tarea-titulo" class="form-control" placeholder="Ej: Circuito en Tinkercad - semáforo">
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label>Instrucciones para los estudiantes</label>
+          <textarea id="input-tarea-descripcion" class="form-control" rows="4" placeholder="Qué deben entregar y cómo (puede copiar sus criterios manuales)"></textarea>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div class="form-group">
+            <label>Puntos máximos</label>
+            <input id="input-tarea-puntos" type="number" min="1" max="1000" step="1" value="5" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Fecha de entrega (opcional)</label>
+            <input id="input-tarea-fecha" type="date" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="cerrarModal('modal-tarea')">Cancelar</button>
+        <button class="btn btn-primary" id="btn-publicar-tarea" onclick="publicarTarea()">Publicar tarea</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ver Entrega -->
+  <div class="modal-overlay" id="modal-preview">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="preview-title">Contenido de la Entrega</h3>
+        <span style="cursor: pointer; font-size: 18px;" onclick="cerrarModal('modal-preview')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <pre id="preview-body" style="font-family: var(--font-mono); font-size: 12px; white-space: pre-wrap; background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border);"></pre>
+      </div>
+      <div class="modal-footer">
+        <a id="preview-link" href="#" target="_blank" class="btn btn-outline" style="text-decoration: none;">Abrir en Drive ↗</a>
+        <button class="btn btn-primary" onclick="cerrarModal('modal-preview')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Mensaje de notificación</div>
+
+  <script>
+    let cursosCache = [];
+    let actividadesCache = [];
+    let entregasCache = [];
+    let apiKeyConfigurada = false;
+    let modelosDisponibles = [];
+    let modeloActivo = 'gemini-3.6-flash';
+    let actividadDetalleCache = null;
+
+    // Inicialización
+    window.addEventListener('DOMContentLoaded', () => {
+      verificarApiKey();
+      cargarCursos();
+      cargarModelosIA();
+    });
+
+    function mostrarToast(msg) {
+      const t = document.getElementById('toast');
+      t.innerText = msg;
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 3000);
+    }
+
+    function abrirModalApiKey() {
+      document.getElementById('modal-api').style.display = 'flex';
+    }
+    function cerrarModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function toggleConsigna() {
+      const b = document.getElementById('rubric-body');
+      const icon = document.getElementById('rubric-toggle-icon');
+      if (b.style.display === 'none') {
+        b.style.display = 'block';
+        icon.innerText = '▲';
+      } else {
+        b.style.display = 'none';
+        icon.innerText = '▼';
+      }
+    }
+
+    // 1. Modelos de IA para uso docente. Un solo selector junto a Evaluar.
+    function cargarModelosIA() {
+      google.script.run
+        .withSuccessHandler(res => {
+          if (res && res.success && res.modelos) {
+            modelosDisponibles = res.modelos;
+            modeloActivo = res.modeloSeleccionado || 'gemini-3.6-flash';
+            renderizarSelectoresModelo();
+            const fechaEl = document.getElementById('modelos-fecha');
+            if (fechaEl && res.fechaConsulta) {
+              const fuente = res.fuente === 'google-listmodels' ? 'Google' : 'respaldo';
+              fechaEl.innerText = '(' + fuente + ' ' + res.fechaConsulta.substring(0, 16).replace('T', ' ') + ')';
+            }
+            if (res.advertenciaLista) {
+              mostrarToast('Lista de respaldo: ' + res.advertenciaLista);
+            }
+          } else if (res && res.error) {
+            alert('No se pudo traer la lista:\n\n' + res.error);
+          }
+        })
+        .withFailureHandler(err => {
+          alert('Error trayendo modelos: ' + err.message);
+        })
+        .listarModelosGemini();
+    }
+
+    function renderizarSelectoresModelo() {
+      const sBarra = document.getElementById('select-modelo-ia');
+
+      if (!modelosDisponibles || modelosDisponibles.length === 0) return;
+
+      let html = '';
+      modelosDisponibles.forEach(m => {
+        const sel = (m.id === modeloActivo) ? 'selected' : '';
+        html += `<option value="${m.id}" data-endpoint="${m.endpoint || ''}" ${sel}>${m.nombre}</option>`;
+      });
+
+      if (sBarra) sBarra.innerHTML = html;
+    }
+
+    function alCambiarModeloIABarra() {
+      const sel = document.getElementById('select-modelo-ia');
+      sincronizarCambioModelo(sel.value);
+    }
+
+    function leerTecho() {
+      const el = document.getElementById('input-techo');
+      let v = el ? Number(el.value) : 5.0;
+      if (isNaN(v)) v = 5.0;
+      if (v < 4.0) v = 4.0;
+      if (v > 5.0) v = 5.0;
+      return Math.round(v * 10) / 10;
+    }
+
+    function alCambiarTecho() {
+      const t = leerTecho();
+      const el = document.getElementById('input-techo');
+      if (el) el.value = t.toFixed(1);
+      mostrarToast(t < 5.0 ? ('Techo de seguimiento: ' + t.toFixed(1)) : 'Sin techo (5.0)');
+    }
+
+    function sincronizarCambioModelo(modelId) {
+      if (!modelId) return;
+      modeloActivo = modelId;
+
+      // Sincronizar el único selector visible
+      const el = document.getElementById('select-modelo-ia');
+      if (el) el.value = modelId;
+
+      // Probar solo el que usted escogió, sin imponer otro.
+      mostrarToast('Probando ' + modelId + '...');
+      google.script.run
+        .withSuccessHandler(res => {
+          verificarApiKey();
+          if (res && res.success) {
+            mostrarToast(`Modelo activo: ${modelId}`);
+          } else {
+            alert('Ese modelo no respondió:\n\n' + ((res && res.error) || 'Pruebe con otro de la lista.') + '\n\nLos modelos 1.5 y 2.5 están retirados para usuarios nuevos.');
+          }
+        })
+        .withFailureHandler(err => {
+          alert('Error probando modelo: ' + err.message);
+        })
+        .probarModeloElegido(modelId);
+    }
+
+    function recargarModelosIA() {
+      mostrarToast('Buscando modelos en Google AI Studio...');
+      cargarModelosIA();
+    }
+
+    // 2. Verificar API Key
+    function verificarApiKey() {
+      google.script.run
+        .withSuccessHandler(res => {
+          apiKeyConfigurada = res.hasKey;
+          const dot = document.getElementById('api-dot');
+          const txt = document.getElementById('api-text');
+          if (res.hasKey) {
+            dot.className = 'status-dot active';
+            const modelTag = res.modelo ? ' [' + res.modelo + ']' : '';
+            txt.innerText = 'Gemini Activa (' + res.preview + modelTag + ')';
+          } else {
+            dot.className = 'status-dot';
+            txt.innerText = 'Configurar Gemini API';
+          }
+        })
+        .verificarGeminiApiKey();
+    }
+
+    function guardarApiKey() {
+      const key = document.getElementById('input-api-key').value.trim();
+      if (!key) return alert('Por favor ingrese la clave.');
+      
+      const btn = event.target;
+      const originalText = btn.innerText;
+      btn.disabled = true;
+      btn.innerText = 'Guardando...';
+
+      // Guarda sin bloquear: luego se trae la lista real para escoger el modelo.
+      google.script.run
+        .withSuccessHandler(res => {
+          btn.disabled = false;
+          btn.innerText = originalText;
+          if (!res.success) {
+            alert('Revise la llave:\n\n' + (res.error || 'Error desconocido'));
+            return;
+          }
+          cerrarModal('modal-api');
+          verificarApiKey();
+          mostrarToast('Llave guardada. Trayendo modelos disponibles...');
+          cargarModelosIA();
+        })
+        .withFailureHandler(err => {
+          btn.disabled = false;
+          btn.innerText = originalText;
+          alert('Error de comunicación con Apps Script: ' + err.message);
+        })
+        .guardarGeminiApiKey(key);
+    }
+
+    // 1b. Crear tarea nueva en Classroom desde el calificador.
+    function abrirModalNuevaTarea() {
+      const courseId = document.getElementById('select-curso').value;
+      if (!courseId) return alert('Seleccione primero el curso donde se publicará la tarea.');
+      const manual = (document.getElementById('txt-consigna').value || '').trim();
+      if (manual) document.getElementById('input-tarea-descripcion').value = manual;
+      document.getElementById('modal-tarea').style.display = 'flex';
+    }
+
+    function publicarTarea() {
+      const courseId = document.getElementById('select-curso').value;
+      const titulo = document.getElementById('input-tarea-titulo').value.trim();
+      const descripcion = document.getElementById('input-tarea-descripcion').value;
+      const puntos = document.getElementById('input-tarea-puntos').value;
+      const fecha = document.getElementById('input-tarea-fecha').value;
+      if (!titulo) return alert('Escriba el título de la tarea.');
+      const btn = document.getElementById('btn-publicar-tarea');
+      btn.disabled = true;
+      btn.innerText = 'Publicando...';
+      google.script.run
+        .withSuccessHandler(res => {
+          btn.disabled = false;
+          btn.innerText = 'Publicar tarea';
+          if (!res.success) {
+            alert('No se pudo publicar: ' + res.error);
+            return;
+          }
+          cerrarModal('modal-tarea');
+          actividadesCache.unshift(res.actividad);
+          const selectAct = document.getElementById('select-actividad');
+          selectAct.innerHTML = '<option value="">-- Selecciona una actividad --</option>';
+          actividadesCache.forEach(a => {
+            selectAct.innerHTML += `<option value="${a.id}">${a.titulo}</option>`;
+          });
+          selectAct.disabled = false;
+          selectAct.value = res.actividad.id;
+          alCambiarActividad();
+          document.getElementById('btn-cargar-entregas').disabled = false;
+          alert(res.mensaje);
+        })
+        .withFailureHandler(err => {
+          btn.disabled = false;
+          btn.innerText = 'Publicar tarea';
+          alert('Error de comunicación: ' + err.message);
+        })
+        .crearTareaClassroom(courseId, { titulo: titulo, descripcion: descripcion, maxPoints: puntos, fechaEntrega: fecha });
+    }
+
+    // 2. Cargar Cursos de Classroom
+    function cargarCursos() {
+      const select = document.getElementById('select-curso');
+      google.script.run
+        .withSuccessHandler(res => {
+          if (!res.success) {
+            select.innerHTML = `<option value="">Error: ${res.error}</option>`;
+            return;
+          }
+          cursosCache = res.cursos;
+          select.innerHTML = '<option value="">-- Selecciona una clase --</option>';
+          cursosCache.forEach(c => {
+            select.innerHTML += `<option value="${c.id}">${c.nombre} ${c.seccion ? '(' + c.seccion + ')' : ''}</option>`;
+          });
+        })
+        .withFailureHandler(err => {
+          select.innerHTML = `<option value="">Error de conexión con Classroom</option>`;
+        })
+        .obtenerCursosDocente();
+    }
+
+    // 3. Al cambiar curso -> cargar actividades
+    function alCambiarCurso() {
+      const courseId = document.getElementById('select-curso').value;
+      const selectAct = document.getElementById('select-actividad');
+      const btnCargar = document.getElementById('btn-cargar-entregas');
+      
+      limpiarTabla();
+      actividadDetalleCache = null;
+      document.getElementById('info-instrucciones').innerText = 'Seleccione una actividad para traer las instrucciones.';
+      document.getElementById('info-rubrica').innerText = 'Sin rúbrica detectada.';
+      document.getElementById('info-materiales').innerText = '';
+      actualizarFuenteCriterios();
+      
+      if (!courseId) {
+        selectAct.innerHTML = '<option value="">Selecciona primero un curso...</option>';
+        selectAct.disabled = true;
+        btnCargar.disabled = true;
+        return;
+      }
+
+      selectAct.innerHTML = '<option value="">Cargando actividades de la clase...</option>';
+      selectAct.disabled = true;
+      btnCargar.disabled = true;
+
+      google.script.run
+        .withSuccessHandler(res => {
+          if (!res.success) {
+            selectAct.innerHTML = `<option value="">Error: ${res.error}</option>`;
+            return;
+          }
+          actividadesCache = res.actividades;
+          selectAct.innerHTML = '<option value="">-- Selecciona una actividad --</option>';
+          actividadesCache.forEach(a => {
+            selectAct.innerHTML += `<option value="${a.id}">${a.titulo}</option>`;
+          });
+          selectAct.disabled = false;
+        })
+        .obtenerActividadesCurso(courseId);
+    }
+
+    function actualizarFuenteCriterios() {
+      const manual = (document.getElementById('txt-consigna').value || '').trim();
+      const el = document.getElementById('fuente-criterios');
+      if (!el) return;
+      if (manual !== '') {
+        el.innerText = 'Fuente actual: criterios manuales (prelación sobre Classroom).';
+      } else if (actividadDetalleCache && (actividadDetalleCache.tieneInstrucciones || actividadDetalleCache.tieneRubrica)) {
+        el.innerText = 'Fuente actual: instrucciones y rúbrica traídas de Classroom.';
+      } else {
+        el.innerText = 'Fuente actual: sin base específica, calificación general.';
+      }
+    }
+
+    function alCambiarActividad() {
+      const courseId = document.getElementById('select-curso').value;
+      const actId = document.getElementById('select-actividad').value;
+      const btnCargar = document.getElementById('btn-cargar-entregas');
+      btnCargar.disabled = !actId;
+      limpiarTabla();
+      actividadDetalleCache = null;
+      document.getElementById('info-instrucciones').innerText = 'Cargando instrucciones...';
+      document.getElementById('info-rubrica').innerText = 'Buscando rúbrica...';
+      document.getElementById('info-materiales').innerText = '';
+      actualizarFuenteCriterios();
+      
+      if (!actId) return;
+      google.script.run
+        .withSuccessHandler(res => {
+          if (res && res.success && res.detalle) {
+            actividadDetalleCache = res.detalle;
+            document.getElementById('info-instrucciones').innerText = res.detalle.instrucciones || 'Esta tarea no trae instrucciones escritas en Classroom.';
+            document.getElementById('info-materiales').innerText = res.detalle.materiales || '';
+            document.getElementById('info-rubrica').innerText = res.detalle.tieneRubrica ? res.detalle.rubricaTexto : 'Esta tarea no tiene rúbrica asociada. Se califica con las instrucciones.';
+          } else {
+            document.getElementById('info-instrucciones').innerText = 'No se pudieron traer las instrucciones: ' + ((res && res.error) || 'error desconocido');
+            document.getElementById('info-rubrica').innerText = 'Sin rúbrica disponible.';
+          }
+          actualizarFuenteCriterios();
+        })
+        .withFailureHandler(err => {
+          document.getElementById('info-instrucciones').innerText = 'Error de conexión trayendo instrucciones: ' + err.message;
+          document.getElementById('info-rubrica').innerText = 'Sin rúbrica disponible.';
+          actualizarFuenteCriterios();
+        })
+        .obtenerDetalleActividad(courseId, actId);
+    }
+
+    // 4. Cargar entregas detalladas
+    function cargarEntregas() {
+      const courseId = document.getElementById('select-curso').value;
+      const actId = document.getElementById('select-actividad').value;
+      const btn = document.getElementById('btn-cargar-entregas');
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Cargando entregas...';
+
+      google.script.run
+        .withSuccessHandler(res => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>📥 Cargar Entregas</span>';
+          
+          if (!res.success) {
+            alert('Error al cargar entregas: ' + res.error);
+            return;
+          }
+
+          entregasCache = res.entregas;
+          aplicarOrden();
+          renderizarTabla();
+          mostrarToast(`¡${entregasCache.length} estudiantes cargados!`);
+        })
+        .withFailureHandler(err => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>📥 Cargar Entregas</span>';
+          alert('Error de conexión: ' + err.message);
+        })
+        .obtenerEntregasDetalladas(courseId, actId);
+    }
+
+    // 5. Funciones de Ordenamiento (Igual a Google Classroom)
+    let ordenActual = 'apellido';
+
+    function cambiarOrden() {
+      ordenActual = document.getElementById('select-ordenar').value;
+      aplicarOrden();
+      renderizarTabla();
+    }
+
+    function aplicarOrden() {
+      entregasCache.sort((a, b) => {
+        if (ordenActual === 'apellido') {
+          const apA = (a.apellido || a.nombre).toLowerCase();
+          const apB = (b.apellido || b.nombre).toLowerCase();
+          return apA.localeCompare(apB);
+        } else if (ordenActual === 'nombre') {
+          const nomA = (a.nombrePila || a.nombre).toLowerCase();
+          const nomB = (b.nombrePila || b.nombre).toLowerCase();
+          return nomA.localeCompare(nomB);
+        } else if (ordenActual === 'estado') {
+          // Entregadas primero, luego devueltas, luego sin entregar
+          const pesoEstado = { 'TURNED_IN': 1, 'RETURNED': 2, 'NEW': 3, 'CREATED': 4 };
+          const pA = pesoEstado[a.estado] || 99;
+          const pB = pesoEstado[b.estado] || 99;
+          if (pA !== pB) return pA - pB;
+          return a.nombre.localeCompare(b.nombre);
+        } else if (ordenActual === 'grupo') {
+          // Matriculados activos primero
+          if (a.matriculado !== b.matriculado) {
+            return a.matriculado ? -1 : 1;
+          }
+          return a.nombre.localeCompare(b.nombre);
+        } else if (ordenActual === 'nota') {
+          const nA = Number(a.calificacionSugerida || 0);
+          const nB = Number(b.calificacionSugerida || 0);
+          return nB - nA;
+        }
+        return 0;
+      });
+    }
+
+    // 6. Renderizar tabla
+    function renderizarTabla() {
+      const tbody = document.getElementById('tbody-entregas');
+      tbody.innerHTML = '';
+
+      let entregadas = 0;
+      let borradores = 0;
+      let sumNotas = 0;
+      let countNotas = 0;
+      let totalMatriculados = 0;
+
+      entregasCache.forEach(e => {
+        if (e.matriculado !== false) totalMatriculados++;
+      });
+
+      const soloMatriculados = document.getElementById('check-solo-matriculados').checked;
+      const listaRender = soloMatriculados ? entregasCache.filter(e => e.matriculado !== false) : entregasCache;
+
+      // Actualizar conteos del selector
+      document.getElementById('count-matriculados').innerText = totalMatriculados;
+      document.getElementById('count-total').innerText = entregasCache.length;
+
+      listaRender.forEach((e, idx) => {
+        const globalIdx = entregasCache.indexOf(e);
+        if (e.entregado) entregadas++;
+        if (e.notaBorrador !== null) borradores++;
+        if (e.calificacionSugerida) {
+          sumNotas += Number(e.calificacionSugerida);
+          countNotas++;
+        }
+
+        const iniciales = e.nombre.split(' ').map(n => n[0]).slice(0, 2).join('');
+        
+        let fileBadge = '<span style="color: #94a3b8; font-size: 12px;">Sin archivo</span>';
+        let viewBtn = '';
+        if (e.archivos && e.archivos.length > 0) {
+          const f = e.archivos[0];
+          const icon = f.tipo === 'colab' ? '🐍' : (f.tipo === 'doc' ? '📄' : (f.tipo === 'imagen' ? '📷' : (f.tipo === 'tinkercad' ? '🔌' : '📎')));
+          const extraImg = (e.tieneImagen && e.archivos.length > 1) ? ' +' + (e.archivos.length - 1) : (e.tieneImagen ? ' (imagen)' : '');
+          fileBadge = `<span title="${f.titulo}" style="font-weight: 600;">${icon} ${f.titulo.length > 18 ? f.titulo.substring(0, 16) + '...' : f.titulo}${extraImg}</span>`;
+          viewBtn = `<button class="btn btn-outline" style="padding: 4px 8px; font-size: 11px;" onclick="verEntrega(${globalIdx})">Ver</button>`;
+        } else if (e.contenidoTexto) {
+          fileBadge = '<span style="color: #10b981; font-weight: 600;">💬 Texto</span>';
+          viewBtn = `<button class="btn btn-outline" style="padding: 4px 8px; font-size: 11px;" onclick="verEntrega(${globalIdx})">Ver</button>`;
+        }
+
+        const nivelClass = e.nivel1290 ? `badge-${e.nivel1290.toLowerCase().replace('á', 'a')}` : '';
+        const tagRetirado = (e.matriculado === false) ? '<span class="badge" style="background: #fee2e2; color: #b91c1c; font-size: 10px; margin-left: 6px;">No matriculado</span>' : '';
+
+        tbody.innerHTML += `
+          <tr id="row-${globalIdx}">
+            <td><strong>${idx + 1}</strong></td>
+            <td>
+              <div class="student-cell">
+                <div class="student-avatar" style="${e.matriculado === false ? 'background: #fecaca; color: #991b1b;' : ''}">${iniciales}</div>
+                <div class="student-info">
+                  <strong>${e.nombre}</strong> ${tagRetirado}
+                  <p>${e.estado}</p>
+                </div>
+              </div>
+            </td>
+            <td>${fileBadge}</td>
+            <td>
+              <input type="number" step="0.1" min="1.0" max="5.0" class="score-input" id="nota-${globalIdx}" 
+                     value="${e.calificacionSugerida || ''}" onchange="alCambiarNotaManual(${globalIdx})">
+            </td>
+            <td>
+              <span class="badge ${nivelClass}" id="badge-${globalIdx}">${e.nivel1290 || '-'}</span>
+            </td>
+            <td>
+              <textarea class="comment-area" id="comm-${globalIdx}" onchange="alCambiarComentarioManual(${globalIdx})">${e.comentarioIA || ''}</textarea>
+            </td>
+            <td>${viewBtn}</td>
+          </tr>
+        `;
+      });
+
+      // Actualizar stats
+      document.getElementById('stat-total').innerText = listaRender.length;
+      document.getElementById('stat-entregadas').innerText = entregadas;
+      document.getElementById('stat-borradores').innerText = borradores;
+      document.getElementById('stat-promedio').innerText = countNotas > 0 ? (sumNotas / countNotas).toFixed(1) : '-';
+
+      document.getElementById('stats-section').style.display = 'grid';
+      document.getElementById('actions-section').style.display = 'flex';
+      document.getElementById('table-section').style.display = 'block';
+    }
+
+    function alCambiarNotaManual(idx) {
+      const val = Number(document.getElementById(`nota-${idx}`).value);
+      entregasCache[idx].calificacionSugerida = val;
+      
+      let nivel = 'Bajo';
+      if (val >= 4.6) nivel = 'Superior';
+      else if (val >= 4.0) nivel = 'Alto';
+      else if (val >= 3.0) nivel = 'Básico';
+      
+      entregasCache[idx].nivel1290 = nivel;
+      const b = document.getElementById(`badge-${idx}`);
+      b.className = `badge badge-${nivel.toLowerCase().replace('á', 'a')}`;
+      b.innerText = nivel;
+    }
+
+    function alCambiarComentarioManual(idx) {
+      entregasCache[idx].comentarioIA = document.getElementById(`comm-${idx}`).value;
+    }
+
+    function verEntrega(idx) {
+      const e = entregasCache[idx];
+      document.getElementById('preview-title').innerText = `${e.nombre} · ${e.archivos.length > 0 ? e.archivos[0].titulo : 'Entrega'}`;
+      let texto = e.contenidoTexto || 'No se pudo extraer texto previo.';
+      if (e.tieneImagen) {
+        texto += '\n\n[Esta entrega incluye imagen. Ábrala con el botón de abajo para ver las conexiones. La IA la revisa a simple vista al calificar.]';
+      }
+      const linkTinkercad = (e.archivos || []).find(a => a.tipo === 'tinkercad');
+      if (linkTinkercad) {
+        texto += '\n\n[Enlace de simulación: ' + linkTinkercad.enlace + '. La simulación no se abre ni se prueba sola; al calificar se leen datos públicos de apoyo. Pida captura si necesita revisar conexiones.]';
+      }
+      document.getElementById('preview-body').innerText = texto;
+      
+      const linkBtn = document.getElementById('preview-link');
+      if (e.archivos.length > 0 && e.archivos[0].enlace) {
+        linkBtn.href = e.archivos[0].enlace;
+        linkBtn.style.display = 'inline-flex';
+      } else {
+        linkBtn.style.display = 'none';
+      }
+      
+      document.getElementById('modal-preview').style.display = 'flex';
+    }
+
+    function limpiarTabla() {
+      document.getElementById('stats-section').style.display = 'none';
+      document.getElementById('actions-section').style.display = 'none';
+      document.getElementById('table-section').style.display = 'none';
+      entregasCache = [];
+    }
+
+    // 6. Iniciar Evaluación Masiva con IA
+    function iniciarEvaluacionIA() {
+      if (!apiKeyConfigurada) {
+        abrirModalApiKey();
+        return alert('Por favor ingresa primero tu clave de Gemini API en la parte superior.');
+      }
+
+      const actSelect = document.getElementById('select-actividad');
+      const actTitulo = actSelect.options[actSelect.selectedIndex].text;
+      const consignaManual = (document.getElementById('txt-consigna').value || '').trim();
+      const techo = leerTecho();
+      const contextoTarea = {
+        instrucciones: actividadDetalleCache ? (actividadDetalleCache.instrucciones || '') : '',
+        rubricaTexto: actividadDetalleCache ? (actividadDetalleCache.rubricaTexto || '') : '',
+        tieneRubrica: actividadDetalleCache ? !!actividadDetalleCache.tieneRubrica : false,
+        tieneInstrucciones: actividadDetalleCache ? !!actividadDetalleCache.tieneInstrucciones : false,
+        materiales: actividadDetalleCache ? (actividadDetalleCache.materiales || '') : '',
+        puntosMaximos: actividadDetalleCache ? (actividadDetalleCache.puntosMaximos || 5.0) : 5.0,
+        titulo: actTitulo,
+        techo: techo
+      };
+      const fuenteAviso = consignaManual !== '' ? 'manual (prelación)' : (contextoTarea.tieneInstrucciones || contextoTarea.tieneRubrica ? 'instrucciones/rúbrica de Classroom' : 'general');
+      const techoAviso = techo < 5.0 ? '\nTecho de seguimiento: ' + techo.toFixed(1) + ' (solo recorta la nota, los niveles siguen fijos: Bajo 1.0-2.9, Básico 3.0-3.9, Alto 4.0-4.5, Superior 4.6-5.0).' : '\nSin techo.';
+      if (!confirm('Se calificará con base: ' + fuenteAviso + '.' + techoAviso + '\n¿Desea continuar con ' + modeloActivo + '?')) {
+        return;
+      }
+
+      // Seleccionar estudiantes a evaluar según el filtro activo (matriculados activos o todos)
+      const soloMatriculados = document.getElementById('check-solo-matriculados').checked;
+      const pendientes = soloMatriculados 
+        ? entregasCache.filter(e => e.matriculado !== false) 
+        : entregasCache;
+
+      if (pendientes.length === 0) {
+        return alert('No hay estudiantes para evaluar.');
+      }
+
+      const pBox = document.getElementById('progress-box');
+      const pFill = document.getElementById('progress-bar-fill');
+      const pTitle = document.getElementById('progress-title');
+      const btnEval = document.getElementById('btn-evaluar-ia');
+
+      pBox.style.display = 'flex';
+      pFill.style.width = '20%';
+      btnEval.disabled = true;
+      pTitle.innerText = `Evaluando ${pendientes.length} entregas con Gemini IA...`;
+
+      google.script.run
+        .withSuccessHandler(res => {
+          btnEval.disabled = false;
+          pFill.style.width = '100%';
+          setTimeout(() => { pBox.style.display = 'none'; }, 1500);
+
+          if (!res.success) {
+            alert('Error en la evaluación: ' + res.error);
+            return;
+          }
+
+          // Mapear resultados a la caché
+          (res.resultados || []).forEach(r => {
+            const index = entregasCache.findIndex(e => e.submissionId === r.submissionId);
+            if (index !== -1) {
+              entregasCache[index].calificacionSugerida = r.nota;
+              entregasCache[index].nivel1290 = r.nivel;
+              entregasCache[index].comentarioIA = r.comentario;
+              entregasCache[index].evaluado = true;
+            }
+          });
+
+          renderizarTabla();
+          const nOk = (res.resultados || []).length;
+          const nFallo = (res.fallos || []).length;
+          const modeloTxt = res.modeloEnUso ? ' Modelo: ' + res.modeloEnUso + '.' : '';
+          const fuenteTxt = res.fuenteCriterios ? ' Base: ' + res.fuenteCriterios + '.' : '';
+          const techoTxt = (res.techoAplicado !== undefined && res.techoAplicado < 5.0) ? ' Techo: ' + Number(res.techoAplicado).toFixed(1) + ' (niveles fijos 1290).' : '';
+          const recortadas = (res.resultados || []).filter(r => r.conTecho).length;
+          const recorteTxt = recortadas > 0 ? ' Recortadas por techo: ' + recortadas + '.' : '';
+          if (nFallo > 0) {
+            const primeros = res.fallos.slice(0, 3).map(f => '- ' + f.nombre + ': ' + (f.error || '').substring(0, 160)).join('\n');
+            alert('Evaluación parcial: ' + nOk + ' bien, ' + nFallo + ' con fallo.' + modeloTxt + fuenteTxt + techoTxt + recorteTxt + '\n\n' + primeros + (nFallo > 3 ? '\n... revise el resto en consola.' : '') + '\n\nSi el fallo dice modelo retirado, actualice la lista y escoja otro.');
+          } else {
+            mostrarToast('Evaluación completada: ' + nOk + ' estudiantes.' + modeloTxt + fuenteTxt + techoTxt + recorteTxt);
+          }
+        })
+        .withFailureHandler(err => {
+          btnEval.disabled = false;
+          pBox.style.display = 'none';
+          alert('Fallo en la llamada a Apps Script: ' + err.message);
+        })
+        .evaluarLoteEstudiantes('', actTitulo, consignaManual, pendientes, contextoTarea, techo);
+    }
+
+    // 7. Guardar en Classroom (Borrador) + hoja de notas con comentarios.
+    // La API de Classroom no permite publicar comentarios privados, por eso siempre
+    // se genera la hoja. Si Google bloquea el patch, la hoja queda como respaldo.
+    function armarPayloadNotas() {
+      // Sincronizar lo editado a mano en la tabla antes de enviar.
+      entregasCache.forEach((e, idx) => {
+        const notaEl = document.getElementById(`nota-${idx}`);
+        const commEl = document.getElementById(`comm-${idx}`);
+        if (notaEl && notaEl.value !== '') e.calificacionSugerida = Number(notaEl.value);
+        if (commEl) e.comentarioIA = commEl.value;
+        const badgeEl = document.getElementById(`badge-${idx}`);
+        if (badgeEl && badgeEl.innerText && badgeEl.innerText !== '-') e.nivel1290 = badgeEl.innerText;
+      });
+      return entregasCache
+        .filter(e => e.calificacionSugerida !== null && e.calificacionSugerida !== undefined && e.calificacionSugerida !== '')
+        .map(e => ({
+          submissionId: e.submissionId,
+          nombre: e.nombre,
+          nota: Number(e.calificacionSugerida),
+          nivel: e.nivel1290 || '',
+          comentario: e.comentarioIA || ''
+        }));
+    }
+
+    function mostrarResultadoGuardado(res, soloHoja) {
+      const btn = document.getElementById('btn-guardar-classroom');
+      btn.disabled = false;
+      btn.innerHTML = '<span>💾 Publicar Notas en Classroom (Borrador)</span>';
+      const btnHoja = document.getElementById('btn-hoja-notas');
+      if (btnHoja) { btnHoja.disabled = false; btnHoja.innerHTML = '<span>📊 Hoja de notas</span>'; }
+
+      res = res || {};
+      if (soloHoja) {
+        if (res.sheetUrl) {
+          alert((res.mensaje || 'Hoja de notas creada.') + '\n\nHoja: ' + res.sheetUrl);
+        } else {
+          alert('No se pudo crear la hoja:\n\n' + (res.error || res.avisoHoja || 'Error desconocido. Revise los permisos en Apps Script.'));
+        }
+        return;
+      }
+
+      // Guardado normal: las notas y la hoja se reportan por separado, nunca "undefined".
+      if (!res.sheetUrl && !res.mensaje && (res.actualizadas || 0) === 0 && (!res.errores || res.errores.length === 0)) {
+        alert('Error al guardar: ' + (res.error || res.avisoHoja || 'no se pudo completar. Revise la conexión y los permisos.'));
+        return;
+      }
+
+      let texto = (res.mensaje || ('Guardado: ' + (res.actualizadas || 0) + ' de ' + (res.total || 0) + ' notas en borrador.'));
+      if (res.sheetUrl) {
+        texto += '\n\nHoja de notas (notas y comentarios): ' + res.sheetUrl;
+      } else if (res.avisoHoja) {
+        texto += '\n\nHoja pendiente: ' + res.avisoHoja;
+      }
+      if (res.errores && res.errores.length > 0) {
+        const primeros = res.errores.slice(0, 5).join('\n- ');
+        texto += '\n\nAtención, ' + res.errores.length + ' caso(s) no quedaron en Classroom:\n- ' + primeros;
+        if (res.errores.length > 5) texto += '\n... revise el resto en la hoja.';
+        texto += '\n\nPase esas notas a mano desde la hoja. Los comentarios siempre se pegan a mano porque Classroom no deja publicarlos por API.';
+      } else {
+        texto += '\n\nLos comentarios se pegan a mano desde la hoja, porque Classroom no deja publicarlos por API.';
+      }
+      alert(texto);
+      cargarEntregas(); // Refrescar borradores desde Classroom
+    }
+
+    function guardarEnClassroom(soloHojaParam) {
+      const soloHoja = soloHojaParam === true;
+      const courseId = document.getElementById('select-curso').value;
+      const actId = document.getElementById('select-actividad').value;
+      const payload = armarPayloadNotas();
+
+      if (payload.length === 0) {
+        return alert('No hay notas asignadas para enviar.');
+      }
+
+      if (!soloHoja && !confirm(`¿Deseas enviar las calificaciones de ${payload.length} estudiantes a Google Classroom en estado BORRADOR? (Nada se publicará a los alumnos hasta que des clic en Devolver en Classroom. Además se genera la hoja de notas con los comentarios.)`)) {
+        return;
+      }
+
+      const btn = document.getElementById('btn-guardar-classroom');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Guardando en Classroom...';
+
+      google.script.run
+        .withSuccessHandler(res => mostrarResultadoGuardado(res, soloHoja))
+        .withFailureHandler(err => {
+          btn.disabled = false;
+          btn.innerHTML = '<span>💾 Publicar Notas en Classroom (Borrador)</span>';
+          alert('Error de conexión: ' + err.message);
+        })
+        .guardarNotasEnClassroom(courseId, actId, payload, soloHoja);
+    }
+
+    function crearHojaNotas() {
+      const courseId = document.getElementById('select-curso').value;
+      const actId = document.getElementById('select-actividad').value;
+      const payload = armarPayloadNotas();
+      if (payload.length === 0) {
+        return alert('No hay notas asignadas. Califique primero para generar la hoja.');
+      }
+      const btnHoja = document.getElementById('btn-hoja-notas');
+      btnHoja.disabled = true;
+      btnHoja.innerHTML = '<span class="spinner"></span> Generando hoja...';
+      google.script.run
+        .withSuccessHandler(res => mostrarResultadoGuardado(res, true))
+        .withFailureHandler(err => {
+          btnHoja.disabled = false;
+          btnHoja.innerHTML = '<span>📊 Hoja de notas</span>';
+          alert('Error de conexión: ' + err.message);
+        })
+        .guardarNotasEnClassroom(courseId, actId, payload, true);
+    }
+
+    // 8. Exportar a Sheets
+    function exportarASheets() {
+      let tsv = "No\tEstudiante\tEstado\tNota\tNivel 1290\tComentario Classroom\n";
+      entregasCache.forEach((e, idx) => {
+        tsv += `${idx + 1}\t${e.nombre}\t${e.estado}\t${e.calificacionSugerida || ''}\t${e.nivel1290 || ''}\t"${(e.comentarioIA || '').replace(/"/g, '""')}"\n`;
+      });
+      navigator.clipboard.writeText(tsv).then(() => {
+        mostrarToast('¡Tabla copiada! Pégala directamente en Google Sheets.');
+      });
+    }
+
+    // 8b. Copiar JSON para la extensión de paso a Classroom (notas + comentarios).
+    function copiarParaExtension() {
+      const datos = entregasCache
+        .filter(e => (e.calificacionSugerida !== null && e.calificacionSugerida !== undefined && e.calificacionSugerida !== '') || (e.comentarioIA || '').trim() !== '')
+        .map(e => ({
+          nombre: e.nombre,
+          nota: (e.calificacionSugerida === null || e.calificacionSugerida === undefined || e.calificacionSugerida === '') ? '' : Number(e.calificacionSugerida),
+          comentario: e.comentarioIA || ''
+        }));
+      if (datos.length === 0) {
+        return alert('No hay notas ni comentarios para copiar. Califique primero.');
+      }
+      navigator.clipboard.writeText(JSON.stringify(datos)).then(() => {
+        mostrarToast('¡' + datos.length + ' registros copiados! Péguelos en la extensión.');
+      }).catch(err => {
+        alert('No se pudo copiar: ' + err.message);
+      });
+    }
+  </script>
+</body>
+</html>
