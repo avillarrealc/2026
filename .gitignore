@@ -1,0 +1,10 @@
+# Entregas y evaluaciones de estudiantes (Privacidad y archivos locales)
+Evaluación/
+Evaluacion/
+
+# Archivos temporales de sistema y editores
+.ipynb_checkpoints/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
