@@ -69,7 +69,6 @@ Para cada clase se deben generar obligatoriamente DOS archivos HTML dentro de la
 - **Ruta y Nomenclatura:** `Grado [X]/Clase [N] [DD-MM-AAAA] [Descripción del Tema]/`
   - Archivo 1: `Clase [N] [DD-MM-AAAA].html`
   - Archivo 2: `Presentación clase [N] [DD-MM-AAAA].html`
-  - Archivo de Control (Opcional/Recomendado): `Control de Grupos - Clase [N] ([DD-MM-AAAA]).html`
 
 1. **Planeación para Google Docs (`Clase [N] [DD-MM-AAAA].html`):**
    - Debe incluir botón interactivo superior para "Copiar Formato para Google Docs".
@@ -85,4 +84,12 @@ Para cada clase se deben generar obligatoriamente DOS archivos HTML dentro de la
    - **Diseño 100% responsivo y Cero Scroll:** El contenido debe ajustarse fluidamente a la altura de la pantalla (`100vh`) sin generar nunca barra de desplazamiento vertical.
    - **Evaluación en Diapositivas:** Mostrar el título como "Nivel Superior" (prohibido colocar el texto entre paréntesis "(Decreto 1290)" en las diapositivas de la presentación).
    - Incluir el temporizador en vivo de 90 min, navegación por teclado y el módulo interactivo de roles de Kolb.
+
+3. **Recordatorio de Registro en el Dashboard Docente (Apps Script / Web App):**
+   - Siempre que se entregue la planeación de la clase y la presentación interactiva, **es obligatorio** incluir al final un bloque recordatorio visual para que el docente actualice su Panel Maestro en Google Apps Script mediante el botón **"➕ Nueva Clase o Práctica"**.
+   - Se deben especificar con total claridad los datos exactos a digitar en el formulario modal:
+     - **Pestaña del Grado:** (ej. Grado 9°, Grado 10° o Grado 11°)
+     - **Tipo:** Regular o Práctica de Sala
+     - **Título o Tema:** `Clase [N]: [Nombre del Tema]`
+     - **Fecha base:** `DD-MM-AAAA`
 

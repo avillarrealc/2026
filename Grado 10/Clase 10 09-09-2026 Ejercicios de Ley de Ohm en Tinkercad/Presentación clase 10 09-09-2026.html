@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 10 09-09-2026: Ejercicios de Ley de Ohm en Tinkercad | Grado 10° IEJAGA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(15, 23, 42, 0.78);
+      --bg-card-hover: rgba(30, 41, 59, 0.92);
+      --border-glow: rgba(59, 130, 246, 0.35);
+      --accent-primary: #2563eb;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 30px rgba(37, 99, 235, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      height: 100vh;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(37, 99, 235, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(6, 182, 212, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
+    }
+
+    /* BARRA SUPERIOR / CONTROLES */
+    header {
+      padding: 0.4rem 2rem;
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 15, 29, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* TEMPORIZADOR EN VIVO */
+    .timer-widget {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      padding: 4px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .timer-phase-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.25);
+      color: #93c5fd;
+      letter-spacing: 0.5px;
+    }
+
+    .timer-display {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #38bdf8;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-timer {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .btn-timer:hover {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-action {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    /* CONTENEDOR PRINCIPAL DE DIAPOSITIVAS */
+    main {
+      flex: 1;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      height: calc(100vh - 56px - 54px);
+    }
+
+    .slides-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(30px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: clamp(1rem, 2.2vh, 1.8rem) clamp(1.5rem, 3.5vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    /* ELEMENTOS COMUNES DE DIAPOSITIVA */
+    .hero-tag {
+      font-family: var(--font-display);
+      font-size: clamp(0.72rem, 1vw, 0.85rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-cyan);
+      margin-bottom: clamp(0.2rem, 0.6vh, 0.4rem);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: clamp(0.3rem, 0.8vh, 0.6rem);
+      color: #ffffff;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #60a5fa, #38bdf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-desc {
+      font-size: clamp(0.88rem, 1.15vw, 1.05rem);
+      color: var(--text-muted);
+      max-width: 980px;
+      line-height: 1.35;
+      margin-bottom: clamp(0.6rem, 1.2vh, 1rem);
+    }
+
+    /* GRID DE TARJETAS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(0.7rem, 1.3vw, 1.2rem);
+      flex: 1;
+      align-items: stretch;
+      max-height: calc(100% - 120px);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      padding: clamp(0.8rem, 1.3vw, 1.2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      transform: translateY(-3px);
+    }
+
+    .card-icon {
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
+      margin-bottom: clamp(0.2rem, 0.6vh, 0.5rem);
+    }
+
+    .card-num {
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+      font-weight: 700;
+      margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+      color: var(--text-main);
+    }
+
+    .card-body {
+      font-size: clamp(0.88rem, 1.1vw, 1.02rem);
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .formula-box {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-family: Consolas, monospace;
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      color: #38bdf8;
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    /* BADGES */
+    .pill {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      width: fit-content;
+    }
+    .pill-emerald { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .pill-cyan { background: rgba(6, 182, 212, 0.2); color: #38bdf8; }
+    .pill-amber { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .pill-rose { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+    .pill-blue { background: rgba(37, 99, 235, 0.2); color: #93c5fd; }
+
+    /* ========================================================
+       COMPONENTE INTERACTIVO: SIMULADOR DE LEY DE OHM (SLIDE 4)
+       ======================================================== */
+    .sim-ohm-container {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: clamp(0.8rem, 1.4vw, 1.3rem);
+      box-shadow: var(--glass-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      max-height: calc(100% - 110px);
+      overflow-y: auto;
+    }
+
+    .sim-top-dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .meter-display-box {
+      background: linear-gradient(145deg, #0b1120, #030712);
+      border: 2px solid #3b82f6;
+      border-radius: 12px;
+      padding: 10px 14px;
+      text-align: center;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .meter-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .meter-val-large {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+      font-weight: 900;
+      color: #38bdf8;
+      line-height: 1.1;
+      margin: 4px 0;
+    }
+
+    .meter-sub {
+      font-family: Consolas, monospace;
+      font-size: 0.85rem;
+      color: #34d399;
+    }
+
+    .circuit-stage {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+    }
+
+    .circuit-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .node-icon {
+      font-size: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .wire-connector {
+      flex: 1;
+      height: 4px;
+      background: #3b82f6;
+      margin: 0 8px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wire-electron {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 4px;
+      background: #38bdf8;
+      border-radius: 2px;
+      box-shadow: 0 0 8px #38bdf8;
+      animation: flowElectrons 1.2s linear infinite;
+    }
+
+    @keyframes flowElectrons {
+      0% { left: -14px; }
+      100% { left: 100%; }
+    }
+
+    .status-badge-container {
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      transition: all 0.3s;
+    }
+
+    .status-badge-container.danger {
+      background: rgba(244, 63, 94, 0.2);
+      border-color: #f43f5e;
+      animation: pulseAlert 0.8s infinite alternate;
+    }
+
+    @keyframes pulseAlert {
+      from { box-shadow: 0 0 10px rgba(244, 63, 94, 0.3); }
+      to { box-shadow: 0 0 25px rgba(244, 63, 94, 0.8); }
+    }
+
+    .sim-controls-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .sim-slider-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .sim-range {
+      width: 100%;
+      height: 7px;
+      border-radius: 4px;
+      background: #334155;
+      outline: none;
+      cursor: pointer;
+      accent-color: #3b82f6;
+    }
+
+    .sim-preset-buttons {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .btn-preset {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-preset:hover {
+      background: var(--accent-primary);
+      color: white;
+    }
+
+    /* MODELO KOLB */
+    .kolb-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: clamp(0.5rem, 1vh, 0.8rem);
+    }
+
+    .kolb-tab-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+      padding: 7px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .kolb-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .kolb-tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .kolb-panel {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 14px;
+      padding: clamp(1rem, 1.6vw, 1.5rem);
+      box-shadow: var(--glass-shadow);
+      flex: 1;
+      max-height: calc(100% - 130px);
+    }
+
+    .kolb-panel.active {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(1rem, 2vw, 1.8rem);
+      align-items: center;
+    }
+
+    .checklist-card {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: clamp(0.82rem, 1vw, 0.95rem);
+      color: #cbd5e1;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: clamp(16px, 1.3vw, 20px);
+      height: clamp(16px, 1.3vw, 20px);
+      accent-color: var(--accent-emerald);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .check-item.done {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER Y NAVEGACIÓN */
+    footer {
+      height: 54px;
+      background: rgba(10, 15, 29, 0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      position: sticky;
+      bottom: 0;
+      z-index: 100;
+      flex-shrink: 0;
+    }
+
+    .dots-nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .dot.active {
+      width: 28px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-cyan));
+    }
+
+    .nav-btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-nav {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: white;
+      padding: 7px 18px;
+      border-radius: 10px;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      background: var(--accent-primary);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 900px) {
+      .slide { padding: 1rem; }
+      .slide-title { font-size: 1.6rem; }
+      .sim-top-dashboard { grid-template-columns: 1fr; }
+      .sim-controls-grid { grid-template-columns: 1fr; }
+      .kolb-panel.active { grid-template-columns: 1fr; }
+      .brand-subtitle { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <div class="brand">
+      <span class="brand-badge">Grado 10°</span>
+      <div>
+        <div class="brand-title">I.E. José Antonio Galán · La Estrella</div>
+        <div class="brand-subtitle">Tecnología e Informática · Clase 09-09-2026: Ley de Ohm en Tinkercad</div>
+      </div>
+    </div>
+
+    <!-- LIVE 90 MIN TIMER -->
+    <div class="timer-widget">
+      <span class="timer-phase-badge" id="timerPhase">Inicio (15m)</span>
+      <span class="timer-display" id="timerDisplay">15:00</span>
+      <div class="timer-controls">
+        <button class="btn-timer" id="btnPlayPause" title="Iniciar/Pausar">▶</button>
+        <button class="btn-timer" id="btnResetTimer" title="Reiniciar">↻</button>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn-action" id="btnFullscreen" title="Pantalla completa (F)">
+        <span>⛶</span> Pantalla Completa
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN SLIDES CONTAINER -->
+  <main>
+    <div class="slides-container">
+
+      <!-- SLIDE 1: PORTADA -->
+      <section class="slide active" id="slide1">
+        <span class="hero-tag">⚡ Circuitos y Ley de Ohm 2026</span>
+        <h1 class="slide-title">El Triángulo Mágico de Ohm<br><span class="gradient-text">Fórmula Reina y Práctica en Tinkercad</span></h1>
+        <p class="slide-desc">
+          Hoy dominaremos las 3 variables que mueven el mundo tecnológico: Voltaje, Corriente y Resistencia. Aprenderemos a medir miliamperios en el simulador sin quemar componentes.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="card-num">01</span>
+            <div class="card-icon">📐</div>
+            <div class="card-title">El Triángulo V = I · R</div>
+            <div class="card-body">Aprende el truco de tapar con el dedo para despejar Corriente (I = V/R), Resistencia (R = V/I) o Voltaje (V = I · R) en segundos.</div>
+          </div>
+          <div class="card">
+            <span class="card-num">02</span>
+            <div class="card-icon">🔌</div>
+            <div class="card-title">Simulación en Tinkercad</div>
+            <div class="card-body">Aprende la regla sagrada del multímetro: el amperímetro se conecta en serie (abriendo el circuito) y el voltímetro en paralelo.</div>
+          </div>
+          <div class="card">
+            <span class="card-num">03</span>
+            <div class="card-icon">🎯</div>
+            <div class="card-title">Cero Tareas en Casa</div>
+            <div class="card-body">El reto del Tablero de Seguridad de La Ferrería se resuelve, se simula y se entrega en Google Classroom en los 90 minutos de clase.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: FICHA DE LA SESIÓN & COMPETENCIA -->
+      <section class="slide" id="slide2">
+        <span class="hero-tag">📋 Ficha Curricular · Grado 10°</span>
+        <h1 class="slide-title">Datos de la Clase & Competencia<br><span class="gradient-text">¿Qué Vamos a Aprender y Demostrar Hoy?</span></h1>
+        <p class="slide-desc">
+          Sesión de 90 minutos orientada al modelamiento matemático y la experimentación técnica con simuladores interactivos en Windows 11:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <div class="card-icon">🏫</div>
+            <div class="card-title">Datos del Área</div>
+            <div class="card-body">
+              • <strong>I.E. José Antonio Galán</strong> · La Estrella<br>
+              • <strong>Grado:</strong> Décimo (10°) · Período 1<br>
+              • <strong>Unidad:</strong> Circuitos / El Proyecto Arduino<br>
+              • <strong>Tema:</strong> Ley de Ohm y Simulación Tinkercad
+            </div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <div class="card-icon">🎯</div>
+            <div class="card-title">Competencia a Desarrollar</div>
+            <div class="card-body">
+              Aplico la Ley de Ohm para resolver problemas relacionados con circuitos eléctricos básicos; construyo y simulo circuitos eléctricos utilizando la plataforma Tinkercad.
+            </div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <div class="card-icon">🚀</div>
+            <div class="card-title">Lo que Sabrás Hacer Hoy</div>
+            <div class="card-body">
+              Sabrás calcular corrientes en mA, determinar la resistencia exacta para no quemar un LED, cablear amperímetros en serie en Tinkercad y comprobar que la matemática coincide 100% con la simulación.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: EL GANCHO / ANALOGÍA DE LA MANGUERA -->
+      <section class="slide" id="slide3">
+        <span class="hero-tag">💧 Momento 1: El Gancho (15 Minutos)</span>
+        <h2 class="slide-title">La Manguera de Pueblo Viejo<br><span class="gradient-text">¿Cómo se Relacionan V, I y R en la Vida Real?</span></h2>
+        <p class="slide-desc">
+          No hay fórmulas difíciles si entendemos cómo viaja el agua que baja desde la vereda Pueblo Viejo hasta el parque:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card">
+            <span class="pill pill-cyan" style="margin-bottom: 8px;">Voltaje (V)</span>
+            <div class="card-title">La Presión del Tanque</div>
+            <div class="card-body">
+              Es la fuerza o altura del tanque que empuja. Se mide en <strong>Voltios (V)</strong>. Más altura = más empuje.
+            </div>
+            <div class="formula-box">V = I · R</div>
+          </div>
+          <div class="card">
+            <span class="pill pill-emerald" style="margin-bottom: 8px;">Corriente (I)</span>
+            <div class="card-title">El Caudal del Chorro</div>
+            <div class="card-body">
+              Es la cantidad de agua o electrones que salen por segundo. Se mide en <strong>Amperios (A)</strong> o miliamperios (mA).
+            </div>
+            <div class="formula-box">I = V / R</div>
+          </div>
+          <div class="card">
+            <span class="pill pill-rose" style="margin-bottom: 8px;">Resistencia (R)</span>
+            <div class="card-title">El Freno de la Manguera</div>
+            <div class="card-body">
+              Es qué tan angosta es la tubería o cuánto pisamos la manguera con la bota. Se mide en <strong>Ohmios (Ω)</strong>.
+            </div>
+            <div class="formula-box">R = V / I</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: COMPONENTE INTERACTIVO - SIMULADOR EN VIVO -->
+      <section class="slide" id="slide4">
+        <span class="hero-tag">🔬 Momento 2: Demostración Interactiva (25 Minutos)</span>
+        <h2 class="slide-title">Laboratorio Interactivo de Ley de Ohm<br><span class="gradient-text">Mueve los Controles y Observa la Respuesta</span></h2>
+        
+        <div class="sim-ohm-container">
+          <!-- TOP METERS -->
+          <div class="sim-top-dashboard">
+            <div class="meter-display-box">
+              <span class="meter-label">⚡ Multímetro (Voltaje)</span>
+              <div class="meter-val-large" id="dispVolt">9.0 V</div>
+              <span class="meter-sub">Fuerza aplicada</span>
+            </div>
+
+            <!-- CIRCUIT ANIMATION STAGE -->
+            <div class="circuit-stage">
+              <div class="circuit-node">
+                <span class="node-icon" id="nodeBattery">🔋</span>
+                <span style="font-size:0.75rem; color:#94a3b8;">Fuente</span>
+              </div>
+              <div class="wire-connector">
+                <div class="wire-electron" id="wireAnim"></div>
+              </div>
+              <div class="circuit-node">
+                <span class="node-icon" id="nodeResistor">🧮</span>
+                <span style="font-size:0.75rem; color:#94a3b8;" id="dispResLabel">180 Ω</span>
+              </div>
+              <div class="wire-connector">
+                <div class="wire-electron" id="wireAnim2"></div>
+              </div>
+              <div class="circuit-node">
+                <span class="node-icon" id="nodeLed">💡</span>
+                <span style="font-size:0.75rem; color:#94a3b8;" id="dispLedState">Activo</span>
+              </div>
+            </div>
+
+            <div class="meter-display-box">
+              <span class="meter-label">📊 Multímetro (Corriente)</span>
+              <div class="meter-val-large" id="dispCurrent" style="color: #34d399;">50.0 mA</div>
+              <span class="meter-sub" id="dispCurrentAmp">0.050 A</span>
+            </div>
+          </div>
+
+          <!-- STATUS ALERT -->
+          <div class="status-badge-container" id="statusContainer">
+            <span id="statusIcon" style="font-size: 1.2rem; margin-bottom: 2px;">✅</span>
+            <strong id="statusTitle" style="font-size: 0.95rem; color: #10b981;">Operación Segura de Componentes</strong>
+            <span id="statusDesc" style="font-size: 0.8rem; color: #cbd5e1;">La corriente está dentro del rango seguro para circuitos electrónicos.</span>
+          </div>
+
+          <!-- SLIDERS CONTROLS -->
+          <div class="sim-controls-grid">
+            <!-- VOLTAGE SLIDER -->
+            <div class="sim-slider-group">
+              <div class="slider-header">
+                <span>Voltaje de Entrada (V): <strong id="valVoltSlider" style="color:#38bdf8;">9.0 V</strong></span>
+                <span style="color:#94a3b8;">1V a 24V</span>
+              </div>
+              <input type="range" class="sim-range" id="sliderVolt" min="1" max="24" step="0.5" value="9" oninput="updateSimOhm()">
+              <div class="sim-preset-buttons">
+                <button class="btn-preset" onclick="setVoltPreset(1.5)">Pila AA (1.5V)</button>
+                <button class="btn-preset" onclick="setVoltPreset(3.0)">2 Pilas (3V)</button>
+                <button class="btn-preset" onclick="setVoltPreset(9.0)">Batería 9V</button>
+                <button class="btn-preset" onclick="setVoltPreset(12.0)">Fuente 12V</button>
+              </div>
+            </div>
+
+            <!-- RESISTANCE SLIDER -->
+            <div class="sim-slider-group">
+              <div class="slider-header">
+                <span>Resistencia (R): <strong id="valResSlider" style="color:#fbbf24;">180 Ω</strong></span>
+                <span style="color:#94a3b8;">10Ω a 1000Ω</span>
+              </div>
+              <input type="range" class="sim-range" id="sliderRes" min="10" max="1000" step="10" value="180" oninput="updateSimOhm()">
+              <div class="sim-preset-buttons">
+                <button class="btn-preset" onclick="setResPreset(10)">Peligro (10Ω)</button>
+                <button class="btn-preset" onclick="setResPreset(100)">100 Ω</button>
+                <button class="btn-preset" onclick="setResPreset(220)">220 Ω (LED)</button>
+                <button class="btn-preset" onclick="setResPreset(470)">470 Ω</button>
+                <button class="btn-preset" onclick="setResPreset(1000)">1 kΩ</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SLIDE 5: EL RETO ABR - DESCRIPCIÓN NARRATIVA -->
+      <section class="slide" id="slide5">
+        <span class="hero-tag">🏭 Momento 3: El Reto ABR (40 Minutos)</span>
+        <h2 class="slide-title">Misión en La Ferrería<br><span class="gradient-text">El Tablero de Emergencia de la Fábrica</span></h2>
+        <p class="slide-desc">
+          En la zona industrial de La Ferrería (La Estrella), una planta procesadora de alimentos está renovando el sistema de señalización de sus tolvas y bandas transportadoras. El equipo técnico los contrató a ustedes para calcular y simular 4 circuitos de seguridad antes de la instalación física.
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <div class="card-icon">🏭</div>
+            <div class="card-title">La Situación Real</div>
+            <div class="card-body">Una falla de sobrecorriente o un cálculo equivocado puede quemar sensores de millones de pesos o detener la producción de alimentos.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <div class="card-icon">💻</div>
+            <div class="card-title">La Misión en Tinkercad</div>
+            <div class="card-body">Resolver matemáticamente los 4 problemas en Google Docs y armar los 4 circuitos en un solo proyecto de Tinkercad Circuits con multímetros.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <div class="card-icon">⏱️</div>
+            <div class="card-title">Regla de Oro Siderense</div>
+            <div class="card-body">Trabajo en mesas de 3 a 4 personas. Simulación probada, enlace público generado y entrega en Classroom antes del timbre. Cero tareas en casa.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: LOS 4 MICRO-RETOS A RESOLVER EN TINKERCAD -->
+      <section class="slide" id="slide6">
+        <span class="hero-tag">🛠️ Tareas Técnicas del Reto (40 Minutos)</span>
+        <h2 class="slide-title">Los 4 Circuitos del Tablero<br><span class="gradient-text">Cálculo Matemático y Simulación en Tinkercad</span></h2>
+        <p class="slide-desc">
+          En un solo lienzo de Tinkercad Circuits deben montar y rotular estos 4 circuitos con sus multímetros digitales:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="border-top: 3px solid var(--accent-cyan);">
+            <span class="pill pill-cyan">Micro-reto 1</span>
+            <div class="card-title" style="margin-top: 4px;">Luz Testigo (I)</div>
+            <div class="card-body">Fuente de 12V con resistencia de 240 Ω.<br>Calcula: <strong>I = V / R</strong><br>Comprueba en Tinkercad que el amperímetro marque <strong>50.0 mA</strong>.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-emerald);">
+            <span class="pill pill-emerald">Micro-reto 2</span>
+            <div class="card-title" style="margin-top: 4px;">Piloto LED (R)</div>
+            <div class="card-body">Fuente de 9V; corriente segura: 15 mA (0.015 A).<br>Calcula: <strong>R = V / I</strong><br>Ajusta la resistencia en Tinkercad a <strong>600 Ω</strong> y mide 15 mA.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-amber);">
+            <span class="pill pill-amber">Micro-reto 3</span>
+            <div class="card-title" style="margin-top: 4px;">Alarma Sonora (V)</div>
+            <div class="card-body">Sirena de 150 Ω que requiere 60 mA (0.06 A).<br>Calcula: <strong>V = I · R</strong><br>Comprueba con batería de 9V y voltímetro en paralelo que marque <strong>9.0 V</strong>.</div>
+          </div>
+          <div class="card" style="border-top: 3px solid var(--accent-rose);">
+            <span class="pill pill-rose">Micro-reto 4</span>
+            <div class="card-title" style="margin-top: 4px;">Falla de Sobrecorriente</div>
+            <div class="card-body">Conecta batería de 9V a resistencia de 10 Ω y un LED.<br>Calcula I (0.9 A = 900 mA).<br>Observa y documenta el ícono de explosión en Tinkercad.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: MODELO KOLB EN EQUIPO -->
+      <section class="slide" id="slide7">
+        <span class="hero-tag">👥 Trabajo en Mesa · Modelo Kolb</span>
+        <h2 class="slide-title">¿Cuál es Tu Misión en el Equipo?<br><span class="gradient-text">Todos Aportan, Nadie se Queda sin Hacer Nada</span></h2>
+        
+        <div class="kolb-tabs">
+          <button class="kolb-tab-btn active" onclick="showKolb('divergente')">🎨 Divergente</button>
+          <button class="kolb-tab-btn" onclick="showKolb('asimilador')">🧠 Asimilador</button>
+          <button class="kolb-tab-btn" onclick="showKolb('convergente')">⌨️ Convergente</button>
+          <button class="kolb-tab-btn" onclick="showKolb('acomodador')">🚀 Acomodador</button>
+        </div>
+
+        <!-- PANEL DIVERGENTE -->
+        <div class="kolb-panel active" id="kolb-divergente">
+          <div>
+            <span class="pill pill-rose" style="margin-bottom: 8px;">Contexto e Impacto</span>
+            <h3 class="card-title">El Analista de Seguridad</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Analizas el riesgo industrial en La Estrella, explicas por qué una sobrecorriente de 900 mA incendiaría un tablero real y redactas la justificación contextual en Google Docs.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #f43f5e; margin-bottom: 6px; font-size: 0.95rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Contextualizar la fábrica de alimentos en La Ferrería.</div>
+            <div class="check-item"><input type="checkbox"> Explicar las consecuencias del ensayo de falla (900 mA).</div>
+            <div class="check-item"><input type="checkbox"> Redactar la introducción y conclusiones en Google Docs.</div>
+          </div>
+        </div>
+
+        <!-- PANEL ASIMILADOR -->
+        <div class="kolb-panel" id="kolb-asimilador">
+          <div>
+            <span class="pill pill-amber" style="margin-bottom: 8px;">Matemáticas y Fórmulas</span>
+            <h3 class="card-title">El Cerebro del Triángulo</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Despejas paso a paso las fórmulas (I=V/R, R=V/I, V=I·R), haces las conversiones de A a mA y diseñas la tabla comparativa "Valor Teórico vs. Valor Tinkercad".
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #fbbf24; margin-bottom: 6px; font-size: 0.95rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Resolver los 4 cálculos matemáticos con unidades estrictas.</div>
+            <div class="check-item"><input type="checkbox"> Convertir Amperios a miliamperios (multiplicar por 1000).</div>
+            <div class="check-item"><input type="checkbox"> Construir la tabla de verificación teórica en el informe.</div>
+          </div>
+        </div>
+
+        <!-- PANEL CONVERGENTE -->
+        <div class="kolb-panel" id="kolb-convergente">
+          <div>
+            <span class="pill pill-cyan" style="margin-bottom: 8px;">Montaje y Cableado</span>
+            <h3 class="card-title">El Técnico de Tinkercad</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Abres Tinkercad Circuits, agregas fuentes, resistencias (240Ω, 600Ω, 150Ω, 10Ω) y conectas los multímetros en serie para amperaje y en paralelo para voltaje.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #38bdf8; margin-bottom: 6px; font-size: 0.95rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Cablear ordenadamente (rojo positivo, negro negativo).</div>
+            <div class="check-item"><input type="checkbox"> Conectar el amperímetro en serie abriendo el circuito.</div>
+            <div class="check-item"><input type="checkbox"> Configurar los valores exactos en Ohmios de cada resistencia.</div>
+          </div>
+        </div>
+
+        <!-- PANEL ACOMODADOR -->
+        <div class="kolb-panel" id="kolb-acomodador">
+          <div>
+            <span class="pill pill-emerald" style="margin-bottom: 8px;">Simulación y Entrega</span>
+            <h3 class="card-title">El Piloto de Pruebas</h3>
+            <p class="card-body" style="margin-top: 6px;">
+              Inicias la simulación, verificas que las lecturas marquen 50 mA, 15 mA, 9 V y la explosión virtual, pones el circuito en modo Público y subes el enlace a Classroom.
+            </p>
+          </div>
+          <div class="checklist-card">
+            <h4 style="color: #34d399; margin-bottom: 6px; font-size: 0.95rem;">Tus Misiones en el Reto:</h4>
+            <div class="check-item"><input type="checkbox"> Darle a 'Iniciar Simulación' y contrastar con el cálculo.</div>
+            <div class="check-item"><input type="checkbox"> Poner privacidad en 'Público' y copiar link de compartir.</div>
+            <div class="check-item"><input type="checkbox"> Asegurar la entrega en Google Classroom antes del timbre.</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SLIDE 8: CIERRE Y EVALUACIÓN -->
+      <section class="slide" id="slide8">
+        <span class="hero-tag">🏁 Momento 4: Cierre y Entrega (10 Minutos)</span>
+        <h2 class="slide-title">Chequeo Final Antes del Timbre<br><span class="gradient-text">Rumbo al Nivel Superior</span></h2>
+        <p class="slide-desc">
+          Antes de subir la evidencia a Google Classroom, verifiquen que su simulación de Tinkercad y su documento tengan estos 4 puntos listos:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card" style="grid-column: span 2;">
+            <div class="card-title" style="margin-bottom: 6px;">Las 4 Mediciones que Debe Mostrar tu Proyecto:</div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 6px;">
+              <div class="formula-box">1. Luz de Tolva: Fuente 12V + 240 Ω ➔ Amperímetro marca exactamente 50.0 mA</div>
+              <div class="formula-box">2. Piloto LED: Fuente 9V + 600 Ω ➔ Amperímetro marca exactamente 15.0 mA</div>
+              <div class="formula-box">3. Sirena Bodega: Fuente 9V + 150 Ω ➔ Voltímetro marca 9.0 V (y 60.0 mA)</div>
+              <div class="formula-box">4. Ensayo de Falla: Fuente 9V + 10 Ω + LED ➔ Ícono de explosión por 900 mA</div>
+            </div>
+          </div>
+          <div class="card">
+            <span class="pill pill-emerald" style="margin-bottom: 6px;">Nivel Superior</span>
+            <div class="card-title">Para la Mejor Nota</div>
+            <div class="card-body">
+              • Los 4 cálculos resueltos en Docs.<br>
+              • Enlace público funcional de Tinkercad.<br>
+              • Amperímetros conectados en serie.<br>
+              • Entrega en Classroom a tiempo.<br>
+              • Cero tareas pendientes en casa.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="dots-nav">
+      <div class="dot active" onclick="goToSlide(0)" title="Portada"></div>
+      <div class="dot" onclick="goToSlide(1)" title="Ficha & Competencia"></div>
+      <div class="dot" onclick="goToSlide(2)" title="El Gancho"></div>
+      <div class="dot" onclick="goToSlide(3)" title="Simulador Interactivo"></div>
+      <div class="dot" onclick="goToSlide(4)" title="Misión en La Ferrería"></div>
+      <div class="dot" onclick="goToSlide(5)" title="4 Micro-retos"></div>
+      <div class="dot" onclick="goToSlide(6)" title="Roles de Kolb"></div>
+      <div class="dot" onclick="goToSlide(7)" title="Cierre & Nivel Superior"></div>
+    </div>
+
+    <div class="nav-btn-group">
+      <button class="btn-nav" id="btnPrev" onclick="prevSlide()" disabled>
+        <span>◀</span> Anterior
+      </button>
+      <button class="btn-nav" id="btnNext" onclick="nextSlide()">
+        Siguiente <span>▶</span>
+      </button>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // SLIDE NAVIGATION
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+
+    function updateSlides() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === currentSlide);
+      });
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === slides.length - 1;
+
+      // Auto-update timer phase based on current slide
+      if (currentSlide <= 2) setPhase('Inicio (15m)', 15 * 60);
+      else if (currentSlide === 3) setPhase('Desarrollo (25m)', 25 * 60);
+      else if (currentSlide >= 4 && currentSlide <= 6) setPhase('Reto ABR (40m)', 40 * 60);
+      else if (currentSlide === 7) setPhase('Cierre (10m)', 10 * 60);
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlides();
+    }
+
+    // KEYBOARD NAVIGATION
+    window.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullscreen();
+      }
+    });
+
+    // FULLSCREEN
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => console.log(err));
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
+
+    // ========================================================
+    // SIMULADOR INTERACTIVO DE LEY DE OHM (SLIDE 4)
+    // ========================================================
+    function updateSimOhm() {
+      const v = parseFloat(document.getElementById('sliderVolt').value);
+      const r = parseFloat(document.getElementById('sliderRes').value);
+
+      document.getElementById('valVoltSlider').innerText = v.toFixed(1) + ' V';
+      document.getElementById('valResSlider').innerText = r + ' Ω';
+      document.getElementById('dispVolt').innerText = v.toFixed(1) + ' V';
+      document.getElementById('dispResLabel').innerText = r + ' Ω';
+
+      // Current calculation: I = V / R
+      const currentAmp = v / r;
+      const currentMa = currentAmp * 1000;
+
+      document.getElementById('dispCurrent').innerText = currentMa.toFixed(1) + ' mA';
+      document.getElementById('dispCurrentAmp').innerText = currentAmp.toFixed(3) + ' A';
+
+      // Animation speed based on current
+      const wire1 = document.getElementById('wireAnim');
+      const wire2 = document.getElementById('wireAnim2');
+      let animDuration = 2.0;
+      if (currentMa > 1) {
+        animDuration = Math.max(0.2, 2.5 - (currentMa / 100));
+      }
+      wire1.style.animationDuration = animDuration + 's';
+      wire2.style.animationDuration = animDuration + 's';
+
+      // Safety status analysis
+      const statusBox = document.getElementById('statusContainer');
+      const statusIcon = document.getElementById('statusIcon');
+      const statusTitle = document.getElementById('statusTitle');
+      const statusDesc = document.getElementById('statusDesc');
+      const nodeLed = document.getElementById('nodeLed');
+      const dispLedState = document.getElementById('dispLedState');
+
+      if (currentMa > 40) {
+        // Danger / Overcurrent
+        statusBox.classList.add('danger');
+        statusIcon.innerText = '💥';
+        statusTitle.innerText = '¡PELIGRO DE SOBRECORRIENTE! (Falla)';
+        statusTitle.style.color = '#f43f5e';
+        statusDesc.innerText = `Corriente de ${currentMa.toFixed(1)} mA superó el límite del LED (20 mA). En un montaje real se quema al instante.`;
+        nodeLed.innerText = '💥';
+        dispLedState.innerText = '¡Destruido!';
+        dispLedState.style.color = '#f43f5e';
+      } else if (currentMa >= 10 && currentMa <= 30) {
+        // Optimal LED operation
+        statusBox.classList.remove('danger');
+        statusIcon.innerText = '💡';
+        statusTitle.innerText = 'Brillo Óptimo y Seguro (LED Comercial)';
+        statusTitle.style.color = '#10b981';
+        statusDesc.innerText = `Corriente de ${currentMa.toFixed(1)} mA es perfecta para iluminar con seguridad sin recalentar la resistencia.`;
+        nodeLed.innerText = '💡';
+        dispLedState.innerText = 'Brillante';
+        dispLedState.style.color = '#34d399';
+      } else if (currentMa < 10 && currentMa > 0.5) {
+        // Dim
+        statusBox.classList.remove('danger');
+        statusIcon.innerText = '🔅';
+        statusTitle.innerText = 'Corriente Muy Baja (Apenas Visible)';
+        statusTitle.style.color = '#fbbf24';
+        statusDesc.innerText = `Con ${currentMa.toFixed(1)} mA el flujo es tan débil que un foco apenas encendería. Conviene reducir la resistencia.`;
+        nodeLed.innerText = '🔅';
+        dispLedState.innerText = 'Muy tenue';
+        dispLedState.style.color = '#fbbf24';
+      } else {
+        // Almost zero
+        statusBox.classList.remove('danger');
+        statusIcon.innerText = '💤';
+        statusTitle.innerText = 'Circuito Prácticamente Inactivo';
+        statusTitle.style.color = '#94a3b8';
+        statusDesc.innerText = `Menos de 0.5 mA: resistencia demasiado alta para el voltaje aplicado.`;
+        nodeLed.innerText = '💤';
+        dispLedState.innerText = 'Apagado';
+        dispLedState.style.color = '#94a3b8';
+      }
+    }
+
+    function setVoltPreset(v) {
+      document.getElementById('sliderVolt').value = v;
+      updateSimOhm();
+    }
+
+    function setResPreset(r) {
+      document.getElementById('sliderRes').value = r;
+      updateSimOhm();
+    }
+
+    // ========================================================
+    // MODELO KOLB
+    // ========================================================
+    function showKolb(styleId) {
+      document.querySelectorAll('.kolb-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.kolb-panel').forEach(p => p.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      const target = document.getElementById('kolb-' + styleId);
+      if (target) target.classList.add('active');
+    }
+
+    // CHECKLIST TOGGLE
+    document.querySelectorAll('.check-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'INPUT') {
+          const checkbox = item.querySelector('input[type="checkbox"]');
+          checkbox.checked = !checkbox.checked;
+        }
+        item.classList.toggle('done', item.querySelector('input').checked);
+      });
+    });
+
+    // ========================================================
+    // LIVE TIMER (90 MINUTOS)
+    // ========================================================
+    let timerDuration = 15 * 60; // Start with 15m
+    let timerRunning = false;
+    let timerInterval = null;
+
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerPhase = document.getElementById('timerPhase');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const btnResetTimer = document.getElementById('btnResetTimer');
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    function updateTimerDisplay() {
+      timerDisplay.innerText = formatTime(timerDuration);
+    }
+
+    function setPhase(name, seconds) {
+      if (timerPhase.innerText !== name) {
+        timerPhase.innerText = name;
+        timerDuration = seconds;
+        updateTimerDisplay();
+      }
+    }
+
+    btnPlayPause.addEventListener('click', () => {
+      if (timerRunning) {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        btnPlayPause.innerText = '▶';
+      } else {
+        timerRunning = true;
+        btnPlayPause.innerText = '⏸';
+        timerInterval = setInterval(() => {
+          if (timerDuration > 0) {
+            timerDuration--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            btnPlayPause.innerText = '▶';
+          }
+        }, 1000);
+      }
+    });
+
+    btnResetTimer.addEventListener('click', () => {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      btnPlayPause.innerText = '▶';
+      if (currentSlide <= 2) timerDuration = 15 * 60;
+      else if (currentSlide === 3) timerDuration = 25 * 60;
+      else if (currentSlide >= 4 && currentSlide <= 6) timerDuration = 40 * 60;
+      else timerDuration = 10 * 60;
+      updateTimerDisplay();
+    });
+
+    // Init
+    updateSimOhm();
+  </script>
+</body>
+</html>

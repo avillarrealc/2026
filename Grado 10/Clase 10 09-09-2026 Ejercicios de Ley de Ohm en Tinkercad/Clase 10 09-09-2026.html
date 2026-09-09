@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Clase 10 09-09-2026 | Planeación para Google Docs</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background-color:#0f172a;color:#f8fafc;margin:0;padding:1.5rem 1rem 3rem 1rem;display:flex;flex-direction:column;align-items:center;}
+.action-bar{position:sticky;top:1rem;z-index:100;background:rgba(30,41,59,0.95);backdrop-filter:blur(12px);padding:0.85rem 1.8rem;border-radius:999px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 15px 30px rgba(0,0,0,0.4);display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;}
+.btn-copy{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:white;border:none;padding:0.7rem 1.6rem;border-radius:999px;font-size:1rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all 0.2s ease;box-shadow:0 4px 14px rgba(37,99,235,0.4);}
+.btn-copy:hover{background:linear-gradient(135deg,#2563eb,#1e40af);transform:translateY(-2px);}
+.status-msg{color:#cbd5e1;font-size:0.9rem;}
+.doc-page{background:white;width:820px;min-height:1056px;padding:70px 75px;box-shadow:0 10px 40px rgba(0,0,0,0.3);border-radius:4px;font-family:Arial,sans-serif;font-size:10.5pt;line-height:1.35;color:#1e293b;}
+pre.code{background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;padding:10px 12px;font-family:Consolas,monospace;font-size:9pt;color:#0f172a;white-space:pre-wrap;margin:8px 0 12px 0;}
+code.inline{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-family:monospace;color:#0284c7;}
+</style>
+</head>
+<body>
+<div class="action-bar">
+<button class="btn-copy" id="btnCopy" onclick="copyForDocs()"><span>📋</span> Copiar Formato para Google Docs</button>
+<span class="status-msg" id="statusMsg">Haz clic en el botón azul y luego presiona <strong>Ctrl + V</strong> en Google Docs.</span>
+</div>
+<div class="doc-page" id="docContent">
+<div style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#1e3a8a;margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px;">Institución Educativa José Antonio Galán · La Estrella (Antioquia)</div>
+<div style="font-family:Arial,sans-serif;font-size:9pt;color:#64748b;margin-bottom:22px;border-bottom:2px solid #cbd5e1;padding-bottom:6px;">Área de Tecnología e Informática · Planeación Curricular de 90 Minutos · Grado 10° · Clase 09-09-2026</div>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:18px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">1. FICHA TÉCNICA</h1>
+<ul style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:14px;padding-left:22px;line-height:1.4;">
+<li style="margin-bottom:4px;"><strong>Grado y Unidad:</strong> Décimo (10°) — Unidad: CIRCUITOS / EL PROYECTO ARDUINO. Período 1.</li>
+<li style="margin-bottom:4px;"><strong>Ámbito Conceptual:</strong> Circuitos - Ley de Ohm: resolución práctica de las tres variables fundamentales (Voltaje V = I · R, Corriente I = V / R, y Resistencia R = V / I). Configuración y simulación de circuitos en Tinkercad Circuits con baterías de 9V, pilas AA, potenciómetros y multímetros en modo amperímetro (conexión en serie) y voltímetro (conexión en paralelo). Diagnóstico de sobrecorriente e interpretación de fallas.</li>
+<li style="margin-bottom:4px;"><strong>Competencia:</strong> Aplico la Ley de Ohm para resolver problemas relacionados con circuitos eléctricos básicos; construyo y simulo circuitos eléctricos utilizando la plataforma Tinkercad.</li>
+<li style="margin-bottom:4px;"><strong>Indicadores de Desempeño:</strong>
+  <ul>
+    <li>Calcula matemáticamente valores de corriente, voltaje y resistencia aplicando la Ley de Ohm en situaciones cotidianas e industriales de La Estrella.</li>
+    <li>Construye y cablea circuitos interactivos en Tinkercad Circuits integrando multímetros digitales para contrastar lecturas reales frente a los cálculos teóricos.</li>
+    <li>Identifica el riesgo de sobrecorriente en componentes luminosos (LEDs) y deduce el valor de resistencia necesario para evitar daños.</li>
+    <li>Participa activamente en equipos heterogéneos aplicando roles de Kolb, completando y entregando el reto en Google Classroom dentro de los 90 minutos de clase.</li>
+  </ul>
+</li>
+</ul>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:10px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">2. DESARROLLO DE LA CLASE (TABLA)</h1>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #cbd5e1;margin-top:10px;margin-bottom:20px;font-family:Arial,sans-serif;font-size:9pt;">
+<thead>
+<tr style="background-color:#1e3a8a;">
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:14%;">Momento</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:50%;">Actividad</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:12%;">Duración</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:9px 10px;border:1px solid #94a3b8;width:24%;">Recursos</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color:#ffffff;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Inicio</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">El Gancho: La manguera del lavadero en Pueblo Viejo y el triángulo de Ohm. Demostración en proyector: qué pasa si cerramos la llave o aumentamos la presión. Apertura de Tinkercad Circuits en Windows 11.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">15 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">PC Windows 11, Proyector/Video Beam, Simulador interactivo en vivo. Video YouTube: Canal Tecnología y Educación - Ley de Ohm con Tinkercad.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Desarrollo</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Práctica Guiada: Despeje y resolución de 2 ejercicios modelo (cálculo de corriente I = V / R y cálculo de voltaje V = I · R). Montaje simultáneo en Tinkercad: cableado del multímetro en modo amperímetro en serie (abriendo el circuito). Comprobación de miliamperios (mA).</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">25 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Navegador web con Tinkercad Circuits, tablero digital del docente con fórmulas resueltas paso a paso.</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Reto ABR</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Reto auténtico e inédito: "El Tablero de Emergencia de la Fábrica de Alimentos en La Ferrería". 4 micro-retos secuenciales: 1) Calcular corriente de lámpara testigo, 2) Calcular resistencia de piloto LED, 3) Calcular voltaje de alarma sonora, 4) Ensayo de sobrecorriente. Trabajo en mesas heterogéneas con roles de Kolb.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">40 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Tinkercad Circuits en cada PC, Google Docs para cálculos del equipo, rúbrica de desempeño proyectada en aula.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Cierre</strong></td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Verificación técnica de las mediciones en Tinkercad. Configuración del proyecto a visibilidad "Público", copia del enlace directo y entrega en Google Classroom junto con el informe matemático. Cero tareas en casa.</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">10 min</td>
+<td style="padding:8px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Plataforma Google Classroom, lista de verificación de entrega.</td>
+</tr>
+</tbody>
+</table>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">3. GUION DEL DOCENTE</h1>
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Inicio - El Gancho: Las 3 Llaves del Agua y el Triángulo Mágico (15 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "¡Hola, muchachos! ¿Cómo vamos hoy? En la clase pasada conocimos la fórmula reina de la electricidad: la Ley de Ohm. Vimos que cuando ponemos una resistencia, estamos poniendo un freno a la corriente para que los bombillos no se quemen. Pero hoy vamos a dar el salto definitivo: ya no solo vamos a calcular resistencias. Vamos a aprender a manejar las 3 variables del triángulo como verdaderos técnicos en electrónica: Voltaje (fuerza), Corriente (flujo de electrones) y Resistencia (el freno)."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Ojo a esto: imagínense que están lavando una moto en un lavadero de la vereda Pueblo Viejo con una manguera conectada al tanque de la montaña. Si el tanque está altísimo, el agua baja con mucha fuerza: ese es el <strong>Voltaje (V)</strong>. La cantidad de chorro de agua que sale por segundo por la punta es la <strong>Corriente (I)</strong>. Y si ustedes pisan la manguera con la bota o le cierran la boquilla, le están metiendo <strong>Resistencia (R)</strong>. Si pisan más duro la manguera, ¿qué pasa con el chorro? ¡Disminuye de una! En cambio, si suben la presión del tanque sin pisar la manguera, el chorro sale disparado con más corriente. Las 3 están conectadas por una sola ley matemática que cabe en la palma de la mano."</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Desarrollo - Práctica Guiada: Las 3 Caras del Triángulo en Tinkercad (25 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Miren el proyector. Tapemos con el dedo la letra que queremos encontrar en el triángulo V = I · R:</p>
+<ul style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:8px;padding-left:22px;line-height:1.35;">
+<li>Si tapamos la I: nos queda <strong>I = V / R</strong> (Corriente = Voltios divididos entre Ohmios).</li>
+<li>Si tapamos la R: nos queda <strong>R = V / I</strong> (Resistencia = Voltios divididos entre Amperios).</li>
+<li>Si tapamos la V: nos queda <strong>V = I · R</strong> (Voltaje = Amperios multiplicados por Ohmios).</li>
+</ul>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Ejercicio Modelo 1 (Cálculo de Corriente para un taller en la variante):</p>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:6px;">Un taller mecánico en la variante a Caldas tiene una batería de 9V y una resistencia de 180 Ω. ¿Cuánta corriente circulará por los cables?</p>
+<pre class="code"># 1. Aplicamos la fórmula de corriente:
+I = V / R
+I = 9 V / 180 Ω = 0.05 A
+# En miliamperios (multiplicamos por 1000):
+0.05 A * 1000 = 50 mA</pre>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Montaje en Tinkercad (Regla de oro del amperímetro):</p>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#475569;margin-top:0;margin-bottom:8px;">Diles a tus estudiantes: "¡Ojo al cableado muchachos! Para medir corriente con el multímetro digital en Tinkercad, hay que cambiarlo al modo 'A' (Amperaje) y ponerlo en serie: <em>hay que romper el cable</em> para que los electrones estén obligados a pasar por dentro del multímetro. Si lo conectan en paralelo como si fuera voltímetro, hacen corto. Conectemos el positivo de la batería de 9V a la punta roja del multímetro, la punta negra a una pata de la resistencia de 180 Ω, y la otra pata al negativo de la batería. Le damos 'Iniciar simulación' y... ¡miren la pantalla! Marca exactamente <strong>50.0 mA</strong>. Las matemáticas concuerdan con la física."</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:4px;font-weight:bold;">Ejercicio Modelo 2 (Cálculo de Voltaje necesario):</p>
+<p style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:6px;">Si por una resistencia de 100 Ω medimos que fluyen 0.03 A (30 mA), ¿cuál es el voltaje que entrega la fuente?</p>
+<pre class="code"># 2. Aplicamos la fórmula de voltaje:
+V = I * R
+V = 0.03 A * 100 Ω = 3.0 V (Equivale a dos pilas AA de 1.5 V en serie)</pre>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Reto ABR - Instrucción en Vivo (40 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:12px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "¡Atención equipos! Hoy ustedes son los ingenieros de mantenimiento de la planta de alimentos en La Ferrería aquí en La Estrella. La fábrica está cambiando su tablero eléctrico de seguridad y tienen 4 problemas críticos que deben calcular primero en el cuaderno y luego simular en Tinkercad Circuits. Todos los 4 circuitos deben quedar armados dentro del mismo proyecto de Tinkercad, cada uno con su multímetro digital midiendo y demostrando que su cálculo fue perfecto. Tienen 40 minutos en equipo. ¡A calcular y montar!"</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:6px;">Cierre - Verificación y Entrega (10 min):</h3>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:12px;line-height:1.4;text-align:justify;">Diles a tus estudiantes: "Últimos 10 minutos de clase. En Tinkercad van a la rueda de engrane del circuito, eligen 'Propiedades', ponen la privacidad en 'Público' y copian el enlace de compartir. En su Google Doc pegan los cálculos de los 4 problemas y el link de Tinkercad, y lo suben a la tarea en Google Classroom. Nuestra regla sagrada se mantiene: trabajo terminado y calificado en el salón; cero tareas para la casa."</p>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">4. EL RETO (ABR + INTEGRACIÓN DE KOLB)</h1>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:8px;line-height:1.4;text-align:justify;"><strong>Situación Real en La Estrella:</strong> En la planta procesadora de alimentos del sector industrial La Ferrería (La Estrella), la línea de empaque cuenta con un tablero de control de seguridad industrial. El departamento técnico necesita instalar 3 subsistemas nuevos y comprobar qué ocurre en caso de una falla por cortocircuito. El equipo de estudiantes debe resolver los cálculos teóricos y montar los 4 circuitos en un solo espacio de Tinkercad Circuits.</p>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;line-height:1.4;text-align:justify;"><strong>Los 4 Micro-retos del Tablero de Seguridad:</strong></p>
+<ul style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:10px;padding-left:20px;line-height:1.35;">
+<li><strong>Micro-reto 1 (Luz Testigo de Tolva - Cálculo de Corriente I):</strong> El sensor de tolva se alimenta con 12 V y cuenta con una resistencia de protección de 240 Ω. El equipo debe calcular la corriente teórica (I = 12 V / 240 Ω = 0.05 A = 50 mA) y simular el circuito en Tinkercad con una fuente de 12 V (o batería de 9V + 2 pilas AA en serie), una resistencia de 240 Ω y el multímetro en modo amperímetro en serie demostrando los 50 mA.</li>
+<li><strong>Micro-reto 2 (Piloto LED de Tablero - Cálculo de Resistencia R):</strong> Se debe instalar un indicador luminoso con fuente fija de 9 V. Para que el circuito funcione de manera óptima y segura sin sobrecalentamiento, la corriente debe limitarse exactamente a 15 mA (0.015 A). El equipo debe calcular la resistencia teórica requerida (R = 9 V / 0.015 A = 600 Ω), montarla en Tinkercad con batería de 9V y amperímetro, verificando los 15 mA exactos.</li>
+<li><strong>Micro-reto 3 (Alarma Sonora de Bodega - Cálculo de Voltaje V):</strong> La sirena de advertencia tiene una resistencia interna medida de 150 Ω. El fabricante indica que para que suene con el volumen reglamentario deben circular exactamente 60 mA (0.06 A). El equipo debe calcular el voltaje requerido (V = 0.06 A · 150 Ω = 9.0 V) y representarlo en Tinkercad con una batería de 9V y voltímetro en paralelo demostrando los 9 V en terminales.</li>
+<li><strong>Micro-reto 4 (Diagnóstico de Falla por Sobrecorriente):</strong> En el circuito de 9V, un operario novato colocó por error una resistencia de solo 10 Ω en lugar de la recomendada junto a un diodo LED. El equipo debe calcular la corriente teórica extrema (I = 9 V / 10 Ω = 0.9 A = 900 mA), simular la conexión en Tinkercad y documentar visualmente la advertencia de sobrecorriente que genera el simulador (el LED se destruye virtualmente por superar los 20 mA máximos permitidos).</li>
+</ul>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;font-weight:bold;">Solución de Referencia para el Docente:</p>
+<pre class="code">==========================================================
+SOLUCIÓN RETO ABR: TABLERO INDUSTRIAL LA FERRERÍA (10°)
+==========================================================
+
+MICRO-RETO 1: Cálculo de Corriente (I)
+• Fórmula: I = V / R
+• Datos: V = 12 V, R = 240 Ω
+• Procedimiento: I = 12 / 240 = 0.05 A
+• Salida esperada en Tinkercad: Amperímetro marca 50.0 mA
+
+MICRO-RETO 2: Cálculo de Resistencia (R)
+• Fórmula: R = V / I
+• Datos: V = 9 V, I = 15 mA = 0.015 A
+• Procedimiento: R = 9 / 0.015 = 600 Ω
+• Salida esperada en Tinkercad: Amperímetro marca 15.0 mA
+
+MICRO-RETO 3: Cálculo de Voltaje (V)
+• Fórmula: V = I * R
+• Datos: R = 150 Ω, I = 60 mA = 0.06 A
+• Procedimiento: V = 0.06 * 150 = 9.0 V
+• Salida esperada en Tinkercad: Voltímetro marca 9.0 V y amperímetro 60.0 mA
+
+MICRO-RETO 4: Ensayo de Falla y Diagnóstico
+• Datos: V = 9 V, R = 10 Ω
+• Procedimiento: I = 9 / 10 = 0.9 A = 900 mA
+• Diagnóstico en Tinkercad: Aparece el ícono de explosión sobre el LED.
+  Explicación: La corriente de 900 mA supera en 45 veces el límite seguro (20 mA).</pre>
+
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:6px;font-weight:bold;">Distribución de Responsabilidades en el Equipo (Estilos de Kolb):</p>
+<ul style="font-family:Arial,sans-serif;font-size:9.5pt;color:#1e293b;margin-top:0;margin-bottom:12px;padding-left:22px;line-height:1.4;">
+<li style="margin-bottom:5px;"><strong>Divergente (Contexto y Seguridad):</strong> Analiza la utilidad real del tablero en la fábrica de La Estrella, redacta el informe en Google Docs explicando las consecuencias de un cortocircuito en una planta real y diseña la presentación visual del documento.</li>
+<li style="margin-bottom:5px;"><strong>Asimilador (El Matemático del Grupo):</strong> Resuelve formalmente en el informe los 4 procedimientos matemáticos (despejes de V, I y R), cuida la conversión de unidades (amperios a miliamperios) y elabora la tabla comparativa "Valor Calculado vs. Valor Medido en Tinkercad".</li>
+<li style="margin-bottom:5px;"><strong>Convergente (El Técnico de Tinkercad):</strong> Configura y cablea los 4 circuitos en el lienzo virtual de Tinkercad, asigna los valores exactos a las resistencias (240 Ω, 600 Ω, 150 Ω, 10 Ω), y conecta los multímetros en serie para corriente y en paralelo para voltaje sin provocar cortocircuitos.</li>
+<li style="margin-bottom:5px;"><strong>Acomodador (Pruebas, Verificación y Entrega):</strong> Inicia la simulación, valida que las lecturas en pantalla concuerden con los cálculos del Asimilador, comprueba el efecto visual de la sobrecorriente en el micro-reto 4, cambia la privacidad del circuito a público y sube la entrega final a Google Classroom antes del timbre.</li>
+</ul>
+
+<h1 style="font-family:Arial,sans-serif;font-size:13pt;font-weight:bold;color:#1e3a8a;margin-top:22px;margin-bottom:8px;border-bottom:1px solid #cbd5e1;padding-bottom:4px;">5. ACTIVIDAD EN CLASSROOM Y RÚBRICA</h1>
+<p style="font-family:Arial,sans-serif;font-size:10pt;color:#1e293b;margin-top:0;margin-bottom:10px;line-height:1.4;"><strong>Qué deben entregar los muchachos:</strong> Un documento de Google Docs entregado en la tarea de Google Classroom que contenga: 1) Los 4 ejercicios con sus fórmulas, despejes y conversiones de unidades; 2) La tabla de contraste entre cálculo matemático y lectura del simulador; 3) El enlace público directo de Tinkercad Circuits con los 4 montajes funcionales listos para probar.</p>
+
+<h3 style="font-family:Arial,sans-serif;font-size:11pt;font-weight:bold;color:#2563eb;margin-top:14px;margin-bottom:8px;">Rúbrica Simplificada (Decreto 1290)</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;border:1px solid #cbd5e1;margin-top:8px;margin-bottom:20px;font-family:Arial,sans-serif;font-size:8.5pt;">
+<thead>
+<tr style="background-color:#1e3a8a;">
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:18%;">Criterio</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:27%;">Superior</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:21%;">Alto</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:19%;">Básico</th>
+<th style="background-color:#1e3a8a;color:#ffffff;font-weight:bold;text-align:left;padding:8px 10px;border:1px solid #94a3b8;width:15%;">Bajo</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background-color:#ffffff;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Cálculo Matemático (Ley de Ohm)</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Despeja y resuelve con exactitud las 3 variables (V, I, R) en los 4 ejercicios, aplicando conversiones correctas entre Amperios y miliamperios.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Resuelve los cálculos de la ley de Ohm con precisión, presentando solo un desliz menor en la conversión de unidades o decimales.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Aplica las fórmulas básicas pero presenta confusiones recurrentes al despejar variables o en el paso de A a mA.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">No aplica las ecuaciones de la Ley de Ohm ni entrega el procedimiento matemático de los retos.</td>
+</tr>
+<tr style="background-color:#f8fafc;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;"><strong>Simulación en Tinkercad Circuits</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Construye los 4 circuitos en Tinkercad con cableado limpio, conecta adecuadamente el multímetro en serie/paralelo y las lecturas coinciden con el cálculo.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Monta 3 de los 4 circuitos con lecturas correctas y enlace público funcional.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">Simula los circuitos pero confunde la conexión del amperímetro (en paralelo) o entrega valores distintos a los requeridos.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#f8fafc;">No logra construir los circuitos en Tinkercad o el enlace entregado es privado o inexistente.</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;"><strong>Trabajo Colaborativo y Entrega</strong></td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Completa el reto integrando los 4 roles de Kolb y entrega la evidencia completa en Google Classroom antes de que concluyan los 90 min de clase.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Entrega la evidencia en Classroom dentro de la sesión con buena articulación del equipo.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">Entrega con retraso al final de la clase o con componentes incompletos en el documento.</td>
+<td style="padding:7px 10px;border:1px solid #cbd5e1;vertical-align:top;color:#1e293b;background-color:#ffffff;">No realiza la entrega en Google Classroom durante la clase ni evidencia trabajo en equipo.</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-family:Arial,sans-serif;font-size:9pt;color:#64748b;margin-top:0;margin-bottom:6px;line-height:1.4;"><strong>Recursos Verificados para el Docente y Estudiantes:</strong><br>
+• Video YouTube: Canal <em>Tecnología y Educación</em> - 'Ley de Ohm con Tinkercad'.<br>
+• Video YouTube: Canal <em>El Profe García</em> - 'La Ley de Ohm explicada fácil y medición con Multímetro'.<br>
+• Plataforma de simulación interactiva: <em>tinkercad.com/circuits</em>.<br>
+• Guía de laboratorio interactiva: <em>allaboutcircuits.com/textbook/direct-current/chpt-2/voltage-current-resistance-relate</em>.</p>
+</div>
+
+<script>
+async function copyForDocs(){
+const docContent=document.getElementById('docContent');
+const btn=document.getElementById('btnCopy');
+const msg=document.getElementById('statusMsg');
+try{
+const fullHtml='<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>'+docContent.innerHTML+'</body></html>';
+const blobHtml=new Blob([fullHtml],{type:'text/html'});
+const blobText=new Blob([docContent.innerText],{type:'text/plain'});
+const item=new ClipboardItem({'text/html':blobHtml,'text/plain':blobText});
+await navigator.clipboard.write([item]);
+btn.innerHTML='<span>✅</span> ¡Copiado con Éxito!';
+btn.style.background='#10b981';
+msg.innerHTML='<strong style="color:#34d399;">¡Formato copiado!</strong> Ve a Google Docs y presiona <strong>Ctrl + V</strong>.';
+setTimeout(()=>{btn.innerHTML='<span>📋</span> Copiar Formato para Google Docs';btn.style.background='linear-gradient(135deg,#3b82f6,#1d4ed8)';},4000);
+}catch(err){
+const range=document.createRange();range.selectNode(docContent);window.getSelection().removeAllRanges();window.getSelection().addRange(range);document.execCommand('copy');window.getSelection().removeAllRanges();btn.innerHTML='<span>✅</span> ¡Copiado!';msg.innerHTML='<strong style="color:#34d399;">¡Listo!</strong> Pega con <strong>Ctrl + V</strong> en Google Docs.';
+}
+}
+</script>
+</body>
+</html>

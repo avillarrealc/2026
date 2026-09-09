@@ -200,6 +200,53 @@
       transform: translateY(-2px);
     }
 
+    .session-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-session {
+      border: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-edit-session {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    .btn-edit-session:hover:not(:disabled) {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    .btn-delete-session {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+    .btn-delete-session:hover:not(:disabled) {
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      transform: translateY(-2px);
+    }
+
+    .btn-action-session:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
     /* STATS CARDS */
     .stats-grid {
       display: grid;
@@ -519,9 +566,17 @@
           <!-- Populated dynamically -->
         </select>
       </div>
-      <button class="btn-new-session" onclick="openNewSessionModal()">
-        <span>➕</span> Nueva Clase o Práctica
-      </button>
+      <div class="session-actions-group">
+        <button class="btn-new-session" onclick="openNewSessionModal()" title="Programar una nueva clase o práctica">
+          <span>➕</span> Nueva Clase
+        </button>
+        <button class="btn-action-session btn-edit-session" id="btnEditSession" onclick="openEditSessionModal()" title="Editar título, tipo o fecha de la clase seleccionada">
+          <span>✏️</span> Editar
+        </button>
+        <button class="btn-action-session btn-delete-session" id="btnDeleteSession" onclick="deleteCurrentSession()" title="Eliminar la clase seleccionada">
+          <span>🗑️</span> Eliminar
+        </button>
+      </div>
     </section>
 
     <!-- STATS CARDS POR GRUPO -->
@@ -596,6 +651,40 @@
       <div class="modal-actions">
         <button class="btn-cancel" onclick="closeNewSessionModal()">Cancelar</button>
         <button class="btn-confirm" onclick="confirmNewSession()">Crear y Guardar en Drive</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL EDITAR CLASE O SESIÓN -->
+  <div class="modal-overlay" id="editSessionModal">
+    <div class="modal-box">
+      <div class="modal-title">
+        <span>✏️</span> Editar Clase o Práctica
+      </div>
+
+      <div class="form-group">
+        <label>Tipo de Sesión:</label>
+        <select class="form-select" id="editSessionTipo">
+          <option value="regular">📘 Clase Teórico-Práctica Regular</option>
+          <option value="practica">🛠️ Clase de Práctica / Laboratorio en Sala</option>
+          <option value="evaluacion">🎯 Reto ABR / Evaluación Formativa</option>
+          <option value="refuerzo">🔄 Taller de Refuerzo / Nivelación</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Título o Tema de la Clase/Práctica:</label>
+        <input type="text" class="form-input" id="editSessionTitulo" placeholder="Ej: Clase 10: Ejercicios de Ley de Ohm en Tinkercad">
+      </div>
+
+      <div class="form-group">
+        <label>Fecha Base Programada (DD-MM-AAAA):</label>
+        <input type="text" class="form-input" id="editSessionFecha" placeholder="Ej: 09-09-2026">
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeEditSessionModal()">Cancelar</button>
+        <button class="btn-confirm" id="btnSaveEditSession" onclick="confirmEditSession()" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">Guardar Cambios en Drive</button>
       </div>
     </div>
   </div>
@@ -676,7 +765,21 @@
               "10°3": "Jueves (3° y 4° hora)",
               "10°4": "Viernes (3° y 4° hora)"
             },
-            sesiones: [] // Sin clases aún
+            sesiones: [
+              {
+                id: "g10-c10",
+                tipo: "regular",
+                numero: 10,
+                titulo: "Clase 10: Ejercicios de Ley de Ohm en Tinkercad",
+                fechaBase: "09-09-2026",
+                grupos: [
+                  { grupo: "10°2", horario: "Miércoles (1° y 2° hora)", fecha: "09-09-2026", impartida: false, classroom: "Borrador", entregas: "0/34", obs: "Programada" },
+                  { grupo: "10°3", horario: "Jueves (3° y 4° hora)", fecha: "10-09-2026", impartida: false, classroom: "Borrador", entregas: "0/33", obs: "Programada" },
+                  { grupo: "10°4", horario: "Viernes (3° y 4° hora)", fecha: "11-09-2026", impartida: false, classroom: "Borrador", entregas: "0/32", obs: "Programada" },
+                  { grupo: "10°1", horario: "Lunes (3° y 4° hora)", fecha: "14-09-2026", impartida: false, classroom: "Borrador", entregas: "0/35", obs: "Programada" }
+                ]
+              }
+            ]
           },
           g11: {
             nombre: "Grado 11°",
@@ -707,8 +810,62 @@
       }
     }
 
+    function sanitizeGradeData(data) {
+      if (!data) return data;
+      const defaults = {
+        g9: {
+          nombre: "Grado 9°",
+          materia: "Fundamentos de Programación (Python)",
+          gruposBase: ["9°1", "9°2", "9°3", "9°4"],
+          horariosBase: {
+            "9°1": "Martes (1° y 2° hora)",
+            "9°2": "Miércoles (3° y 4° hora)",
+            "9°3": "Jueves (5° y 6° hora)",
+            "9°4": "Viernes (1° y 2° hora)"
+          }
+        },
+        g10: {
+          nombre: "Grado 10°",
+          materia: "El Proyecto Arduino y Circuitos en Tinkercad",
+          gruposBase: ["10°1", "10°2", "10°3", "10°4"],
+          horariosBase: {
+            "10°1": "Lunes (3° y 4° hora)",
+            "10°2": "Miércoles (1° y 2° hora)",
+            "10°3": "Jueves (3° y 4° hora)",
+            "10°4": "Viernes (3° y 4° hora)"
+          }
+        },
+        g11: {
+          nombre: "Grado 11°",
+          materia: "Producción Audiovisual y Página de Ventas",
+          gruposBase: ["11°1", "11°2", "11°3"],
+          horariosBase: {
+            "11°1": "Lunes (1° y 2° hora)",
+            "11°2": "Jueves (3° y 4° hora)",
+            "11°3": "Viernes (5° y 6° hora)"
+          }
+        }
+      };
+
+      ['g9', 'g10', 'g11'].forEach(k => {
+        if (!data[k]) data[k] = defaults[k];
+        if (!data[k].nombre) data[k].nombre = defaults[k].nombre;
+        if (!data[k].materia) data[k].materia = defaults[k].materia;
+        if (!data[k].gruposBase || !Array.isArray(data[k].gruposBase) || data[k].gruposBase.length === 0) {
+          data[k].gruposBase = defaults[k].gruposBase;
+        }
+        if (!data[k].horariosBase || typeof data[k].horariosBase !== 'object') {
+          data[k].horariosBase = defaults[k].horariosBase;
+        }
+        if (!data[k].sesiones || !Array.isArray(data[k].sesiones)) {
+          data[k].sesiones = [];
+        }
+      });
+      return data;
+    }
+
     function onDataLoaded(data) {
-      allGradesData = data;
+      allGradesData = sanitizeGradeData(data);
       document.getElementById('loadingOverlay').style.display = 'none';
       document.getElementById('gradeTable').style.display = 'table';
       populateSessionPicker();
@@ -737,6 +894,9 @@
       const select = document.getElementById('sessionSelect');
       select.innerHTML = '';
 
+      const btnEdit = document.getElementById('btnEditSession');
+      const btnDelete = document.getElementById('btnDeleteSession');
+
       const gradeObj = allGradesData[activeGrade];
       if (!gradeObj || !gradeObj.sesiones || gradeObj.sesiones.length === 0) {
         const opt = document.createElement('option');
@@ -744,10 +904,15 @@
         opt.textContent = "Sin clases programadas";
         select.appendChild(opt);
         select.disabled = true;
+        if (btnEdit) btnEdit.disabled = true;
+        if (btnDelete) btnDelete.disabled = true;
         return;
       }
 
       select.disabled = false;
+      if (btnEdit) btnEdit.disabled = false;
+      if (btnDelete) btnDelete.disabled = false;
+
       gradeObj.sesiones.forEach((ses, idx) => {
         const opt = document.createElement('option');
         opt.value = idx;
@@ -921,10 +1086,16 @@
       if (typeof google !== 'undefined' && google.script) {
         google.script.run
           .withSuccessHandler((res) => {
-            setCloudStatus(`☁️ Guardado en Drive (${res.hora})`);
+            if (res && res.success === false) {
+              setCloudStatus('⚠️ Aviso al guardar');
+              alert('Aviso al guardar en Google Drive: ' + (res.error || 'No se pudo completar el guardado.'));
+            } else {
+              setCloudStatus(`☁️ Guardado en Drive (${(res && res.hora) || new Date().toLocaleTimeString()})`);
+            }
           })
           .withFailureHandler((err) => {
             setCloudStatus('⚠️ Error al guardar');
+            alert('Error de conexión al guardar en Drive: ' + (err.message || err));
           })
           .saveAllGradeData(activeGrade, allGradesData[activeGrade]);
       } else {
@@ -944,10 +1115,12 @@
 
     // MODAL LOGIC
     function openNewSessionModal() {
-      const gradeObj = allGradesData[activeGrade];
       document.getElementById('newSessionTitulo').value = '';
       document.getElementById('newSessionFecha').value = new Date().toLocaleDateString('es-CO');
       document.getElementById('newSessionModal').classList.add('active');
+      setTimeout(() => {
+        document.getElementById('newSessionTitulo').focus();
+      }, 100);
     }
 
     function closeNewSessionModal() {
@@ -955,43 +1128,207 @@
     }
 
     function confirmNewSession() {
-      const tipo = document.getElementById('newSessionTipo').value;
-      const titulo = document.getElementById('newSessionTitulo').value.trim();
-      const fechaBase = document.getElementById('newSessionFecha').value.trim() || 'Fecha pendiente';
+      const btnConfirm = document.querySelector('.btn-confirm');
+      try {
+        const tipo = document.getElementById('newSessionTipo').value;
+        const titulo = document.getElementById('newSessionTitulo').value.trim();
+        const fechaBase = document.getElementById('newSessionFecha').value.trim() || 'Fecha pendiente';
 
-      if (!titulo) {
-        alert('Por favor escribe el título o tema de la clase o práctica.');
+        if (!titulo) {
+          alert('Por favor escribe el título o tema de la clase o práctica.');
+          document.getElementById('newSessionTitulo').focus();
+          return;
+        }
+
+        if (!allGradesData || !allGradesData[activeGrade]) {
+          alert('Error: Los datos del grado aún no se han cargado. Espera un momento o recarga la página.');
+          return;
+        }
+
+        const gradeObj = allGradesData[activeGrade];
+
+        // Asegurar gruposBase con fallback automático
+        let gruposList = gradeObj.gruposBase;
+        if (!gruposList || !Array.isArray(gruposList) || gruposList.length === 0) {
+          if (activeGrade === 'g9') gruposList = ["9°1", "9°2", "9°3", "9°4"];
+          else if (activeGrade === 'g10') gruposList = ["10°1", "10°2", "10°3", "10°4"];
+          else if (activeGrade === 'g11') gruposList = ["11°1", "11°2", "11°3"];
+          else gruposList = ["Grupo 1", "Grupo 2", "Grupo 3"];
+          gradeObj.gruposBase = gruposList;
+        }
+
+        if (!gradeObj.horariosBase || typeof gradeObj.horariosBase !== 'object') {
+          gradeObj.horariosBase = {};
+          if (activeGrade === 'g10') {
+            gradeObj.horariosBase = {
+              "10°1": "Lunes (3° y 4° hora)",
+              "10°2": "Miércoles (1° y 2° hora)",
+              "10°3": "Jueves (3° y 4° hora)",
+              "10°4": "Viernes (3° y 4° hora)"
+            };
+          }
+        }
+
+        // Auto generar filas de cada grupo
+        const newGrupos = gradeObj.gruposBase.map(grpName => {
+          return {
+            grupo: grpName,
+            horario: (gradeObj.horariosBase && gradeObj.horariosBase[grpName]) || "Horario habitual",
+            fecha: fechaBase,
+            impartida: false,
+            classroom: "Borrador",
+            entregas: "0/30",
+            obs: "Programada"
+          };
+        });
+
+        const newSesion = {
+          id: `${activeGrade}-${Date.now()}`,
+          tipo: tipo,
+          titulo: titulo,
+          fechaBase: fechaBase,
+          grupos: newGrupos
+        };
+
+        if (!gradeObj.sesiones || !Array.isArray(gradeObj.sesiones)) {
+          gradeObj.sesiones = [];
+        }
+        gradeObj.sesiones.push(newSesion);
+        currentSessionIndex = gradeObj.sesiones.length - 1;
+
+        if (btnConfirm) {
+          btnConfirm.disabled = true;
+          btnConfirm.textContent = '⏳ Guardando...';
+        }
+
+        closeNewSessionModal();
+        populateSessionPicker();
+        renderCurrentSession();
+        syncActiveGrade();
+
+        setTimeout(() => {
+          if (btnConfirm) {
+            btnConfirm.disabled = false;
+            btnConfirm.textContent = 'Crear y Guardar en Drive';
+          }
+        }, 1500);
+
+      } catch (err) {
+        console.error("Error confirmNewSession:", err);
+        alert('Error al crear la clase: ' + err.message);
+        if (btnConfirm) {
+          btnConfirm.disabled = false;
+          btnConfirm.textContent = 'Crear y Guardar en Drive';
+        }
+      }
+    }
+
+    // ==========================================
+    // EDITAR Y ELIMINAR SESIÓN ACTUAL
+    // ==========================================
+    function openEditSessionModal() {
+      const gradeObj = allGradesData[activeGrade];
+      if (!gradeObj || !gradeObj.sesiones || gradeObj.sesiones.length === 0 || currentSessionIndex === -1) {
+        alert('No hay ninguna clase seleccionada para editar.');
         return;
       }
 
+      const ses = gradeObj.sesiones[currentSessionIndex];
+      document.getElementById('editSessionTipo').value = ses.tipo || 'regular';
+      document.getElementById('editSessionTitulo').value = ses.titulo || '';
+      document.getElementById('editSessionFecha').value = ses.fechaBase || '';
+      document.getElementById('editSessionModal').classList.add('active');
+      setTimeout(() => {
+        document.getElementById('editSessionTitulo').focus();
+      }, 100);
+    }
+
+    function closeEditSessionModal() {
+      document.getElementById('editSessionModal').classList.remove('active');
+    }
+
+    function confirmEditSession() {
+      const btnSave = document.getElementById('btnSaveEditSession');
+      try {
+        const gradeObj = allGradesData[activeGrade];
+        if (!gradeObj || !gradeObj.sesiones || currentSessionIndex === -1) {
+          alert('No hay ninguna sesión activa para editar.');
+          return;
+        }
+
+        const titulo = document.getElementById('editSessionTitulo').value.trim();
+        const tipo = document.getElementById('editSessionTipo').value;
+        const fechaBase = document.getElementById('editSessionFecha').value.trim() || 'Fecha pendiente';
+
+        if (!titulo) {
+          alert('Por favor escribe el título o tema de la clase.');
+          document.getElementById('editSessionTitulo').focus();
+          return;
+        }
+
+        const ses = gradeObj.sesiones[currentSessionIndex];
+        const oldFechaBase = ses.fechaBase;
+        ses.titulo = titulo;
+        ses.tipo = tipo;
+        ses.fechaBase = fechaBase;
+
+        // Si la fecha base cambió, actualizar fechas de los grupos que tenían la fecha base anterior
+        if (oldFechaBase !== fechaBase && ses.grupos) {
+          ses.grupos.forEach(g => {
+            if (g.fecha === oldFechaBase || !g.fecha || g.fecha === 'Fecha pendiente') {
+              g.fecha = fechaBase;
+            }
+          });
+        }
+
+        if (btnSave) {
+          btnSave.disabled = true;
+          btnSave.textContent = '⏳ Guardando...';
+        }
+
+        closeEditSessionModal();
+        populateSessionPicker();
+        renderCurrentSession();
+        syncActiveGrade();
+
+        setTimeout(() => {
+          if (btnSave) {
+            btnSave.disabled = false;
+            btnSave.textContent = 'Guardar Cambios en Drive';
+          }
+        }, 1500);
+
+      } catch (err) {
+        console.error("Error confirmEditSession:", err);
+        alert('Error al editar la clase: ' + err.message);
+        if (btnSave) {
+          btnSave.disabled = false;
+          btnSave.textContent = 'Guardar Cambios en Drive';
+        }
+      }
+    }
+
+    function deleteCurrentSession() {
       const gradeObj = allGradesData[activeGrade];
+      if (!gradeObj || !gradeObj.sesiones || gradeObj.sesiones.length === 0 || currentSessionIndex === -1) {
+        alert('No hay ninguna clase seleccionada para eliminar.');
+        return;
+      }
 
-      // Auto generate group entries based on grade groups
-      const newGrupos = gradeObj.gruposBase.map(grpName => {
-        return {
-          grupo: grpName,
-          horario: (gradeObj.horariosBase && gradeObj.horariosBase[grpName]) || "Horario habitual",
-          fecha: fechaBase,
-          impartida: false,
-          classroom: "Borrador",
-          entregas: "0/30",
-          obs: "Programada"
-        };
-      });
+      const ses = gradeObj.sesiones[currentSessionIndex];
+      const confirmDelete = confirm(
+        `¿Estás seguro de eliminar la "${ses.titulo}" de ${gradeObj.nombre}?\n\n` +
+        `Esta acción borrará la sesión y sus registros, y se sincronizará con Google Drive.`
+      );
 
-      const newSesion = {
-        id: `${activeGrade}-${Date.now()}`,
-        tipo: tipo,
-        titulo: titulo,
-        fechaBase: fechaBase,
-        grupos: newGrupos
-      };
+      if (!confirmDelete) return;
 
-      if (!gradeObj.sesiones) gradeObj.sesiones = [];
-      gradeObj.sesiones.push(newSesion);
-      currentSessionIndex = gradeObj.sesiones.length - 1;
+      gradeObj.sesiones.splice(currentSessionIndex, 1);
 
-      closeNewSessionModal();
+      if (currentSessionIndex >= gradeObj.sesiones.length) {
+        currentSessionIndex = gradeObj.sesiones.length - 1;
+      }
+
       populateSessionPicker();
       renderCurrentSession();
       syncActiveGrade();
