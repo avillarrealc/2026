@@ -762,6 +762,17 @@ function resolverEnlacesDrive(driveLinks) {
         } catch (eDoc) {
           avisos.push('El documento ' + nombreReal + ' no se pudo abrir (revise que esté compartido).');
         }
+      } else if (nombreReal.toLowerCase().indexOf('.brd') !== -1 || (mime.indexOf('text/') === 0 && blob.getDataAsString().indexOf('<eagle') !== -1)) {
+        try {
+          var extractoBrd = extraerCircuitoBrd(blob.getDataAsString(), nombreReal);
+          if (extractoBrd) {
+            textos.push(extractoBrd);
+          } else {
+            avisos.push('El archivo .brd ' + nombreReal + ' no contiene componentes reconocibles.');
+          }
+        } catch (eBrd) {
+          avisos.push('El archivo .brd ' + nombreReal + ' no se pudo interpretar.');
+        }
       } else if (mime.indexOf('text/') === 0 || mime.indexOf('csv') !== -1 || mime.indexOf('json') !== -1) {
         try {
           var plano = blob.getDataAsString().substring(0, 4000);
@@ -811,6 +822,68 @@ function extraerCodigoIpynb(rawJson, titulo) {
     return '[Cuaderno Colab abierto desde enlace: ' + titulo + ']\n' + extracto.substring(0, 5000);
   } catch (e) {
     return '';
+  }
+}
+
+/**
+ * Extrae un resumen limpio de componentes y conexiones eléctricas (netlist)
+ * de un archivo de circuito exportado desde Tinkercad en formato Autodesk EAGLE (.brd).
+ * Reduce un archivo XML de 25KB a un extracto ultraligero de ~200 tokens.
+ */
+function extraerCircuitoBrd(rawXml, titulo) {
+  try {
+    if (!rawXml) return '';
+    var lineas = ['[Circuito Tinkercad / EAGLE (.brd): ' + (titulo || 'circuito.brd') + ']'];
+    
+    // 1. Extraer elementos / componentes
+    var mElements = rawXml.match(/<elements>([\s\S]*?)<\/elements>/i);
+    lineas.push('\nCOMPONENTES INSTALADOS:');
+    if (mElements && mElements[1]) {
+      var elemMatches = mElements[1].match(/<element\b[^>]*\/?>/gi) || [];
+      elemMatches.forEach(function(elStr) {
+        var nameMatch = elStr.match(/\bname="([^"]*)"/i);
+        var valMatch = elStr.match(/\bvalue="([^"]*)"/i);
+        var pkgMatch = elStr.match(/\bpackage="([^"]*)"/i);
+        var name = nameMatch ? nameMatch[1] : 'Componente';
+        var val = valMatch ? valMatch[1] : '';
+        var pkg = pkgMatch ? pkgMatch[1] : '';
+        lineas.push('- ' + name + (val ? ': valor="' + val + '"' : '') + (pkg ? ' (paquete: ' + pkg + ')' : ''));
+      });
+      if (elemMatches.length === 0) lineas.push('(No se detectaron componentes en <elements>)');
+    } else {
+      lineas.push('(Sin sección de componentes)');
+    }
+    
+    // 2. Extraer señales / conexiones (Netlist)
+    var mSignals = rawXml.match(/<signals>([\s\S]*?)<\/signals>/i);
+    lineas.push('\nCONEXIONES Y CABLES ELÉCTRICOS (NETLIST):');
+    if (mSignals && mSignals[1]) {
+      var sigBlocks = mSignals[1].match(/<signal\b[\s\S]*?<\/signal>/gi) || [];
+      sigBlocks.forEach(function(sigStr) {
+        var sigNameMatch = sigStr.match(/<signal\b[^>]*\bname="([^"]*)"/i);
+        var sigName = sigNameMatch ? sigNameMatch[1] : 'Red';
+        var conns = [];
+        var refMatches = sigStr.match(/<contactref\b[^>]*\/?>/gi) || [];
+        refMatches.forEach(function(refStr) {
+          var elM = refStr.match(/\belement="([^"]*)"/i);
+          var padM = refStr.match(/\bpad="([^"]*)"/i);
+          if (elM && padM) {
+            conns.push(elM[1] + '.pad(' + padM[1] + ')');
+          }
+        });
+        if (conns.length > 0) {
+          lineas.push('- Red ' + sigName + ': ' + conns.join(' <--> '));
+        }
+      });
+      if (sigBlocks.length === 0) lineas.push('(No se detectaron cables o conexiones en <signals>)');
+    } else {
+      lineas.push('(Sin sección de conexiones)');
+    }
+    
+    return lineas.join('\n');
+  } catch (e) {
+    Logger.log('Error parseando .brd: ' + e.message);
+    return '[Archivo .brd: ' + (titulo || '') + ' - no se pudo interpretar el esquema XML]';
   }
 }
 
@@ -1165,6 +1238,17 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                 }).join('\n---\n');
                 
                 contenidoTexto += '\n[Cuaderno Colab: ' + f.title + ']\n' + extracto;
+              } else if (f.title.toLowerCase().indexOf('.brd') !== -1) {
+                // Circuito Tinkercad / EAGLE (.brd)
+                fileData.tipo = 'circuito_brd';
+                tipoContenido = (tipoContenido === 'none') ? 'circuito_brd' : tipoContenido + '+brd';
+                try {
+                  var rawBrd = DriveApp.getFileById(f.id).getBlob().getDataAsString();
+                  var extractoBrd = extraerCircuitoBrd(rawBrd, f.title);
+                  contenidoTexto += '\n' + extractoBrd;
+                } catch(eBrd) {
+                  contenidoTexto += '\n[Archivo .brd: ' + f.title + ' - no se pudo extraer el esquema]';
+                }
               } else {
                 // Intentar leer como Google Doc
                 try {
@@ -1174,9 +1258,13 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                   var textoDoc = doc.getBody().getText();
                   contenidoTexto += '\n[Documento Google Docs: ' + f.title + ']\n' + textoDoc.substring(0, 4000);
                 } catch(docErr) {
-                  // Si no es Google Doc, leer texto plano si es posible
+                  // Si no es Google Doc, leer texto plano (o .brd no nombrado)
                   var blobText = DriveApp.getFileById(f.id).getBlob().getDataAsString();
-                  if (blobText && blobText.length < 5000) {
+                  if (f.title.toLowerCase().indexOf('.brd') !== -1 || (blobText && blobText.indexOf('<eagle') !== -1)) {
+                    fileData.tipo = 'circuito_brd';
+                    tipoContenido = (tipoContenido === 'none') ? 'circuito_brd' : tipoContenido + '+brd';
+                    contenidoTexto += '\n' + extraerCircuitoBrd(blobText, f.title);
+                  } else if (blobText && blobText.length < 5000) {
                     contenidoTexto += '\n[Archivo: ' + f.title + ']\n' + blobText;
                     tipoContenido = 'text';
                   }
@@ -1519,7 +1607,7 @@ function consultarGemini(apiKey, tituloTarea, consignaManual, nombreEstudiante, 
     (contenidoEntrega ? contenidoEntrega.substring(0, 4500) : 'Sin texto, solo imagen o enlace') + "\n\n" +
     "INSTRUCCIONES DE EVALUACIÓN:\n" +
     "1. Revisa el trabajo: si funciona, si cumple lo pedido y si se entiende.\n" +
-    "2. Si hay imagen de un circuito (Tinkercad o foto real): describe en palabras sencillas lo que se ve, revisa si las conexiones están bien hechas según lo pedido (por ejemplo: placa, cables a los pines correctos, LED con su resistencia, orden y limpieza). Si algo no se ve claro o la foto está borrosa, dilo en palabras sencillas y califica lo que sí se vea. Recuerda que es solo una revisión a simple vista, no una prueba de la simulación.\n" +
+    "2. Si hay esquema de circuito Tinkercad / EAGLE (.brd) incluido en el texto: revisa la lista de COMPONENTES (valores en ohmios, voltajes, tipos) y las CONEXIONES (netlist de cables). Evalúa si el circuito está bien armado según lo pedido (ej: polaridad de pilas y LEDs, resistencias de protección adecuadas, circuito cerrado en serie o paralelo según el reto). Si hay imagen de un circuito (Tinkercad o foto real): describe en palabras sencillas lo que se ve a simple vista y califica conexiones visibles.\n" +
     "3. Si hay contenido abierto desde un enlace de Drive (documento o texto incluido arriba), califícalo como parte de la entrega, nunca lo ignores ni respondas en genérico. Si arriba dice que el enlace no se pudo abrir, dilo en palabras sencillas y pide al estudiante que revise los permisos para compartir, pero califica lo demás que sí se vea.\n" +
     "4. Pon una nota de 1.0 a 5.0 (con un decimal) y su nivel fijo: Bajo 1.0 a 2.9, Básico 3.0 a 3.9, Alto 4.0 a 4.5, Superior 4.6 a 5.0. El techo no cambia estos rangos.\n" +
     "5. Para el campo diagnostico escribe un resumen corto para el docente, con palabras normales. Si revisaste imagen, di qué se vio bien y qué conexión falló. Si leíste un enlace de Drive, di qué contenía.\n" +

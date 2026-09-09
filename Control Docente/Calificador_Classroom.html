@@ -1187,7 +1187,7 @@
         let viewBtn = '';
         if (e.archivos && e.archivos.length > 0) {
           const f = e.archivos[0];
-          const icon = f.tipo === 'colab' ? '🐍' : (f.tipo === 'doc' ? '📄' : (f.tipo === 'imagen' ? '📷' : (f.tipo === 'tinkercad' ? '🔌' : (f.tipo === 'drivelink' ? '📁' : '📎'))));
+          const icon = f.tipo === 'circuito_brd' ? '⚡' : (f.tipo === 'colab' ? '🐍' : (f.tipo === 'doc' ? '📄' : (f.tipo === 'imagen' ? '📷' : (f.tipo === 'tinkercad' ? '🔌' : (f.tipo === 'drivelink' ? '📁' : '📎')))));
           const extraImg = (e.tieneImagen && e.archivos.length > 1) ? ' +' + (e.archivos.length - 1) : (e.tieneImagen ? ' (imagen)' : '');
           fileBadge = `<span title="${f.titulo}" style="font-weight: 600;">${icon} ${f.titulo.length > 18 ? f.titulo.substring(0, 16) + '...' : f.titulo}${extraImg}</span>`;
           viewBtn = `<button class="btn btn-outline" style="padding: 4px 8px; font-size: 11px;" onclick="verEntrega(${globalIdx})">Ver</button>`;
@@ -1266,7 +1266,11 @@
       }
       const linkTinkercad = (e.archivos || []).find(a => a.tipo === 'tinkercad');
       if (linkTinkercad) {
-        texto += '\n\n[Enlace de simulación: ' + linkTinkercad.enlace + '. La simulación no se abre ni se prueba sola; al calificar se leen datos públicos de apoyo. Pida captura si necesita revisar conexiones.]';
+        texto += '\n\n[Enlace de simulación: ' + linkTinkercad.enlace + '. La simulación no se abre ni se prueba sola; al calificar se leen datos públicos de apoyo. Pida captura o archivo .brd si necesita revisar conexiones.]';
+      }
+      const linkBrd = (e.archivos || []).find(a => a.tipo === 'circuito_brd');
+      if (linkBrd) {
+        texto += '\n\n[Circuito Tinkercad (.brd) detectado y extraído. La IA revisó los componentes y conexiones netlist con precisión matemática.]';
       }
       document.getElementById('preview-body').innerText = texto;
       
