@@ -695,8 +695,256 @@ function leerImagenesParaIA(imagenIds) {
 }
 
 /**
- * Dice si una URL es de una simulación (Tinkercad u otra similar).
+ * Dice si una URL es un enlace de Drive o de Docs/Sheets/Slides de Google.
  */
+function esEnlaceDrive(url) {
+  var u = (url || '').toLowerCase();
+  return (u.indexOf('drive.google.com') !== -1 || u.indexOf('docs.google.com') !== -1);
+}
+
+/**
+ * Saca el ID de archivo de un enlace de Drive/Docs/Sheets/Slides.
+ * Soporta /file/d/ID, open?id=ID, /document/d/ID, /spreadsheets/d/ID, etc.
+ */
+function extraerIdDrive(url) {
+  try {
+    var m = String(url || '').match(/\/file\/d\/([-\w]+)/)
+      || String(url || '').match(/[?&]id=([-\w]+)/)
+      || String(url || '').match(/\/(document|spreadsheets|presentation|drawings|forms)\/d\/([-\w]+)/);
+    if (!m) return '';
+    return m[2] !== undefined && m[1].length < 20 ? m[2] : m[1];
+  } catch (e) {
+    return '';
+  }
+}
+/**
+ * Intenta abrir enlaces de Drive/Docs compartidos como enlace (no adjuntos).
+ * Lee Docs como texto e imágenes para visión. Nunca responde en vacío:
+ * si no se puede abrir, deja aviso claro para pedir revisión de permisos.
+ * Máximo 2 enlaces por estudiante.
+ */
+function resolverEnlacesDrive(driveLinks) {
+  var textos = [];
+  var imagenes = [];
+  var avisos = [];
+  var lista = driveLinks || [];
+  for (var i = 0; i < Math.min(lista.length, 2); i++) {
+    var url = lista[i].url || '';
+    var titulo = lista[i].titulo || url;
+    var id = extraerIdDrive(url);
+    if (!id) {
+      avisos.push('El enlace ' + titulo + ' no trae un ID de archivo reconocible.');
+      continue;
+    }
+    try {
+      var file = DriveApp.getFileById(id);
+      var blob = file.getBlob();
+      var mime = blob.getContentType() || '';
+      var nombreReal = titulo;
+      try { nombreReal = file.getName() || titulo; } catch (eN) { /* conserva título */ }
+      if (mime.indexOf('image/') === 0 || esArchivoImagen(nombreReal, mime)) {
+        var bytes = blob.getBytes();
+        if (bytes.length > 3670016) {
+          avisos.push('La imagen del enlace ' + nombreReal + ' pesa mucho y no se pudo revisar.');
+        } else {
+          imagenes.push({ titulo: nombreReal, mimeType: mime || 'image/png', base64: Utilities.base64Encode(bytes) });
+          textos.push('[Imagen abierta desde enlace de Drive: ' + nombreReal + ' - se revisa a simple vista]');
+        }
+      } else if (mime.indexOf('google-apps.document') !== -1) {
+        try {
+          var doc = DocumentApp.openById(id);
+          var t = doc.getBody().getText() || '';
+          if (t.trim() !== '') {
+            textos.push('[Documento de Drive abierto desde enlace: ' + nombreReal + ']\n' + t.substring(0, 4000));
+          } else {
+            avisos.push('El documento ' + nombreReal + ' se abrió pero está vacío.');
+          }
+        } catch (eDoc) {
+          avisos.push('El documento ' + nombreReal + ' no se pudo abrir (revise que esté compartido).');
+        }
+      } else if (mime.indexOf('text/') === 0 || mime.indexOf('csv') !== -1 || mime.indexOf('json') !== -1) {
+        try {
+          var plano = blob.getDataAsString().substring(0, 4000);
+          if (plano.trim() !== '') {
+            textos.push('[Archivo de texto abierto desde enlace: ' + nombreReal + ']\n' + plano);
+          } else {
+            avisos.push('El archivo ' + nombreReal + ' se abrió pero está vacío.');
+          }
+        } catch (eTxt) {
+          avisos.push('El archivo ' + nombreReal + ' no se pudo leer como texto.');
+        }
+      } else if (mime.indexOf('pdf') !== -1) {
+        avisos.push('El enlace ' + nombreReal + ' es un PDF y no se pudo extraer su texto automáticamente; pida al estudiante el contenido en Docs o imagen.');
+      } else if (mime.indexOf('spreadsheet') !== -1 || mime.indexOf('presentation') !== -1) {
+        avisos.push('El enlace ' + nombreReal + ' es hoja de cálculo o presentación y no se pudo leer automáticamente; pida captura o exportación.');
+      } else {
+        avisos.push('El enlace ' + nombreReal + ' (' + mime + ') no se pudo interpretar; pida otro formato.');
+      }
+    } catch (eOpen) {
+      avisos.push('El enlace ' + titulo + ' no se pudo abrir (revise que esté compartido con usted).');
+      Logger.log('Enlace Drive no abrible ' + url + ': ' + eOpen.message);
+    }
+  }
+  if (lista.length > 2) {
+    avisos.push('Se revisaron los 2 primeros enlaces de Drive.');
+  }
+  return { texto: textos.join('\n'), imagenes: imagenes, aviso: avisos.join(' ') };
+}
+
+/**
+ * Extrae el código de un cuaderno .ipynb leído como texto (para Colab públicos).
+ */
+function extraerCodigoIpynb(rawJson, titulo) {
+  try {
+    var nb = JSON.parse(rawJson);
+    var celdasCodigo = (nb.cells || []).filter(function(c) { return c.cell_type === 'code'; });
+    if (celdasCodigo.length === 0) return '';
+    var extracto = celdasCodigo.map(function(c, idx) {
+      var src = Array.isArray(c.source) ? c.source.join('') : (c.source || '');
+      var outs = (c.outputs || []).map(function(o) {
+        if (o.text) return Array.isArray(o.text) ? o.text.join('') : o.text;
+        if (o.evalue) return 'Error: ' + o.evalue;
+        return '';
+      }).join('\n');
+      return 'Celda ' + (idx + 1) + ':\n' + src + (outs ? '\nSalida:\n' + outs : '');
+    }).join('\n---\n');
+    return '[Cuaderno Colab abierto desde enlace: ' + titulo + ']\n' + extracto.substring(0, 5000);
+  } catch (e) {
+    return '';
+  }
+}
+
+/**
+ * Limpia HTML a texto visible corto (título, descripción y contenido).
+ */
+function textoVisibleDeHtml(html) {
+  try {
+    var titulo = '';
+    var mTitle = html.match(/<title[^>]*>([^<]*)<\/title>/i);
+    if (mTitle) titulo = mTitle[1].trim();
+    var desc = extraerMeta(html, 'og:description') || extraerMeta(html, 'description');
+    var cuerpo = html.replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ').trim();
+    var partes = [];
+    if (titulo) partes.push('Título de la página: ' + titulo.substring(0, 200));
+    if (desc) partes.push('Descripción: ' + desc.substring(0, 400));
+    if (cuerpo) partes.push('Contenido visible: ' + cuerpo.substring(0, 1200));
+    return partes.join('\n');
+  } catch (e) {
+    return '';
+  }
+}
+
+/**
+ * Intenta ABRIR enlaces públicos entregados (Colab, código, páginas).
+ * Un enlace público de Colab o de código SÍ se puede leer: se trae su
+ * contenido y va a la IA. Solo si de verdad no abre se deja aviso puntual,
+ * sin regaños y sin pedir otro formato por defecto.
+ * Máximo 2 enlaces por estudiante.
+ */
+function resolverEnlacesPublicos(links) {
+  var textos = [];
+  var imagenes = [];
+  var avisos = [];
+  var lista = links || [];
+  for (var i = 0; i < Math.min(lista.length, 2); i++) {
+    var url = (lista[i].url || '').trim();
+    var titulo = lista[i].titulo || url;
+    if (!url || url.toLowerCase().indexOf('http') !== 0) {
+      continue;
+    }
+    var bajo = url.toLowerCase();
+    try {
+      // 1. Colab público con ID de Drive: se lee el cuaderno directamente.
+      var mColab = url.match(/colab\.research\.google\.com\/drive\/([-\w]+)/i);
+      if (mColab) {
+        try {
+          var rawColab = DriveApp.getFileById(mColab[1]).getBlob().getDataAsString();
+          var codigo = extraerCodigoIpynb(rawColab, titulo);
+          if (codigo) {
+            textos.push(codigo);
+            continue;
+          }
+          avisos.push('El Colab ' + titulo + ' abrió pero no se pudo interpretar su código (revise que el enlace sea público).');
+        } catch (eColab) {
+          avisos.push('El Colab ' + titulo + ' no se pudo abrir (revise que el enlace sea público).');
+        }
+        continue;
+      }
+      // 2. Archivos binarios que no se pueden calificar como texto.
+      if (/\.(mp4|avi|mov|zip|rar|mp3|wav|exe|apk)(\?|#|$)/i.test(bajo)) {
+        avisos.push('El enlace ' + titulo + ' es un archivo multimedia o comprimido y no se pudo revisar su contenido.');
+        continue;
+      }
+      // 3. Imágenes directas: van a visión.
+      if (/\.(png|jpe?g|gif|webp|bmp)(\?|#|$)/i.test(bajo)) {
+        try {
+          var respImg = UrlFetchApp.fetch(url, { method: 'get', muteHttpExceptions: true, followRedirects: true });
+          if (respImg.getResponseCode() >= 200 && respImg.getResponseCode() < 400) {
+            var blobImg = respImg.getBlob();
+            var bytesImg = blobImg.getBytes();
+            if (bytesImg.length > 0 && bytesImg.length <= 3670016) {
+              imagenes.push({ titulo: titulo, mimeType: blobImg.getContentType() || 'image/png', base64: Utilities.base64Encode(bytesImg) });
+              textos.push('[Imagen abierta desde enlace: ' + titulo + ' - se revisa a simple vista]');
+              continue;
+            }
+          }
+          avisos.push('La imagen del enlace ' + titulo + ' no se pudo descargar.');
+        } catch (eImg) {
+          avisos.push('La imagen del enlace ' + titulo + ' no se pudo descargar.');
+        }
+        continue;
+      }
+      // 4. GitHub blob -> raw, y textos planos directos.
+      var urlFetch = url;
+      var mGh = bajo.match(/github\.com\/([^\/]+\/[^\/]+)\/blob\/(.+)/);
+      if (mGh) {
+        urlFetch = 'https://raw.githubusercontent.com/' + mGh[1] + '/' + mGh[2];
+      }
+      var resp = UrlFetchApp.fetch(urlFetch, { method: 'get', muteHttpExceptions: true, followRedirects: true });
+      var code = resp.getResponseCode();
+      if (code < 200 || code >= 400) {
+        avisos.push('El enlace ' + titulo + ' no abrió (HTTP ' + code + ').');
+        continue;
+      }
+      var mime = '';
+      try { mime = resp.getBlob().getContentType() || ''; } catch (eMime) { mime = ''; }
+      var contenido = '';
+      try { contenido = resp.getContentText().substring(0, 6000); } catch (eTxt) { contenido = ''; }
+      if (!contenido || contenido.trim() === '') {
+        avisos.push('El enlace ' + titulo + ' abrió pero no trajo contenido legible.');
+        continue;
+      }
+      if (mime.indexOf('text/') === 0 || mime.indexOf('json') !== -1 || mime.indexOf('javascript') !== -1 ||
+          /\.(py|js|java|c|cpp|txt|csv|md|ipynb)(\?|#|$)/i.test(bajo) || bajo.indexOf('raw.githubusercontent') !== -1 ||
+          bajo.indexOf('gist.githubusercontent') !== -1 || bajo.indexOf('pastebin') !== -1) {
+        if (/\.ipynb(\?|#|$)/i.test(bajo) || contenido.trim().charAt(0) === '{') {
+          var codNb = extraerCodigoIpynb(contenido, titulo);
+          textos.push(codNb !== '' ? codNb : '[Código abierto desde enlace: ' + titulo + ']\n' + contenido.substring(0, 5000));
+        } else {
+          textos.push('[Contenido abierto desde enlace: ' + titulo + ']\n' + contenido.substring(0, 5000));
+        }
+      } else {
+        var visible = textoVisibleDeHtml(contenido);
+        if (visible) {
+          textos.push('[Página abierta desde enlace: ' + titulo + ']\n' + visible);
+        } else {
+          avisos.push('El enlace ' + titulo + ' abrió pero no trajo texto aprovechable.');
+        }
+      }
+    } catch (eGen) {
+      avisos.push('El enlace ' + titulo + ' no se pudo abrir en este intento.');
+      Logger.log('Enlace público no abrible ' + url + ': ' + eGen.message);
+    }
+  }
+  if (lista.length > 2) {
+    avisos.push('Se revisaron los 2 primeros enlaces.');
+  }
+  return { texto: textos.join('\n'), imagenes: imagenes, aviso: avisos.join(' ') };
+}
+
 function esUrlSimulacion(url) {
   var u = (url || '').toLowerCase();
   return (u.indexOf('tinkercad') !== -1 || u.indexOf('falstad') !== -1 || u.indexOf('circuit') !== -1);
@@ -873,6 +1121,8 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
       var contenidoTexto = '';
       var tipoContenido = 'none';
       var imagenIds = [];
+      var driveLinks = [];
+      var enlacesPublicos = [];
       
       if (sub.assignmentSubmission && sub.assignmentSubmission.attachments) {
         sub.assignmentSubmission.attachments.forEach(function(att) {
@@ -940,16 +1190,23 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
           } else if (att.link) {
             var urlLink = att.link.url || '';
             var esTinkercad = urlLink.toLowerCase().indexOf('tinkercad') !== -1;
+            var esDrive = !esTinkercad && esEnlaceDrive(urlLink);
             archivos.push({
               id: '',
               titulo: att.link.title || urlLink,
               enlace: urlLink,
-              tipo: esTinkercad ? 'tinkercad' : 'link'
+              tipo: esTinkercad ? 'tinkercad' : (esDrive ? 'drivelink' : 'link')
             });
-            contenidoTexto += esTinkercad
-              ? '\n[Enlace de simulación entregado]: ' + urlLink + ' (se intentará leer datos públicos de apoyo; la simulación no se puede abrir ni probar, pida captura si falta)'
-              : '\n[Enlace entregado]: ' + urlLink;
-            if (tipoContenido === 'none') tipoContenido = esTinkercad ? 'tinkercad' : 'link';
+            if (esTinkercad) {
+              contenidoTexto += '\n[Enlace de simulación entregado]: ' + urlLink + ' (se intentará leer datos públicos de apoyo; la simulación no se puede abrir ni probar, pida captura si falta)';
+            } else if (esDrive) {
+              driveLinks.push({ url: urlLink, titulo: att.link.title || urlLink });
+              contenidoTexto += '\n[Enlace de Drive entregado]: ' + urlLink + ' (se abrirá e intentará leer al calificar)';
+            } else {
+              enlacesPublicos.push({ url: urlLink, titulo: att.link.title || urlLink });
+              contenidoTexto += '\n[Enlace entregado]: ' + urlLink + ' (se abrirá e intentará leer al calificar)';
+            }
+            if (tipoContenido === 'none') tipoContenido = esTinkercad ? 'tinkercad' : (esDrive ? 'drivelink' : 'link');
           }
         });
       }
@@ -978,6 +1235,10 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
         contenidoTexto: contenidoTexto.trim(),
         imagenIds: imagenIds,
         tieneImagen: imagenIds.length > 0,
+        driveLinks: driveLinks,
+        tieneDriveLink: driveLinks.length > 0,
+        enlacesPublicos: enlacesPublicos,
+        tieneEnlacePublico: enlacesPublicos.length > 0,
         // Campos que llenará la IA
         calificacionSugerida: notaBorrador || null,
         nivel1290: '',
@@ -1080,6 +1341,50 @@ function evaluarLoteEstudiantes(apiKey, actividadTitulo, consignaManual, entrega
       var textoParaIA = e.contenidoTexto || '';
       if (vision.aviso) {
         textoParaIA += '\n[Nota sobre imágenes]: ' + vision.aviso;
+      }
+      // Si hay enlaces de Drive, se ABREN e intentan leer (Docs, texto, imágenes).
+      // Nada de respuesta genérica: lo que se pudo leer va a la IA y lo que no,
+      // queda avisado para pedir revisión de permisos.
+      if (e.driveLinks && e.driveLinks.length > 0) {
+        try {
+          var resDrive = resolverEnlacesDrive(e.driveLinks);
+          if (resDrive.texto) {
+            textoParaIA += '\n' + resDrive.texto;
+          }
+          if (resDrive.imagenes && resDrive.imagenes.length > 0) {
+            for (var di = 0; di < resDrive.imagenes.length && vision.imagenes.length < 2; di++) {
+              vision.imagenes.push(resDrive.imagenes[di]);
+            }
+          }
+          if (resDrive.aviso) {
+            textoParaIA += '\n[Nota sobre enlaces de Drive]: ' + resDrive.aviso;
+          }
+        } catch (eDrive) {
+          textoParaIA += '\n[Nota sobre enlaces de Drive]: no se pudieron revisar en este intento.';
+          Logger.log('Resolver Drive falló para ' + e.nombre + ': ' + eDrive.message);
+        }
+      }
+      // Si hay enlaces públicos (Colab, código, páginas), se ABREN e intentan leer.
+      // Un enlace público SÍ se puede leer: su contenido va a la IA y solo si de
+      // verdad no abre se deja aviso puntual, sin regaños ni pedidos genéricos.
+      if (e.enlacesPublicos && e.enlacesPublicos.length > 0) {
+        try {
+          var resPub = resolverEnlacesPublicos(e.enlacesPublicos);
+          if (resPub.texto) {
+            textoParaIA += '\n' + resPub.texto;
+          }
+          if (resPub.imagenes && resPub.imagenes.length > 0) {
+            for (var pi = 0; pi < resPub.imagenes.length && vision.imagenes.length < 2; pi++) {
+              vision.imagenes.push(resPub.imagenes[pi]);
+            }
+          }
+          if (resPub.aviso) {
+            textoParaIA += '\n[Nota sobre enlaces entregados]: ' + resPub.aviso;
+          }
+        } catch (ePub) {
+          textoParaIA += '\n[Nota sobre enlaces entregados]: no se pudieron revisar en este intento.';
+          Logger.log('Resolver enlaces falló para ' + e.nombre + ': ' + ePub.message);
+        }
       }
       // Si hay enlaces de simulación (Tinkercad u otra), se intenta leer datos públicos de apoyo.
       // La simulación interactiva no se puede abrir ni correr: solo es contexto, no verificación.
@@ -1206,17 +1511,19 @@ function consultarGemini(apiKey, tituloTarea, consignaManual, nombreEstudiante, 
     "CRITERIOS MANUALES DEL DOCENTE (tienen prelación si existen):\n" + (manual !== '' ? manual : 'Sin criterios manuales.') + "\n\n" +
     reglaPrelacion + "\n\n" +
     (imagenes.length > 0
-      ? "HAY " + imagenes.length + " IMAGEN" + (imagenes.length > 1 ? "ES" : "") + " ADJUNTA" + (imagenes.length > 1 ? "S" : "") + " (foto, captura o miniatura del enlace, por ejemplo de Tinkercad). Mírala" + (imagenes.length > 1 ? "s" : "") + " con cuidado.\n\n"
-      : "No hay imágenes adjuntas. Si ves un enlace de simulación con datos públicos, úsalos solo como apoyo. La simulación no se puede abrir ni probar: califica lo escrito y pide captura para la próxima.\n\n") +
+      ? "HAY " + imagenes.length + " IMAGEN" + (imagenes.length > 1 ? "ES" : "") + " ADJUNTA" + (imagenes.length > 1 ? "S" : "") + " (foto, captura o imagen abierta desde un enlace). Mírala" + (imagenes.length > 1 ? "s" : "") + " con cuidado.\n\n"
+      : "No hay imágenes adjuntas. Si ves contenido abierto desde enlaces (código, documento o página incluida arriba), califícalo como parte de la entrega. Solo las simulaciones interactivas no se pueden correr: de esas usa los datos de apoyo incluidos.\n\n") +
+    "REGLAS SOBRE ENLACES (obligatorias): los enlaces públicos entregados YA fueron abiertos cuando fue posible y su contenido está incluido arriba: califícalo con normalidad. JAMÁS digas que no puedes abrir enlaces si arriba hay contenido de un enlace. JAMÁS regañes al estudiante por entregar un enlace ni le exijas reenviar en otro formato por defecto. Solo si arriba dice expresamente que un enlace no abrió Y no hay otro contenido para calificar, agrega al final del comentario UNA frase amable pidiendo que revise el permiso del enlace o adjunte el código o una captura la próxima vez.\n\n" +
     "ESTUDIANTE: " + nombreEstudiante + "\n\n" +
     "CONTENIDO ENTREGADO POR EL ESTUDIANTE (texto):\n" +
     (contenidoEntrega ? contenidoEntrega.substring(0, 4500) : 'Sin texto, solo imagen o enlace') + "\n\n" +
     "INSTRUCCIONES DE EVALUACIÓN:\n" +
     "1. Revisa el trabajo: si funciona, si cumple lo pedido y si se entiende.\n" +
     "2. Si hay imagen de un circuito (Tinkercad o foto real): describe en palabras sencillas lo que se ve, revisa si las conexiones están bien hechas según lo pedido (por ejemplo: placa, cables a los pines correctos, LED con su resistencia, orden y limpieza). Si algo no se ve claro o la foto está borrosa, dilo en palabras sencillas y califica lo que sí se vea. Recuerda que es solo una revisión a simple vista, no una prueba de la simulación.\n" +
-    "3. Pon una nota de 1.0 a 5.0 (con un decimal) y su nivel fijo: Bajo 1.0 a 2.9, Básico 3.0 a 3.9, Alto 4.0 a 4.5, Superior 4.6 a 5.0. El techo no cambia estos rangos.\n" +
-    "4. Para el campo diagnostico escribe un resumen corto para el docente, con palabras normales. Si revisaste imagen, di qué se vio bien y qué conexión falló.\n" +
-    "5. Para el campo comentario escribe el mensaje para el estudiante: máximo 3 líneas cortas, con palabras sencillas de todos los días. Empieza con '¡Hola [Nombre]!'. Di una cosa buena y una por mejorar con un ejemplo claro. No uses palabras difíciles como sintaxis, lógica, particularidades, pedagógico o retroalimentación. Di en cambio 'error en el código', 'se entiende bien', 'te faltó', 'el cable va en...'. Frases cortas que un joven de 13 a 17 años entienda a la primera.\n\n" +
+    "3. Si hay contenido abierto desde un enlace de Drive (documento o texto incluido arriba), califícalo como parte de la entrega, nunca lo ignores ni respondas en genérico. Si arriba dice que el enlace no se pudo abrir, dilo en palabras sencillas y pide al estudiante que revise los permisos para compartir, pero califica lo demás que sí se vea.\n" +
+    "4. Pon una nota de 1.0 a 5.0 (con un decimal) y su nivel fijo: Bajo 1.0 a 2.9, Básico 3.0 a 3.9, Alto 4.0 a 4.5, Superior 4.6 a 5.0. El techo no cambia estos rangos.\n" +
+    "5. Para el campo diagnostico escribe un resumen corto para el docente, con palabras normales. Si revisaste imagen, di qué se vio bien y qué conexión falló. Si leíste un enlace de Drive, di qué contenía.\n" +
+    "6. Para el campo comentario escribe el mensaje para el estudiante: máximo 3 líneas cortas, con palabras sencillas de todos los días. Empieza con '¡Hola [Nombre]!'. Di una cosa buena y una por mejorar con un ejemplo claro. No uses palabras difíciles como sintaxis, lógica, particularidades, pedagógico o retroalimentación. Di en cambio 'error en el código', 'se entiende bien', 'te faltó', 'el cable va en...'. Frases cortas que un joven de 13 a 17 años entienda a la primera.\n\n" +
     "Responde EXCLUSIVAMENTE con este formato JSON:\n" +
     "{\n" +
     '  "nota": 4.8,\n' +
