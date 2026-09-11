@@ -784,10 +784,30 @@ function resolverEnlacesDrive(driveLinks) {
         } catch (eTxt) {
           avisos.push('El archivo ' + nombreReal + ' no se pudo leer como texto.');
         }
+      } else if (mime.indexOf('spreadsheet') !== -1 || url.indexOf('/spreadsheets/') !== -1) {
+        try {
+          var extractoSheet = extraerContenidoGoogleSheet(id, nombreReal);
+          if (extractoSheet) {
+            textos.push(extractoSheet);
+          } else {
+            avisos.push('La hoja de cálculo ' + nombreReal + ' no se pudo interpretar.');
+          }
+        } catch (eS) {
+          avisos.push('La hoja de cálculo ' + nombreReal + ' no se pudo abrir (revise permisos de acceso).');
+        }
+      } else if (mime.indexOf('presentation') !== -1 || url.indexOf('/presentation/') !== -1) {
+        try {
+          var extractoSlide = extraerContenidoGoogleSlide(id, nombreReal);
+          if (extractoSlide) {
+            textos.push(extractoSlide);
+          } else {
+            avisos.push('La presentación ' + nombreReal + ' no se pudo interpretar.');
+          }
+        } catch (eSl) {
+          avisos.push('La presentación ' + nombreReal + ' no se pudo abrir (revise permisos de acceso).');
+        }
       } else if (mime.indexOf('pdf') !== -1) {
         avisos.push('El enlace ' + nombreReal + ' es un PDF y no se pudo extraer su texto automáticamente; pida al estudiante el contenido en Docs o imagen.');
-      } else if (mime.indexOf('spreadsheet') !== -1 || mime.indexOf('presentation') !== -1) {
-        avisos.push('El enlace ' + nombreReal + ' es hoja de cálculo o presentación y no se pudo leer automáticamente; pida captura o exportación.');
       } else {
         avisos.push('El enlace ' + nombreReal + ' (' + mime + ') no se pudo interpretar; pida otro formato.');
       }
@@ -822,6 +842,102 @@ function extraerCodigoIpynb(rawJson, titulo) {
     return '[Cuaderno Colab abierto desde enlace: ' + titulo + ']\n' + extracto.substring(0, 5000);
   } catch (e) {
     return '';
+  }
+}
+
+/**
+ * Extrae el contenido y fórmulas de una Hoja de Cálculo de Google (Google Sheets).
+ * Lee las pestañas, dimensiones, tablas de valores y fórmulas usadas por el estudiante.
+ */
+function extraerContenidoGoogleSheet(sheetId, titulo) {
+  try {
+    var ss = SpreadsheetApp.openById(sheetId);
+    var hojas = ss.getSheets();
+    if (!hojas || hojas.length === 0) {
+      return '[Hoja de cálculo Google Sheets: ' + (titulo || 'Sin título') + ' (Vacía)]';
+    }
+    
+    var lineas = ['[Hoja de cálculo Google Sheets: ' + (titulo || ss.getName()) + ' - Total de hojas: ' + hojas.length + ']'];
+    
+    for (var h = 0; h < Math.min(hojas.length, 3); h++) {
+      var hoja = hojas[h];
+      var nombreHoja = hoja.getName();
+      var lastRow = hoja.getLastRow();
+      var lastCol = hoja.getLastColumn();
+      
+      lineas.push('\n--- Pestaña: "' + nombreHoja + '" (' + lastRow + ' filas x ' + lastCol + ' columnas) ---');
+      
+      if (lastRow === 0 || lastCol === 0) {
+        lineas.push('(Pestaña sin datos)');
+        continue;
+      }
+      
+      var maxFilas = Math.min(lastRow, 30);
+      var maxCols = Math.min(lastCol, 12);
+      var range = hoja.getRange(1, 1, maxFilas, maxCols);
+      var valores = range.getValues();
+      var formulas = range.getFormulas();
+      
+      var tieneFormulas = false;
+      var filasTabla = [];
+      
+      for (var r = 0; r < valores.length; r++) {
+        var celdas = [];
+        for (var c = 0; c < valores[r].length; c++) {
+          var val = valores[r][c];
+          var form = formulas[r][c];
+          if (form) {
+            tieneFormulas = true;
+            celdas.push(val + ' (Fórmula: ' + form + ')');
+          } else if (val instanceof Date) {
+            celdas.push(Utilities.formatDate(val, Session.getScriptTimeZone(), 'yyyy-MM-dd'));
+          } else {
+            celdas.push(val !== '' ? String(val) : '-');
+          }
+        }
+        if (celdas.some(function(txt) { return txt !== '-'; })) {
+          filasTabla.push('Fila ' + (r + 1) + ': | ' + celdas.join(' | ') + ' |');
+        }
+      }
+      
+      lineas.push(filasTabla.join('\n'));
+      if (tieneFormulas) {
+        lineas.push('✓ El estudiante utilizó fórmulas en esta pestaña.');
+      }
+    }
+    
+    return lineas.join('\n');
+  } catch(e) {
+    Logger.log('Error al abrir Google Sheet ' + sheetId + ': ' + e.message);
+    return '[Hoja de cálculo Google Sheets: ' + titulo + ' (No se pudo leer el contenido: ' + e.message + ')]';
+  }
+}
+
+/**
+ * Extrae los textos principales de una presentación de Google Slides.
+ */
+function extraerContenidoGoogleSlide(slideId, titulo) {
+  try {
+    var pres = SlidesApp.openById(slideId);
+    var slides = pres.getSlides();
+    var lineas = ['[Presentación Google Slides: ' + (titulo || pres.getName()) + ' - ' + slides.length + ' diapositivas]'];
+    for (var s = 0; s < Math.min(slides.length, 10); s++) {
+      var slide = slides[s];
+      var shapes = slide.getShapes();
+      var textos = [];
+      shapes.forEach(function(sh) {
+        try {
+          var txt = sh.getText().asString().trim();
+          if (txt) textos.push(txt);
+        } catch(eSh) {}
+      });
+      if (textos.length > 0) {
+        lineas.push('Diapositiva ' + (s + 1) + ':\n' + textos.join('\n'));
+      }
+    }
+    return lineas.join('\n---\n');
+  } catch(e) {
+    return '[Presentación Google Slides: ' + titulo + ' (No se pudo leer: ' + e.message + ')]';
   }
 }
 
@@ -1210,8 +1326,18 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
             
             // Intentar extraer contenido para la IA
             try {
+              var fileDrive = null;
               var mimePrevio = '';
-              try { mimePrevio = DriveApp.getFileById(f.id).getBlob().getContentType() || ''; } catch(eMime) {}
+              try {
+                fileDrive = DriveApp.getFileById(f.id);
+                mimePrevio = fileDrive.getMimeType() || '';
+              } catch(eMime) {}
+              
+              var altLink = f.alternateLink || '';
+              var esSheet = (mimePrevio.indexOf('spreadsheet') !== -1 || altLink.indexOf('/spreadsheets/') !== -1 || f.title.toLowerCase().indexOf('.sheet') !== -1);
+              var esSlide = (mimePrevio.indexOf('presentation') !== -1 || altLink.indexOf('/presentation/') !== -1);
+              var esDoc = (mimePrevio.indexOf('document') !== -1 || altLink.indexOf('/document/') !== -1);
+              
               if (esArchivoImagen(f.title, mimePrevio)) {
                 // Imagen (foto o captura de Tinkercad): no se manda el peso al panel,
                 // solo se guarda el id para leerla al calificar con visión.
@@ -1220,11 +1346,23 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                 tipoContenido = (tipoContenido === 'none' || tipoContenido === 'imagen') ? 'imagen' : tipoContenido + '+imagen';
                 imagenIds.push({ id: f.id, titulo: f.title });
                 contenidoTexto += '\n[Imagen adjunta: ' + f.title + ' - se revisará a simple vista en la calificación]';
+              } else if (esSheet) {
+                // Hoja de cálculo de Google (Sheets)
+                fileData.tipo = 'sheets';
+                tipoContenido = (tipoContenido === 'none') ? 'sheets' : tipoContenido + '+sheets';
+                var sheetText = extraerContenidoGoogleSheet(f.id, f.title);
+                contenidoTexto += '\n' + sheetText;
+              } else if (esSlide) {
+                // Presentación de Google (Slides)
+                fileData.tipo = 'slides';
+                tipoContenido = (tipoContenido === 'none') ? 'slides' : tipoContenido + '+slides';
+                var slideText = extraerContenidoGoogleSlide(f.id, f.title);
+                contenidoTexto += '\n' + slideText;
               } else if (f.title.toLowerCase().indexOf('.ipynb') !== -1) {
                 // Cuaderno Colab
                 fileData.tipo = 'colab';
                 tipoContenido = 'colab';
-                var rawJson = DriveApp.getFileById(f.id).getBlob().getDataAsString();
+                var rawJson = fileDrive ? fileDrive.getBlob().getDataAsString() : DriveApp.getFileById(f.id).getBlob().getDataAsString();
                 var nb = JSON.parse(rawJson);
                 var celdasCodigo = (nb.cells || []).filter(function(c) { return c.cell_type === 'code'; });
                 var extracto = celdasCodigo.map(function(c, idx) {
@@ -1243,13 +1381,13 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                 fileData.tipo = 'circuito_brd';
                 tipoContenido = (tipoContenido === 'none') ? 'circuito_brd' : tipoContenido + '+brd';
                 try {
-                  var rawBrd = DriveApp.getFileById(f.id).getBlob().getDataAsString();
+                  var rawBrd = fileDrive ? fileDrive.getBlob().getDataAsString() : DriveApp.getFileById(f.id).getBlob().getDataAsString();
                   var extractoBrd = extraerCircuitoBrd(rawBrd, f.title);
                   contenidoTexto += '\n' + extractoBrd;
                 } catch(eBrd) {
                   contenidoTexto += '\n[Archivo .brd: ' + f.title + ' - no se pudo extraer el esquema]';
                 }
-              } else {
+              } else if (esDoc) {
                 // Intentar leer como Google Doc
                 try {
                   var doc = DocumentApp.openById(f.id);
@@ -1258,8 +1396,12 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                   var textoDoc = doc.getBody().getText();
                   contenidoTexto += '\n[Documento Google Docs: ' + f.title + ']\n' + textoDoc.substring(0, 4000);
                 } catch(docErr) {
-                  // Si no es Google Doc, leer texto plano (o .brd no nombrado)
-                  var blobText = DriveApp.getFileById(f.id).getBlob().getDataAsString();
+                  contenidoTexto += '\n[Documento Google Docs: ' + f.title + ' (No se pudo leer texto)]';
+                }
+              } else {
+                // Archivos varios o texto plano
+                try {
+                  var blobText = fileDrive ? fileDrive.getBlob().getDataAsString() : DriveApp.getFileById(f.id).getBlob().getDataAsString();
                   if (f.title.toLowerCase().indexOf('.brd') !== -1 || (blobText && blobText.indexOf('<eagle') !== -1)) {
                     fileData.tipo = 'circuito_brd';
                     tipoContenido = (tipoContenido === 'none') ? 'circuito_brd' : tipoContenido + '+brd';
@@ -1267,11 +1409,19 @@ function obtenerEntregasDetalladas(courseId, courseWorkId) {
                   } else if (blobText && blobText.length < 5000) {
                     contenidoTexto += '\n[Archivo: ' + f.title + ']\n' + blobText;
                     tipoContenido = 'text';
+                  } else {
+                    contenidoTexto += '\n[Archivo adjunto: ' + f.title + ' (' + (mimePrevio || 'archivo') + ')]';
+                    tipoContenido = (tipoContenido === 'none') ? 'adjunto' : tipoContenido;
                   }
+                } catch(blobErr) {
+                  contenidoTexto += '\n[Archivo adjunto: ' + f.title + ' (' + (mimePrevio || 'archivo') + ')]';
+                  tipoContenido = (tipoContenido === 'none') ? 'adjunto' : tipoContenido;
                 }
               }
             } catch(readErr) {
               Logger.log("No se pudo leer archivo " + f.id + ": " + readErr.message);
+              contenidoTexto += '\n[Archivo adjunto entregado: ' + f.title + ']';
+              tipoContenido = (tipoContenido === 'none') ? 'adjunto' : tipoContenido;
             }
             
             archivos.push(fileData);
@@ -1389,7 +1539,8 @@ function evaluarLoteEstudiantes(apiKey, actividadTitulo, consignaManual, entrega
     
     var tieneTexto = (e.contenidoTexto && e.contenidoTexto.trim() !== '');
     var tieneImagen = !!(e.tieneImagen || (e.imagenIds && e.imagenIds.length > 0));
-    var tieneContenido = tieneTexto || tieneImagen;
+    var tieneArchivos = !!(e.archivos && e.archivos.length > 0);
+    var tieneContenido = tieneTexto || tieneImagen || tieneArchivos;
     var marcoEntregado = (e.estado === 'TURNED_IN' || e.estado === 'RETURNED');
     
     // -----------------------------------------------------------------------
@@ -1427,6 +1578,13 @@ function evaluarLoteEstudiantes(apiKey, actividadTitulo, consignaManual, entrega
       // Si hay imágenes, se leen de Drive en este momento para análisis visual.
       var vision = leerImagenesParaIA(e.imagenIds || []);
       var textoParaIA = e.contenidoTexto || '';
+      
+      // Salvaguarda: si tiene archivos pero no se extrajo texto
+      if (!textoParaIA.trim() && tieneArchivos) {
+        var nombresArchivos = e.archivos.map(function(a) { return a.titulo || 'Archivo adjunto'; }).join(', ');
+        textoParaIA = '[Archivo(s) adjunto(s) detectado(s): ' + nombresArchivos + ']\n(El estudiante sí adjuntó su trabajo. Evalúe formativamente con base en el archivo entregado).';
+      }
+      
       if (vision.aviso) {
         textoParaIA += '\n[Nota sobre imágenes]: ' + vision.aviso;
       }
