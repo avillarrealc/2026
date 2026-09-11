@@ -9,16 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-dark: #090d16;
-      --bg-card: rgba(15, 23, 42, 0.75);
-      --bg-card-border: rgba(56, 189, 248, 0.2);
+      --bg-dark: #080c14;
+      --bg-card: rgba(15, 23, 42, 0.82);
+      --bg-card-border: rgba(56, 189, 248, 0.25);
       --primary: #10b981;
-      --primary-glow: rgba(16, 185, 129, 0.35);
+      --primary-glow: rgba(16, 185, 129, 0.4);
       --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.3);
-      --purple: #818cf8;
+      --accent-glow: rgba(56, 189, 248, 0.35);
+      --purple: #a855f7;
       --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --text-muted: #cbd5e1;
       --font-heading: 'Space Grotesk', sans-serif;
       --font-body: 'Outfit', sans-serif;
     }
@@ -40,27 +40,27 @@
       display: flex;
       flex-direction: column;
       background-image: 
-        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(129, 140, 248, 0.08) 0%, transparent 60%);
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
     }
 
     /* BARRA SUPERIOR */
     header {
-      height: 60px;
+      height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 32px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
+      padding: 0 36px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
       z-index: 100;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-badge {
@@ -68,8 +68,8 @@
       color: white;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 13px;
-      padding: 4px 10px;
+      font-size: 14px;
+      padding: 5px 12px;
       border-radius: 6px;
       letter-spacing: 1px;
       box-shadow: 0 0 15px var(--primary-glow);
@@ -78,9 +78,9 @@
     .brand-title {
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: -0.5px;
-      color: #f1f5f9;
+      color: #f8fafc;
     }
 
     .header-controls {
@@ -94,12 +94,13 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 5px 12px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 6px 14px;
       border-radius: 20px;
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--accent);
       cursor: pointer;
       transition: all 0.2s;
@@ -107,26 +108,26 @@
 
     .timer-badge:hover {
       border-color: var(--accent);
-      box-shadow: 0 0 10px var(--accent-glow);
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     .btn-header {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f1f5f9;
+      padding: 7px 14px;
       border-radius: 8px;
-      font-size: 12px;
-      font-weight: 500;
+      font-size: 13px;
+      font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       transition: all 0.2s;
     }
 
     .btn-header:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
       border-color: var(--primary);
     }
 
@@ -140,14 +141,14 @@
     .slide {
       position: absolute;
       inset: 0;
-      padding: 30px 60px;
+      padding: 24px 50px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       opacity: 0;
       pointer-events: none;
       transform: translateX(60px) scale(0.98);
-      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .slide.active {
@@ -158,102 +159,103 @@
 
     .slide-tag {
       font-family: var(--font-heading);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
       letter-spacing: 2px;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .slide-tag::before {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       background: var(--primary);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--primary);
+      box-shadow: 0 0 12px var(--primary);
     }
 
     .slide-title {
       font-family: var(--font-heading);
-      font-size: clamp(26px, 3.2vw, 42px);
+      font-size: clamp(28px, 3.4vw, 44px);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -1px;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* GRID LAYOUTS */
+    /* CARDS Y CONTENEDORES CON TIPOGRAFÍA GRANDE */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      gap: 24px;
       align-items: stretch;
-      height: 72%;
+      height: 74%;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      height: 72%;
+      height: 74%;
     }
 
     .card {
       background: var(--bg-card);
       border: 1px solid var(--bg-card-border);
       border-radius: 16px;
-      padding: 24px;
+      padding: 22px 24px;
       backdrop-filter: blur(16px);
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
       transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.45);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      border-color: rgba(56, 189, 248, 0.5);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
 
     .card-icon {
-      font-size: 32px;
-      margin-bottom: 14px;
+      font-size: 36px;
+      margin-bottom: 12px;
       display: inline-block;
     }
 
     .card-title {
       font-family: var(--font-heading);
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 700;
       margin-bottom: 8px;
-      color: #f1f5f9;
+      color: #f8fafc;
+      letter-spacing: -0.3px;
     }
 
     .card-desc {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-muted);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     .card-tag {
       margin-top: auto;
       align-self: flex-start;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 12px;
       border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--accent);
     }
 
@@ -263,28 +265,28 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
     .hero-pill {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.5);
       color: #34d399;
       font-family: var(--font-heading);
-      font-weight: 600;
-      font-size: 13px;
-      padding: 6px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 8px 22px;
       border-radius: 30px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .hero-title {
       font-family: var(--font-heading);
-      font-size: clamp(34px, 4.5vw, 64px);
+      font-size: clamp(38px, 5.2vw, 68px);
       font-weight: 800;
       line-height: 1.08;
       margin-bottom: 18px;
@@ -298,46 +300,121 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(16px, 1.3vw, 20px);
-      color: #cbd5e1;
+      font-size: clamp(18px, 1.6vw, 23px);
+      color: #e2e8f0;
       line-height: 1.6;
-      max-width: 740px;
-      margin-bottom: 36px;
+      max-width: 820px;
+      margin-bottom: 32px;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .meta-badge {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 16px;
-      border-radius: 10px;
-      font-size: 13px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 15px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: #e2e8f0;
+      gap: 10px;
+      color: #f1f5f9;
     }
 
-    /* SIMULADOR INTERACTIVO (SLIDE 4) */
+    /* SLIDE 3: OBJETIVOS */
+    .obj-container {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 22px;
+      height: 74%;
+    }
+
+    .obj-general-card {
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 0.9));
+      border: 2px solid var(--primary);
+      border-radius: 18px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+    }
+
+    .obj-general-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .obj-general-text {
+      font-size: 18px;
+      line-height: 1.65;
+      color: #f8fafc;
+      font-weight: 400;
+    }
+
+    .obj-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .obj-spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .obj-spec-num {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .obj-spec-title {
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .obj-spec-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SLIDE 4: SIMULADOR INTERACTIVO */
     .sim-tabs {
       display: flex;
-      gap: 10px;
-      margin-bottom: 16px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
 
     .sim-tab {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #94a3b8;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 13px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      padding: 9px 18px;
+      border-radius: 10px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -347,14 +424,14 @@
       background: var(--primary);
       border-color: var(--primary);
       color: #ffffff;
-      box-shadow: 0 0 15px var(--primary-glow);
+      box-shadow: 0 0 16px var(--primary-glow);
     }
 
     .sim-panel {
       display: none;
-      grid-template-columns: 1.3fr 1fr;
+      grid-template-columns: 1.25fr 1fr;
       gap: 20px;
-      height: 100%;
+      height: 68%;
     }
 
     .sim-panel.active {
@@ -362,9 +439,9 @@
     }
 
     .sim-visual {
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -380,61 +457,62 @@
     }
 
     .stat-box {
-      background: rgba(30, 41, 59, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px 18px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
     }
 
     .stat-label {
-      font-size: 11px;
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--text-muted);
+      color: #94a3b8;
       margin-bottom: 4px;
+      font-weight: 600;
     }
 
     .stat-value {
       font-family: var(--font-heading);
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 700;
       color: #ffffff;
     }
 
     /* ANIMACIÓN GLOBO */
     .balloon-anim {
-      width: 70px;
-      height: 85px;
+      width: 80px;
+      height: 98px;
       background: radial-gradient(circle at 35% 30%, #38bdf8, #0369a1);
       border-radius: 50% 50% 45% 45% / 60% 60% 35% 35%;
       position: relative;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.5);
       animation: float 4s ease-in-out infinite;
     }
 
     .balloon-cord {
       position: absolute;
-      top: 85px;
+      top: 98px;
       left: 50%;
       width: 2px;
       height: 120px;
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.35);
       transform: translateX(-50%);
     }
 
     .balloon-payload {
       position: absolute;
-      top: 130px;
+      top: 145px;
       left: 50%;
       transform: translateX(-50%);
       background: #10b981;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 700;
       color: white;
       white-space: nowrap;
-      box-shadow: 0 0 10px var(--primary-glow);
+      box-shadow: 0 0 12px var(--primary-glow);
     }
 
     @keyframes float {
@@ -442,34 +520,53 @@
       50% { transform: translateY(-16px); }
     }
 
-    /* TEAM CARDS */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+    /* SLIDE 6: EQUIPO HUMANO (JÓVENES + 3 DOCENTES) */
+    .team-container {
+      display: flex;
+      flex-direction: column;
       gap: 14px;
-      height: 68%;
+      height: 74%;
     }
 
-    .member-card {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 16px;
+    .section-subtitle {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .student-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 12px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: all 0.2s;
+      transition: transform 0.2s, border-color 0.2s;
     }
 
-    .member-card:hover {
+    .student-card:hover {
       border-color: var(--primary);
-      transform: translateY(-4px);
+      transform: translateY(-3px);
     }
 
-    .member-avatar {
-      width: 58px;
-      height: 58px;
+    .student-avatar {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: linear-gradient(135deg, #1e3a8a, #0f766e);
       border: 2px solid var(--accent);
@@ -478,30 +575,67 @@
       justify-content: center;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       color: white;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
-    .member-name {
+    .student-name {
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 4px;
+      font-size: 13.5px;
+      margin-bottom: 2px;
       color: #f8fafc;
+      line-height: 1.2;
     }
 
-    .member-role {
-      font-size: 11px;
-      color: var(--accent);
+    .student-role {
+      font-size: 11.5px;
+      color: var(--primary);
       font-weight: 600;
-      margin-bottom: 8px;
     }
 
-    .member-desc {
-      font-size: 11px;
-      color: var(--text-muted);
-      line-height: 1.4;
+    /* MENTORES */
+    .mentors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mentor-card {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.25), rgba(15, 23, 42, 0.85));
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .mentor-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.2);
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .mentor-info h4 {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .mentor-info p {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.35;
     }
 
     /* BARRA INFERIOR DE NAVEGACIÓN */
@@ -511,8 +645,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
       z-index: 100;
     }
 
@@ -523,19 +657,19 @@
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
       transition: all 0.25s;
     }
 
     .dot.active {
-      width: 28px;
+      width: 32px;
       border-radius: 6px;
       background: var(--primary);
-      box-shadow: 0 0 12px var(--primary-glow);
+      box-shadow: 0 0 14px var(--primary-glow);
     }
 
     .nav-buttons {
@@ -544,13 +678,13 @@
     }
 
     .btn-nav {
-      background: rgba(30, 41, 59, 0.8);
+      background: rgba(30, 41, 59, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: white;
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      padding: 8px 18px;
+      padding: 9px 20px;
       border-radius: 8px;
       cursor: pointer;
       display: flex;
@@ -560,14 +694,14 @@
     }
 
     .btn-nav:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.18);
       border-color: var(--accent);
     }
 
     .btn-nav.primary {
       background: var(--primary);
       border-color: var(--primary);
-      box-shadow: 0 0 15px var(--primary-glow);
+      box-shadow: 0 0 16px var(--primary-glow);
     }
 
     .btn-nav.primary:hover {
@@ -579,13 +713,13 @@
       position: fixed;
       bottom: 75px;
       right: 40px;
-      width: 420px;
-      max-height: 280px;
-      background: rgba(15, 23, 42, 0.95);
+      width: 440px;
+      max-height: 290px;
+      background: rgba(15, 23, 42, 0.96);
       border: 1px solid var(--accent);
       border-radius: 14px;
       padding: 18px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.65);
       backdrop-filter: blur(20px);
       z-index: 200;
       display: none;
@@ -608,7 +742,7 @@
 
     .notes-title {
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       color: var(--accent);
       display: flex;
@@ -617,9 +751,9 @@
     }
 
     .notes-body {
-      font-size: 13px;
+      font-size: 14px;
       color: #e2e8f0;
-      line-height: 1.5;
+      line-height: 1.55;
       overflow-y: auto;
       padding-right: 6px;
     }
@@ -677,27 +811,70 @@
       <div class="slide-tag">Diagnóstico Territorial</div>
       <h2 class="slide-title">¿Qué le ocurre a nuestra montaña cuando se deforesta?</h2>
       <div class="grid-2">
-        <div class="card" style="border-left: 4px solid #10b981;">
+        <div class="card" style="border-left: 5px solid #10b981;">
           <div class="card-icon">🌲</div>
           <div class="card-title">El Bosque: Filtro y Aire Acondicionado</div>
           <div class="card-desc">
-            La Reserva El Romeral transpira humedad constante, bajando la temperatura entre <strong>2.5 °C y 5.8 °C</strong> frente a zonas urbanas, y actúa como trampa biológica para atrapar el material particulado (PM2.5) que asciende desde el Valle de Aburrá.
+            La Reserva El Romeral transpira humedad constante, reduciendo la temperatura entre <strong>2.5 °C y 5.8 °C</strong>, y actúa como trampa biológica para capturar el material particulado (PM2.5) que asciende desde el Valle de Aburrá.
           </div>
           <div class="card-tag">Ecosistema Saludable</div>
         </div>
-        <div class="card" style="border-left: 4px solid #ef4444;">
+        <div class="card" style="border-left: 5px solid #ef4444;">
           <div class="card-icon">🔥</div>
           <div class="card-title">La Deforestación: Islas de Calor y Riscos Inaccesibles</div>
           <div class="card-desc">
-            Al talar laderas en La Tablaza, el suelo se recalienta y el aire se seca. Las semillas naturales mueren por deshidratación antes de enraizar. Y las brigadas humanas <strong>no pueden subir a pie</strong> a taludes de alta pendiente por riesgo de caída.
+            Al talar laderas en La Tablaza, el suelo se recalienta y el aire se seca. Las semillas naturales mueren por deshidratación antes de enraizar. Y las brigadas humanas <strong>no pueden subir a pie</strong> a taludes de alta pendiente por riesgo físico.
           </div>
           <div class="card-tag">El Desafío Crítico</div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 3: LA TRÍADA DE LA SOLUCIÓN -->
+    <!-- SLIDE 3: OBJETIVOS EN LENGUAJE SENCILLO (NUEVA SLIDE) -->
     <section class="slide" data-slide="2">
+      <div class="slide-tag">Misión & Metas Claras</div>
+      <h2 class="slide-title">¿Qué nos proponemos lograr con AeroBio PDA?</h2>
+      <div class="obj-container">
+        
+        <!-- OBJETIVO GENERAL -->
+        <div class="obj-general-card">
+          <div class="obj-general-title">
+            <span>🎯</span> Objetivo General
+          </div>
+          <p class="obj-general-text">
+            Demostrar que podemos usar tecnología aeroespacial escolar —<strong>un globo con sensores limpios y un cohete con semillas nativas</strong>— para diagnosticar la salud del aire y reforestar las laderas inaccesibles de nuestro Municipio Verde.
+          </p>
+        </div>
+
+        <!-- OBJETIVOS ESPECÍFICOS -->
+        <div class="obj-spec-grid">
+          <div class="obj-spec-card">
+            <div class="obj-spec-num">1. Medición de Aire</div>
+            <div class="obj-spec-title">🎈 Medir en Altura</div>
+            <div class="obj-spec-desc">Subir sensores en un globo limpio junto al SIATA para ver cómo la deforestación calienta la ladera y frena el filtrado del humo.</div>
+          </div>
+          <div class="obj-spec-card">
+            <div class="obj-spec-num">2. Teledetección</div>
+            <div class="obj-spec-title">📸 Fotografiar el Bosque</div>
+            <div class="obj-spec-desc">Tomar fotos aéreas cenitales para ubicar con exactitud las zonas erosionadas y quebradas que necesitan auxilio.</div>
+          </div>
+          <div class="obj-spec-card">
+            <div class="obj-spec-num">3. Bio-Cohetería</div>
+            <div class="obj-spec-title">🚀 Semillas Protegidas</div>
+            <div class="obj-spec-desc">Diseñar una cápsula en cohete para enviar 'bombas de semillas' nativas con arcilla nutritiva hacia riscos inaccesibles.</div>
+          </div>
+          <div class="obj-spec-card">
+            <div class="obj-spec-num">4. Laboratorio</div>
+            <div class="obj-spec-title">🌱 Validar la Vida</div>
+            <div class="obj-spec-desc">Cultivar las semillas en el colegio bajo el calor real de la ladera para asegurar que germinan con fuerza y vigor.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SLIDE 4: LA TRÍADA DE LA SOLUCIÓN -->
+    <section class="slide" data-slide="3">
       <div class="slide-tag">Ecosistema de Solución</div>
       <h2 class="slide-title">Tres Pasos para Sanar el Territorio desde las Alturas</h2>
       <div class="grid-3">
@@ -728,8 +905,8 @@
       </div>
     </section>
 
-    <!-- SLIDE 4: SIMULADOR EN VIVO -->
-    <section class="slide" data-slide="3">
+    <!-- SLIDE 5: SIMULADOR EN VIVO -->
+    <section class="slide" data-slide="4">
       <div class="slide-tag">Demostración Interactiva</div>
       <h2 class="slide-title">Centro de Control de Misión AeroBio</h2>
       
@@ -745,22 +922,22 @@
           <div class="balloon-anim"></div>
           <div class="balloon-cord"></div>
           <div class="balloon-payload">CanSat Atmosférico LoRa</div>
-          <div style="position: absolute; bottom: 12px; font-size: 11px; color: #64748b;">
+          <div style="position: absolute; bottom: 12px; font-size: 13px; color: #94a3b8; font-weight: 500;">
             Vuelo Cautivo Estacionario a 100 m de Altura · Cero Emisiones
           </div>
         </div>
         <div class="sim-stats">
           <div class="stat-box">
             <div class="stat-label">Material Particulado PM2.5 (SIATA)</div>
-            <div class="stat-value" style="color: #34d399;">14.2 µg/m³ <span style="font-size: 13px; color: #94a3b8;">(Aire Bueno)</span></div>
+            <div class="stat-value" style="color: #34d399;">14.2 µg/m³ <span style="font-size: 15px; color: #cbd5e1;">(Aire Bueno)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Gradiente Térmico de Ladera</div>
-            <div class="stat-value" style="color: #38bdf8;">-3.8 °C <span style="font-size: 13px; color: #94a3b8;">(Efecto Amortiguador)</span></div>
+            <div class="stat-value" style="color: #38bdf8;">-3.8 °C <span style="font-size: 15px; color: #cbd5e1;">(Efecto Amortiguador)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Humedad Relativa en Dosel</div>
-            <div class="stat-value" style="color: #818cf8;">82.5 % <span style="font-size: 13px; color: #94a3b8;">(Aptitud Óptima)</span></div>
+            <div class="stat-value" style="color: #818cf8;">82.5 % <span style="font-size: 15px; color: #cbd5e1;">(Aptitud Óptima)</span></div>
           </div>
         </div>
       </div>
@@ -768,9 +945,9 @@
       <!-- PANEL COHETE -->
       <div class="sim-panel" id="sim-rocket">
         <div class="sim-visual" id="rocket-stage">
-          <div id="rocket-sprite" style="font-size: 48px; transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);">🚀</div>
-          <div id="parachute-sprite" style="font-size: 32px; display: none; margin-top: 10px;">🪂 Bio-Cápsula</div>
-          <button class="btn-nav primary" style="position: absolute; bottom: 16px;" onclick="lanzarCohete()">
+          <div id="rocket-sprite" style="font-size: 54px; transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);">🚀</div>
+          <div id="parachute-sprite" style="font-size: 38px; display: none; margin-top: 10px;">🪂 Bio-Cápsula</div>
+          <button class="btn-nav primary" style="position: absolute; bottom: 16px; font-size: 15px;" onclick="lanzarCohete()">
             🔥 Simular Lanzamiento Balístico
           </button>
         </div>
@@ -780,12 +957,12 @@
             <div class="stat-value" id="rocket-apogee" style="color: #fbbf24;">320 m</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">Celeración / Fuerzas G Soportadas</div>
-            <div class="stat-value" style="color: #f87171;">9.4 G <span style="font-size: 13px; color: #94a3b8;">(Ensayo de Estrés)</span></div>
+            <div class="stat-label">Aceleración / Fuerzas G Soportadas</div>
+            <div class="stat-value" style="color: #f87171;">9.4 G <span style="font-size: 15px; color: #cbd5e1;">(Ensayo de Estrés)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Carga Útil Biológica</div>
-            <div class="stat-value" style="color: #34d399;">100 Pellets <span style="font-size: 13px; color: #94a3b8;">(Nativas Protegidas)</span></div>
+            <div class="stat-value" style="color: #34d399;">100 Pellets <span style="font-size: 15px; color: #cbd5e1;">(Nativas Protegidas)</span></div>
           </div>
         </div>
       </div>
@@ -793,74 +970,102 @@
       <!-- PANEL LAB -->
       <div class="sim-panel" id="sim-lab">
         <div class="sim-visual">
-          <div style="font-size: 40px; margin-bottom: 8px;">🧫 🌱</div>
-          <div style="font-size: 14px; font-weight: 600; color: #f8fafc;">Cámaras de Germinación IEJAGA</div>
-          <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Comparación Lote de Vuelo vs. Control</div>
-          <div style="margin-top: 20px; width: 80%; background: rgba(255,255,255,0.08); border-radius: 10px; height: 16px; overflow: hidden;">
+          <div style="font-size: 46px; margin-bottom: 8px;">🧫 🌱</div>
+          <div style="font-size: 16px; font-weight: 700; color: #f8fafc;">Cámaras de Germinación IEJAGA</div>
+          <div style="font-size: 14px; color: #cbd5e1; margin-top: 4px;">Comparación Lote de Vuelo vs. Control</div>
+          <div style="margin-top: 20px; width: 80%; background: rgba(255,255,255,0.1); border-radius: 10px; height: 18px; overflow: hidden;">
             <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #10b981, #38bdf8);"></div>
           </div>
-          <div style="margin-top: 6px; font-size: 12px; color: #34d399; font-weight: 700;">88% Tasa de Germinación Exitosa</div>
+          <div style="margin-top: 8px; font-size: 15px; color: #34d399; font-weight: 700;">88% Tasa de Germinación Exitosa</div>
         </div>
         <div class="sim-stats">
           <div class="stat-box">
             <div class="stat-label">Tiempo de Brote (Velocidad de Emergencia)</div>
-            <div class="stat-value" style="color: #34d399;">6.2 Días <span style="font-size: 13px; color: #94a3b8;">(Vigor Intacto)</span></div>
+            <div class="stat-value" style="color: #34d399;">6.2 Días <span style="font-size: 15px; color: #cbd5e1;">(Vigor Intacto)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Elongación Radicular Promedio</div>
-            <div class="stat-value" style="color: #38bdf8;">4.8 cm <span style="font-size: 13px; color: #94a3b8;">(Enraizamiento Fuerte)</span></div>
+            <div class="stat-value" style="color: #38bdf8;">4.8 cm <span style="font-size: 15px; color: #cbd5e1;">(Enraizamiento Fuerte)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Veredicto Científico</div>
-            <div class="stat-value" style="color: #a7f3d0; font-size: 18px;">Protocolo Aéreo 100% Viable</div>
+            <div class="stat-value" style="color: #a7f3d0; font-size: 20px;">Protocolo Aéreo 100% Viable</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 5: EL EQUIPO HUMANO -->
-    <section class="slide" data-slide="4">
-      <div class="slide-tag">Equipo Juvenil Líder</div>
-      <h2 class="slide-title">La Juventud de La Tablaza al Frente de la Ciencia</h2>
-      <div class="team-grid">
-        <div class="member-card">
-          <div class="member-avatar">SS</div>
-          <div class="member-name">Santiago Saldarriaga</div>
-          <div class="member-role">Dirección de Misión</div>
-          <div class="member-desc">Líder postulante, logística de vuelo, cálculos balísticos y seguridad operacional.</div>
+    <!-- SLIDE 6: EL EQUIPO HUMANO (5 ESTUDIANTES + 3 DOCENTES) -->
+    <section class="slide" data-slide="5">
+      <div class="slide-tag">Liderazgo Institucional</div>
+      <h2 class="slide-title">El Equipo de la I.E. José Antonio Galán</h2>
+      <div class="team-container">
+        
+        <!-- ESTUDIANTES -->
+        <div>
+          <div class="section-subtitle">🚀 5 Jóvenes Líderes del Semillero PDA CLUB</div>
+          <div class="student-grid">
+            <div class="student-card">
+              <div class="student-avatar">SS</div>
+              <div class="student-name">Santiago Saldarriaga</div>
+              <div class="student-role">Dirección de Misión</div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar">JL</div>
+              <div class="student-name">Julian López</div>
+              <div class="student-role">Plat. Aerostática</div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar">SV</div>
+              <div class="student-name">Samuel Vargas</div>
+              <div class="student-role">Teledetección Aérea</div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar">FJ</div>
+              <div class="student-name">Felipe Jiménez</div>
+              <div class="student-role">Aviónica & LoRa</div>
+            </div>
+            <div class="student-card">
+              <div class="student-avatar">EG</div>
+              <div class="student-name">Emanuel García</div>
+              <div class="student-role">Bio-Cargas & Lab</div>
+            </div>
+          </div>
         </div>
-        <div class="member-card">
-          <div class="member-avatar">JL</div>
-          <div class="member-name">Julian López</div>
-          <div class="member-role">Plataforma Aerostática</div>
-          <div class="member-desc">Mecánica del arnés cautivo, inflado con helio y estabilización aerostática.</div>
+
+        <!-- 3 DOCENTES ACOMPAÑANTES -->
+        <div>
+          <div class="section-subtitle" style="color: #34d399;">🎓 Docentes Acompañantes y Asesores</div>
+          <div class="mentors-grid">
+            <div class="mentor-card">
+              <div class="mentor-icon">👨‍🏫</div>
+              <div class="mentor-info">
+                <h4>Alexander Villarreal</h4>
+                <p>Tecnología e Informática · Mentor Líder Semillero PDA</p>
+              </div>
+            </div>
+            <div class="mentor-card">
+              <div class="mentor-icon">👨‍🏫</div>
+              <div class="mentor-info">
+                <h4>Robinson Causil</h4>
+                <p>Docente Acompañante · Apoyo Técnico y Pedagógico</p>
+              </div>
+            </div>
+            <div class="mentor-card">
+              <div class="mentor-icon">👨‍🏫</div>
+              <div class="mentor-info">
+                <h4>Marco Zuluaga</h4>
+                <p>Docente Acompañante · Apoyo Científico y Metodológico</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="member-card">
-          <div class="member-avatar">SV</div>
-          <div class="member-name">Samuel Vargas</div>
-          <div class="member-role">Teledetección Aérea</div>
-          <div class="member-desc">Adquisición fotogramétrica cenital y análisis visual de la cobertura del dosel.</div>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">FJ</div>
-          <div class="member-name">Felipe Jiménez</div>
-          <div class="member-role">Aviónica & Telemetría</div>
-          <div class="member-desc">Microcontroladores ESP32, enlace de radio LoRa y correlación de sensores con SIATA.</div>
-        </div>
-        <div class="member-card">
-          <div class="member-avatar">EG</div>
-          <div class="member-name">Emanuel García</div>
-          <div class="member-role">Bio-Cargas & Lab</div>
-          <div class="member-desc">Formulación de pellets de semillas nativas y registro biométrico en laboratorio.</div>
-        </div>
-      </div>
-      <div style="margin-top: 14px; text-align: center; font-size: 13px; color: #94a3b8;">
-        Orientados por el <strong>Docente Alexander Villarreal</strong> · Institución Educativa José Antonio Galán
+
       </div>
     </section>
 
-    <!-- SLIDE 6: PRESUPUESTO TRANSPARENTE -->
-    <section class="slide" data-slide="5">
+    <!-- SLIDE 7: PRESUPUESTO TRANSPARENTE -->
+    <section class="slide" data-slide="6">
       <div class="slide-tag">Gestión Financiera</div>
       <h2 class="slide-title">Inversión Rigurosa: $12.000.000 COP (USD $3.000)</h2>
       <div class="grid-3">
@@ -891,18 +1096,18 @@
       </div>
     </section>
 
-    <!-- SLIDE 7: IMPACTO Y CIERRE -->
-    <section class="slide" data-slide="6">
+    <!-- SLIDE 8: IMPACTO Y CIERRE -->
+    <section class="slide" data-slide="7">
       <div class="hero-container">
         <div class="hero-pill">🚀 El Legado para La Estrella</div>
-        <h2 class="hero-title" style="font-size: clamp(30px, 3.8vw, 54px);">
+        <h2 class="hero-title" style="font-size: clamp(32px, 4.2vw, 56px);">
           Conocer desde el cielo para <span>sembrar vida en la tierra</span>
         </h2>
         <p class="hero-subtitle">
           Entregaremos a la Secretaría de Medio Ambiente e ICLEI un mapa vertical inédito de calidad de aire y un protocolo probado de siembra aérea para recuperar las laderas de nuestro Municipio Verde.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center;">
-          <button class="btn-nav primary" onclick="goToSlide(0)">↺ Reiniciar Exposición</button>
+          <button class="btn-nav primary" style="font-size: 16px; padding: 10px 24px;" onclick="goToSlide(0)">↺ Reiniciar Exposición</button>
         </div>
       </div>
     </section>
@@ -924,7 +1129,7 @@
   <div class="speaker-notes-modal" id="speaker-notes-modal">
     <div class="notes-header">
       <div class="notes-title">🎙️ Guion para esta diapositiva</div>
-      <button onclick="toggleSpeakerNotes()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 16px;">✕</button>
+      <button onclick="toggleSpeakerNotes()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 18px;">✕</button>
     </div>
     <div class="notes-body" id="speaker-notes-content">
       <!-- Se actualiza con JS -->
@@ -940,15 +1145,17 @@
     const speakerNotes = [
       "¡Hola a todos! Hoy presentamos AeroBio PDA, un proyecto donde la ingeniería aeroespacial juvenil se pone al servicio de nuestro Municipio Verde con el apoyo del Fondo Juventud y Acción Climática.",
       "Miren este dilema: El Romeral es nuestro aire acondicionado natural, pero cuando una ladera se tala o erosiona, el suelo se recalienta y el bosque pierde su poder de filtrar el aire. Además, ¡nadie puede subir a pie a sembrar en esos riscos tan peligrosos!",
+      "Nuestra meta es muy concreta: demostrar que podemos usar tecnología aeroespacial escolar —un globo con sensores limpios y un cohete con semillas— para diagnosticar el aire y reforestar las laderas inaccesibles del Municipio Verde.",
       "¿Cómo lo resolvemos? Con tres pasos sencillos: 1) Un globo aerostático cautivo que no echa humo para diagnosticar la temperatura y el PM2.5 junto al SIATA; 2) Un cohete sonda con bio-cápsula de semillas nativas protegidas; y 3) Un laboratorio escolar para certificar si germinan con fuerza.",
       "Aquí vemos la misión en vivo: la plataforma aerostática mide el aire limpio a 100 metros sin contaminar; el cohete prueba la resistencia física de las semillas nativas; y en el laboratorio escolar comprobamos que el 88% logra germinar con vigor intacto.",
-      "Este proyecto lo lideran 5 estudiantes de grado 9° a 11° de la IEJAGA: Santiago en la dirección, Julian y Samuel en la aerostática y fotos, Felipe en la aviónica LoRa con SIATA, y Emanuel en la biología de semillas, guiados por el profe Alexander Villarreal.",
+      "Este proyecto cuenta con un equipo completo de la IEJAGA: 5 estudiantes líderes (Santiago, Julian, Samuel, Felipe y Emanuel) acompañados por tres docentes comprometidos: Alexander Villarreal, Robinson Causil y Marco Zuluaga.",
       "Con $12 millones de pesos (USD $3.000) no pagamos salarios burocráticos: compramos sensores de precisión, helio, componentes de cohete, equipamiento de germinación y cartillas didácticas para los muchachos.",
       "Cerramos con esta convicción: desde un colegio público de La Tablaza demostramos que la ciencia aeroespacial no es solo para soñar con ir a Marte, sino para salvar y reforestar el territorio donde vivimos. ¡Muchas gracias!"
     ];
 
     // INICIALIZAR PUNTOS DE PROGRESO
     const dotsContainer = document.getElementById('progress-dots');
+    dotsContainer.innerHTML = '';
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('div');
       dot.className = `dot ${i === 0 ? 'active' : ''}`;
