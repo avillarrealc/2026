@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroBio PDA · Presentación Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #090d16;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-border: rgba(56, 189, 248, 0.2);
+      --primary: #10b981;
+      --primary-glow: rgba(16, 185, 129, 0.35);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.3);
+      --purple: #818cf8;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(129, 140, 248, 0.08) 0%, transparent 60%);
+    }
+
+    /* BARRA SUPERIOR */
+    header {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #10b981, #0284c7);
+      color: white;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .brand-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.5px;
+      color: #f1f5f9;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* TEMPORIZADOR */
+    .timer-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      color: var(--accent);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .timer-badge:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-header:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--primary);
+    }
+
+    /* CONTENEDOR DE SLIDES */
+    main {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 30px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(60px) scale(0.98);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0) scale(1);
+    }
+
+    .slide-tag {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .slide-tag::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .slide-title {
+      font-family: var(--font-heading);
+      font-size: clamp(26px, 3.2vw, 42px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* GRID LAYOUTS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      height: 72%;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      height: 72%;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f1f5f9;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .card-tag {
+      margin-top: auto;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--accent);
+    }
+
+    /* SLIDE 1: HERO */
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(34px, 4.5vw, 64px);
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #10b981, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 1.3vw, 20px);
+      color: #cbd5e1;
+      line-height: 1.6;
+      max-width: 740px;
+      margin-bottom: 36px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .meta-badge {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+    }
+
+    /* SIMULADOR INTERACTIVO (SLIDE 4) */
+    .sim-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .sim-tab {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .sim-tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .sim-panel {
+      display: none;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+      height: 100%;
+    }
+
+    .sim-panel.active {
+      display: grid;
+    }
+
+    .sim-visual {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sim-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stat-box {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* ANIMACIÓN GLOBO */
+    .balloon-anim {
+      width: 70px;
+      height: 85px;
+      background: radial-gradient(circle at 35% 30%, #38bdf8, #0369a1);
+      border-radius: 50% 50% 45% 45% / 60% 60% 35% 35%;
+      position: relative;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .balloon-cord {
+      position: absolute;
+      top: 85px;
+      left: 50%;
+      width: 2px;
+      height: 120px;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-50%);
+    }
+
+    .balloon-payload {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      white-space: nowrap;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-16px); }
+    }
+
+    /* TEAM CARDS */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      height: 68%;
+    }
+
+    .member-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .member-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .member-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1e3a8a, #0f766e);
+      border: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .member-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #f8fafc;
+    }
+
+    .member-role {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .member-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* BARRA INFERIOR DE NAVEGACIÓN */
+    footer {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .progress-dots {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .dot.active {
+      width: 28px;
+      border-radius: 6px;
+      background: var(--primary);
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-nav {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-nav:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent);
+    }
+
+    .btn-nav.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .btn-nav.primary:hover {
+      background: #059669;
+    }
+
+    /* MODAL DE NOTAS DE ORADOR */
+    .speaker-notes-modal {
+      position: fixed;
+      bottom: 75px;
+      right: 40px;
+      width: 420px;
+      max-height: 280px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid var(--accent);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(20px);
+      z-index: 200;
+      display: none;
+      flex-direction: column;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .speaker-notes-modal.active {
+      display: flex;
+    }
+
+    .notes-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 6px;
+    }
+
+    .notes-title {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .notes-body {
+      font-size: 13px;
+      color: #e2e8f0;
+      line-height: 1.5;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <header>
+    <div class="brand">
+      <div class="brand-badge">PDA CLUB</div>
+      <div class="brand-title">AeroBio PDA · Generación Estrella</div>
+    </div>
+    <div class="header-controls">
+      <div class="timer-badge" id="timer-btn" title="Clic para Pausar/Reanudar">
+        <span>⏱️</span>
+        <span id="timer-display">03:00</span>
+      </div>
+      <button class="btn-header" id="btn-notes" onclick="toggleSpeakerNotes()">
+        <span>🎙️</span> Guion del Pitch
+      </button>
+      <button class="btn-header" onclick="toggleFullScreen()">
+        <span>⛶</span> Pantalla Completa
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL DE SLIDES -->
+  <main id="slide-container">
+
+    <!-- SLIDE 1: PORTADA HERO -->
+    <section class="slide active" data-slide="0">
+      <div class="hero-container">
+        <div class="hero-pill">🌿 Convocatoria Generación Estrella · YCAF Bloomberg</div>
+        <h1 class="hero-title">AeroBio <span>PDA</span></h1>
+        <p class="hero-subtitle">
+          Teledetección Atmosférica Multivariable y Validación de Siembra Aérea para la Conservación del Municipio Verde.
+        </p>
+        <div class="hero-badges">
+          <div class="meta-badge">🏫 <strong>I.E. José Antonio Galán</strong> (La Tablaza)</div>
+          <div class="meta-badge">🔭 Línea: <strong>Conocer para Conservar</strong></div>
+          <div class="meta-badge">💰 Nivel Crecimiento: <strong>$12.000.000 COP</strong></div>
+          <div class="meta-badge">🤝 Articulación: <strong>SIATA</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: EL PROBLEMA EN LA ESTRELLA -->
+    <section class="slide" data-slide="1">
+      <div class="slide-tag">Diagnóstico Territorial</div>
+      <h2 class="slide-title">¿Qué le ocurre a nuestra montaña cuando se deforesta?</h2>
+      <div class="grid-2">
+        <div class="card" style="border-left: 4px solid #10b981;">
+          <div class="card-icon">🌲</div>
+          <div class="card-title">El Bosque: Filtro y Aire Acondicionado</div>
+          <div class="card-desc">
+            La Reserva El Romeral transpira humedad constante, bajando la temperatura entre <strong>2.5 °C y 5.8 °C</strong> frente a zonas urbanas, y actúa como trampa biológica para atrapar el material particulado (PM2.5) que asciende desde el Valle de Aburrá.
+          </div>
+          <div class="card-tag">Ecosistema Saludable</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #ef4444;">
+          <div class="card-icon">🔥</div>
+          <div class="card-title">La Deforestación: Islas de Calor y Riscos Inaccesibles</div>
+          <div class="card-desc">
+            Al talar laderas en La Tablaza, el suelo se recalienta y el aire se seca. Las semillas naturales mueren por deshidratación antes de enraizar. Y las brigadas humanas <strong>no pueden subir a pie</strong> a taludes de alta pendiente por riesgo de caída.
+          </div>
+          <div class="card-tag">El Desafío Crítico</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: LA TRÍADA DE LA SOLUCIÓN -->
+    <section class="slide" data-slide="2">
+      <div class="slide-tag">Ecosistema de Solución</div>
+      <h2 class="slide-title">Tres Pasos para Sanar el Territorio desde las Alturas</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🎈</div>
+          <div class="card-title">1. Diagnóstico Limpio</div>
+          <div class="card-desc">
+            Plataforma aerostática cautiva sin emisiones. Sensores ópticos calibrados con el <strong>SIATA</strong> para medir perfiles de PM2.5, PM10, temperatura y ortofotografía cenital del dosel arbóreo.
+          </div>
+          <div class="card-tag">Globo Cautivo</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🚀</div>
+          <div class="card-title">2. Vector de Rescate</div>
+          <div class="card-desc">
+            Cohete sonda con <strong>bio-cápsula</strong> para transportar semillas nativas (Yarumo, Chagualo, Guayacán) peletizadas con arcilla hidrofílica (Nendo Dango) hacia zonas inaccesibles.
+          </div>
+          <div class="card-tag">Cohetería Sonda</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <div class="card-title">3. Validación Biológica</div>
+          <div class="card-desc">
+            Laboratorio escolar de germinación en la IEJAGA: evaluamos si las semillas que vivieron el estrés del vuelo germinan con fuerza bajo el calor real medido en la ladera.
+          </div>
+          <div class="card-tag">Ambiente Controlado</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: SIMULADOR EN VIVO -->
+    <section class="slide" data-slide="3">
+      <div class="slide-tag">Demostración Interactiva</div>
+      <h2 class="slide-title">Centro de Control de Misión AeroBio</h2>
+      
+      <div class="sim-tabs">
+        <button class="sim-tab active" onclick="switchSim('balloon')">🎈 1. Plataforma Aerostática</button>
+        <button class="sim-tab" onclick="switchSim('rocket')">🚀 2. Cohete y Bio-Cápsula</button>
+        <button class="sim-tab" onclick="switchSim('lab')">🌱 3. Laboratorio de Germinación</button>
+      </div>
+
+      <!-- PANEL GLOBO -->
+      <div class="sim-panel active" id="sim-balloon">
+        <div class="sim-visual">
+          <div class="balloon-anim"></div>
+          <div class="balloon-cord"></div>
+          <div class="balloon-payload">CanSat Atmosférico LoRa</div>
+          <div style="position: absolute; bottom: 12px; font-size: 11px; color: #64748b;">
+            Vuelo Cautivo Estacionario a 100 m de Altura · Cero Emisiones
+          </div>
+        </div>
+        <div class="sim-stats">
+          <div class="stat-box">
+            <div class="stat-label">Material Particulado PM2.5 (SIATA)</div>
+            <div class="stat-value" style="color: #34d399;">14.2 µg/m³ <span style="font-size: 13px; color: #94a3b8;">(Aire Bueno)</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Gradiente Térmico de Ladera</div>
+            <div class="stat-value" style="color: #38bdf8;">-3.8 °C <span style="font-size: 13px; color: #94a3b8;">(Efecto Amortiguador)</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Humedad Relativa en Dosel</div>
+            <div class="stat-value" style="color: #818cf8;">82.5 % <span style="font-size: 13px; color: #94a3b8;">(Aptitud Óptima)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL COHETE -->
+      <div class="sim-panel" id="sim-rocket">
+        <div class="sim-visual" id="rocket-stage">
+          <div id="rocket-sprite" style="font-size: 48px; transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);">🚀</div>
+          <div id="parachute-sprite" style="font-size: 32px; display: none; margin-top: 10px;">🪂 Bio-Cápsula</div>
+          <button class="btn-nav primary" style="position: absolute; bottom: 16px;" onclick="lanzarCohete()">
+            🔥 Simular Lanzamiento Balístico
+          </button>
+        </div>
+        <div class="sim-stats">
+          <div class="stat-box">
+            <div class="stat-label">Apogeo Máximo Estimado</div>
+            <div class="stat-value" id="rocket-apogee" style="color: #fbbf24;">320 m</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Celeración / Fuerzas G Soportadas</div>
+            <div class="stat-value" style="color: #f87171;">9.4 G <span style="font-size: 13px; color: #94a3b8;">(Ensayo de Estrés)</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Carga Útil Biológica</div>
+            <div class="stat-value" style="color: #34d399;">100 Pellets <span style="font-size: 13px; color: #94a3b8;">(Nativas Protegidas)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL LAB -->
+      <div class="sim-panel" id="sim-lab">
+        <div class="sim-visual">
+          <div style="font-size: 40px; margin-bottom: 8px;">🧫 🌱</div>
+          <div style="font-size: 14px; font-weight: 600; color: #f8fafc;">Cámaras de Germinación IEJAGA</div>
+          <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">Comparación Lote de Vuelo vs. Control</div>
+          <div style="margin-top: 20px; width: 80%; background: rgba(255,255,255,0.08); border-radius: 10px; height: 16px; overflow: hidden;">
+            <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #10b981, #38bdf8);"></div>
+          </div>
+          <div style="margin-top: 6px; font-size: 12px; color: #34d399; font-weight: 700;">88% Tasa de Germinación Exitosa</div>
+        </div>
+        <div class="sim-stats">
+          <div class="stat-box">
+            <div class="stat-label">Tiempo de Brote (Velocidad de Emergencia)</div>
+            <div class="stat-value" style="color: #34d399;">6.2 Días <span style="font-size: 13px; color: #94a3b8;">(Vigor Intacto)</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Elongación Radicular Promedio</div>
+            <div class="stat-value" style="color: #38bdf8;">4.8 cm <span style="font-size: 13px; color: #94a3b8;">(Enraizamiento Fuerte)</span></div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Veredicto Científico</div>
+            <div class="stat-value" style="color: #a7f3d0; font-size: 18px;">Protocolo Aéreo 100% Viable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: EL EQUIPO HUMANO -->
+    <section class="slide" data-slide="4">
+      <div class="slide-tag">Equipo Juvenil Líder</div>
+      <h2 class="slide-title">La Juventud de La Tablaza al Frente de la Ciencia</h2>
+      <div class="team-grid">
+        <div class="member-card">
+          <div class="member-avatar">SS</div>
+          <div class="member-name">Santiago Saldarriaga</div>
+          <div class="member-role">Dirección de Misión</div>
+          <div class="member-desc">Líder postulante, logística de vuelo, cálculos balísticos y seguridad operacional.</div>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">JL</div>
+          <div class="member-name">Julian López</div>
+          <div class="member-role">Plataforma Aerostática</div>
+          <div class="member-desc">Mecánica del arnés cautivo, inflado con helio y estabilización aerostática.</div>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">SV</div>
+          <div class="member-name">Samuel Vargas</div>
+          <div class="member-role">Teledetección Aérea</div>
+          <div class="member-desc">Adquisición fotogramétrica cenital y análisis visual de la cobertura del dosel.</div>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">FJ</div>
+          <div class="member-name">Felipe Jiménez</div>
+          <div class="member-role">Aviónica & Telemetría</div>
+          <div class="member-desc">Microcontroladores ESP32, enlace de radio LoRa y correlación de sensores con SIATA.</div>
+        </div>
+        <div class="member-card">
+          <div class="member-avatar">EG</div>
+          <div class="member-name">Emanuel García</div>
+          <div class="member-role">Bio-Cargas & Lab</div>
+          <div class="member-desc">Formulación de pellets de semillas nativas y registro biométrico en laboratorio.</div>
+        </div>
+      </div>
+      <div style="margin-top: 14px; text-align: center; font-size: 13px; color: #94a3b8;">
+        Orientados por el <strong>Docente Alexander Villarreal</strong> · Institución Educativa José Antonio Galán
+      </div>
+    </section>
+
+    <!-- SLIDE 6: PRESUPUESTO TRANSPARENTE -->
+    <section class="slide" data-slide="5">
+      <div class="slide-tag">Gestión Financiera</div>
+      <h2 class="slide-title">Inversión Rigurosa: $12.000.000 COP (USD $3.000)</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <div class="card-title">Materiales e Insumos</div>
+          <div class="stat-value" style="color: #34d399; margin: 10px 0;">$8.700.000</div>
+          <div class="card-desc">
+            Sensores de partículas PM2.5/PM10, BME280, ESP32, LoRa 915 MHz, globo látex 350g, pipeta de helio técnico, fuselaje de cohete y semillas nativas peletizadas.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <div class="card-title">Compra de Equipos</div>
+          <div class="stat-value" style="color: #38bdf8; margin: 10px 0;">$2.400.000</div>
+          <div class="card-desc">
+            Bandejas de germinación escolar, sustratos estériles, termohigrómetros digitales, medidor de pH, lupa digital USB para radículas y sistema de baterías LiPo.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📢</div>
+          <div class="card-title">Diseño y Comunicaciones</div>
+          <div class="stat-value" style="color: #818cf8; margin: 10px 0;">$900.000</div>
+          <div class="card-desc">
+            Cartillas de registro experimental para los estudiantes, pendón institucional de ciencia ciudadana y talleres de divulgación con la comunidad.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: IMPACTO Y CIERRE -->
+    <section class="slide" data-slide="6">
+      <div class="hero-container">
+        <div class="hero-pill">🚀 El Legado para La Estrella</div>
+        <h2 class="hero-title" style="font-size: clamp(30px, 3.8vw, 54px);">
+          Conocer desde el cielo para <span>sembrar vida en la tierra</span>
+        </h2>
+        <p class="hero-subtitle">
+          Entregaremos a la Secretaría de Medio Ambiente e ICLEI un mapa vertical inédito de calidad de aire y un protocolo probado de siembra aérea para recuperar las laderas de nuestro Municipio Verde.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center;">
+          <button class="btn-nav primary" onclick="goToSlide(0)">↺ Reiniciar Exposición</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA INFERIOR -->
+  <footer>
+    <div class="progress-dots" id="progress-dots">
+      <!-- Generado dinámicamente con JS -->
+    </div>
+    <div class="nav-buttons">
+      <button class="btn-nav" id="prev-btn" onclick="prevSlide()">← Anterior</button>
+      <button class="btn-nav primary" id="next-btn" onclick="nextSlide()">Siguiente →</button>
+    </div>
+  </footer>
+
+  <!-- MODAL DE NOTAS DE ORADOR (GUION) -->
+  <div class="speaker-notes-modal" id="speaker-notes-modal">
+    <div class="notes-header">
+      <div class="notes-title">🎙️ Guion para esta diapositiva</div>
+      <button onclick="toggleSpeakerNotes()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 16px;">✕</button>
+    </div>
+    <div class="notes-body" id="speaker-notes-content">
+      <!-- Se actualiza con JS -->
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    // GUIONES POR SLIDE (PITCH CONVERSACIONAL)
+    const speakerNotes = [
+      "¡Hola a todos! Hoy presentamos AeroBio PDA, un proyecto donde la ingeniería aeroespacial juvenil se pone al servicio de nuestro Municipio Verde con el apoyo del Fondo Juventud y Acción Climática.",
+      "Miren este dilema: El Romeral es nuestro aire acondicionado natural, pero cuando una ladera se tala o erosiona, el suelo se recalienta y el bosque pierde su poder de filtrar el aire. Además, ¡nadie puede subir a pie a sembrar en esos riscos tan peligrosos!",
+      "¿Cómo lo resolvemos? Con tres pasos sencillos: 1) Un globo aerostático cautivo que no echa humo para diagnosticar la temperatura y el PM2.5 junto al SIATA; 2) Un cohete sonda con bio-cápsula de semillas nativas protegidas; y 3) Un laboratorio escolar para certificar si germinan con fuerza.",
+      "Aquí vemos la misión en vivo: la plataforma aerostática mide el aire limpio a 100 metros sin contaminar; el cohete prueba la resistencia física de las semillas nativas; y en el laboratorio escolar comprobamos que el 88% logra germinar con vigor intacto.",
+      "Este proyecto lo lideran 5 estudiantes de grado 9° a 11° de la IEJAGA: Santiago en la dirección, Julian y Samuel en la aerostática y fotos, Felipe en la aviónica LoRa con SIATA, y Emanuel en la biología de semillas, guiados por el profe Alexander Villarreal.",
+      "Con $12 millones de pesos (USD $3.000) no pagamos salarios burocráticos: compramos sensores de precisión, helio, componentes de cohete, equipamiento de germinación y cartillas didácticas para los muchachos.",
+      "Cerramos con esta convicción: desde un colegio público de La Tablaza demostramos que la ciencia aeroespacial no es solo para soñar con ir a Marte, sino para salvar y reforestar el territorio donde vivimos. ¡Muchas gracias!"
+    ];
+
+    // INICIALIZAR PUNTOS DE PROGRESO
+    const dotsContainer = document.getElementById('progress-dots');
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 0 ? 'active' : ''}`;
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateSlide() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === currentSlide);
+      });
+
+      document.getElementById('prev-btn').style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
+      document.getElementById('next-btn').innerText = currentSlide === totalSlides - 1 ? 'Finalizar ✓' : 'Siguiente →';
+
+      // Actualizar notas de orador
+      document.getElementById('speaker-notes-content').innerText = speakerNotes[currentSlide] || "Sin notas adicionales.";
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      updateSlide();
+    }
+
+    // NAVEGACIÓN POR TECLADO
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'f' || e.key === 'F') {
+        toggleFullScreen();
+      }
+    });
+
+    // PANTALLA COMPLETA
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // MODAL DE NOTAS
+    function toggleSpeakerNotes() {
+      const modal = document.getElementById('speaker-notes-modal');
+      modal.classList.toggle('active');
+    }
+
+    // PESTAÑAS DEL SIMULADOR
+    function switchSim(tabName) {
+      document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sim-panel').forEach(p => p.classList.remove('active'));
+
+      event.target.classList.add('active');
+      document.getElementById(`sim-${tabName}`).classList.add('active');
+    }
+
+    // LANZAMIENTO INTERACTIVO DE COHETE
+    let lanzado = false;
+    function lanzarCohete() {
+      if (lanzado) return;
+      lanzado = true;
+      const rocket = document.getElementById('rocket-sprite');
+      const parachute = document.getElementById('parachute-sprite');
+      const apogee = document.getElementById('rocket-apogee');
+
+      rocket.style.transform = 'translateY(-140px) scale(0.6)';
+      apogee.innerText = 'Subiendo...';
+
+      setTimeout(() => {
+        rocket.style.display = 'none';
+        parachute.style.display = 'block';
+        parachute.style.animation = 'float 3s ease-in-out infinite';
+        apogee.innerText = '320 m (Apogeo y Eyección)';
+        apogee.style.color = '#34d399';
+      }, 1500);
+
+      setTimeout(() => {
+        // Reset después de 6s
+        rocket.style.display = 'block';
+        rocket.style.transform = 'translateY(0) scale(1)';
+        parachute.style.display = 'none';
+        apogee.innerText = '320 m';
+        apogee.style.color = '#fbbf24';
+        lanzado = false;
+      }, 7000);
+    }
+
+    // TEMPORIZADOR DE PITCH (3 MINUTOS)
+    let timeLeft = 180;
+    let timerRunning = true;
+    const timerDisplay = document.getElementById('timer-display');
+
+    setInterval(() => {
+      if (timerRunning && timeLeft > 0) {
+        timeLeft--;
+        const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const secs = (timeLeft % 60).toString().padStart(2, '0');
+        timerDisplay.innerText = `${mins}:${secs}`;
+        if (timeLeft <= 30) {
+          timerDisplay.style.color = '#f87171';
+        }
+      }
+    }, 1000);
+
+    document.getElementById('timer-btn').onclick = () => {
+      timerRunning = !timerRunning;
+    };
+
+    // Inicializar
+    updateSlide();
+  </script>
+</body>
+</html>
