@@ -49,3 +49,16 @@ Nacido como un grupo pionero en robótica educativa en el año 2012 y formalizad
 * 📄 [`Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx`](./Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx): Formato oficial Word completamente diligenciado con justificación, problemática, antecedentes y referencias científicas (AMVA, Corantioquia, SIATA, Nowak et al., Fukuoka). *Pendiente: asignar los 3 a 5 jóvenes del equipo líder*.
 * 📊 [`Presupuesto_y_Cronograma_Generacion_Estrella_AeroBio.xlsx`](./Presupuesto_y_Cronograma_Generacion_Estrella_AeroBio.xlsx): Presupuesto formulado en $12.000.000 COP (sensores, aviónica LoRa, helio/globo, cohetería, equipamiento de laboratorio de germinación y divulgación) y cronograma operativo a 5 meses.
 * 📂 [`Documentos de convocatoria Generación Estrella/`](./Documentos%20de%20convocatoria%20Generación%20Estrella): Documentos y términos de referencia originales de la convocatoria.
+
+---
+
+## 📚 5. Referencias Bibliográficas y Normativas Incorporadas en la Propuesta
+1. **Área Metropolitana del Valle de Aburrá [AMVA] & Universidad Nacional de Colombia.** (2018). *Estudio de variabilidad microclimática, islas de calor y coberturas vegetales en el Valle de Aburrá*. Medellín: AMVA.
+2. **Corantioquia.** (2019). *Plan de Manejo Ambiental del Distrito de Manejo Integrado (DMI) Cuchilla del Romeral*. Corporación Autónoma Regional del Centro de Antioquia.
+3. **Escobedo, F. J., Kroeger, T., & Wagner, J. E.** (2011). *Urban forests and pollution mitigation: Analyzing ecosystem services and disservices*. Environmental Pollution, 159(8-9), 2078-2087. https://doi.org/10.1016/j.envpol.2011.01.010
+4. **Fukuoka, M.** (1978). *The One-Straw Revolution: An Introduction to Natural Farming (Técnica de Nendo Dango)*. Rodale Press.
+5. **García-Fayos, P., Bochet, E., & Cerdà, A.** (2020). *Seed pelleting and soil erosion control: Enhancing restoration success on degraded steep slopes*. Ecological Engineering, 148, 105789. https://doi.org/10.1016/j.ecoleng.2020.105789
+6. **Municipio de La Estrella.** (2024). *Plan de Desarrollo Municipal 2024-2027: 'La Estrella, Municipio Verde y Sostenible'*. Alcaldía Municipal de La Estrella.
+7. **Nowak, D. J., Hirabayashi, S., Bodine, A., & Greenfield, E.** (2014). *Tree and forest effects on air quality and human health in the United States*. Environmental Pollution, 193, 119-129. https://doi.org/10.1016/j.envpol.2014.05.028
+8. **Sistema de Alerta Temprana de Medellín y el Valle de Aburrá [SIATA].** (2023). *Dinámica de dispersión de contaminantes, perfiles verticales y red de monitoreo ciudadano en la cuenca del Valle de Aburrá*. Medellín: AMVA / SIATA.
+
