@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>AeroBio PDA · Presentación Oficial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +10,7 @@
   <style>
     :root {
       --bg-dark: #080c14;
-      --bg-card: rgba(15, 23, 42, 0.82);
+      --bg-card: rgba(15, 23, 42, 0.85);
       --bg-card-border: rgba(56, 189, 248, 0.25);
       --primary: #10b981;
       --primary-glow: rgba(16, 185, 129, 0.4);
@@ -28,6 +28,7 @@
       margin: 0;
       padding: 0;
       user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -36,6 +37,7 @@
       font-family: var(--font-body);
       overflow: hidden;
       height: 100vh;
+      height: 100dvh;
       width: 100vw;
       display: flex;
       flex-direction: column;
@@ -47,11 +49,12 @@
 
     /* BARRA SUPERIOR */
     header {
-      height: 62px;
+      height: 60px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 36px;
+      padding: 0 32px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(14px);
       z-index: 100;
@@ -60,7 +63,7 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .brand-badge {
@@ -68,62 +71,63 @@
       color: white;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 14px;
-      padding: 5px 12px;
+      font-size: 13px;
+      padding: 4px 10px;
       border-radius: 6px;
       letter-spacing: 1px;
       box-shadow: 0 0 15px var(--primary-glow);
+      white-space: nowrap;
     }
 
     .brand-title {
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       letter-spacing: -0.5px;
       color: #f8fafc;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .header-controls {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
 
     /* TEMPORIZADOR */
     .timer-badge {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: rgba(30, 41, 59, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.15);
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 20px;
       font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--accent);
       cursor: pointer;
       transition: all 0.2s;
-    }
-
-    .timer-badge:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 12px var(--accent-glow);
+      white-space: nowrap;
     }
 
     .btn-header {
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #f1f5f9;
-      padding: 7px 14px;
+      padding: 6px 12px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       transition: all 0.2s;
+      white-space: nowrap;
     }
 
     .btn-header:hover {
@@ -136,6 +140,7 @@
       flex: 1;
       position: relative;
       overflow: hidden;
+      touch-action: pan-y;
     }
 
     .slide {
@@ -148,7 +153,9 @@
       opacity: 0;
       pointer-events: none;
       transform: translateX(60px) scale(0.98);
-      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .slide.active {
@@ -172,16 +179,17 @@
 
     .slide-tag::before {
       content: '';
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       background: var(--primary);
       border-radius: 50%;
-      box-shadow: 0 0 12px var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+      flex-shrink: 0;
     }
 
     .slide-title {
       font-family: var(--font-heading);
-      font-size: clamp(28px, 3.4vw, 44px);
+      font-size: clamp(26px, 3.2vw, 42px);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -1px;
@@ -197,14 +205,14 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       align-items: stretch;
-      height: 74%;
+      min-height: 65%;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      height: 74%;
+      min-height: 65%;
     }
 
     .card {
@@ -227,7 +235,7 @@
     }
 
     .card-icon {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 12px;
       display: inline-block;
     }
@@ -286,7 +294,7 @@
 
     .hero-title {
       font-family: var(--font-heading);
-      font-size: clamp(38px, 5.2vw, 68px);
+      font-size: clamp(36px, 5vw, 68px);
       font-weight: 800;
       line-height: 1.08;
       margin-bottom: 18px;
@@ -300,18 +308,18 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(18px, 1.6vw, 23px);
+      font-size: clamp(17px, 1.5vw, 23px);
       color: #e2e8f0;
       line-height: 1.6;
       max-width: 820px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .meta-badge {
@@ -319,7 +327,7 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       padding: 10px 18px;
       border-radius: 12px;
-      font-size: 15px;
+      font-size: 14.5px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -331,7 +339,7 @@
       display: grid;
       grid-template-columns: 1fr 1.35fr;
       gap: 22px;
-      height: 74%;
+      min-height: 65%;
     }
 
     .obj-general-card {
@@ -381,7 +389,7 @@
 
     .obj-spec-num {
       font-family: var(--font-heading);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
@@ -414,7 +422,7 @@
       color: #cbd5e1;
       padding: 9px 18px;
       border-radius: 10px;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -431,7 +439,7 @@
       display: none;
       grid-template-columns: 1.25fr 1fr;
       gap: 20px;
-      height: 68%;
+      min-height: 60%;
     }
 
     .sim-panel.active {
@@ -448,23 +456,25 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 240px;
     }
 
     .sim-stats {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      justify-content: center;
     }
 
     .stat-box {
       background: rgba(30, 41, 59, 0.7);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 14px;
-      padding: 16px 20px;
+      padding: 14px 18px;
     }
 
     .stat-label {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: #94a3b8;
@@ -474,15 +484,15 @@
 
     .stat-value {
       font-family: var(--font-heading);
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 700;
       color: #ffffff;
     }
 
     /* ANIMACIÓN GLOBO */
     .balloon-anim {
-      width: 80px;
-      height: 98px;
+      width: 75px;
+      height: 92px;
       background: radial-gradient(circle at 35% 30%, #38bdf8, #0369a1);
       border-radius: 50% 50% 45% 45% / 60% 60% 35% 35%;
       position: relative;
@@ -492,23 +502,23 @@
 
     .balloon-cord {
       position: absolute;
-      top: 98px;
+      top: 92px;
       left: 50%;
       width: 2px;
-      height: 120px;
+      height: 110px;
       background: rgba(255, 255, 255, 0.35);
       transform: translateX(-50%);
     }
 
     .balloon-payload {
       position: absolute;
-      top: 145px;
+      top: 135px;
       left: 50%;
       transform: translateX(-50%);
       background: #10b981;
-      padding: 6px 12px;
+      padding: 5px 12px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
       color: white;
       white-space: nowrap;
@@ -517,15 +527,16 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-16px); }
+      50% { transform: translateY(-14px); }
     }
 
-    /* SLIDE 6: EQUIPO HUMANO (JÓVENES + 3 DOCENTES) */
+    /* SLIDE 6: EQUIPO HUMANO */
     .team-container {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      height: 74%;
+      gap: 16px;
+      min-height: 65%;
+      justify-content: center;
     }
 
     .section-subtitle {
@@ -535,7 +546,7 @@
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -565,8 +576,8 @@
     }
 
     .student-avatar {
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: linear-gradient(135deg, #1e3a8a, #0f766e);
       border: 2px solid var(--accent);
@@ -575,7 +586,7 @@
       justify-content: center;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       color: white;
       margin-bottom: 6px;
     }
@@ -595,7 +606,6 @@
       font-weight: 600;
     }
 
-    /* MENTORES */
     .mentors-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -606,45 +616,47 @@
       background: linear-gradient(135deg, rgba(30, 58, 138, 0.25), rgba(15, 23, 42, 0.85));
       border: 1px solid rgba(56, 189, 248, 0.3);
       border-radius: 14px;
-      padding: 14px 18px;
+      padding: 14px 16px;
       display: flex;
       align-items: center;
       gap: 14px;
     }
 
     .mentor-icon {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
       background: rgba(56, 189, 248, 0.2);
       border: 1px solid var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 20px;
+      flex-shrink: 0;
     }
 
     .mentor-info h4 {
       font-family: var(--font-heading);
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 2px;
     }
 
     .mentor-info p {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #94a3b8;
       line-height: 1.35;
     }
 
     /* BARRA INFERIOR DE NAVEGACIÓN */
     footer {
-      height: 64px;
+      height: 60px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 40px;
+      padding: 0 36px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(14px);
       z-index: 100;
@@ -652,13 +664,13 @@
 
     .progress-dots {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
     }
 
     .dot {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.2);
       cursor: pointer;
@@ -666,7 +678,7 @@
     }
 
     .dot.active {
-      width: 32px;
+      width: 28px;
       border-radius: 6px;
       background: var(--primary);
       box-shadow: 0 0 14px var(--primary-glow);
@@ -674,7 +686,7 @@
 
     .nav-buttons {
       display: flex;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn-nav {
@@ -682,14 +694,14 @@
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: white;
       font-family: var(--font-heading);
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
-      padding: 9px 20px;
+      padding: 8px 18px;
       border-radius: 8px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       transition: all 0.2s;
     }
 
@@ -711,10 +723,10 @@
     /* MODAL DE NOTAS DE ORADOR */
     .speaker-notes-modal {
       position: fixed;
-      bottom: 75px;
-      right: 40px;
+      bottom: 72px;
+      right: 36px;
       width: 440px;
-      max-height: 290px;
+      max-height: 300px;
       background: rgba(15, 23, 42, 0.96);
       border: 1px solid var(--accent);
       border-radius: 14px;
@@ -758,6 +770,244 @@
       padding-right: 6px;
     }
 
+    /* ========================================================= */
+    /* RESPONSIVE DESIGN INTELIGENTE PARA CELULARES Y TABLETS     */
+    /* ========================================================= */
+    @media (max-width: 820px) {
+      /* Cabecera compacta */
+      header {
+        height: 52px;
+        padding: 0 16px;
+      }
+      .brand-title {
+        display: none; /* Oculta en celular para no saturar */
+      }
+      .brand-badge {
+        font-size: 12px;
+        padding: 3px 8px;
+      }
+      .header-controls {
+        gap: 8px;
+      }
+      .timer-badge {
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+      .btn-header {
+        padding: 4px 10px;
+        font-size: 11px;
+      }
+      .btn-header span:first-child {
+        font-size: 14px;
+      }
+
+      /* Área de Slides con Scroll Táctil */
+      .slide {
+        padding: 16px 16px 72px 16px;
+        justify-content: flex-start;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .slide-tag {
+        font-size: 11.5px;
+        letter-spacing: 1.5px;
+        margin-bottom: 4px;
+      }
+
+      .slide-title {
+        font-size: 22px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+      }
+
+      /* Hero Slide */
+      .hero-container {
+        padding-top: 10px;
+      }
+      .hero-pill {
+        font-size: 12px;
+        padding: 5px 14px;
+        margin-bottom: 12px;
+      }
+      .hero-title {
+        font-size: 34px;
+        line-height: 1.15;
+        margin-bottom: 12px;
+      }
+      .hero-subtitle {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 20px;
+      }
+      .hero-badges {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+      }
+      .meta-badge {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px 12px;
+        justify-content: flex-start;
+      }
+
+      /* Rejillas colapsadas a columna */
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        height: auto;
+      }
+
+      .card {
+        padding: 16px 14px;
+      }
+      .card-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+      .card-title {
+        font-size: 18px;
+      }
+      .card-desc {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .card-tag {
+        font-size: 11.5px;
+        padding: 3px 8px;
+      }
+
+      /* Slide Objetivos */
+      .obj-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        height: auto;
+      }
+      .obj-general-card {
+        padding: 16px 14px;
+      }
+      .obj-general-title {
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .obj-general-text {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+      .obj-spec-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .obj-spec-card {
+        padding: 12px 14px;
+      }
+      .obj-spec-title {
+        font-size: 15.5px;
+      }
+      .obj-spec-desc {
+        font-size: 13.5px;
+      }
+
+      /* Slide Simulador */
+      .sim-tabs {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .sim-tab {
+        font-size: 12.5px;
+        padding: 7px 12px;
+        text-align: center;
+      }
+      .sim-panel {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        height: auto;
+      }
+      .sim-visual {
+        min-height: 180px;
+        padding: 16px;
+      }
+      .stat-box {
+        padding: 10px 14px;
+      }
+      .stat-value {
+        font-size: 20px;
+      }
+
+      /* Slide Equipo */
+      .team-container {
+        height: auto;
+        gap: 14px;
+      }
+      .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      .student-card:last-child {
+        grid-column: span 2; /* El 5to estudiante centrado */
+      }
+      .student-avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 13px;
+      }
+      .student-name {
+        font-size: 12px;
+      }
+      .student-role {
+        font-size: 10.5px;
+      }
+      .mentors-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .mentor-card {
+        padding: 10px 12px;
+      }
+      .mentor-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+      }
+      .mentor-info h4 {
+        font-size: 14px;
+      }
+      .mentor-info p {
+        font-size: 11.5px;
+      }
+
+      /* Barra de navegación inferior en celular */
+      footer {
+        height: 56px;
+        padding: 0 16px;
+      }
+      .progress-dots {
+        gap: 5px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+      }
+      .dot.active {
+        width: 18px;
+      }
+      .btn-nav {
+        padding: 7px 12px;
+        font-size: 12.5px;
+      }
+
+      /* Modal de notas flotante en celular */
+      .speaker-notes-modal {
+        width: calc(100vw - 24px);
+        right: 12px;
+        left: 12px;
+        bottom: 64px;
+        max-height: 50vh;
+        padding: 14px;
+      }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -778,15 +1028,15 @@
         <span id="timer-display">03:00</span>
       </div>
       <button class="btn-header" id="btn-notes" onclick="toggleSpeakerNotes()">
-        <span>🎙️</span> Guion del Pitch
+        <span>🎙️</span> <span class="hide-mobile">Guion</span>
       </button>
       <button class="btn-header" onclick="toggleFullScreen()">
-        <span>⛶</span> Pantalla Completa
+        <span>⛶</span>
       </button>
     </div>
   </header>
 
-  <!-- CONTENEDOR PRINCIPAL DE SLIDES -->
+  <!-- CONTENEDOR PRINCIPAL DE SLIDES CON SOPORTE TOUCH SWIPE -->
   <main id="slide-container">
 
     <!-- SLIDE 1: PORTADA HERO -->
@@ -830,7 +1080,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 3: OBJETIVOS EN LENGUAJE SENCILLO (NUEVA SLIDE) -->
+    <!-- SLIDE 3: OBJETIVOS EN LENGUAJE SENCILLO -->
     <section class="slide" data-slide="2">
       <div class="slide-tag">Misión & Metas Claras</div>
       <h2 class="slide-title">¿Qué nos proponemos lograr con AeroBio PDA?</h2>
@@ -911,9 +1161,9 @@
       <h2 class="slide-title">Centro de Control de Misión AeroBio</h2>
       
       <div class="sim-tabs">
-        <button class="sim-tab active" onclick="switchSim('balloon')">🎈 1. Plataforma Aerostática</button>
-        <button class="sim-tab" onclick="switchSim('rocket')">🚀 2. Cohete y Bio-Cápsula</button>
-        <button class="sim-tab" onclick="switchSim('lab')">🌱 3. Laboratorio de Germinación</button>
+        <button class="sim-tab active" onclick="switchSim('balloon', this)">🎈 1. Globo Aerostático</button>
+        <button class="sim-tab" onclick="switchSim('rocket', this)">🚀 2. Cohete Sonda</button>
+        <button class="sim-tab" onclick="switchSim('lab', this)">🌱 3. Laboratorio Germinación</button>
       </div>
 
       <!-- PANEL GLOBO -->
@@ -922,22 +1172,22 @@
           <div class="balloon-anim"></div>
           <div class="balloon-cord"></div>
           <div class="balloon-payload">CanSat Atmosférico LoRa</div>
-          <div style="position: absolute; bottom: 12px; font-size: 13px; color: #94a3b8; font-weight: 500;">
-            Vuelo Cautivo Estacionario a 100 m de Altura · Cero Emisiones
+          <div style="position: absolute; bottom: 10px; font-size: 11.5px; color: #94a3b8; font-weight: 500; text-align: center; padding: 0 10px;">
+            Vuelo Cautivo Estacionario a 100 m · Cero Emisiones
           </div>
         </div>
         <div class="sim-stats">
           <div class="stat-box">
             <div class="stat-label">Material Particulado PM2.5 (SIATA)</div>
-            <div class="stat-value" style="color: #34d399;">14.2 µg/m³ <span style="font-size: 15px; color: #cbd5e1;">(Aire Bueno)</span></div>
+            <div class="stat-value" style="color: #34d399;">14.2 µg/m³ <span style="font-size: 14px; color: #cbd5e1;">(Aire Bueno)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Gradiente Térmico de Ladera</div>
-            <div class="stat-value" style="color: #38bdf8;">-3.8 °C <span style="font-size: 15px; color: #cbd5e1;">(Efecto Amortiguador)</span></div>
+            <div class="stat-value" style="color: #38bdf8;">-3.8 °C <span style="font-size: 14px; color: #cbd5e1;">(Amortiguador)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Humedad Relativa en Dosel</div>
-            <div class="stat-value" style="color: #818cf8;">82.5 % <span style="font-size: 15px; color: #cbd5e1;">(Aptitud Óptima)</span></div>
+            <div class="stat-value" style="color: #818cf8;">82.5 % <span style="font-size: 14px; color: #cbd5e1;">(Óptima)</span></div>
           </div>
         </div>
       </div>
@@ -945,10 +1195,10 @@
       <!-- PANEL COHETE -->
       <div class="sim-panel" id="sim-rocket">
         <div class="sim-visual" id="rocket-stage">
-          <div id="rocket-sprite" style="font-size: 54px; transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);">🚀</div>
-          <div id="parachute-sprite" style="font-size: 38px; display: none; margin-top: 10px;">🪂 Bio-Cápsula</div>
-          <button class="btn-nav primary" style="position: absolute; bottom: 16px; font-size: 15px;" onclick="lanzarCohete()">
-            🔥 Simular Lanzamiento Balístico
+          <div id="rocket-sprite" style="font-size: 48px; transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);">🚀</div>
+          <div id="parachute-sprite" style="font-size: 34px; display: none; margin-top: 10px;">🪂 Bio-Cápsula</div>
+          <button class="btn-nav primary" style="position: absolute; bottom: 14px; font-size: 13.5px;" onclick="lanzarCohete()">
+            🔥 Simular Lanzamiento
           </button>
         </div>
         <div class="sim-stats">
@@ -957,12 +1207,12 @@
             <div class="stat-value" id="rocket-apogee" style="color: #fbbf24;">320 m</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">Aceleración / Fuerzas G Soportadas</div>
-            <div class="stat-value" style="color: #f87171;">9.4 G <span style="font-size: 15px; color: #cbd5e1;">(Ensayo de Estrés)</span></div>
+            <div class="stat-label">Aceleración / Fuerzas G</div>
+            <div class="stat-value" style="color: #f87171;">9.4 G <span style="font-size: 14px; color: #cbd5e1;">(Estrés Mecánico)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Carga Útil Biológica</div>
-            <div class="stat-value" style="color: #34d399;">100 Pellets <span style="font-size: 15px; color: #cbd5e1;">(Nativas Protegidas)</span></div>
+            <div class="stat-value" style="color: #34d399;">100 Pellets <span style="font-size: 14px; color: #cbd5e1;">(Nativas Protegidas)</span></div>
           </div>
         </div>
       </div>
@@ -970,26 +1220,26 @@
       <!-- PANEL LAB -->
       <div class="sim-panel" id="sim-lab">
         <div class="sim-visual">
-          <div style="font-size: 46px; margin-bottom: 8px;">🧫 🌱</div>
-          <div style="font-size: 16px; font-weight: 700; color: #f8fafc;">Cámaras de Germinación IEJAGA</div>
-          <div style="font-size: 14px; color: #cbd5e1; margin-top: 4px;">Comparación Lote de Vuelo vs. Control</div>
-          <div style="margin-top: 20px; width: 80%; background: rgba(255,255,255,0.1); border-radius: 10px; height: 18px; overflow: hidden;">
+          <div style="font-size: 40px; margin-bottom: 6px;">🧫 🌱</div>
+          <div style="font-size: 15px; font-weight: 700; color: #f8fafc;">Cámaras de Germinación IEJAGA</div>
+          <div style="font-size: 13px; color: #cbd5e1; margin-top: 2px;">Lote de Vuelo vs. Control</div>
+          <div style="margin-top: 14px; width: 80%; background: rgba(255,255,255,0.1); border-radius: 10px; height: 16px; overflow: hidden;">
             <div style="width: 88%; height: 100%; background: linear-gradient(90deg, #10b981, #38bdf8);"></div>
           </div>
-          <div style="margin-top: 8px; font-size: 15px; color: #34d399; font-weight: 700;">88% Tasa de Germinación Exitosa</div>
+          <div style="margin-top: 6px; font-size: 14px; color: #34d399; font-weight: 700;">88% Germinación Exitosa</div>
         </div>
         <div class="sim-stats">
           <div class="stat-box">
-            <div class="stat-label">Tiempo de Brote (Velocidad de Emergencia)</div>
-            <div class="stat-value" style="color: #34d399;">6.2 Días <span style="font-size: 15px; color: #cbd5e1;">(Vigor Intacto)</span></div>
+            <div class="stat-label">Tiempo de Brote (Emergencia)</div>
+            <div class="stat-value" style="color: #34d399;">6.2 Días <span style="font-size: 14px; color: #cbd5e1;">(Vigor Intacto)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Elongación Radicular Promedio</div>
-            <div class="stat-value" style="color: #38bdf8;">4.8 cm <span style="font-size: 15px; color: #cbd5e1;">(Enraizamiento Fuerte)</span></div>
+            <div class="stat-value" style="color: #38bdf8;">4.8 cm <span style="font-size: 14px; color: #cbd5e1;">(Enraizamiento Fuerte)</span></div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Veredicto Científico</div>
-            <div class="stat-value" style="color: #a7f3d0; font-size: 20px;">Protocolo Aéreo 100% Viable</div>
+            <div class="stat-value" style="color: #a7f3d0; font-size: 18px;">Protocolo Aéreo 100% Viable</div>
           </div>
         </div>
       </div>
@@ -1072,7 +1322,7 @@
         <div class="card">
           <div class="card-icon">🛠️</div>
           <div class="card-title">Materiales e Insumos</div>
-          <div class="stat-value" style="color: #34d399; margin: 10px 0;">$8.700.000</div>
+          <div class="stat-value" style="color: #34d399; margin: 8px 0;">$8.700.000</div>
           <div class="card-desc">
             Sensores de partículas PM2.5/PM10, BME280, ESP32, LoRa 915 MHz, globo látex 350g, pipeta de helio técnico, fuselaje de cohete y semillas nativas peletizadas.
           </div>
@@ -1080,7 +1330,7 @@
         <div class="card">
           <div class="card-icon">🔬</div>
           <div class="card-title">Compra de Equipos</div>
-          <div class="stat-value" style="color: #38bdf8; margin: 10px 0;">$2.400.000</div>
+          <div class="stat-value" style="color: #38bdf8; margin: 8px 0;">$2.400.000</div>
           <div class="card-desc">
             Bandejas de germinación escolar, sustratos estériles, termohigrómetros digitales, medidor de pH, lupa digital USB para radículas y sistema de baterías LiPo.
           </div>
@@ -1088,7 +1338,7 @@
         <div class="card">
           <div class="card-icon">📢</div>
           <div class="card-title">Diseño y Comunicaciones</div>
-          <div class="stat-value" style="color: #818cf8; margin: 10px 0;">$900.000</div>
+          <div class="stat-value" style="color: #818cf8; margin: 8px 0;">$900.000</div>
           <div class="card-desc">
             Cartillas de registro experimental para los estudiantes, pendón institucional de ciencia ciudadana y talleres de divulgación con la comunidad.
           </div>
@@ -1100,14 +1350,14 @@
     <section class="slide" data-slide="7">
       <div class="hero-container">
         <div class="hero-pill">🚀 El Legado para La Estrella</div>
-        <h2 class="hero-title" style="font-size: clamp(32px, 4.2vw, 56px);">
+        <h2 class="hero-title" style="font-size: clamp(30px, 4vw, 54px);">
           Conocer desde el cielo para <span>sembrar vida en la tierra</span>
         </h2>
         <p class="hero-subtitle">
           Entregaremos a la Secretaría de Medio Ambiente e ICLEI un mapa vertical inédito de calidad de aire y un protocolo probado de siembra aérea para recuperar las laderas de nuestro Municipio Verde.
         </p>
-        <div style="display: flex; gap: 16px; justify-content: center;">
-          <button class="btn-nav primary" style="font-size: 16px; padding: 10px 24px;" onclick="goToSlide(0)">↺ Reiniciar Exposición</button>
+        <div style="display: flex; gap: 14px; justify-content: center; width: 100%;">
+          <button class="btn-nav primary" style="font-size: 15px; padding: 10px 22px;" onclick="goToSlide(0)">↺ Reiniciar Exposición</button>
         </div>
       </div>
     </section>
@@ -1116,9 +1366,7 @@
 
   <!-- BARRA INFERIOR -->
   <footer>
-    <div class="progress-dots" id="progress-dots">
-      <!-- Generado dinámicamente con JS -->
-    </div>
+    <div class="progress-dots" id="progress-dots"></div>
     <div class="nav-buttons">
       <button class="btn-nav" id="prev-btn" onclick="prevSlide()">← Anterior</button>
       <button class="btn-nav primary" id="next-btn" onclick="nextSlide()">Siguiente →</button>
@@ -1129,11 +1377,9 @@
   <div class="speaker-notes-modal" id="speaker-notes-modal">
     <div class="notes-header">
       <div class="notes-title">🎙️ Guion para esta diapositiva</div>
-      <button onclick="toggleSpeakerNotes()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 18px;">✕</button>
+      <button onclick="toggleSpeakerNotes()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 18px; padding: 4px;">✕</button>
     </div>
-    <div class="notes-body" id="speaker-notes-content">
-      <!-- Se actualiza con JS -->
-    </div>
+    <div class="notes-body" id="speaker-notes-content"></div>
   </div>
 
   <script>
@@ -1166,6 +1412,9 @@
     function updateSlide() {
       slides.forEach((s, idx) => {
         s.classList.toggle('active', idx === currentSlide);
+        if (idx === currentSlide) {
+          s.scrollTop = 0; // Regresa al tope al cambiar de slide en celular
+        }
       });
 
       const dots = document.querySelectorAll('.dot');
@@ -1210,6 +1459,32 @@
       }
     });
 
+    // SOPORTE DE GESTOS TÁCTILES (SWIPE EN CELULAR)
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const slideContainer = document.getElementById('slide-container');
+
+    slideContainer.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    slideContainer.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Detectar swipe horizontal prioritario
+      if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.4) {
+        if (diffX < 0) {
+          nextSlide(); // Deslizar hacia la izquierda -> Siguiente
+        } else {
+          prevSlide(); // Deslizar hacia la derecha -> Anterior
+        }
+      }
+    }, { passive: true });
+
     // PANTALLA COMPLETA
     function toggleFullScreen() {
       if (!document.fullscreenElement) {
@@ -1226,12 +1501,13 @@
     }
 
     // PESTAÑAS DEL SIMULADOR
-    function switchSim(tabName) {
+    function switchSim(tabName, btn) {
       document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.sim-panel').forEach(p => p.classList.remove('active'));
 
-      event.target.classList.add('active');
-      document.getElementById(`sim-${tabName}`).classList.add('active');
+      if (btn) btn.classList.add('active');
+      const targetPanel = document.getElementById(`sim-${tabName}`);
+      if (targetPanel) targetPanel.classList.add('active');
     }
 
     // LANZAMIENTO INTERACTIVO DE COHETE
@@ -1243,7 +1519,7 @@
       const parachute = document.getElementById('parachute-sprite');
       const apogee = document.getElementById('rocket-apogee');
 
-      rocket.style.transform = 'translateY(-140px) scale(0.6)';
+      rocket.style.transform = 'translateY(-120px) scale(0.6)';
       apogee.innerText = 'Subiendo...';
 
       setTimeout(() => {
@@ -1252,17 +1528,16 @@
         parachute.style.animation = 'float 3s ease-in-out infinite';
         apogee.innerText = '320 m (Apogeo y Eyección)';
         apogee.style.color = '#34d399';
-      }, 1500);
+      }, 1400);
 
       setTimeout(() => {
-        // Reset después de 6s
         rocket.style.display = 'block';
         rocket.style.transform = 'translateY(0) scale(1)';
         parachute.style.display = 'none';
         apogee.innerText = '320 m';
         apogee.style.color = '#fbbf24';
         lanzado = false;
-      }, 7000);
+      }, 6500);
     }
 
     // TEMPORIZADOR DE PITCH (3 MINUTOS)
