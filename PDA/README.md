@@ -32,23 +32,39 @@ Nacido como un grupo pionero en robótica educativa en el año 2012 y formalizad
 
 ---
 
-## 🌿 3. Propuesta Oficial: "AeroBio Estrella" (Convocatoria Generación Estrella 2026)
+## 🌿 3. Propuesta Oficial Definitiva: "AeroBio PDA" (Convocatoria Generación Estrella 2026)
+* **Nombre Oficial Registrado:** **AeroBio PDA: Teledetección Atmosférica Multivariable y Validación de Siembra Aérea para la Conservación del Municipio Verde**
 * **Convocatoria:** Fondo de Juventud y Acción Climática (YCAF) — Bloomberg Philanthropies, ICLEI Colombia y Alcaldía de La Estrella.
-* **Línea Temática Seleccionada:** **Conocer para conservar** (Ciencia ciudadana, teledetección y monitoreo de la biodiversidad).
+* **Línea Temática:** **Conocer para conservar** (Ciencia ciudadana, teledetección y monitoreo de la biodiversidad).
 * **Nivel de Financiación:** 🌿 **Crecimiento** (Monto: **USD $3.000 / $12.000.000 COP**).
 * **Periodo de Ejecución:** Noviembre de 2026 – 1 de abril de 2027.
 
-### Ejes de la Propuesta (El Bosque como Amortiguador y Filtro Atmosférico)
-1. **Diagnóstico Atmosférico Vertical (Globo Cautivo + SIATA):** Medición continua de gradiente vertical de PM2.5, PM10, CO2, temperatura y humedad sobre laderas rurales (La Tablaza / El Romeral) mediante plataforma aerostática limpia de emisiones, contrastada con la red de *Ciudadanos Científicos* del SIATA.
-2. **Teledetección Fotogramétrica:** Cámara cenital de alta resolución en la plataforma aerostática para caracterizar la fragmentación del dosel arbóreo y rondas hídricas.
-3. **Bio-Cápsulas de Siembra Aérea y Laboratorio de Germinación:** Diseño de bio-cápsula en cohete sonda portando semillas nativas peletizadas (arcilla hidrofílica y nutrientes - Nendo Dango) de especies del bosque altoandino (*Chagualo*, *Yarumo*, *Amarrabollo*, *Guayacán*). Las semillas sometidas a las fuerzas del vuelo son evaluadas en ambiente controlado (laboratorio de la IEJAGA: lote experimental vs. lote de control terrestre simulando el microclima hostil medido) para validar el protocolo tecnológico de reforestación aérea en laderas de difícil acceso.
+### 👥 Equipo Juvenil Líder Oficial (5 Estudiantes):
+1. **Santiago Saldarriaga Cardona** (Líder de Misión, Representante y Persona de Contacto)
+2. **Julian López Escobar** (Plataforma Aerostática y Teledetección)
+3. **Samuel Vargas Zapata** (Plataforma Aerostática y Teledetección)
+4. **Felipe Jiménez Ramírez** (Aviónica, Telemetría y Bio-Cargas)
+5. **Emanuel García Sánchez** (Bio-Cargas y Laboratorio de Germinación)
+* **Docente Asesor / Mentor:** Alexander Villarreal.
+* **Contacto Registrado:** `santiagosaldarriaga@jaga.edu.co` / `saldarsantago@gmail.com` | Tel: `3114553902`.
+
+### 🎯 Objetivos de la Propuesta:
+* **Objetivo General (Macro):** Desarrollar y validar un sistema integrado de teledetección ambiental y siembra aérea protegida, mediante el uso articulado de plataformas aerostáticas y cohetería experimental, con el fin de diagnosticar el impacto microclimático de la deforestación y evaluar la viabilidad biológica de la restauración ecológica en laderas de difícil acceso del municipio de La Estrella.
+* **Objetivos Específicos:**
+  1. Caracterizar el gradiente vertical de microclima (temperatura, humedad relativa y presión) y calidad del aire (PM2.5, PM10 y gases) en laderas rurales mediante plataforma aerostática cautiva limpia de emisiones y cohetes sonda, contrastando y calibrando las lecturas con la red de *Ciudadanos Científicos* del SIATA.
+  2. Mapear la continuidad del dosel forestal, áreas erosionadas y rondas hídricas en La Tablaza a través de fotogrametría aérea cenital instalada en la plataforma aerostática.
+  3. Diseñar, fabricar y probar una bio-cápsula en cohete sonda para el transporte y eyección segura de semillas nativas altoandinas (*Chagualo, Yarumo, Amarrabollo, Guayacán*) peletizadas con arcillas hidrofílicas y nutrientes.
+  4. Evaluar en el laboratorio escolar la tasa de germinación, velocidad de emergencia y vigor radicular de las semillas sometidas al estrés del vuelo frente a un lote de control terrestre, simulando el régimen de temperatura y humedad medido en la ladera para certificar el protocolo de siembra aérea.
 
 ---
 
-## 📁 4. Estructura de Documentos en Esta Carpeta
-* 📄 [`Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx`](./Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx): Formato oficial Word completamente diligenciado con justificación, problemática, antecedentes y referencias científicas (AMVA, Corantioquia, SIATA, Nowak et al., Fukuoka). *Pendiente: asignar los 3 a 5 jóvenes del equipo líder*.
-* 📊 [`Presupuesto_y_Cronograma_Generacion_Estrella_AeroBio.xlsx`](./Presupuesto_y_Cronograma_Generacion_Estrella_AeroBio.xlsx): Presupuesto formulado en $12.000.000 COP (sensores, aviónica LoRa, helio/globo, cohetería, equipamiento de laboratorio de germinación y divulgación) y cronograma operativo a 5 meses.
-* 📂 [`Documentos de convocatoria Generación Estrella/`](./Documentos%20de%20convocatoria%20Generación%20Estrella): Documentos y términos de referencia originales de la convocatoria.
+## 📁 4. Documentación Oficial Radicada (`Documentos enviados/`)
+Los documentos definitivos con los cuales se participa formalmente en la convocatoria están consolidados en la carpeta **[`Documentos enviados/`](./Documentos%20enviados/)**:
+
+1. 📄 **[`Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.pdf`](./Documentos%20enviados/Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.pdf)**: Formulario oficial firmado y exportado a PDF (9 páginas) para radicación digital.
+2. 📄 **[`Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx`](./Documentos%20enviados/Solicitud_Microsubsidio_Generacion_Estrella_AeroBio.docx)**: Formulario editable definitivo con los 5 líderes asignados, objetivos macro/específicos y las 8 referencias bibliográficas APA 7.
+3. 📊 **[`40201_presupuesto-y-cronograma_generacion-estrella-2026.xlsx`](./Documentos%20enviados/40201_presupuesto-y-cronograma_generacion-estrella-2026.xlsx)**: Presupuesto oficial ajustado a la nomenclatura de la convocatoria (*Materiales e insumos, Compra de Equipos, Diseño y comunicaciones*) por **$12.000.000 COP**, y cronograma con fechas calendario mensuales de noviembre 2026 a abril 2027.
+4. 📄 **[`Consentimiento informado menores de edad Generación La Estrella.pdf`](./Documentos%20enviados/Consentimiento%20informado%20menores%20de%20edad%20Generaci%C3%B3n%20La%20Estrella.pdf)**: Documento escaneado de 4 folios con las firmas y consentimientos informados de los padres/acudientes de los integrantes menores de edad del equipo.
 
 ---
 
@@ -61,4 +77,3 @@ Nacido como un grupo pionero en robótica educativa en el año 2012 y formalizad
 6. **Municipio de La Estrella.** (2024). *Plan de Desarrollo Municipal 2024-2027: 'La Estrella, Municipio Verde y Sostenible'*. Alcaldía Municipal de La Estrella.
 7. **Nowak, D. J., Hirabayashi, S., Bodine, A., & Greenfield, E.** (2014). *Tree and forest effects on air quality and human health in the United States*. Environmental Pollution, 193, 119-129. https://doi.org/10.1016/j.envpol.2014.05.028
 8. **Sistema de Alerta Temprana de Medellín y el Valle de Aburrá [SIATA].** (2023). *Dinámica de dispersión de contaminantes, perfiles verticales y red de monitoreo ciudadano en la cuenca del Valle de Aburrá*. Medellín: AMVA / SIATA.
-
