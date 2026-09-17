@@ -1,0 +1,458 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+Documento de Motores Permitidos - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 14 
+
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Motores Permitidos 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+4 
+2. PRINCIPIOS GENERALES DE SEGURIDAD​
+5 
+3. CLASIFICACIÓN DE MOTORES​
+6 
+4. MOTORES PERMITIDOS POR CATEGORÍA​
+7 
+4.1 Categoría 1​
+7 
+4.1.1 D12-5​
+7 
+4.2 Categoría 2​
+8 
+4.2.1 E12-4​
+9 
+4.2.2 F15-6​
+10 
+4.3 Categoría 3​
+11 
+4.3.1 G80-7T​
+11 
+4.3.2 H135-14A​
+12 
+5. RESTRICCIONES TÉCNICAS​
+13 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 14 
+
+ 
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente documento tiene como propósito establecer de manera clara y uniforme los tipos de 
+motores permitidos para su uso en las categorías 1, 2 y 3 del Concurso Colombiano de Cohetería 
+Deportiva (CCCD 2026). Su objetivo es: 
+●​ Garantizar la seguridad operacional durante ensayos y vuelos.​
+ 
+●​ Establecer límites técnicos coherentes con los niveles formativos de cada categoría.​
+ 
+●​ Homologar los estándares de potencia, impulso total y tipo de propulsor.​
+ 
+●​ Evitar el uso de motores no certificados o no adecuados para la competencia. 
+El Documento de Motores Permitidos (DMP) constituye un documento vinculante dentro del sistema 
+normativo del CCCD, complementario al Reglamento General y a los documentos técnicos y 
+procedimentales del evento (NSRT, PIC, SPP, DCR, CCRD, DCP y DCE).​
+Su cumplimiento es de carácter obligatorio para todas las delegaciones, jurados, asesores, organizadores 
+y miembros del comité técnico y de seguridad. 
+1.2 Alcance 
+Aplica a todos los equipos participantes del Concurso Colombiano de Cohetería Deportiva, y los motores 
+comerciales o certificados que puedan ser utilizados por delegaciones inscritas en las categorías 1, 2 y 3, 
+tanto en versiones regionales como nacionales. 
+Asimismo, el DMP 2026 se integra y complementa con los lineamientos establecidos en los documentos 
+técnicos oficiales del concurso (PIC 2026, NSRT 2026, SPP 2026, DCR 2026, CCRD 2026, DCP 2026 y DCE 
+2026), los cuales definen los estándares de diseño, evaluación, seguridad y desempeño esperados 
+durante la competencia. 
+El cumplimiento del presente código es obligatorio y su desconocimiento no exime de responsabilidad 
+ante las sanciones o penalizaciones contempladas por el Comité Nacional del CCCD. 
+1.3 Definiciones 
+Para efectos del Código de Conducta y Responsabilidad de las Delegaciones (CCRD 2026), se adoptan las 
+siguientes definiciones: 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 14 
+
+ 
+●​ Motor Comercial Certificado: Motor fabricado industrialmente bajo normas Tripoli, NAR o 
+equivalentes.​
+ 
+●​ Impulso Total (Ns): Integral del empuje a lo largo del tiempo de combustión.​
+ 
+●​ Clase de Motor: Letra que designa el rango de impulso total.​
+ 
+●​ Propelente Sólido: Mezcla sólida estable certificada para uso en cohetería deportiva. 
+2. PRINCIPIOS GENERALES DE SEGURIDAD 
+La seguridad es un componente esencial del CCCD 2026, y todos los motores utilizados deberán cumplir 
+con estándares reconocidos de certificación y trazabilidad. Únicamente se permiten motores comerciales 
+provenientes de fabricantes autorizados, y únicamente pueden ser manipulados por el Comité Nacional 
+del Concurso, o miembros autorizados por éste para realizarlo. 
+Los equipos deben garantizar que el motor seleccionado sea plenamente compatible con la estructura 
+del cohete, considerando las cargas mecánicas, térmicas y dinámicas que se generan durante el 
+despegue y el vuelo. Es responsabilidad de cada delegación verificar que el diseño y los materiales de su 
+vehículo soporten adecuadamente el impulso y las características del motor empleado. 
+Queda estrictamente prohibido modificar o intervenir motores, cargas, boquillas o retardos. Cualquier 
+intento de alteración será considerado una falta muy grave y podrá derivar en sanciones, suspensión o 
+descalificación del equipo. 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 14 
+
+ 
+3. CLASIFICACIÓN DE MOTORES 
+El CCCD adopta la clasificación internacional de motores por clase de impulso, dada por la National 
+Association of Rocketry (NAR),la Tripoli Rocketry Association y el Código de Seguridad de Tripoli 
+Colombia: 
+ 
+Impulso Total (N-sec) 
+Tipo de Motor 
+0.00 - 1.25 
+1/4A, 1/2A 
+1.26 - 2.50 
+A 
+2.51 - 5.00 
+B 
+5.01 - 10.00 
+C 
+10.01 - 20.00 
+D 
+20.01 - 40.00 
+E 
+40.01 - 80.00 
+F 
+80.01 - 160.00 
+G 
+160.01 - 320.00 
+H 
+Tabla 1. Clasificación de motores 
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 14 
+
+ 
+4. MOTORES PERMITIDOS POR CATEGORÍA 
+4.1 Categoría 1 
+Los motores permitidos para la Categoría 1 están diseñados para niveles iniciales de cohetería y se 
+limitan exclusivamente a motores comerciales de baja potencia en la clase D, con un impulso total 
+máximo de 20.00 Ns. 
+Los motores posibles a utilizar para la categoría 1 son los siguientes: 
+ 
+Motor 
+Fabricante 
+D12-5 
+Estes 
+Tabla 2. Motores Categoría 1 
+ 
+4.1.1 D12-5 
+ 
+ 
+Ilustración 1. Motor D12-5 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 14 
+
+ 
+ 
+Ilustración 2. Especificaciones Motor D12-5 
+4.2 Categoría 2 
+Los motores permitidos para la Categoría 2 están diseñados para niveles intermedios de cohetería y se 
+limitan exclusivamente a motores comerciales de baja potencia en la clase E-F, con un impulso total 
+máximo de 80.00 Ns. 
+Los equipos que participen por primera vez en esta categoría solo podrán acceder a los motores de clase 
+E. Los equipos que hayan participado en versiones anteriores en esta categoría tendrán la posibilidad de 
+acceder a los motores de clase F. Los motores posibles a utilizar para la categoría 2, de acuerdo a las 
+restricciones previamente mencionadas son los siguientes: 
+ 
+Motor 
+Fabricante 
+E12-4 
+Estes 
+F15-6 
+Estes 
+Tabla 3. Motores Categoría 2 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 14 
+
+ 
+ 
+4.2.1 E12-4 
+ 
+ 
+Ilustración 3. Motor E12-4 
+ 
+Ilustración 4. Especificaciones Motor E12-4 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 14 
+
+ 
+4.2.2 F15-6 
+ 
+ 
+Ilustración 5. Motor F15-6 
+ 
+ 
+ 
+Ilustración 6. Especificaciones Motor F15-6 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 14 
+
+ 
+4.3 Categoría 3 
+Los motores permitidos para la Categoría 3 están diseñados para niveles intermedios de cohetería y se 
+limitan exclusivamente a motores comerciales de baja potencia en la clase G-H, con un impulso total 
+máximo de 320.00 Ns. 
+Los equipos que participen por primera vez en esta categoría solo podrán acceder a los motores de clase 
+G. 
+Los equipos que hayan participado en versiones anteriores en esta categoría tendrán la posibilidad de 
+acceder a los motores de clase H. 
+Los motores posibles a utilizar para la categoría 3, de acuerdo a las restricciones previamente 
+mencionadas son los siguientes: 
+ 
+Motor 
+Fabricante 
+G80-7T 
+Aerotech 
+H135-14A 
+Aerotech 
+Tabla 4. Motores Categoría 3 
+ 
+4.3.1 G80-7T 
+ 
+Ilustración 7. Motor G80-7T 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 14 
+
+ 
+ 
+Ilustración 8. Especificaciones Motor G80-7T 
+4.3.2 H135-14A 
+ 
+Ilustración 11. Motor H135-14A 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 14 
+
+ 
+ 
+Ilustración 11. Especificaciones Motor H135-14A 
+5. RESTRICCIONES TÉCNICAS 
+La manipulación, inspección, autorización y verificación de los motores permitidos en el CCCD 2026 será 
+realizada exclusivamente por el Comité Nacional del Concurso. Ninguna delegación, asesor o participante 
+podrá abrir, modificar, manipular, alterar o intervenir motores, componentes pirotécnicos, retardos, 
+boquillas o elementos asociados al sistema de propulsión. Cualquier intento de intervención no 
+autorizada, manipulación indebida o uso de motores sin aprobación oficial será considerado una falta 
+grave o muy grave, pudiendo dar lugar a penalizaciones, anulación del vuelo, suspensión de actividades e 
+incluso la descalificación de la delegación, de acuerdo con lo estipulado en el CCRD y el SPP 2026. 
+Los equipos no podrán combinar motores, instalar cargas adicionales o implementar sistemas de ignición 
+no autorizados. Todos los componentes relacionados con la propulsión deben cumplir los requisitos del 
+fabricante y del CCCD 2026. El incumplimiento de cualquiera de estas restricciones se considerará una 
+falta grave o muy grave, dependiendo de la situación, y podrá resultar en la anulación del vuelo, 
+penalizaciones en puntaje o descalificación del equipo. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 14 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 14 
+

@@ -1,0 +1,1325 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                        
+ 
+Reglamento General de Competencia - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 28 
+
+                        
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Reglamento General de Competencia 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+5 
+1.1 Propósito​
+5 
+1.2 Alcance​
+5 
+1.3 Definiciones​
+5 
+1.4 Referencias​
+6 
+2. OBJETIVOS DEL CONCURSO​
+7 
+3. PARTICIPANTES ELEGIBLES​
+7 
+3.1 Quiénes pueden participar​
+7 
+3.2 Requisitos de inscripción​
+8 
+3.3 Elegibilidad técnica​
+8 
+3.4 Equipos regionales y nacionales​
+8 
+4. CATEGORÍAS DE COMPETENCIA Y USO DE MOTORES​
+9 
+4.1 Clasificación y certificación de motores​
+9 
+4.2 Documento de Motores Permitidos (DMP)​
+9 
+4.3 Documento de Categorías y Retos (DCR)​
+9 
+4.4 Control y trazabilidad​
+10 
+5. REQUISITOS TÉCNICOS DE LOS COHETES​
+10 
+5.1 Contenido mínimo del DCP (a presentar por el equipo)​
+10 
+5.2 Uso del DCP en la evaluación:​
+11 
+5.3 Vehículo de competencia​
+11 
+5.4 Sistemas de recuperación​
+11 
+5.5 Dimensiones, peso y cargas​
+11 
+5.6 Estabilidad y aerodinámica​
+12 
+5.7 Equipamiento de seguridad adicional​
+12 
+6. PROCEDIMIENTOS DE INSPECCIÓN TÉCNICA​
+12 
+6.1 Inspección inicial​
+12 
+6.2 Inspección en el pad​
+12 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 28 
+
+                        
+6.3 Registro y certificación​
+13 
+6.4 Seguridad en operaciones​
+13 
+7. SISTEMA DE PUNTUACIÓN Y PREMIOS​
+13 
+7.1 Principios generales de puntuación​
+13 
+7.2 Bonificaciones​
+14 
+7.3 Premios​
+14 
+8. CÓDIGO DE CONDUCTA​
+14 
+8.1 Principios generales​
+14 
+8.2 Seguridad y responsabilidad​
+14 
+8.3 Integridad y devolución​
+15 
+8.4 Sanciones por incumplimiento​
+15 
+9. CRONOGRAMA ANUAL, CATEGORÍAS Y FASES​
+15 
+9.1 Fases del Concurso​
+15 
+10. INSPECCIÓN, LANZAMIENTO Y OPERACIÓN DEL EVENTO​
+16 
+10.1 Zona de lanzamiento​
+16 
+10.2 Montaje en pad y procedimiento de ignición​
+16 
+10.3 Recuperación y retiro del vehículo​
+16 
+10.4 Registro de vuelo​
+17 
+11. PROCESO DE APELACIÓN​
+17 
+11.1 Derecho de apelación​
+17 
+11.2 Comisión de apelación​
+18 
+11.3 Procedimiento de revisión​
+18 
+12. INTEGRACIÓN DE DOCUMENTOS TÉCNICOS ESPECIALIZADOS​
+19 
+13. SEGURIDAD Y RESPONSABILIDAD​
+20 
+13.1 Cobertura de póliza general​
+20 
+13.2 Activación de la póliza​
+21 
+13.4 Protocolos de emergencia general​
+22 
+13.5 Responsabilidades de seguridad​
+23 
+13.6 Cierre de emergencia​
+23 
+14. DISPOSICIONES FINALES​
+24 
+APÉNDICE A — DOCUMENTOS COMPLEMENTARIOS, ABREVIATURAS Y FORMATOS DE REFERENCIA​
+25 
+A.1. Abreviaturas y Siglas Oficiales​
+25 
+A.2. Glosario Técnico​
+26 
+A.3. Relación entre Documentos Técnicos y Fases del Concurso​
+27 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 28 
+
+                        
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente reglamento tiene como objetivo establecer un marco normativo único, coherente y 
+comprensible que regule la organización, desarrollo y evaluación del Concurso Colombiano de Cohetería 
+Deportiva —en sus versiones nacional y regional—, garantizando: 
+●​ la equidad entre participantes;​
+ 
+●​ la seguridad de todos los involucrados;​
+ 
+●​ la claridad de los procedimientos;​
+ 
+●​ la consistencia administrativa en todo el territorio colombiano;​
+ 
+●​ la alineación con estándares internacionales reconocidos en cohetería deportiva (como IREC, 
+LASC, entre otros).​
+ 
+Además, este reglamento integra los documentos técnicos especializados (NSRT, PIC, SPP, CCRD, DCR, 
+DMP, DCP, DCE) como parte integrante del sistema normativo del Concurso. 
+1.2 Alcance 
+Este reglamento establece el marco normativo unificado del Concurso Colombiano de Cohetería 
+Deportiva, aplicable a todas las ediciones nacionales y regionales. 
+Cada concurso adoptará este reglamento general y contará con versiones específicas de los documentos 
+técnicos complementarios (NSRT, PIC, SPP, CCRD, DCR, DMP, DCP, DCE), que reflejarán las condiciones, 
+motores y características propias de esa edición. 
+1.3 Definiciones 
+Se adoptan las siguientes definiciones (inspiradas en IREC v1.6 y adaptadas al contexto nacional): 
+●​ Participante: persona individual o equipo inscrito en el Concurso.​
+ 
+●​ Equipo: conjunto de participantes que desarrollan un vehículo de cohetería para competencia.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 28 
+
+                        
+●​ Cohete / vehículo: dispositivo diseñado para lanzamiento, que incluye motor, estructura y 
+sistema de recuperación.​
+ 
+●​ Motor certificado: motor comercial con certificación reconocida (NAR, Tripoli, CAR u organismo 
+equivalente).​
+ 
+●​ Inspección técnica: revisión previa al lanzamiento conforme al documento PIC.​
+ 
+●​ Puntuación: sistema de evaluación establecido en el documento SPP.​
+ 
+●​ Apelación: solicitud de revisión de una decisión oficial conforme a la Sección 11.​
+ 
+Las abreviaturas oficiales se detallan en el Apéndice A. 
+1.4 Referencias 
+Este reglamento se inspira en los estándares internacionales reconocidos, especialmente: 
+●​ IREC Rules & Requirements v1.6​
+ 
+●​ LASC Rules & Requirements​
+ 
+●​ Código de Seguridad de Tripoli Colombia​
+ 
+Asimismo, los documentos de apoyo que lo complementan son:​
+ NSRT, PIC, SPP, CCRD, DCR, DMP, DCE. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 28 
+
+                        
+2. OBJETIVOS DEL CONCURSO 
+●​ 2.1 Fomentar el interés de jóvenes, estudiantes y aficionados en la ciencia, tecnología, ingeniería 
+y matemáticas (STEM) mediante la cohetería deportiva.​
+ 
+●​ 2.2 Promover el diseño, construcción, lanzamiento y recuperación segura de cohetes, con 
+estándares técnicos, operativos y de seguridad.​
+ 
+●​ 2.3 Garantizar que la competencia se realice en condiciones de equidad, transparencia y respeto, 
+con reglas claras y comunes para todos los participantes. 
+●​ 2.4 Desarrollar competencias de trabajo en equipo, innovación, metodología técnica, análisis de 
+riesgos y responsabilidad social en el contexto de la cohetería.​
+ 
+●​ 2.5 Mantener una plataforma nacional que permita la integración de las competiciones 
+regionales y nacionales, con estándares uniformes y conexión con estándares internacionales 
+adaptados al contexto colombiano.​
+ 
+●​ 2.6 Asegurar que todos los aspectos de la operación (inscripción, inspección, lanzamiento, 
+puntuación, apelación) estén respaldados por normas técnicas específicas (NSRT, PIC, SPP, CCRD, 
+DCR, DCE) para la seguridad, integridad y fiabilidad del proceso. 
+3. PARTICIPANTES ELEGIBLES 
+3.1 Quiénes pueden participar 
+●​ Equipos conformados por estudiantes de instituciones educativas (bachillerato o técnico), 
+universidades, y aficiones organizadas, siempre que cumplan con los requisitos de inscripción del 
+Concurso.​
+ 
+●​ Cada institución o grupo podrá inscribirse con uno o más equipos, conforme a los criterios 
+vigentes en cada edición.​
+ 
+●​ También pueden participar grupos regionales cuando la edición regional lo permita.​
+ 
+●​ Podrán participar menores de edad (conforme a la normativa de protección de menores vigente 
+en Colombia), siempre que cuenten con autorización de sus padres o tutores y cumplan con el 
+Código de Conducta (ver Sección 10).​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 28 
+
+                        
+3.2 Requisitos de inscripción 
+●​ Completar formulario oficial de inscripción, entrega de documentos requeridos (identificación, 
+carta de responsabilidad, autorización de tutores si aplica).​
+ 
+●​ Pago de tarifas de inscripción si aplica (según edición y región).​
+ 
+●​ Aceptación de este reglamento y de los documentos asociados (NSRT, PIC, SPPP, CCRD, DCR, 
+DCE).​
+ 
+●​ Declaración del motor certificado a utilizar (deberá cumplir con la limitación de clasificación H; 
+ver Sección 4).​
+ 
+●​ Cumplimiento del calendario de hitos que defina la organización del Concurso (inspección, 
+entrega de documentación, etc).​
+ 
+3.3 Elegibilidad técnica 
+●​ El cohete proyectado debe cumplir con los requisitos técnicos del Concurso (ver Sección 6).​
+ 
+●​ El motor debe ser certificado y clasificado hasta nivel H (ver Sección 4).​
+ 
+●​ El equipo debe haber pasado la inspección técnica previa al lanzamiento (Sección 7).​
+ 
+3.4 Equipos regionales y nacionales 
+●​ Los equipos registrados en ediciones regionales 2025 podrán competir en la fase nacional, 
+siempre que cumplan con la normativa nacional unificada.​
+ 
+●​ Las regionales adoptan este reglamento como marco general; la organización regional podrá 
+añadir normativas locales siempre que no contravengan este reglamento general.
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 28 
+
+                        
+4. CATEGORÍAS DE COMPETENCIA Y USO DE MOTORES 
+4.1 Clasificación y certificación de motores 
+Todos los motores empleados en el Concurso Colombiano de Cohetería Deportiva deberán ser motores 
+comerciales certificados por entidades reconocidas internacionalmente (NAR, Tripoli, CAR o 
+equivalentes). 
+El uso de motores caseros, experimentales, modificados o sin certificación está estrictamente prohibido, 
+salvo que la organización lo autorice de forma expresa y documentada. 
+La distribución, almacenamiento y entrega de los motores será responsabilidad exclusiva del Comité del 
+Concurso, salvo disposición diferente en el DMP – Documento de Motores Permitidos. 
+4.2 Documento de Motores Permitidos (DMP) 
+Los motores autorizados para cada edición del Concurso serán definidos en el DMP – Documento de 
+Motores Permitidos, emitido por el Comité Técnico Nacional. 
+El DMP establecerá: 
+●​ el listado completo de motores permitidos;​
+ 
+●​ fabricante, modelo, tipo de combustible y certificación;​
+ 
+●​ impulso total, empuje, masa propulsora y observaciones operativas;​
+ 
+●​ restricciones o recomendaciones particulares. 
+​
+Solo podrán emplearse motores incluidos en el DMP vigente.​
+Cualquier motor no contemplado en el DMP se considerará no autorizado. 
+4.3 Documento de Categorías y Retos (DCR) 
+●​ El DCR – Documento de Categorías y Retos define las categorías de competencia, los objetivos 
+técnicos, los retos específicos de altitud o desempeño, y las condiciones de evaluación de cada 
+edición. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 28 
+
+                        
+4.4 Control y trazabilidad 
+●​ Los equipos no podrán sustituir, modificar o intercambiar motores sin autorización del Comité 
+Técnico.​
+ 
+●​ El Comité Organizador garantizará la trazabilidad completa de cada motor desde su entrega 
+hasta su lanzamiento o recuperación. 
+5. REQUISITOS TÉCNICOS DE LOS COHETES 
+Antes del montaje y la inspección, cada equipo deberá preparar y presentar su DCP – Documento de 
+Diseño, Construcción y Pruebas, el cual formará parte de la documentación obligatoria a entregar según 
+el PIC. 
+ 
+5.1 Contenido mínimo del DCP (a presentar por el equipo) 
+ El DCP deberá incluir, como mínimo: 
+●​ Resumen ejecutivo del proyecto.​
+ 
+●​ Objetivo de la misión (categoría y reto según DCR).​
+ 
+●​ Planos y especificaciones del vehículo (dimensiones, materiales, masas).​
+ 
+●​ Cálculos de estabilidad (CP/CG), previsiones de trayectoria y análisis aerodinámico.​
+ 
+●​ Especificaciones del motor y su integración (referencia al DMP).​
+ 
+●​ Sistema(s) de recuperación y su verificación (paracaídas, arneses, mecanismos de despliegue).​
+ 
+●​ Resultados de pruebas previas (ensayos de banco, pruebas estructurales, verificación de ignición 
+si aplica), con fechas, responsables y registro de observaciones.​
+ 
+●​ Procedimientos de montaje y listas de inspección (checklists).​
+ 
+●​ Evaluación de riesgos y medidas mitigantes (referencia al NSRT y al plan de emergencias).​
+ 
+●​ Registro de versiones (control de cambios del DCP) y firma del responsable técnico del equipo.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 28 
+
+                        
+5.2 Uso del DCP en la evaluación: 
+●​ El DCP será utilizado por los inspectores durante las fases de revisión (pre-inspección y pad 
+inspection). La calidad, completitud y coherencia del DCP influyen en la puntuación en aspectos 
+de diseño, construcción y pruebas según el SPP. 
+5.3 Vehículo de competencia 
+●​ El cohete debe estar diseñado, construido y recuperado de forma segura, conforme a lo 
+dispuesto en el documento NSRT (Norma de Seguridad en Cohetería – Técnica).​
+ 
+●​ El cohete debe emplear un motor certificado incluido en el DMP vigente, y cumplir con los 
+parámetros estructurales y de seguridad definidos en el NSRT.​
+ 
+●​ Estructura, sistemas de recuperación, y otras partes del cohete deben cumplir los requisitos 
+mínimos establecidos en NSRT, incluida la estabilidad, resistencia al despegue y aterrizaje, 
+mediciones de peso, dimensiones máximas, etc. 
+5.4 Sistemas de recuperación 
+●​ El cohete debe llevar un sistema de recuperación que garantice aterrizaje seguro y minimización 
+de riesgos.​
+ 
+●​ Las partes de recuperación deben estar dimensionadas adecuadamente al peso del vehículo y al 
+viento local, y cumplir las normas de mantenimiento, revisión y reutilización. 
+5.5 Dimensiones, peso y cargas 
+●​ Cada vehículo debe indicar peso total listo para lanzamiento, dimensiones (longitud máxima 
+permitida, diámetro máximo si aplica).​
+ 
+●​ La organización fijará límites específicos (por ejemplo, longitud máxima 80 cm, diámetro máximo 
+60 mm).​
+ 
+●​ Si se incluye carga útil (payload), esta debe estar claramente indicada, no exceder un peso 
+máximo fijado por la edición, y su efecto no debe comprometer la seguridad del cohete.​
+ 
+●​ Las cargas útiles deben estar autorizadas por la inspección técnica (ver Sección 6) y cumplir las 
+regulaciones locales de transporte, manipulación y lanzamiento.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 28 
+
+                        
+5.6 Estabilidad y aerodinámica 
+●​ El cohete debe presentar estabilidad en vuelo (centro de presión detrás del centro de gravedad 
+en condiciones de vuelo) conforme a los cálculos presentados por el equipo.​
+ 
+●​ Los participantes deben proporcionar análisis de estabilidad, estructura, materiales y 
+procedimientos de seguridad (ver documento DCR).​
+ 
+●​ Se prohíben diseños que comprometan la seguridad por inestabilidad, desprendimiento de 
+partes o trayectoria impredecible.​
+ 
+5.7 Equipamiento de seguridad adicional 
+●​ La organización podrá requerir equipo de rastreo GPS si lo considera pertinente (inspirado en 
+estándares internacionales como IREC) para garantizar la localización del vehículo tras vuelo. 
+6. PROCEDIMIENTOS DE INSPECCIÓN TÉCNICA 
+6.1 Inspección inicial 
+●​ Antes del lanzamiento, todo vehículo debe someterse a una inspección técnica conforme al 
+documento PIC (Procedimiento de Inspección y Certificación).​
+ 
+●​ Las inspecciones pueden realizarse en varios hitos: pre-inscripción del vehículo, pre-vuelo (día 
+del lanzamiento) y post-vuelo (verificación de integridad).​
+ 
+●​ Un cohete que no pase la inspección no podrá lanzarse, o deberá corregir las deficiencias según 
+lo indicado por los inspectores.​
+ 
+6.2 Inspección en el pad 
+●​ Se verificará que el motor a utilizar coincida con el declarado y certificado.​
+ 
+●​ Se revisará que la zona de lanzamiento cumpla las distancias mínimas de seguridad, conforme al 
+documento NSRT.​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 28 
+
+                        
+6.3 Registro y certificación 
+●​ Una vez aprobado, el cohete recibirá un sello o número de aprobación técnica que lo autoriza al 
+lanzamiento.​
+ 
+●​ Se dejará un registro oficial de la inspección (documento estándar puede ser parte del PIC).​
+ 
+●​ Las modificaciones posteriores a la inspección deben notificarse y re-inspeccionarse antes de el 
+lanzamiento.​
+ 
+6.4 Seguridad en operaciones 
+●​ La organización del Concurso debe asegurar que exista zona de seguridad, personal de control, 
+señalización y permisos locales (si aplica) según el documento DCR.​
+ 
+●​ El equipo debe cumplir los procedimientos de emergencias, comunicaciones, supervisión y retiro 
+de vehículos de la zona posterior al lanzamiento. 
+7. SISTEMA DE PUNTUACIÓN Y PREMIOS 
+7.1 Principios generales de puntuación 
+●​ El sistema de puntuación se describe en detalle en el documento SPP.​
+ 
+●​ La puntuación considera múltiples factores tales como: calidad del diseño, innovación, 
+estabilidad de vuelo, altitud alcanzada (o cumplimiento del objetivo definido), recuperación 
+segura, presentación técnica, cumplimiento de calendario, penalizaciones por incumplimientos 
+de seguridad o del reglamento.​
+ 
+●​ Los criterios de evaluación se comunicarán con anticipación y serán los mismos para todos los 
+participantes de cada categoría.​
+ 
+●​ Se fomentará la transparencia: cada equipo recibirá hoja de puntuación y podrá revisar su 
+desempeño.​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 28 
+
+                        
+7.2 Bonificaciones 
+●​ La organización podrá fijar bonificaciones especiales (por ejemplo, innovación, presentación, 
+divulgación) y penalizaciones (conducta inapropiada).​
+ 
+7.3 Premios 
+●​ Para cada edición, se otorgarán premios a los primeros puestos (1°, 2°, 3° como mínimo) 
+conforme al documento SPP.​
+ 
+●​ Los premios pueden ser trofeos, medallas, diplomas, material técnico, becas o reconocimientos 
+institucionales.​
+ 
+●​ La entrega de premios se realizará en ceremonia oficial al cierre del evento.​
+ 
+●​ Los criterios para los reconocimientos especiales serán publicados antes del evento. 
+8. CÓDIGO DE CONDUCTA 
+8.1 Principios generales 
+●​ Cada participante, equipo, juez, organizador y patrocinador debe respetar el documento CCRD 
+(Código de Conducta y Responsabilidad de las Delegaciones).​
+ 
+●​ Se exige comportamiento ético, de respeto mutuo, de competencia limpia, de cuidado de la 
+seguridad y del entorno.​
+ 
+●​ Quedan prohibidos acciones como: sabotaje, uso de materiales no permitidos sin autorización, 
+manipulación de resultados, conducta discriminatoria, incumplimiento deliberado de las normas 
+de seguridad.​
+ 
+8.2 Seguridad y responsabilidad 
+●​ Los responsables del equipo deben asegurarse de que todos los miembros conocen la normativa 
+de seguridad (NSRT) y los protocolos de emergencia.​
+ 
+●​ La recuperación de los cohetes, una vez autorizada por el Director de Lanzamientos, será 
+ejecutada únicamente por el equipo especializado de rescate del Comité Organizador, el cual 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 28 
+
+                        
+cuenta con la capacitación, protocolos y equipos adecuados para esta labor.​
+ 
+●​ Los participantes no podrán ingresar al área de impacto ni realizar maniobras de rescate por 
+cuenta propia, salvo autorización expresa del Comité Técnico y bajo acompañamiento del 
+personal autorizado.​
+ 
+●​ Los menores de edad deben contar con supervisión adecuada y autorización de tutores. 
+8.3 Integridad y devolución 
+●​ Una vez recuperado el cohete, el equipo de rescate lo entregará al Comité Técnico para su 
+evaluación y registro de vuelo.​
+El Comité será responsable de certificar los resultados del vuelo y su cumplimiento con los 
+objetivos de la categoría correspondiente. 
+8.4 Sanciones por incumplimiento 
+●​ La organización podrá aplicar sanciones que van desde penalizaciones de puntuación, exclusión 
+de premios, hasta descalificación del equipo según la gravedad del incumplimiento, de 
+conformidad con el documento CCRD.​
+ 
+●​ Se podrá imponer sanción de “advertencia” por primera infracción leve, “penalización” por 
+infracción moderada y “descalificación” por infracción grave o reiterada.​
+ 
+9. CRONOGRAMA ANUAL, CATEGORÍAS Y FASES 
+9.1 Fases del Concurso 
+●​ Inscripción: apertura de formulario, pago y entrega de documentación.​
+ 
+●​ Entrega de documentación técnica: ficha del proyecto, motor certificado, plan de vuelo, análisis 
+de riesgos.​
+ 
+●​ Inspección técnica: conforme a la Sección 6.​
+ 
+●​ Stage de pre-lanzamiento: montaje, ensayo, briefing de seguridad.​
+ 
+●​ Lanzamiento: en la fecha y lugar designados por la organización.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 15 de 28 
+
+                        
+●​ Puntuación y premiación: entrega de resultados, ceremonia de cierre.​
+ 
+●​ Proceso de apelación: tras publicación de resultados, periodo para apelaciones (ver Sección 12).​
+ 
+10. INSPECCIÓN, LANZAMIENTO Y OPERACIÓN DEL 
+EVENTO 
+10.1 Zona de lanzamiento 
+●​ Debe cumplir los requisitos mínimos de seguridad del documento NSRT y el Código de Seguridad 
+de Tripoli Colombia: zona despejada, distancia mínima de público, dirección de viento, superficie 
+segura, señalización.​
+ 
+●​ La organización designará una “Rampa de lanzamiento” y personal calificado (control de pad) 
+conforme al documento PIC.​
+ 
+10.2 Montaje en pad y procedimiento de ignición 
+●​ Antes del montaje del cohete en el pad, el equipo presentará la documentación de inspección 
+aprobada.​
+ 
+●​ El técnico de lanzamiento verificará motor, sistema de ignición, cableado, sistema de 
+recuperación, zona de detonación.​
+ 
+●​ Se aplican los tiempos mínimos de espera, distancia mínima de seguridad y señal de “all clear” 
+conforme a NSRT.​
+ 
+●​ Está prohibido modificar el motor o estructura después de la inspección sin reinspección.​
+ 
+10.3 Recuperación y retiro del vehículo 
+●​ Una vez completado el vuelo y declarado seguro el campo por el Director de Lanzamientos, la 
+recuperación del cohete será realizada exclusivamente por el equipo especializado de rescate 
+del Comité Organizador, siguiendo los protocolos establecidos en el NSRT vigente y el Código 
+de Seguridad de Tripoli Colombia.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 16 de 28 
+
+                        
+●​ Los equipos participantes no deben ingresar al área de impacto ni intentar recuperar el 
+vehículo por cuenta propia, salvo autorización expresa del Comité Técnico y bajo 
+acompañamiento del personal autorizado.​
+ 
+●​ En caso de pérdida de contacto visual o aterrizaje fuera del área de recuperación, el equipo 
+participante deberá reportar de inmediato la última ubicación conocida y los datos de vuelo 
+relevantes (dirección del viento, altitud estimada, trayectoria observada) al centro de control del 
+evento, para que el personal de rescate actúe según lo previsto en el NSRT y el Código de 
+Seguridad de Tripoli Colombia.​
+ 
+●​ Una vez recuperado, el cohete será entregado al Comité Técnico para su inspección post-vuelo y 
+registro de desempeño.​
+ 
+●​ El retiro o devolución final del vehículo se realizará conforme a las instrucciones del Comité 
+Organizador, una vez finalizadas las verificaciones y el registro oficial de resultados.​
+ 
+10.4 Registro de vuelo 
+●​ La organización mantendrá un “Flight Card” o registro de lanzamiento para cada equipo, en el 
+que se anotará motor usado, altura alcanzada, recuperación, incidencias, observaciones de 
+inspectores y jueces.​
+ 
+●​ Ese registro servirá para la puntuación y para eventuales apelaciones.​
+ 
+11. PROCESO DE APELACIÓN 
+11.1 Derecho de apelación 
+●​ Todo equipo participante tiene derecho a apelar una decisión relativa a inspección técnica, 
+puntuación, sanción o descalificación.​
+ 
+●​ El plazo para presentar la apelación será definido por la organización (ejemplo: dentro de las 2 
+horas posteriores a la publicación del resultado, o en versión local según cronograma).​
+ 
+●​ La apelación deberá presentarse por escrito, firmada por el responsable del equipo, e incluir 
+fundamentación técnica o de procedimiento. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 17 de 28 
+
+                        
+11.2 Comisión de apelación 
+●​ La organización designará una Comisión de Apelación, independiente del jurado de puntuación, 
+para revisar los casos.​
+ 
+●​ La Comisión podrá confirmar la decisión, modificarla (por ejemplo, corregir errores de cálculo) o 
+revertirla (deshacer sanción, restituir puntuación).​
+ 
+●​ La decisión de la Comisión será final y vinculante.​
+ 
+11.3 Procedimiento de revisión 
+●​ La Comisión revisará la documentación del equipo, los informes de inspección, la hoja de 
+puntuación original y el motivo de la apelación.​
+ 
+●​ Podrá convocar al responsable del equipo para explicar su caso si así lo estima necesario.​
+ 
+●​ Si se detecta error procedimental por parte de la organización (por ejemplo fallo en registro de 
+datos), la Comisión podrá ordenar la modificación del resultado.​
+ 
+●​ Las decisiones de apelación serán notificadas por escrito al equipo y publicadas con 
+transparencia.​
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 18 de 28 
+
+                        
+12. 
+INTEGRACIÓN 
+DE 
+DOCUMENTOS 
+TÉCNICOS 
+ESPECIALIZADOS 
+Sigla 
+Documento 
+Descripción 
+NSRT 
+Norma de Seguridad en 
+Cohetería – Técnica 
+Define los requisitos de seguridad, zonas, ignición 
+y responsabilidades. 
+PIC 
+Procedimiento 
+de 
+Inspección 
+y 
+Certificación 
+Establece hitos de inspección, criterios de 
+aprobación y documentación técnica. 
+SPP 
+Sistema de Puntuación y 
+Premios 
+Contiene la metodología de evaluación y criterios 
+de premiación. 
+CCRD 
+Código de Conducta y 
+Responsabilidad de 
+las Delegaciones 
+Regula 
+la 
+conducta, 
+sanciones 
+y 
+responsabilidades de todos los participantes. 
+DCR 
+Documento 
+de 
+Categorías y Retos 
+Define las categorías, objetivos técnicos, retos y 
+parámetros de evaluación. 
+DMP 
+Documento de Motores 
+Permitidos 
+Define los motores certificados autorizados, su 
+clasificación, 
+fabricante y características 
+técnicas. 
+DCE 
+Documento 
+de 
+Cumplimiento 
+y 
+Evaluación 
+Incluye 
+auditorías, 
+registros, 
+reportes 
+y 
+evaluación post-evento. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 19 de 28 
+
+                        
+DCP 
+Diseño Construcción y 
+Pruebas 
+Documento técnico presentado por cada equipo que 
+describe el diseño, cálculos, materiales, sistemas de 
+recuperación, ensayos y plan de seguridad. 
+Cada equipo, al inscribirse, acepta estos siete documentos como parte integral del reglamento. 
+El Comité Nacional deberá publicar DCR y DMP de forma conjunta antes de cada edición. 
+13. SEGURIDAD Y RESPONSABILIDAD 
+13.1 Cobertura de póliza general 
+Todos los participantes, jueces, voluntarios, personal logístico y miembros del Comité Organizador 
+estarán amparados por una póliza de seguro integral contratada por la organización del Concurso. 
+Dicha póliza deberá cubrir, como mínimo: 
+●​ Lesiones personales o daños físicos durante el desarrollo de actividades del evento.​
+ 
+●​ Daños materiales causados por el lanzamiento, recuperación o manipulación de equipos.​
+ 
+●​ Responsabilidad civil frente a terceros.​
+ 
+●​ Atención médica inmediata y gastos de traslado en caso de accidente.​
+ 
+El Comité Organizador publicará, antes del inicio de cada edición, el alcance específico y la entidad 
+aseguradora en el DCE – Documento de Cumplimiento y Evaluación correspondiente. 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 20 de 28 
+
+                        
+13.2 Activación de la póliza 
+En caso de incidente o accidente, el procedimiento de activación de la póliza será el siguiente: 
+1.​ Reporte inicial:​
+ 
+○​ Cualquier persona que presencie el incidente deberá notificar de inmediato al Oficial de 
+Seguridad o al Director de Campo.​
+ 
+○​ El Coordinador documentará hora, lugar, personas involucradas y descripción breve.​
+ 
+2.​ Evaluación primaria:​
+ 
+○​ El Coordinador de Seguridad, junto con el personal de primeros auxilios, clasificará el 
+evento según su gravedad (leve, moderado, grave o muy grave).​
+ 
+○​ En caso de duda, se considerará grave por precaución.​
+ 
+3.​ Activación de protocolo:​
+ 
+○​ Para incidentes graves o muy graves, se suspenderán inmediatamente todas las 
+operaciones de lanzamiento.​
+ 
+○​ Se activará el protocolo de emergencia general y se notificará a la aseguradora según los 
+canales definidos en el DCE.​
+ 
+○​ Se dará prioridad a la atención médica y evacuación antes de cualquier trámite 
+administrativo.​
+ 
+4.​ Registro y comunicación:​
+ 
+○​ El Comité levantará un informe oficial dentro de las 24 horas posteriores al evento.​
+ 
+○​ Copia del informe se enviará a la aseguradora, a la entidad educativa (si aplica) y al 
+Comité Nacional de Cohetería Deportiva. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 21 de 28 
+
+                        
+13.3 Clasificación de emergencias 
+Nivel 
+Descripción 
+Acción inmediata 
+Leve 
+Situaciones menores sin riesgo para 
+personas ni equipos (caídas, tropiezos, 
+fallos menores). 
+Atención de primeros auxilios, registro 
+del evento, continuidad de actividades 
+previa verificación de seguridad. 
+Moderada 
+Incidentes que pueden causar lesiones o 
+daños parciales a estructuras o equipos. 
+Suspensión 
+temporal 
+del 
+área 
+afectada, revisión técnica y reporte al 
+Coordinador de Seguridad. 
+Grave 
+Riesgo alto de lesiones, incendio, pérdida 
+de control del vehículo o impacto fuera 
+de zona segura. 
+Activación inmediata del protocolo de 
+emergencia, evacuación parcial del 
+campo y notificación a la aseguradora. 
+Muy grave 
+Situaciones con amenaza a la vida 
+humana, incendios mayores, pérdida 
+total de control o daño ambiental 
+significativo. 
+Suspensión total del evento, activación 
+del plan de emergencia general, 
+coordinación con autoridades locales y 
+aseguradoras. 
+​
+13.4 Protocolos de emergencia general 
+El Comité Organizador deberá garantizar la existencia y socialización de un Plan de Emergencia y 
+Evacuación antes del inicio de cada competencia, que incluya: 
+●​ Mapa de zonas seguras, puntos de encuentro y rutas de evacuación.​
+ 
+●​ Personal designado para primeros auxilios, extinción de incendios y coordinación de 
+emergencias.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 22 de 28 
+
+                        
+●​ Equipamiento mínimo de seguridad: botiquines, extintores, camillas, radios, señalización y 
+puntos de hidratación.​
+ 
+●​ Comunicación directa con cuerpos de socorro, policía y servicios médicos locales.​
+ 
+●​ Procedimiento para suspensión y reanudación segura de actividades tras una emergencia. 
+13.5 Responsabilidades de seguridad 
+●​ Participantes: cumplir las normas establecidas en el NSRT y atender las instrucciones del Comité 
+de Seguridad.​
+ 
+●​ Comité de Seguridad: supervisar las condiciones del campo, emitir alertas preventivas y 
+coordinar las acciones de emergencia.​
+ 
+●​ Dirección del Concurso: garantizar la vigencia de la póliza, gestionar la atención de los incidentes 
+y reportar resultados al Comité Nacional.​
+ 
+El incumplimiento de las medidas de seguridad o la omisión de reporte de incidentes constituirá una 
+falta grave conforme al CCRD – Código de Conducta y Responsabilidad de las Delegaciones. 
+Además todos los participantes, Comité de Seguridad y Direcciones del Concurso deberán seguir y 
+acogerse a la normativa del Código de Seguridad de Tripoli Colombia 
+13.6 Cierre de emergencia 
+Una vez resuelta la situación y asegurada la zona, el Comité podrá: 
+●​ Reanudar el evento si las condiciones son seguras;​
+ 
+●​ O, en caso contrario, suspender o reprogramar la jornada, priorizando la integridad de los 
+participantes.​
+ 
+Toda decisión será documentada en el informe final del evento y anexada al DCE – Documento de 
+Cumplimiento y Evaluación. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 23 de 28 
+
+                        
+14. DISPOSICIONES FINALES 
+●​ 14.1 Este reglamento general entra en vigor para la edición nacional del Concurso de cada año y 
+para todas las regionales que lo adopten (a partir de la edición 2026).​
+ 
+●​ 14.2 La organización nacional se reserva el derecho de actualizar este reglamento antes de cada 
+edición, previa publicación de la versión revisada con al menos 90 días de anticipación.​
+ 
+●​ 14.3 En caso de contradicción entre este reglamento general y regulaciones internas regionales, 
+prevalece este reglamento general, salvo que la diferencia sea en favor de los participantes y no 
+comprometa seguridad ni certificación.​
+ 
+●​ 14.4 La interpretación de este reglamento corresponde al Comité Organizador Nacional del 
+Concurso, cuyos fallos son vinculantes.​
+ 
+●​ 14.5 Cualquier asunto no contemplado en este reglamento será resuelto a criterio del Comité 
+Organizador, aplicando los principios de este reglamento, los documentos técnicos asociados y la 
+buena fe deportiva.​
+ 
+●​ 14.6 Este reglamento podrá ser traducido al español y publicado en versión bilingüe 
+(español/inglés) para facilitar su divulgación internacional, pero la versión en español tendrá 
+validez legal en el territorio colombiano. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 24 de 28 
+
+                        
+APÉNDICE A — DOCUMENTOS COMPLEMENTARIOS, 
+ABREVIATURAS Y FORMATOS DE REFERENCIA 
+A.1. Abreviaturas y Siglas Oficiales 
+Sigla 
+Documento / Concepto 
+Descripción resumida 
+CCRD 
+Código 
+de 
+Conducta 
+y 
+Responsabilidad 
+de 
+las 
+Delegaciones 
+Regula el comportamiento ético, responsabilidades, 
+sanciones y deberes de los equipos y organizadores. 
+DCE 
+Documento de Cumplimiento 
+y Evaluación 
+Reúne reportes de cumplimiento, actas, evaluaciones 
+post-evento, y registro de póliza y emergencias. 
+DCP 
+Documento 
+de 
+Diseño, 
+Construcción y Pruebas 
+Documento técnico presentado por cada equipo que 
+describe el diseño, cálculos, materiales, sistemas de 
+recuperación, ensayos y plan de seguridad. 
+DCR 
+Documento de Categorías y 
+Retos 
+Define objetivos, tipos de misión, metas de altitud o 
+desempeño, y criterios específicos de cada categoría de 
+competencia. 
+DMP 
+Documento 
+de 
+Motores 
+Permitidos 
+Contiene la lista de motores certificados autorizados para 
+la edición vigente, sus parámetros técnicos y trazabilidad. 
+NSRT 
+Norma 
+de 
+Seguridad 
+en 
+Cohetería – Técnica 
+Norma base de seguridad, distancias, zonas, ignición, roles 
+y protocolos operativos. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 25 de 28 
+
+                        
+PIC 
+Procedimiento de Inspección y 
+Certificación 
+Establece las etapas de revisión técnica, documentación, 
+pruebas y certificación de vuelo. 
+SPP 
+Sistema 
+de 
+Puntuación 
+y 
+Premios 
+Define la metodología de evaluación, ponderaciones, 
+penalizaciones, premios y mecanismos de transparencia. 
+A.2. Glosario Técnico 
+Término 
+Definición 
+Altitud objetivo 
+Altura máxima que debe alcanzar el cohete según su categoría o reto 
+técnico. 
+Centro de presión (CP) 
+Punto donde actúan las fuerzas aerodinámicas del cohete durante el 
+vuelo. Debe situarse detrás del centro de gravedad para garantizar 
+estabilidad. 
+Centro 
+de 
+gravedad 
+(CG) 
+Punto de equilibrio del vehículo. 
+Flight Card 
+Tarjeta o registro individual de vuelo donde se consignan datos de motor, 
+altitud, desempeño, observaciones y resultados. 
+Motor certificado 
+Motor comercial validado por una organización reconocida (NAR, Tripoli, 
+CAR o equivalente) que cumple con normas internacionales de seguridad. 
+Pad de lanzamiento 
+Plataforma o base segura desde la cual se lanza el cohete. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 26 de 28 
+
+                        
+Plan de emergencia 
+Conjunto de medidas preventivas y reactivas para atender incidentes, 
+evacuaciones y situaciones críticas durante el evento. 
+Protocolo de activación 
+de póliza 
+Procedimiento oficial que establece los pasos para notificar, registrar y 
+activar la cobertura de seguro en caso de accidente. 
+Recuperación 
+controlada 
+Proceso mediante el cual el vehículo es recuperado por el equipo de 
+rescate autorizado, garantizando seguridad y trazabilidad. 
+Trazabilidad del motor 
+Registro de entrega, instalación y uso del motor desde la recepción por el 
+Comité hasta el vuelo. 
+A.3. Relación entre Documentos Técnicos y Fases del Concurso 
+Fase del Concurso 
+Documento 
+Regente 
+Propósito / Uso Principal 
+Inscripción y registro 
+CCRD, DCR, DMP 
+Declaración de motor, categorías, aceptación de 
+responsabilidades. 
+Diseño y desarrollo del 
+vehículo 
+DCP, DCR 
+Validación técnica del proyecto, análisis de estabilidad 
+y riesgos. 
+Inspección 
+técnica 
+y 
+certificación 
+PIC, NSRT 
+Evaluación de cumplimiento, aprobación de vuelo. 
+Lanzamiento y operación 
+NSRT, DCE 
+Aplicación de normas de seguridad, seguimiento de 
+vuelo, atención de emergencias. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 27 de 28 
+
+                        
+Evaluación y premiación 
+SPP, DCE 
+Cálculo de puntajes, publicación de resultados y 
+entrega de premios. 
+Apelaciones y cierre 
+CCRD, DCE 
+Procedimientos de apelación, informes post-evento y 
+registro de lecciones aprendidas. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 28 de 28 
+

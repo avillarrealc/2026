@@ -1,0 +1,400 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+Documento de Cumplimiento y Evaluación - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 11 
+
+ 
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Cumplimiento y evaluación 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+5 
+2. TIPOS DE REGISTRO​
+6 
+3. DOCUMENTOS Y REGISTRO DEL EVENTO​
+7 
+3.1 Flight Card (Tarjeta de Vuelo)​
+7 
+3.2 Actas de Reuniones del Evento​
+7 
+3.3 Acta de Comportamiento​
+8 
+3.4 Registro de Incidentes​
+8 
+3.5 Registro de Sanciones y Observaciones​
+8 
+3.6 Acta de Aceptación y Conocimiento de Documentos Normativos​
+9 
+4. DISPOSICIONES FINALES​
+9 
+​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 11 
+
+ 
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente documento tiene como propósito establecer un marco documental y evaluativo uniforme 
+que permita registrar, verificar y evaluar el cumplimiento de las normas, responsabilidades y 
+disposiciones aplicables a las delegaciones participantes en el Concurso Colombiano de Cohetería 
+Deportiva (CCCD 2026), tanto en sus versiones nacional como regional, con el fin de garantizar: 
+●​ La verificación objetiva del cumplimiento de los reglamentos, protocolos y documentos 
+normativos que rigen el concurso.​
+ 
+●​ El registro formal de actas, reportes, evaluaciones, incidentes y decisiones adoptadas durante el 
+desarrollo del evento.​
+ 
+●​ La trazabilidad de los procesos de seguridad, convivencia y control, incluyendo el registro de 
+pólizas y situaciones de emergencia.​
+ 
+●​ La evaluación integral del desempeño de las delegaciones y del desarrollo del evento como 
+insumo para la mejora continua del CCCD. 
+El Documento de Cumplimiento y Evaluación (DCE) constituye un documento vinculante dentro del 
+sistema normativo del CCCD, complementario al Reglamento General y a los documentos técnicos y 
+procedimentales del evento (NSRT, PIC, SPP, DCR, DMP, DCP y CCDR).​
+Su cumplimiento es de carácter obligatorio para todas las delegaciones, jurados, asesores, organizadores 
+y miembros del comité técnico y de seguridad. 
+1.2 Alcance 
+El presente Documento de Cumplimiento y Evaluación (DCE 2026) es aplicable a todos los equipos, 
+docentes asesores, delegados institucionales y representantes acreditados ante el Concurso Colombiano 
+de Cohetería Deportiva, en cualquiera de sus versiones presenciales y regionales. 
+Este documento regula los procesos de registro, verificación, evaluación y seguimiento del cumplimiento 
+normativo, técnico, organizativo, conductual y de seguridad de las delegaciones participantes en el 
+Concurso Colombiano de Cohetería Deportiva (CCCD 2026), tanto en el entorno académico y técnico 
+como en los espacios operativos y de lanzamiento. 
+Asimismo, el DCE 2026 se integra y complementa con los lineamientos establecidos en los documentos 
+técnicos oficiales del concurso (PIC 2026, NSRT 2026, SPP 2026, DCR 2026, DMP 2026, DCP 2026 y CCDR 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 11 
+
+ 
+2026), los cuales definen los estándares de diseño, evaluación, seguridad y desempeño esperados 
+durante la competencia. 
+El cumplimiento, diligenciamiento y veracidad de la información contenida en el presente documento 
+son de carácter obligatorio para los comités, jurados, asesores, organizadores y demás instancias 
+responsables, y su desconocimiento o incumplimiento no exime de responsabilidad frente a las 
+decisiones, observaciones o sanciones que pueda determinar el Comité Nacional del CCCD. 
+1.3 Definiciones 
+Para efectos del Documento de Cumplimiento y Evaluación (DCE 2026), se adoptan las siguientes 
+definiciones: 
+●​ Documento de Cumplimiento y Evaluación (DCE): Instrumento oficial del Concurso Colombiano 
+de Cohetería Deportiva destinado a consolidar los registros, actas, reportes y evaluaciones 
+relacionados con el cumplimiento normativo, técnico, conductual y de seguridad de las 
+delegaciones, así como con el desarrollo general del evento.​
+ 
+●​ Flight Card: Documento técnico oficial utilizado durante las actividades de lanzamiento, en el 
+cual se registran los datos esenciales del vuelo del vehículo de lanzamiento, incluyendo 
+identificación del equipo, características del cohete, configuración del motor, validaciones 
+previas, condiciones del lanzamiento, resultados del vuelo y observaciones del Comité Técnico y 
+de Seguridad. La Flight Card constituye un registro obligatorio y vinculante para la evaluación del 
+vuelo.​
+ 
+●​ Acta: Documento oficial que registra de manera formal y cronológica las decisiones, acuerdos, 
+autorizaciones, incidentes o sanciones adoptadas por los comités del CCCD durante el desarrollo 
+del evento, y que forma parte integral del DCE.​
+ 
+●​ Hoja de Evaluación: Formato oficial mediante el cual los jurados y comités del CCCD valoran el 
+desempeño técnico, organizativo, conductual o de seguridad de una delegación o de una 
+actividad específica, de acuerdo con los criterios establecidos en el Sistema de Puntuación y 
+Premios (SPP) y en los documentos normativos del concurso.​
+ 
+●​ Incidente: Cualquier evento, situación o acción que afecte o pueda afectar la seguridad, la 
+convivencia, el cumplimiento normativo o el desarrollo normal del concurso, y que deba ser 
+reportado y registrado oficialmente en el DCE.​
+ 
+●​ Registro de Pólizas: Documento o conjunto de registros oficiales que certifican la existencia, 
+vigencia y cobertura de las pólizas de seguro aplicables al Concurso Colombiano de Cohetería 
+Deportiva (CCCD), y que respaldan la gestión del riesgo y la atención de emergencias durante el 
+evento. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 11 
+
+ 
+2. TIPOS DE REGISTRO 
+El Documento de Cumplimiento y Evaluación (DCE 2026) se compone de un conjunto de registros 
+oficiales que permiten evidenciar, verificar y evaluar el cumplimiento de las disposiciones normativas, 
+técnicas, conductuales y de seguridad aplicables al Concurso Colombiano de Cohetería Deportiva (CCCD 
+2026). 
+Los tipos de registro que conforman el DCE 2026 son los siguientes: 
+●​ Acta de Aceptación y Conocimiento de Documentos Normativos: Documento oficial mediante 
+el cual las delegaciones declaran haber leído y aceptado los documentos normativos y técnicos 
+del Concurso Colombiano de Cohetería Deportiva (CCCD), comprometiéndose a su 
+cumplimiento.​
+ 
+●​ Actas oficiales: Documentos formales que registran reuniones, validaciones, decisiones, 
+autorizaciones, incidentes o sanciones adoptadas por los comités y autoridades del CCCD 
+durante el desarrollo del evento.​
+ 
+●​ Registros de seguridad y emergencias: Documentación que consolida la aplicación de los 
+protocolos de seguridad, el registro de incidentes, la atención de emergencias y la información 
+asociada a las pólizas de seguro vigentes durante el concurso.​
+ 
+●​ Flight Cards y evaluaciones post-vuelo: Registros técnicos oficiales utilizados durante las 
+actividades de lanzamiento, en los cuales se consigna la información del vehículo, las 
+validaciones previas, el desarrollo del vuelo, los resultados obtenidos y la evaluación post-vuelo 
+realizada por el Comité Técnico y de Seguridad. Las Flight Cards constituyen el soporte principal 
+para la evaluación de los vuelos dentro del DCE.​
+ 
+●​ Consolidado de sanciones y observaciones: Registro resumen de las faltas identificadas, las 
+medidas aplicadas y las observaciones relevantes, conforme a lo establecido en el CCRD 2026 y 
+el Sistema de Puntuación y Premios (SPP 2026). 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 11 
+
+ 
+3. DOCUMENTOS Y REGISTRO DEL EVENTO 
+3.1 Flight Card (Tarjeta de Vuelo) 
+La Flight Card es el documento técnico oficial mediante el cual se registra la información asociada a cada 
+vuelo realizado durante la competencia. 
+Este documento será diligenciado por la delegación participante y deberá incluir, como mínimo: 
+●​ Identificación del equipo y categoría 
+●​ Fecha y número de vuelo 
+●​ Descripción general del vehículo (cohete) 
+●​ Configuración del motor y sistema de recuperación 
+●​ Condiciones relevantes del lanzamiento 
+La Flight Card deberá ser validada y firmada, en los campos correspondientes, por miembros designados 
+del Comité Nacional del CCCD, el Comité Técnico o el Comité de Seguridad, y constituye el soporte 
+principal para la evaluación post-vuelo y para la asignación de puntaje conforme al SPP 2026. 
+3.2 Actas de Reuniones del Evento 
+Las Actas de Reuniones registran de manera formal las reuniones oficiales realizadas durante el evento, 
+ya sean presenciales o virtuales. 
+Estas actas serán diligenciadas exclusivamente por un miembro del Comité Nacional del CCCD o por un 
+miembro designado y podrán corresponder, entre otras, a: 
+●​ Reuniones organizativas 
+●​ Reuniones informativas o extraordinarias 
+Cada acta deberá consignar como mínimo: 
+●​ Fecha y tipo de reunión 
+●​ Temas tratados 
+●​ Decisiones adoptadas 
+●​ Responsables designados, cuando aplique 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 11 
+
+ 
+3.3 Acta de Comportamiento 
+El Acta de Comportamiento es un registro institucional mediante el cual el Comité Nacional del CCCD 
+documenta los comportamientos observados de las delegaciones durante el desarrollo del evento. 
+Este documento será diligenciado exclusivamente por el equipo organizador y podrá incluir: 
+●​ Observaciones positivas o negativas de conducta 
+●​ Incumplimientos conductuales o éticos 
+●​ Advertencias realizadas 
+●​ Seguimiento a comportamientos reiterados 
+El Acta de Comportamiento constituye un insumo para la evaluación conductual y para la aplicación de 
+medidas conforme al CCRD 2026. 
+3.4 Registro de Incidentes 
+El Registro de Incidentes documenta cualquier evento que afecte o pueda afectar la seguridad, la 
+convivencia o el desarrollo normal del concurso. 
+Este registro será diligenciado por el Comité Nacional del CCCD o por las instancias autorizadas y deberá 
+incluir, como mínimo: 
+●​ Fecha y hora del incidente 
+●​ Tipo de incidente 
+●​ Delegación o personas involucradas 
+●​ Descripción del evento 
+●​ Acciones adoptadas 
+Este documento forma parte de los registros de seguridad y emergencias del DCE. 
+3.5 Registro de Sanciones y Observaciones 
+El Registro de Sanciones y Observaciones consolida las faltas identificadas durante el evento, así como 
+las medidas aplicadas conforme al CCRD 2026 y al Sistema de Puntuación y Premios (SPP 2026). 
+Este registro incluirá: 
+●​ Delegación involucrada 
+●​ Tipo de falta 
+●​ Base normativa 
+●​ Medida aplicada 
+●​ Impacto en puntaje, cuando corresponda 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 11 
+
+ 
+3.6 Acta de Aceptación y Conocimiento de Documentos Normativos 
+La Carta o Acta de Aceptación y Conocimiento de Documentos Normativos es el documento mediante el 
+cual las delegaciones declaran haber leído, comprendido y aceptado los reglamentos, códigos y 
+documentos técnicos oficiales del CCCD. 
+Este documento: 
+●​ Será diligenciado y firmado por los representantes de la delegación 
+●​ Es requisito para la participación en el evento 
+●​ Forma parte obligatoria del DCE 2026 
+4. DISPOSICIONES FINALES 
+El Documento de Cumplimiento y Evaluación (DCE 2026) constituye el registro oficial y consolidado de 
+los procesos de verificación, evaluación y seguimiento del Concurso Colombiano de Cohetería Deportiva 
+(CCCD 2026), y tendrá validez institucional para todos los efectos administrativos, académicos, técnicos y 
+disciplinarios del evento. 
+La información consignada en el DCE 2026 deberá ser veraz, completa y diligenciada por las instancias 
+autorizadas. Cualquier omisión, alteración o falsedad en los registros podrá dar lugar a observaciones, 
+sanciones o medidas correctivas, conforme a lo establecido en el Código de Conducta y Responsabilidad 
+de las Delegaciones (CCRD 2026) y en el Sistema de Puntuación y Premios (SPP 2026). 
+Los registros contenidos en el DCE 2026 servirán como soporte oficial para: 
+●​ La asignación de puntajes y la validación de resultados del concurso.​
+ 
+●​ La aplicación de medidas disciplinarias o correctivas.​
+ 
+●​ El análisis post-evento y la mejora continua del CCCD.​
+ 
+●​ El respaldo institucional ante reclamaciones, auditorías o procesos de aseguramiento.​
+ 
+El Comité Nacional del CCCD será la instancia responsable de la validación, custodia y conservación del 
+DCE 2026, así como de la interpretación y uso de su contenido para la toma de decisiones relacionadas 
+con el desarrollo del evento y futuras ediciones del concurso. 
+El presente documento entra en vigencia a partir de su publicación oficial y será de obligatorio 
+cumplimiento para todas las delegaciones, jurados, asesores, organizadores y demás actores 
+involucrados en el CCCD 2026. Su desconocimiento no exime de responsabilidad. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 11 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+Medellín, Colombia 
+© 2026 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 11 
+

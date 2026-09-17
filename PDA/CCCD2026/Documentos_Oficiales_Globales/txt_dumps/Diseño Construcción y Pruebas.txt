@@ -1,0 +1,764 @@
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+Documento de Diseño, Construcción y Pruebas - Concurso Colombiano de Cohetería Deportiva 
+CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorga únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 18 
+
+ 
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Diseño, Construcción y Pruebas 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+5 
+1.1 Propósito​
+5 
+1.2 Alcance​
+5 
+1.3 Definiciones​
+6 
+2. PRINCIPIOS GENERALES DE DISEÑO, CONSTRUCCIÓN Y PRUEBAS​
+7 
+3. DISEÑO Y CONSTRUCCIÓN DE VEHÍCULOS DE LANZAMIENTO​
+8 
+3.1 Reglas Generales de Diseño​
+8 
+3.2 Estructura​
+9 
+3.2.1 Generalidades​
+9 
+3.2.2 Ventilación Adecuada​
+9 
+3.2.3 Integridad Estructural General​
+9 
+3.2.4 Selección de Materiales​
+10 
+3.2.5 Altimetro​
+10 
+3.2.6 Guía de lanzamiento​
+10 
+3.2.7 Tubos de Acoplamiento entre secciones​
+12 
+3.2.8 Marcas de Identificación​
+12 
+3.2.9 Retén de motor​
+13 
+3.3 Recuperación​
+13 
+3.3.1 Generalidades​
+13 
+3.3.2 Velocidad de Recuperación​
+13 
+3.3.3 Protección Ignífuga​
+13 
+3.3.4 Cordón de choque​
+13 
+3.3.5 Color del Sistema de Recuperación​
+14 
+3.3.6 Paracaídas Piloto​
+14 
+4. INTEGRACIÓN DEL VEHÍCULO DE LANZAMIENTO​
+14 
+4.1 Principios Generales​
+14 
+4.2 Sencillez en la Integración​
+14 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 18 
+
+ 
+4.3 Tiempo de Integración​
+14 
+4.4 Documentación de la Integración​
+15 
+4.5 Integración del Altímetro​
+15 
+4.6 Integración del Motor​
+15 
+5. PRUEBAS DEL VEHÍCULO DE LANZAMIENTO​
+15 
+5.1 Tipos de Pruebas​
+15 
+5.1.1 Pruebas Estructurales​
+15 
+5.1.2 Pruebas de Recuperación​
+16 
+5.1.3 Pruebas de Integración​
+16 
+6. DISPOSICIONES FINALES​
+17 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 18 
+
+ 
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El Documento de Diseño, Construcción y Pruebas (DCP) tiene como propósito establecer los 
+lineamientos técnicos y normativos que deben cumplir todas las delegaciones participantes en el 
+Concurso Colombiano de Cohetería Deportiva (CCCD 2026) para el diseño, construcción, integración y 
+pruebas de los vehículos de lanzamiento. 
+El DCP busca garantizar que los vehículos cumplan con los criterios de seguridad, estabilidad, 
+funcionalidad y trazabilidad requeridos por el concurso, proporcionando un marco estandarizado para: 
+●​ La definición de reglas de diseño estructural, aerodinámico y de sistemas de recuperación.​
+ 
+●​ La selección y utilización segura de materiales en estructuras, sistemas de recuperación y 
+electrónica.​
+ 
+●​ La realización de pruebas y validaciones necesarias para verificar la funcionalidad y confiabilidad 
+del vehículo antes del vuelo.​
+ 
+●​ La documentación completa de los procedimientos de diseño, construcción y pruebas, 
+asegurando la trazabilidad y soporte para la certificación previa al vuelo.​
+ 
+El cumplimiento de este DCP es obligatorio para todas las delegaciones y constituye la base técnica para 
+la inspección, certificación y autorización de vuelos oficiales dentro del CCCD 2026, contribuyendo a la 
+seguridad de los participantes, la protección del entorno operativo y la consistencia en la evaluación 
+técnica de los vehículos. 
+1.2 Alcance 
+El presente documento es aplicable exclusivamente a la versión 2026 del Concurso Colombiano de 
+Cohetería Deportiva (CCCD 2026), tanto en su edición nacional como en las ediciones regionales 
+autorizadas por el Comité Nacional. 
+El Documento de Diseño, Construcción y Pruebas (DCP 2026) establece los lineamientos, criterios y 
+procedimientos oficiales para el diseño, selección de materiales, construcción, integración y pruebas de 
+los vehículos de lanzamiento participantes en esta versión del concurso, y será de cumplimiento 
+obligatorio por parte de las delegaciones participantes. 
+Asimismo, el DCP 2026 se integra al sistema normativo del Concurso Colombiano de Cohetería 
+Deportiva, en conjunto con los documentos técnicos específicos correspondientes a esta edición (NSRT 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 18 
+
+ 
+2026, PIC 2026, CCRD 2026, DCR 2026, DMP 2026, SPP 2026 y DCE 2026), los cuales reflejan las 
+condiciones técnicas, categorías, motores y características propias del evento en el año 2026. 
+1.3 Definiciones 
+Para efectos del presente Documento de Diseño, Construcción y Pruebas (DCP 2026), se adoptan las 
+siguientes definiciones: 
+●​ Vehículo de lanzamiento: Cohete o dispositivo propulsado diseñado para participar en el CCCD 
+2026, incluyendo todos sus sistemas estructurales, de recuperación y electrónicos.​
+ 
+●​ Subsistema: Conjunto funcional dentro del vehículo de lanzamiento que cumple una función 
+específica, como estructura, sistema de recuperación, propulsión o electrónica.​
+ 
+●​ Diseño preliminar: Etapa inicial del desarrollo del vehículo, que incluye planos, simulaciones y 
+especificaciones técnicas generales antes de la construcción definitiva.​
+ 
+●​ Diseño crítico: Versión final del diseño del vehículo, con todos los detalles constructivos, 
+materiales, dimensiones y configuraciones aprobadas para construcción y pruebas.​
+ 
+●​ Material permitido: Tipo de material autorizado para su uso en las estructuras, sistemas de 
+recuperación o electrónica del vehículo, conforme a los criterios de seguridad y normas técnicas 
+del CCCD 2026.​
+ 
+●​ Prueba funcional: Evaluación controlada de un subsistema o del vehículo completo para validar 
+su comportamiento esperado antes del vuelo.​
+ 
+●​ Integración: Proceso de ensamblaje de los diferentes subsistemas del vehículo de lanzamiento, 
+asegurando compatibilidad, funcionalidad y seguridad.​
+ 
+●​ No conformidad técnica: Cualquier desviación respecto a los criterios de diseño, construcción o 
+pruebas establecidos en el DCP que pueda comprometer la seguridad, estabilidad o 
+funcionamiento del vehículo.​
+ 
+●​ Estructura: Conjunto de elementos rígidos y resistentes del vehículo de lanzamiento que 
+proporcionan soporte mecánico, integridad y estabilidad durante todas las fases del vuelo, 
+incluyendo fuselaje, aletas, ojiva, retén de motor y demás elementos físicos dentro del fuselaje.​
+ 
+●​ Sistemas de recuperación: Conjunto de dispositivos y mecanismos diseñados para asegurar el 
+descenso controlado y seguro del vehículo después del vuelo, incluyendo paracaídas, cordón de 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 18 
+
+ 
+choque, mecanismos de despliegue y cualquier elemento que reduzca la velocidad de impacto y 
+proteja la integridad del vehículo. 
+2. PRINCIPIOS GENERALES DE DISEÑO, CONSTRUCCIÓN 
+Y PRUEBAS 
+El desarrollo de los vehículos de lanzamiento para el CCCD 2026 se rige por los siguientes principios 
+generales, que orientan todas las fases de diseño, construcción, integración y pruebas: 
+1.​ Seguridad como prioridad absoluta: Todas las decisiones de diseño, selección de materiales, 
+construcción e implementación de sistemas deben priorizar la seguridad de los participantes, el 
+personal organizador y el entorno operativo. Ningún parámetro de desempeño puede 
+comprometer la integridad física de las personas ni del vehículo.​
+ 
+2.​ Cumplimiento normativo y técnico: Los vehículos deben cumplir estrictamente con las normas y 
+criterios técnicos establecidos en el DCP 2026, la NSRT 2026 y los demás documentos oficiales 
+del CCCD 2026, asegurando coherencia entre el diseño aprobado y la construcción final.​
+ 
+3.​ Uso de Sistemas de Propulsión Comerciales y materiales permitidos:​
+ 
+○​ Los motores y sistemas de ignición forman parte del Sistema de Propulsión y deben ser 
+de tipo comercial, garantizando confiabilidad y seguridad certificada.​
+ 
+○​ Todos los materiales utilizados en estructuras, recuperación y electrónica deben cumplir 
+con los lineamientos establecidos en el DCP 2026, asegurando resistencia, durabilidad y 
+compatibilidad con el funcionamiento seguro del vehículo.​
+ 
+4.​ Simplicidad y confiabilidad:  Los diseños deben ser funcionales y robustos, evitando 
+complejidades innecesarias que puedan incrementar riesgos de falla o dificultar la inspección, 
+construcción y pruebas.​
+ 
+5.​ Trazabilidad documental: Todo el proceso de diseño, construcción, integración y pruebas debe 
+estar documentado de manera completa y verificable. Los registros constituyen soporte 
+obligatorio para la inspección y certificación previa al vuelo según el PIC 2026, asegurando 
+transparencia, consistencia y control de calidad.​
+ 
+6.​ Validación mediante pruebas: Cada subsistema y el vehículo completo deben someterse a 
+pruebas estructurales, funcionales y de recuperación que permitan validar su desempeño 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 18 
+
+ 
+conforme al diseño aprobado. Las pruebas deben ser documentadas y reflejadas en la Flight 
+Card para soporte de certificación. 
+3. DISEÑO Y CONSTRUCCIÓN DE VEHÍCULOS DE 
+LANZAMIENTO 
+3.1 Reglas Generales de Diseño 
+1.​ Estabilidad y control:​
+ 
+○​ El vehículo debe mantener estabilidad durante todas las fases del vuelo, considerando el 
+centro de gravedad, centro de presión y coeficiente de estabilidad aerodinámica.​
+ 
+○​ Las aletas y superficies estabilizadoras deben ser diseñadas para minimizar el riesgo de 
+pérdida de control o giros inesperados.​
+ 
+○​ Todos los vehículos de lanzamiento deben contar con una estabilidad mínima de 2 
+calibre.​
+ 
+2.​ Relación empuje-peso:​
+ 
+○​ El diseño debe garantizar que el empuje proporcionado por el Sistema de Propulsión 
+(motor comercial y sistema de ignición) sea suficiente para un ascenso seguro sin 
+comprometer la integridad estructural.​
+ 
+○​ En la categoría 3 se debe mantener una relación Empuje Peso mínima de 5:1​
+ 
+3.​ Integridad estructural:​
+ 
+○​ El fuselaje, aletas, refuerzos y puntos de unión deben soportar las cargas dinámicas del 
+lanzamiento y el despliegue de recuperación, evitando deformaciones o fallas durante el 
+vuelo. 
+4.​ Sistemas de recuperación:​
+ 
+○​ Los mecanismos de despliegue deben estar integrados de manera que no interfieran con 
+la estructura ni con el Sistema de Propulsión.​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 18 
+
+ 
+5.​ Compatibilidad y documentación:​
+ 
+○​ Cualquier cambio respecto al diseño preliminar debe estar documentado y aprobado por 
+la delegación para su revisión durante la inspección técnica.​
+ 
+○​ Todas las decisiones de diseño deben estar argumentadas en base a la investigación de 
+cada una de las delegaciones. 
+3.2 Estructura 
+3.2.1 Generalidades 
+●​ El vehículo de lanzamiento tendrá un máximo de tres secciones independientes, en dónde se 
+entiende como segmentos desprendibles o separables que permanecen todo el tiempo atados al 
+cuerpo principal o fuselaje.​
+ 
+●​ El vehículo de lanzamiento deberá ser recuperable y reutilizable, entendiéndose reutilizable 
+como la posibilidad de volver a lanzarse el mismo día sin modificación o reparación alguna, con 
+excepción de la instalación de un nuevo motor cohete.​
+ 
+●​ Todas las partes del cohete, con excepción del material ignífugo desechable que protege el 
+paracaídas, deben descender de manera conjunta.​
+ 
+●​ Las diferentes partes que componen el cohete pueden ser piezas pre-manufacturadas, pero todo 
+el conjunto no puede ser un kit o diseño comercial.​
+ 
+●​ Pueden utilizar para la configuración del fuselaje tubos de diferentes diámetros. 
+3.2.2 Ventilación Adecuada 
+●​ Los vehículos de lanzamiento deberán estar adecuadamente ventilados para evitar que 
+presiones internas no deseadas generadas durante el vuelo provoquen daños en la estructura o 
+cualquier otro cambio de configuración no planificado.​
+ 
+●​ Los vehículos de lanzamiento que cuenten con un altímetro deben tener adecuada ventilación 
+3.2.3 Integridad Estructural General 
+●​ Los vehículos de lanzamiento se construirán para soportar las cargas operativas y conservar la 
+integridad estructural en las condiciones encontradas durante la manipulación y el vuelo del 
+cohete.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 18 
+
+ 
+●​ Los vehículos de lanzamientos deberán soportar las condiciones de lanzamiento, principalmente 
+la temperatura y humedad del sitio de lanzamiento. 
+3.2.4 Selección de Materiales 
+●​ Los vehículos de lanzamiento se construirán utilizando materiales ligeros, como cartón, madera, 
+plástico, caucho o, cuando sea necesario, metales ligeros dúctiles, es también permitido el uso 
+de materiales compuestos como lo son la fibra de carbono y la fibra de vidrio si los equipos 
+requieren de su uso.​
+ 
+●​ No se utilizará PVC, PLA (ni polímeros similares de baja temperatura), en la estructura de ningún 
+fuselaje del vehículo de lanzamiento.​
+ 
+●​ No se utilizarán pegamentos que puedan perder sus propiedades mecánicas ni estructurales en 
+el sitio de lanzamiento debido a condiciones como el calor o la humedad, se recomienda el uso 
+de pegamentos como el Epoxy que no pierdan sus propiedades estructurales dadas las 
+condiciones de lanzamiento.​
+ 
+●​ La nariz del cohete no podrá tener ninguna parte metálica a excepción del cáncamo donde se ata 
+el paracaídas y el cordón de choque. 
+3.2.5 Altimetro 
+●​ Los vehículos de lanzamiento que cuenten con un altímetro deben tener adecuada ventilación 
+en el lugar de posicionamiento de este.​
+ 
+●​ Los vehículos de lanzamiento que cuenten con un altímetro deberán contar con una estructura 
+para el montaje de este, el altímetro no puede quedar suelto, debe estar atado, ajustado o tener 
+un espacio sobre una superficie estructural.​
+ 
+●​ El altímetro no puede ser posicionado en zonas del cohete que puedan presentar variaciones de 
+presión significativas que afecten las mediciones del mismo. 
+3.2.6 Guía de lanzamiento 
+●​ Se debe contar con por lo mínimo 2 guías de lanzamiento, una debe estar ubicada sobre el 
+Centro de Gravedad del Vehículo de Lanzamiento, y la otra debe estar en la parte inferior del 
+cohete.​
+ 
+●​ Los equipos de las categorías 1 y 2 deberán usar una guía de lanzamiento tipo “launch lug”, en la 
+cual se pueden usar pitillos u otro material que el equipo considere pertinente, además debe 
+adecuarse a la plataforma de lanzamiento que se aprecia en la figura 1. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 18 
+
+ 
+ 
+ 
+Figura 1. Plataforma de Lanzamiento Categoría 1 y 2 
+●​ Los equipos de la categoría 3 deberán utilizar una guía de lanzamiento tipo “Rail Button”, la cual 
+deberá adecuarse a la plataforma de lanzamiento que se aprecia en la figura 2. 
+ 
+Figura 1. Plataforma de Lanzamiento Categoría 3 
+​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 18 
+
+ 
+3.2.7 Tubos de Acoplamiento entre secciones 
+●​ Los acopladores que se pretenden separar durante la fase de recuperación deben cumplir que su 
+extensión desde el punto de separación no sea menor a 1 Caliber (medida del diámetro del 
+fuselaje del cohete) hacia ambos lados de la separación.​
+ 
+●​ Los acopladores que no se pretenden separar durante la fase de recuperación deben cumplir 
+que su extensión cumpla al menos uno de los siguientes requerimientos: la máxima extensión 
+posible del acoplador o 1 Caliber. Estos acopladores deberán estar sujetados por uniones 
+mecánicas o adhesivos permanentes.​
+ 
+●​ Los eventos de separación solo se pueden dar durante la fase de recuperación, los vehículos de 
+lanzamiento que no cumplan con esto no cumpliran con las normas mínimas de seguridad 
+establecidas y no serán autorizados para volar. 
+3.2.8 Marcas de Identificación 
+●​ Todos los vehículos de lanzamiento deben contar con una etiqueta o marca donde se encuentre 
+identificado el nombre del equipo, el ID del equipo, el nombre de la institución educativa, el país 
+y la ciudad de donde proviene el equipo y una forma de contacto (número telefónico o correo 
+electrónico) de los equipos. Esta etiqueta no tiene un tamaño ni formato específico.​
+ 
+●​ Todos los vehículos de lanzamiento deben contar con una etiqueta puesta entre sus aletas en la 
+parte inferior, donde sea visible el ID del equipo, el color de esta etiqueta debe contrastar con el 
+color del fuselaje del cohete, puesta de manera vertical y debe tener una longitud mínima de 10 
+cm para la categoría 1, 15 cm para la categoría 2 y 25 cm para la categoría 3, además por encima 
+de esta etiqueta se debe contar con un sticker del concurso proporcionado por el Comité 
+Nacional, tal como se muestra en la figura 3. 
+ 
+Figura 3. Etiqueta del cohete 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 18 
+
+ 
+3.2.9 Retén de motor 
+●​ El motor debe permanecer dentro del cohete durante todo el vuelo y en el momento de la 
+eyección del paracaídas. Este deberá sujetarse por un medio mecánico (gancho, clip, tapa 
+roscada, etc.) y no simplemente ajustarse por fricción en el tubo porta-motor, sino que debe 
+poder desmontarse después del vuelo. 
+3.3 Recuperación 
+3.3.1 Generalidades 
+●​ Todos los sistemas de recuperación deben ser puestos de manera interna del cohete, ningún 
+mecanismo puede ser dejado en la parte exterior del fuselaje del cohete​
+ 
+●​ Ningún sistema de recuperación deberá ser controlado de manera activa, todos los mecanismos 
+de recuperación deberán ser desplegados únicamente por la carga de eyección del motor, no se 
+podrá usar ningún tipo de sistema de eyección distinto, tampoco se podrá utilizar ningún tipo de 
+control activo sobre las superficies de recuperación. 
+3.3.2 Velocidad de Recuperación 
+●​ Todos los vehículos de lanzamiento deberán cumplir con una velocidad máxima al momento de 
+aterrizar de 11 m/s, cualquier velocidad dentro de las simulaciones mayor a esta velocidad podrá 
+generar una penalización al incumplir el Código de Seguridad de Tripoli Colombia. 
+3.3.3 Protección Ignífuga 
+●​ Todos los vehículos de lanzamiento deberán tener una protección ignífuga para sus sistemas de 
+recuperación, esta protección puede ser papel ignífugo proporcionado por el Comité Nacional 
+del Concurso, o manufacturado por parte de los equipos si estos lo desean. 
+3.3.4 Cordón de choque 
+●​ Todos los vehículos de lanzamiento deberán poseer un cordón de choque, que deberá unir todos 
+los componentes estructurales del cohete durante la recuperación del mismo, este cordón de 
+choque debe unir todas las partes del cohete junto al sistema de recuperación​
+ 
+●​ La longitud del cordón de choque debe ser de mínimo 2 veces la longitud total del cohete.​
+ 
+●​ Todos los cordones de choque deben tener protección térmica y ser capaces de soportar la carga 
+de eyección del motor, cualquier cordón de choque que se considere inseguro para el cohete 
+deberá ser reemplazado, y en caso de no poder ser reemplazado el Comité Nacional tendrá la 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 18 
+
+ 
+potestad de decidir el estado de certificación del cohete de acuerdo al PIC.​
+ 
+●​ El cordón de choque deberá estar sujeto al vehículo de lanzamiento de manera tal que resista la 
+carga de eyección, se pueden usar protecciones térmicas para el punto de unión del cordón de 
+choque con el cohete o se pueden usar otro tipo de uniones, uniones metálicas si es requerido. 
+3.3.5 Color del Sistema de Recuperación 
+●​ Cualquier tipo de Sistema de Recuperación (Paracaídas, Streamer, etc), debe ser identificado 
+fácilmente en el aire, y debe ser de un color que contraste con el cielo, de tal manera que sea 
+más fácil distinguir el vehículo de lanzamiento al momento de su recuperación.  
+3.3.6 Paracaídas Piloto 
+●​ Los paracaídas de tipo piloto que sirvan para expulsar el paracaídas principal están permitidos 
+para el Concurso.​
+ 
+●​ En caso de uso de paracaídas piloto, los equipos deben tener en cuenta que este paracaídas 
+debe ser capaz de frenar el cohete a una velocidad máxima de 30 m/s. 
+4. INTEGRACIÓN DEL VEHÍCULO DE LANZAMIENTO 
+4.1 Principios Generales 
+La integración del vehículo de lanzamiento comprende el ensamblaje de todos los subsistemas del 
+vehículo de lanzamiento(estructura, propulsión, carga útil y recuperación) de manera que el vehículo 
+quede listo para su operación segura y funcional. Esta fase debe garantizar compatibilidad entre 
+subsistemas, facilidad de montaje y desmontaje, y mínima complejidad operativa. 
+4.2 Sencillez en la Integración 
+El vehículo de lanzamiento debe ser diseñado para que su integración sea sencilla y directa, evitando 
+procedimientos innecesariamente complejos que puedan aumentar el riesgo de errores o daños a los 
+subsistemas. Todos los elementos deben ser accesibles y los puntos de unión deben permitir un 
+ensamblaje claro, seguro y reproducible por los miembros del equipo. 
+4.3 Tiempo de Integración 
+La integración completa del vehículo de lanzamiento, incluyendo la instalación del motor y los sistemas 
+de recuperación, no debe exceder los 7 minutos para las categorías 1 y 2, y 15 minutos para la categoría 
+3. Los equipos deberán demostrar que el cohete puede ser ensamblado y preparado para el vuelo dentro 
+de este tiempo durante las pruebas de inspección previas al lanzamiento oficial. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 18 
+
+ 
+4.4 Documentación de la Integración 
+Todo el proceso de integración debe estar dispuesto en una lista de chequeo, la cuál debe ser 
+completada por el equipo en la sección dispuesta en la Flight Card para esto, evidenciando cumplimiento 
+de procedimientos rigurosos y teniendo certeza de cada paso que realiza el equipo para la integración de 
+su vehículo de lanzamiento. 
+4.5 Integración del Altímetro 
+El Altímetro de registro será integrado dentro del cohete en la zona de lanzamiento, y debe ser puesto en 
+la zona predispuesta dentro del cohete para este, además de ser uno de los últimos componentes 
+integrados al vehículo de lanzamiento.   
+4.6 Integración del Motor 
+La integración del motor será el último paso realizado por los equipos dentro de la zona de lanzamiento 
+antes del lanzamiento, la integración del motor será hecha por el Comité Nacional del Concurso, en 
+compañía del RSO y FSO. 
+5. PRUEBAS DEL VEHÍCULO DE LANZAMIENTO 
+Todas las pruebas deben garantizar que los vehículos de lanzamiento cumplen con los criterios de 
+seguridad, funcionalidad, estabilidad y confiabilidad establecidos en el DCP 2026. Cada subsistema y el 
+vehículo completo deben ser verificados antes de cualquier vuelo oficial, documentando todos los 
+resultados de manera trazable para la certificación. 
+5.1 Tipos de Pruebas 
+5.1.1 Pruebas Estructurales 
+Dentro de las pruebas estructurales que puede realizar el equipo de verificación, se encuentra: 
+●​ Comprobación de fijación de aletas y no movimiento excesivo de estas al soportar fuerza 
+ejercida por un miembro verificador.​
+ 
+●​ Comprobación de integridad física del fuselaje, que no presente reacciones que puedan generar 
+un riesgo para el vuelo.​
+ 
+●​ Comprobación del lugar de posicionamiento del altímetro.​
+ 
+●​ Comprobación de fijación de las guías de lanzamiento.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 15 de 18 
+
+ 
+●​ Cualquier otro tipo de prueba que el equipo verificador considere importante para asegurar la 
+integridad estructural del vuelo. 
+5.1.2 Pruebas de Recuperación 
+Dentro de las pruebas de recuperación que puede realizar el equipo de verificación, se encuentra: 
+●​ Comprobación de fijación de cordón de choque y paracaídas.​
+ 
+●​ Comprobación de longitud del cordón de choque.​
+ 
+●​ Comprobación del procedimiento de empaquetado del paracaídas.​
+ 
+●​ Comprobación de posicionamiento de protección ignífuga por parte del equipo.​
+ 
+●​ Comprobación numérica de velocidad de caída del cohete.​
+ 
+●​ Cualquier otro tipo de prueba que el equipo verificador considere importante para asegurar la 
+integridad del vehículo de lanzamiento. 
+5.1.3 Pruebas de Integración 
+Dentro de las pruebas de integración que puede realizar el equipo de verificación, se encuentra: 
+●​ Comprobación de integración del vehículo de lanzamiento por parte de los miembros del 
+equipo.​
+ 
+●​ Comprobación de integridad física del vehículo de lanzamiento luego de la integración del 
+vehículo de lanzamiento.​
+ 
+●​ Cualquier otro tipo de prueba que el equipo verificador considere importante para asegurar la 
+integridad del vehículo de lanzamiento.​
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 16 de 18 
+
+ 
+6. DISPOSICIONES FINALES 
+El presente Documento de Diseño, Construcción y Pruebas (DCP 2026) es obligatorio para todas las 
+delegaciones participantes en el Concurso Colombiano de Cohetería Deportiva (CCCD 2026). Ningún 
+vehículo de lanzamiento podrá ser ensamblado, integrado o presentado para vuelo oficial sin cumplir los 
+lineamientos establecidos en este documento. 
+El Comité Nacional del CCCD 2026 tiene la autoridad final para interpretar y aplicar el DCP, validar 
+registros, autorizar vuelos y determinar medidas correctivas o sanciones en caso de incumplimiento. Sus 
+decisiones son vinculantes para todas las delegaciones y para el personal involucrado en el concurso. 
+Todos los registros relacionados con el diseño, construcción, integración y pruebas, incluyendo la Flight 
+Card y los informes de observaciones o no conformidades, se integrarán como soporte oficial de 
+trazabilidad. Estos documentos servirán para la certificación previa al vuelo, la asignación de puntajes, la 
+evaluación de desempeño y la documentación institucional de los equipos. 
+Cualquier actualización del DCP 2026 deberá ser emitida oficialmente por el Comité Nacional y 
+comunicada a todas las delegaciones. El desconocimiento de las modificaciones no exime de 
+responsabilidad frente a las decisiones, certificaciones o sanciones que determine el Comité Nacional. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 17 de 18 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 18 de 18 
+

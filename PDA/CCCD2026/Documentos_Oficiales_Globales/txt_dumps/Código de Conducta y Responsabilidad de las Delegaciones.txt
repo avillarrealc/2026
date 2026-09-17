@@ -1,0 +1,590 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                        
+Código de Conducta y Responsabilidad de las Delegaciones - Concurso Colombiano de Cohetería 
+Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 14 
+
+                        
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Código de Conducta y Responsabilidad de las 
+Delegaciones 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+5 
+2. Principios Generales de Conducta​
+5 
+3. Responsabilidades de las delegaciones​
+6 
+3.1 Responsabilidades Técnicas​
+6 
+3.2 Responsabilidades Organizativas​
+7 
+3.3 Responsabilidades Conductuales y Éticas​
+7 
+3.4 Responsabilidades Administrativas y de Representación​
+8 
+4. Normas de Convivencia y Comportamiento​
+9 
+5. Seguridad y Conducta en Campo​
+10 
+6. Clasificación de faltas​
+10 
+6.1 Faltas Leves​
+11 
+6.2 Faltas Graves​
+11 
+6.3 Faltas Muy Graves​
+12 
+7. Disposiciones Finales​
+13 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 14 
+
+                        
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente documento tiene como propósito establecer un marco normativo y conductual uniforme que 
+regule el comportamiento, las responsabilidades y las buenas prácticas de las delegaciones participantes 
+en el Concurso Colombiano de Cohetería Deportiva (CCCD 2026), tanto en sus versiones nacional como 
+regional, con el fin de garantizar: 
+●​ La convivencia armónica, el respeto y la ética entre los equipos participantes.​
+ 
+●​ La seguridad integral de las personas, materiales y operaciones durante el desarrollo del evento.​
+ 
+●​ La protección de la integridad institucional del concurso y de la Corporación ALAS.​
+ 
+●​ La promoción de valores formativos, colaborativos y científicos dentro de la comunidad 
+participante.​
+ 
+●​ La consolidación de un ambiente académico responsable, transparente y seguro. 
+El Código de Conducta y Responsabilidad de las Delegaciones (CCRD) constituye un documento 
+vinculante dentro del sistema normativo del CCCD, complementario al Reglamento General y a los 
+documentos técnicos y procedimentales del evento (NSRT, PIC, SPP, DCR, DMP, DCP y DCE).​
+ Su cumplimiento es de carácter obligatorio para todas las delegaciones, jurados, asesores, organizadores 
+y miembros del comité técnico y de seguridad. 
+1.2 Alcance 
+El presente Código de Conducta y Responsabilidad de las Delegaciones (CCRD 2026) es aplicable a todos 
+los equipos, docentes asesores, delegados institucionales y representantes acreditados ante el Concurso 
+Colombiano de Cohetería Deportiva, en cualquiera de sus versiones presenciales y regionales. 
+Este documento regula los aspectos de comportamiento, seguridad, convivencia, ética, comunicación y 
+responsabilidad institucional, tanto en el entorno académico y técnico, como en los espacios operativos 
+y de lanzamiento. 
+Asimismo, el CCRD 2026 se integra y complementa con los lineamientos establecidos en los documentos 
+técnicos oficiales del concurso (PIC 2026, NSRT 2026, SPP 2026, DCR 2026, DMP 2026, DCP 2026 y DCE 
+2026), los cuales definen los estándares de diseño, evaluación, seguridad y desempeño esperados 
+durante la competencia. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 14 
+
+                        
+El cumplimiento del presente código es obligatorio y su desconocimiento no exime de responsabilidad 
+ante las sanciones o penalizaciones contempladas por el Comité Nacional del CCCD. 
+1.3 Definiciones 
+Para efectos del Código de Conducta y Responsabilidad de las Delegaciones (CCRD 2026), se adoptan las 
+siguientes definiciones: 
+●​ Delegación: Conjunto de participantes que representan a una institución educativa o grupo 
+independiente inscrito oficialmente en el CCCD, conformado por estudiantes y docentes 
+asesores.​
+ 
+●​ Participante: Miembro activo de un equipo de competencia, responsable de cumplir las normas 
+técnicas, de seguridad y de conducta establecidas por el concurso. Debe ser un Adulto 
+Autorizado o Junior Autorizado de acuerdo a lo establecido en el Código de Seguridad de Tripoli 
+Colombia.​
+ 
+●​ Comité Nacional del CCCD: Órgano directivo encargado de la supervisión general, toma de 
+decisiones y resolución de conflictos durante el desarrollo del concurso.​
+ 
+●​ Incidente disciplinario: Cualquier acción u omisión que vulnere las normas de conducta, 
+seguridad o ética establecidas en el presente código o en los documentos normativos del CCCD.​
+ 
+●​ Sanción: Medida correctiva impuesta por los comités competentes ante el incumplimiento del 
+CCRD, que puede incluir amonestaciones, deducciones de puntaje, suspensión o descalificación.​
+ 
+●​ Código de Conducta: Conjunto de principios, normas y compromisos éticos que regulan el 
+comportamiento esperado de todos los participantes en el marco del CCCD. 
+2. Principios Generales de Conducta 
+El Código de Conducta y Responsabilidad de las Delegaciones (CCRD 2026) se fundamenta en un 
+conjunto de valores institucionales que orientan el comportamiento de todos los participantes, equipos, 
+jurados, asesores y miembros de la organización del Concurso Colombiano de Cohetería Deportiva 
+(CCCD). 
+Estos principios buscan promover una cultura de respeto, ética, seguridad y excelencia técnica, 
+fortaleciendo el espíritu académico, científico y deportivo del evento. 
+Los valores que deben guiar el comportamiento de las delegaciones son los siguientes: 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 14 
+
+                        
+●​ Integridad: Mantener una conducta honesta y transparente en todas las actividades del 
+concurso, incluyendo la elaboración de informes técnicos, presentación de resultados, validación 
+de vuelos y comunicación pública. La falsificación de información, manipulación de datos o 
+apropiación indebida de material técnico o intelectual se considera una violación directa al 
+presente código.​
+ 
+●​ Seguridad: Cumplir de forma estricta las normas, protocolos y procedimientos de seguridad 
+establecidos en el documento PIC y demás documentos normativos del CCCD. Cada participante 
+y delegado institucional es responsable de prevenir incidentes, reportar condiciones de riesgo y 
+actuar con prudencia durante todas las fases del evento, incluyendo prácticas, ensamblajes y 
+lanzamientos.​
+ 
+●​ Responsabilidad: Cumplir puntualmente con los compromisos académicos, técnicos y logísticos 
+asumidos por el equipo, así como con los plazos, entregas, presentaciones y normas de 
+convivencia. La responsabilidad implica también la representación ética y adecuada de la 
+institución o grupo al que pertenece cada delegación.​
+ 
+●​ Colaboración: Promover el trabajo en equipo, la cooperación y el intercambio constructivo de 
+conocimientos entre delegaciones, organizadores y jurados. El espíritu de colaboración fortalece 
+el aprendizaje colectivo y refleja los valores fundamentales de la Corporación ALAS y del CCCD 
+como evento académico y formativo. 
+3. Responsabilidades de las delegaciones 
+Cada delegación participante en el Concurso Colombiano de Cohetería Deportiva (CCCD 2026) 
+representa no solo a su institución educativa, sino también los valores de la Corporación ALAS y de la 
+comunidad científica nacional.​
+Por ello, todas las delegaciones deberán actuar con responsabilidad, disciplina, respeto y compromiso 
+técnico, cumpliendo con las normas, procedimientos y lineamientos establecidos por la organización. Las 
+responsabilidades específicas de las delegaciones se dividen en cuatro ámbitos: técnico, organizativo, 
+conductual y administrativo. 
+3.1 Responsabilidades Técnicas 
+Las obligaciones específicas de los equipos son las siguientes: 
+●​ Cumplir estrictamente con los reglamentos oficiales: RGC, CCRD 2026, PIC 2026, NSRT 2026, SPP 
+2026, DCR 2026, DMP 2026, DCP 2026 y DCE 2026.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 14 
+
+                        
+●​ Diseñar, fabricar y operar su vehículo de cohetería conforme a los criterios de seguridad y 
+normas técnicas definidas por el Comité Técnico del CCCD.​
+ 
+●​ Garantizar que su cohete y sus componentes (motor, sistemas de recuperación, carga útil, etc.) 
+estén correctamente ensamblados, documentados y verificados antes de cada vuelo.​
+ 
+●​ Realizar todas las pruebas, simulaciones y validaciones requeridas de forma responsable, sin 
+poner en riesgo la integridad de las personas o el entorno.​
+ 
+●​ Asegurar que los materiales y métodos de construcción sean compatibles con los estándares de 
+seguridad establecidos por el concurso.​
+ 
+●​ Presentar toda la documentación técnica (informes, planos, fichas de validación, etc.) en los 
+plazos y formatos oficiales establecidos por la organización.​
+ 
+●​ Notificar oportunamente al Comité Técnico cualquier modificación en el diseño, configuración o 
+componentes del vehículo.​
+ 
+●​ Cumplir las disposiciones del Comité de Seguridad durante los ensayos, transporte, 
+almacenamiento y lanzamiento del vehículo. 
+3.2 Responsabilidades Organizativas 
+●​ Asistir puntualmente a todas las actividades oficiales del concurso, tales como: reuniones 
+informativas, presentaciones orales, validaciones técnicas, ceremonias y lanzamientos.​
+ 
+●​ Respetar los espacios asignados en zonas de trabajo, montaje y lanzamiento, evitando la 
+ocupación indebida de áreas comunes o de otros equipos.​
+ 
+●​ Mantener un registro interno de actividades y asignar roles dentro del equipo (líder técnico, 
+responsable de seguridad, responsable de carga útil, etc.).​
+ 
+●​ Cooperar con el personal organizador y técnico durante las inspecciones o controles, facilitando 
+el acceso a la información requerida.​
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 14 
+
+                        
+3.3 Responsabilidades Conductuales y Éticas 
+●​ Actuar en todo momento con honestidad, respeto y ética profesional, promoviendo un ambiente 
+de colaboración científica y convivencia positiva.​
+ 
+●​ Respetar a todos los miembros del evento: organizadores, jurados, voluntarios, personal de 
+apoyo, público y otras delegaciones.​
+ 
+●​ Abstenerse de cualquier conducta que atente contra la imagen institucional del CCCD, de la 
+Corporación ALAS, de Tripoli Colombia o de su propia institución.​
+ 
+●​ Garantizar la veracidad de toda la información técnica presentada en informes, simulaciones o 
+resultados de vuelo.​
+ 
+●​ Fomentar la colaboración interinstitucional y el aprendizaje colectivo, evitando actitudes de 
+competencia desleal o desinformación.​
+ 
+●​ Evitar expresiones, publicaciones o mensajes en redes sociales que puedan interpretarse como 
+ofensivos, despectivos o contrarios al espíritu educativo y científico del evento. 
+3.4 Responsabilidades Administrativas y de Representación 
+●​ Portar siempre la identificación oficial proporcionada por la organización durante las actividades 
+del evento.​
+ 
+●​ Mantener el orden, la limpieza y la buena presentación en las zonas de trabajo y lanzamiento.​
+ 
+●​ Responder por los daños causados a materiales, equipos o instalaciones del concurso cuando 
+sean consecuencia directa de negligencia o mal uso.​
+ 
+●​ Cumplir con los procesos de acreditación, registro y entrega de documentos establecidos en los 
+plazos oficiales.​
+ 
+●​ Participar activamente en las actividades de formación, divulgación y socialización promovidas 
+por la organización.​
+ 
+●​ Reportar cualquier situación anómala, conflicto o incumplimiento observado al Comité Nacional 
+del CCCD. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 14 
+
+                        
+4. Normas de Convivencia y Comportamiento 
+El Concurso Colombiano de Cohetería Deportiva (CCCD 2026) promueve un ambiente de respeto, 
+inclusión, cooperación y excelencia académica, en el que todas las delegaciones actúan como 
+representantes de su institución y del espíritu científico del evento. 
+Los participantes deberán cumplir las siguientes normas de convivencia: 
+●​ Mantener un trato respetuoso, cordial y profesional con organizadores, jurados, voluntarios, 
+público y demás delegaciones.​
+ 
+●​ Evitar discusiones, burlas, lenguaje ofensivo, gestos inapropiados o actitudes discriminatorias 
+por motivos de género, edad, origen, ideología o cualquier otra condición personal.​
+ 
+●​ Abstenerse de realizar comentarios negativos o despectivos en redes sociales, medios o espacios 
+públicos que afecten la imagen del concurso, de la Corporación ALAS o de otros participantes.​
+ 
+●​ Respetar los horarios oficiales de actividades, reuniones, lanzamientos y presentaciones, 
+demostrando puntualidad y compromiso con el cronograma general del evento.​
+ 
+●​ Cuidar el entorno físico y ambiental, evitando dejar residuos, alterar zonas verdes o dañar 
+instalaciones.​
+ 
+●​ Mantener un comportamiento ético, responsable y colaborativo, contribuyendo a un ambiente 
+seguro y armónico.​
+ 
+●​ Evitar el uso de dispositivos de audio o música en zonas comunes cuando interfieran con 
+actividades oficiales.​
+ 
+●​ No apropiarse ni manipular equipos, herramientas o materiales pertenecientes a otras 
+delegaciones sin autorización.​
+ 
+●​ Promover el trabajo en equipo, la inclusión y la ayuda mutua, como principios esenciales de la 
+convivencia científica y deportiva. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 14 
+
+                        
+5. Seguridad y Conducta en Campo 
+La seguridad es un principio fundamental del CCCD 2026 y constituye una responsabilidad compartida 
+entre todos los equipos, organizadores y autoridades técnicas. 
+Durante las actividades de campo, las delegaciones deberán cumplir con las siguientes disposiciones: 
+●​ Acatar todas las instrucciones emitidas por el Director de Lanzamiento, el Comité Técnico y el 
+Comité de Seguridad, antes, durante y después de los vuelos.​
+ 
+●​ No manipular motores, encendedores, cargas pirotécnicas o sistemas eléctricos sin supervisión 
+del personal autorizado.​
+ 
+●​ Mantener la distancia reglamentaria en las zonas de seguridad y respetar las señalizaciones y 
+restricciones de acceso.​
+ 
+●​ No ingresar al campo de vuelo sin autorización expresa del personal de control.​
+ 
+●​ Reportar de inmediato cualquier incidente, accidente, daño material o riesgo potencial al Comité 
+de Seguridad o al Coordinador General del evento.​
+ 
+●​ Evitar toda acción que pueda interferir con la seguridad del lanzamiento, el funcionamiento de 
+los equipos o la integridad de las personas presentes. 
+6. Clasificación de faltas 
+El cumplimiento del presente Código de Conducta y Responsabilidad de las Delegaciones (CCRD 2026) es 
+obligatorio para todos los equipos, asesores, delegados y participantes acreditados en el Concurso 
+Colombiano de Cohetería Deportiva (CCCD 2026).​
+ Cualquier acción u omisión que vulnere las normas establecidas en este documento, en el Reglamento 
+General, o en los documentos técnicos del concurso (PIC, NSRT, SPP, DCR, DMP, DCP, DCE), podrá ser 
+considerada una falta disciplinaria y será evaluada según su gravedad. 
+Las faltas se clasifican en Leves, Graves y Muy Graves, de acuerdo con su impacto en la convivencia, la 
+seguridad, la ética, la integridad institucional o el desarrollo del evento. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 14 
+
+                        
+6.1 Faltas Leves 
+Son aquellas conductas que afectan de manera menor la convivencia, el orden o el cumplimiento de las 
+normas, y que pueden ser corregidas mediante advertencia o deducción parcial de puntaje, según lo 
+estipulado en el SPP 2026. 
+Ejemplos de faltas leves: 
+●​ Llegar tarde a reuniones, actividades o lanzamientos sin justificación válida.​
+ 
+●​ Descuidar el orden o limpieza en el área de trabajo asignada.​
+ 
+●​ No portar la identificación oficial durante las actividades del concurso.​
+ 
+●​ Usar dispositivos de audio o música que interfieran con el desarrollo de actividades oficiales.​
+ 
+●​ Presentar deficiencias menores en la presentación o cumplimiento de tareas administrativas.​
+ 
+●​ Desatender temporalmente indicaciones del personal organizador o del Comité Técnico.​
+ 
+Medidas aplicables: 
+●​ Llamado de atención verbal o escrita.​
+ 
+●​ Deducción leve de puntaje en el ítem correspondiente del SPP 2026.​
+ 
+6.2 Faltas Graves 
+Son aquellas acciones que afectan la seguridad, la integridad institucional, la convivencia entre equipos o 
+el desarrollo normal del evento, y que requieren intervención formal del Comité Nacional del CCCD o del 
+Comité de Ética y Convivencia. 
+Ejemplos de faltas graves: 
+●​ Falta de respeto hacia jurados, organizadores o demás participantes.​
+ 
+●​ Conductas discriminatorias, groseras o irrespetuosas.​
+ 
+●​ Manipulación no autorizada de materiales, equipos o herramientas de otros equipos o de la 
+organización.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 14 
+
+                        
+●​ Incumplimiento reiterado de normas de seguridad o convivencia.​
+ 
+●​ Publicación de comentarios, imágenes o mensajes en redes sociales que afecten la imagen del 
+CCCD, la Corporación ALAS o los equipos participantes.​
+ 
+●​ Presentación de información técnica inexacta o incompleta con intención de obtener beneficio.​
+ 
+Medidas aplicables: 
+●​ Amonestación formal y reporte oficial a la institución representada.​
+ 
+●​ Deducción de puntaje conforme al SPP 2026.​
+ 
+●​ Suspensión temporal de la participación en actividades específicas del concurso. 
+6.3 Faltas Muy Graves 
+Son aquellas conductas que atentan directamente contra la seguridad, la ética, la integridad personal o 
+institucional, o que representan una violación intencionada de las normas técnicas y de convivencia del 
+evento. 
+Ejemplos de faltas muy graves: 
+●​ Manipulación o alteración de resultados, datos técnicos o registros oficiales.​
+ 
+●​ Incumplimiento deliberado de las normas de seguridad del NSRT 2026, poniendo en riesgo la 
+integridad de personas o bienes.​
+ 
+●​ Actos de agresión física o verbal hacia cualquier miembro del concurso.​
+ 
+●​ Robo, daño intencional o sabotaje de materiales o equipos de otros equipos o de la organización.​
+ 
+●​ Uso no autorizado, alterado o inapropiado de la identidad visual o material institucional del 
+CCCD o de la Corporación ALAS.​
+ 
+●​ Reincidencia en faltas graves previamente sancionadas. 
+ 
+ 
+Medidas aplicables: 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 14 
+
+                        
+●​ Descalificación inmediata del equipo o delegación.​
+ 
+●​ Anulación del puntaje, conforme al SPP 2026.​
+ 
+●​ Inhabilitación temporal o permanente para participar en futuras ediciones del CCCD.​
+ 
+●​ Informe oficial a la institución educativa representada y al Comité Nacional del CCCD, para el 
+registro y seguimiento del caso. 
+7. Disposiciones Finales 
+●​ El incumplimiento de las normas del presente Código de Conducta y Responsabilidad de las 
+Delegaciones (CCRD 2026) podrá afectar la participación futura de la institución o equipo en 
+próximas ediciones del Concurso Colombiano de Cohetería Deportiva (CCCD).​
+ 
+●​ Cualquier sanción aplicada será comunicada oficialmente por el Comité Nacional del CCCD, 
+conforme a los procedimientos establecidos y a la naturaleza de la falta cometida.​
+ 
+●​ En caso de incidentes, faltas disciplinarias o incumplimiento grave del presente CCRD 2026, se 
+deberá informar al Comité Nacional del CCCD. ​
+ 
+●​ Conforme a lo establecido en el Sistema de Puntuación y Premios (SPP 2026), se aplicarán las 
+sanciones correspondientes en puntaje cuando la falta afecte los ítems evaluativos o el 
+desempeño técnico del equipo.​
+ 
+●​ En situaciones que excedan las disposiciones del SPP o comprometan la ética, seguridad o 
+convivencia del concurso, el Comité Nacional del CCCD será la instancia responsable de 
+determinar la sanción final, la cual podrá incluir la suspensión o descalificación de la delegación, 
+según la gravedad del caso. 
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 14 
+
+                        
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 14 
+

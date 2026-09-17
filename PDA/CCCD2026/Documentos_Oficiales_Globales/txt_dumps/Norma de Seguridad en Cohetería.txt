@@ -1,0 +1,485 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+Norma de Seguridad en Cohetería - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 12 
+
+ 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Norma de Seguridad en Cohetería 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+5 
+2. LEGALIDAD Y CUMPLIMIENTO LOCAL​
+6 
+3. DELIMITACIÓN DE ÁREAS, ACCESOS Y CONTROL DE SEGURIDAD​
+7 
+4. REGLAS GENERALES DE OPERACIÓN​
+7 
+4.1 Responsabilidad del Participante​
+7 
+4.2 Construcción​
+8 
+4.3 Estabilidad​
+8 
+5. ÁNGULOS Y CONDICIONES DE LANZAMIENTO​
+9 
+6. DISTANCIA DE SEGURIDAD​
+10 
+7. RECUPERACIÓN​
+10 
+8. NORMATIVA INTERNACIONAL APLICABLE​
+11 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 12 
+
+ 
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente documento tiene como propósito establecer de manera clara, uniforme y verificable los 
+lineamientos de seguridad que regulan todas las actividades relacionadas con la operación, preparación, 
+construcción y lanzamiento de vehículos cohete dentro del Concurso Colombiano de Cohetería 
+Deportiva (CCCD 2026). 
+Los objetivos principales de la NSRT son: 
+●​ Garantizar la seguridad operacional durante las fases de diseño, integración, armado, vuelo y 
+recuperación.​
+ 
+●​ Definir procedimientos obligatorios para la manipulación segura de motores, ignitores, 
+electrónica y sistemas de recuperación.​
+ 
+●​ Establecer límites técnicos y operativos acordes con las capacidades formativas y con los niveles 
+de riesgo aceptables en las categorías 1, 2 y 3.​
+ 
+●​ Evitar prácticas inseguras que comprometan a participantes, jueces, organizadores, espectadores 
+y la integridad del rango. 
+El Documento de Norma de Seguridad en Cohetería (NSRT) constituye un documento vinculante dentro 
+del sistema normativo del CCCD, complementario al Reglamento General y a los documentos técnicos y 
+procedimentales del evento (DMP, PIC, SPP, DCR, CCRD, DCP y DCE).​
+ Su cumplimiento es de carácter obligatorio para todas las delegaciones, jurados, asesores, organizadores 
+y miembros del comité técnico y de seguridad. 
+1.2 Alcance 
+Aplica a todas las delegaciones participantes del Concurso Colombiano de Cohetería Deportiva, y regula 
+todas las actividades de construcción, preparación, integración, operación en rango, lanzamiento y 
+recuperación realizadas por equipos inscritos en las categorías 1, 2 y 3, tanto en fases regionales como 
+en la competencia nacional. 
+ Asimismo, la NSRT 2026 se integra y complementa con los lineamientos establecidos en los documentos 
+técnicos oficiales del concurso (PIC 2026, DMP 2026, SPP 2026, DCR 2026, CCRD 2026, DCP 2026 y DCE 
+2026), los cuales definen los estándares de diseño, seguridad, operación y evaluación esperados durante 
+el desarrollo del evento.  
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 12 
+
+ 
+El cumplimiento del presente código es obligatorio y su desconocimiento no exime de responsabilidad 
+ante las sanciones, restricciones operativas o penalizaciones contempladas por el Comité Nacional del 
+CCCD. 
+1.3 Definiciones 
+Para efectos de la Norma de Seguridad en Cohetería Deportiva (NSRT 2026) se adoptan las siguientes 
+definiciones operativas: 
+●​ Rango: Área total destinada a la preparación, armado y lanzamiento de cohetes durante un 
+evento autorizado. ​
+ 
+●​ Oficial de Seguridad(RSO): Persona con autoridad final en materia de seguridad durante el 
+evento. El RSO debe contar con una certificación mínima de Nivel 2 (L2) de la Tripoli Rocketry 
+Association.​
+ 
+●​ Oficial de Control de Lanzamiento (LCO): Persona certificada que opera el sistema de ignición y 
+tiene responsabilidad inmediata sobre la seguridad del lanzamiento. El LCO reporta al Director 
+de Lanzamiento. ​
+ 
+●​ Área de Preparación: Sector destinado al ensamblaje final del cohete, instalación de 
+recuperación y verificación previa a integración.​
+ 
+●​ Armado: Procedimiento mediante el cual el cohete entra en condición operativa al instalar 
+ignitor, electrónica o sistemas dependientes de activación.​
+ 
+●​ Ignitor: Elemento piroeléctrico destinado a iniciar la combustión del motor.​
+ 
+●​ Sistema de Recuperación: Conjunto de mecanismos diseñados para reducir la velocidad del 
+vehículo durante el descenso (paracaídas, cinta, tumble, etc.).​
+ 
+●​ Zonas de Seguridad: Separación mínima requerida entre el punto de lanzamiento y las personas, 
+determinada en función del impulso total instalado y la complejidad del cohete. ​
+ 
+●​ Incidente: Evento operativo no intencional que afecta de manera leve las actividades del rango 
+sin comprometer vidas ni estructuras.​
+ 
+●​ Accidente: Evento que genera daño físico, estructural o riesgo severo y requiere intervención 
+inmediata.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 12 
+
+ 
+●​ Falla Crítica: Situación durante el vuelo que compromete la integridad del cohete, su trayectoria 
+o su capacidad de recuperación segura. 
+2. LEGALIDAD Y CUMPLIMIENTO LOCAL 
+La NSRT 2026 aplica a todas las delegaciones participantes del Concurso Colombiano de Cohetería 
+Deportiva y establece los lineamientos de seguridad que deben cumplirse conforme al marco normativo 
+nacional aplicable a actividades relacionadas con el uso del espacio aéreo, la operación segura de 
+dispositivos autopropulsados y la manipulación de materiales potencialmente peligrosos. Aunque en 
+Colombia no existe una regulación específica para la cohetería deportiva, el concurso debe desarrollarse 
+bajo el respeto de la legislación vigente y en coordinación con las autoridades competentes. 
+La operación del Concurso Colombiano de Cohetería Deportiva se desarrolla bajo regulaciones y 
+lineamientos establecidos conjuntamente entre la Aerocivil, Tripoli Colombia y el Comité Nacional del 
+CCCD, quienes son los organismos responsables de autorizar, supervisar y validar las condiciones de 
+seguridad necesarias para la realización de actividades de cohetería deportiva en el país. En 
+consecuencia, todas las delegaciones, asesores, jurados y participantes deberán acatar íntegramente la 
+normativa de seguridad definida por estas entidades, incluyendo los procedimientos, restricciones y 
+requisitos técnicos establecidos para el manejo de motores, ignitores, operaciones en rango, zonas de 
+seguridad y procesos de recuperación. El cumplimiento estricto de dichas disposiciones es obligatorio y 
+constituye la base operativa para garantizar el desarrollo seguro, ordenado y autorizado de la 
+competencia. 
+Toda la normatividad está basada de acuerdo al Código de Seguridad de Tripoli Colombia, todas las 
+delegaciones y participantes deberán familiarizarse con este código, puesto que será el que prevalecerá 
+para cualquier actividad de lanzamiento referente al Concurso Colombiano de Cohetería Deportiva. 
+Adicionalmente, todas las delegaciones y participantes deberán cumplir con la normativa nacional 
+relativa al manejo, transporte y almacenamiento de sustancias peligrosas y materiales inflamables, lo 
+cual prohíbe expresamente la fabricación, uso o posesión de mezclas caseras de propelente, pólvoras no 
+certificadas, sustancias químicas no autorizadas o cualquier compuesto que contravenga la legislación 
+colombiana sobre control de explosivos, seguridad pública y protección ambiental. 
+Asimismo, la NSRT 2026 se integra y complementa con los lineamientos establecidos en los documentos 
+técnicos oficiales del concurso (PIC 2026, DMP 2026, SPP 2026, DCR 2026, CCRD 2026, DCP 2026 y DCE 
+2026), los cuales detallan los estándares de diseño, operación, evaluación y seguridad que deben cumplir 
+las delegaciones durante el desarrollo del evento. El desconocimiento de estas normas no exime de 
+responsabilidad. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 12 
+
+ 
+3. DELIMITACIÓN DE ÁREAS, ACCESOS Y CONTROL DE 
+SEGURIDAD 
+Las zonas operativas del concurso se encuentran estrictamente delimitadas para garantizar la seguridad 
+de todos los asistentes. El Área de Preparación tendrá acceso exclusivo para participantes acreditados y 
+jueces, quienes serán los únicos autorizados para manipular cohetes, motores y sistemas de encendido. 
+El Área de Lanzamiento, considerada zona de seguridad, tendrá acceso estrictamente controlado y solo 
+podrá ser ingresada por los participantes cuando el el RSO (Oficial de Seguridad) lo autorice, 
+manteniendo control total sobre movimientos, tiempos de entrada y permanencia en esta zona crítica. 
+Todo ingreso no autorizado queda prohibido. 
+Por su parte, el Área de Espectadores deberá mantenerse siempre separada de las zonas operativas 
+mediante las distancias mínimas de seguridad establecidas por la NSRT y el Código de Seguridad de 
+Tripoli Colombia, sin excepciones de ningún tipo. Todos los menores de edad deberán encontrarse 
+acompañados permanentemente por un adulto responsable, tanto en las áreas generales como en 
+cualquier zona a la que se les permita acceso. El cumplimiento de estas disposiciones es obligatorio para 
+todos los asistentes, delegaciones, jueces y personal de apoyo, y su incumplimiento podrá derivar en 
+restricciones de acceso o sanciones durante el concurso. 
+4. REGLAS GENERALES DE OPERACIÓN 
+4.1 Responsabilidad del Participante 
+Cada equipo será plenamente responsable de la construcción segura de su cohete, asegurando que 
+todos los componentes utilizados sean apropiados, estén correctamente integrados y cumplan con los 
+lineamientos establecidos por el DCP 2026 (Documento de Diseño Construcción y Pruebas 2026). 
+Asimismo, cada cohete deberá estar marcado de forma visible con la ubicación del Centro de Gravedad 
+(CG) y el Centro de Presión (CP), información indispensable para los procesos de verificación de 
+estabilidad realizados por jueces y oficiales de seguridad. 
+Los participantes deberán garantizar la correcta instalación de los sistemas de recuperación, ya sea 
+mediante paracaídas, streamers u otros dispositivos permitidos dentro de la categoría correspondiente. 
+Dichos sistemas deberán activarse de manera segura, confiable y acorde con el perfil de vuelo esperado, 
+evitando riesgos para personas, instalaciones o equipos. Además, cada miembro del equipo deberá 
+mantener un comportamiento seguro y disciplinado durante todas las operaciones en el rango, siguiendo 
+estrictamente las indicaciones del juez y del RSO. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 12 
+
+ 
+4.2 Construcción 
+Los cohetes presentados en competencia deberán construirse empleando materiales seguros, livianos y 
+adecuados para cohetería deportiva. Se establece que la nariz, el cuerpo y las aletas deben estar 
+fabricadas únicamente con materiales no metálicos, tales como plásticos, maderas livianas o compuestos 
+equivalentes, quedando prohibido el uso de estructuras metálicas o elementos rígidos que incrementen 
+el riesgo de daño en caso de impacto o falla en vuelo. 
+El proceso de ensamblaje deberá realizarse de manera limpia, firme y sin holguras, asegurando una 
+correcta alineación de las aletas, uniones resistentes y una integración segura del motor. Cualquier 
+componente defectuoso o que presente riesgo estructural podrá ser rechazado por el equipo de jueces o 
+por el RSO antes del vuelo. 
+El proceso de construcción del cohete debe cumplir de manera acorde en su totalidad con el DCP 2026. 
+4.3 Estabilidad 
+Cada equipo deberá demostrar que su cohete cumple con los criterios mínimos de estabilidad 
+aerodinámica antes de ser autorizado para volar. Para ello, es obligatorio identificar la posición del 
+Centro de Gravedad (CG) y del Centro de Presión (CP), marcándose de forma visible en el fuselaje y 
+aportando evidencia del cálculo o simulación correspondiente. 
+                       
+ 
+Imagen 1. Marcación del CG                      Imagen 2. Marcación del CP 
+La estabilidad mínima será de 2 calibres, entendida como la distancia entre CG y CP equivalente a dos 
+veces el diámetro del fuselaje del cohete. Los jueces podrán solicitar en cualquier momento la 
+simulación de vuelo en OpenRocket o software equivalente para verificar esta condición, y cualquier 
+cohete que no cumpla con esta estabilidad mínima será rechazado hasta que se realicen los ajustes 
+necesarios. 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 12 
+
+ 
+5. ÁNGULOS Y CONDICIONES DE LANZAMIENTO 
+Con el fin de garantizar operaciones de lanzamiento seguras y en conformidad con los estándares 
+establecidos por la NSRT 2026 y el Código de Seguridad de Tripoli Colombia, se definen las condiciones 
+ambientales, angulares y operativas mínimas que deben cumplirse antes de autorizar cualquier vuelo. 
+Estas restricciones buscan evitar riesgos asociados a desviaciones de trayectoria, condiciones 
+atmosféricas adversas, interferencia con aeronaves y posibles impactos en zonas no autorizadas. La 
+siguiente tabla resume los parámetros obligatorios que deberán ser verificados por el equipo y 
+confirmados por el juez o el RSO antes de proceder con cada lanzamiento. 
+Condición 
+Regla Establecida 
+Ángulo máximo de lanzamiento 
+El cohete deberá ser lanzado con un ángulo entre +- 30° respecto a 
+la vertical para cohetes clase 1 y +- 20° para cohetes clase 2 
+Velocidad máxima del viento 
+Se prohíben lanzamientos con vientos superiores a 20 km/h. 
+Dirección de lanzamiento 
+Está estrictamente prohibido lanzar en dirección hacia el público o 
+áreas no autorizadas. 
+Tránsito aéreo 
+No se permitirá ningún lanzamiento si hay aeronaves en las 
+inmediaciones o en la zona de influencia del rango. 
+Condiciones de nubosidad 
+No se permitirá lanzar si existe más de 50% de nubosidad por 
+debajo del apogeo previsto del cohete. 
+Tabla 1. Condiciones Operativas de Lanzamiento 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 12 
+
+ 
+6. DISTANCIA DE SEGURIDAD 
+Las distancias de seguridad constituyen uno de los elementos fundamentales de la NSRT 2026, ya que 
+determinan la separación mínima requerida entre las zonas operativas, los participantes, los 
+espectadores y cualquier estructura o instalación presente en el área del concurso. Estas distancias 
+tienen como propósito mitigar riesgos asociados a desviaciones de trayectoria, fallas en el ascenso, 
+impacto del cohete o caída de fragmentos durante la recuperación. Su cumplimiento es obligatorio para 
+todas las delegaciones y deberá ser verificado por los jueces y el RSO antes de autorizar cualquier 
+lanzamiento. 
+ 
+Tabla 2. Distancia de Seguridad establecida por el Código de Seguridad de Tripoli Colombia 
+7. RECUPERACIÓN 
+Todo cohete deberá estar equipado con un sistema de recuperación que garantice un descenso seguro y 
+controlado, ya sea mediante paracaídas, cinta de frenado (streamer) o mecanismos de caída libre 
+controlada (tumble), siempre y cuando este último sea compatible con el diseño y permitido por la 
+categoría correspondiente.  
+Con el fin de minimizar riesgos para personas y bienes, se establece una velocidad máxima de impacto 
+recomendada inferior a 10–11 m/s, la cual deberá ser verificada mediante simulación o inspección previa 
+al lanzamiento. Queda estrictamente prohibido intentar atrapar cohetes en el aire, así como realizar 
+maniobras de recuperación en postes eléctricos, árboles, techos o cualquier estructura que represente 
+un peligro. Todas las delegaciones deberán aplicar criterios de seguridad y esperar la autorización del 
+equipo autorizado para la recuperación o del RSO antes de emprender cualquier acción de recuperación. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 12 
+
+ 
+8. NORMATIVA INTERNACIONAL APLICABLE 
+Como parte de los lineamientos de referencia aplicables al Concurso Colombiano de Cohetería 
+Deportiva, se adoptan también normas estandarizadas internacionalmente en actividades de cohetería 
+deportiva. En particular, se reconocen como documentos de apoyo y consulta el Unified Safety Code de 
+la Tripoli Rocketry Association (TRA),Safety Code de la National Association of Rocketry (NAR) y el Código 
+de Seguridad de Tripoli Colombia, los cuales establecen principios, prácticas y criterios ampliamente 
+validados para la operación segura de cohetes de baja, media y alta potencia. Aunque la NSRT 2026 
+prevalece como normativa oficial del concurso, estos códigos complementan los procedimientos de 
+seguridad, refuerzan criterios técnicos y sirven como referencia en la interpretación y aplicación de 
+buenas prácticas operativas dentro del rango. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 12 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026  
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 12 
+

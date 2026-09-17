@@ -1,0 +1,625 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                                                                 
+ 
+Guía CANSAT - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorga únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 15 
+
+                                                                 
+Concurso Colombiano de Cohetería 
+Deportiva CCCD 2026: 
+Guía CANSAT 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+4 
+2. REQUISITOS GENERALES DEL CANSAT​
+5 
+2.1 Dimensiones Generales​
+5 
+2.2 Masa y Distribución Interna​
+6 
+2.3 Materiales Permitidos​
+6 
+3. SISTEMA ELÉCTRICO Y ELECTRÓNICO​
+7 
+3.1 Alimentación Eléctrica​
+7 
+3.1.1 Baterías Prohibidas​
+7 
+3.1.1 Baterías Permitidas​
+7 
+3.2 Computadora de vuelo​
+7 
+3.3 Sensores​
+7 
+3.4 Telecomunicaciones​
+8 
+4. MISIONES​
+9 
+4.1 Misión Principal​
+9 
+4.2 Misión Secundaria​
+9 
+5. SISTEMA DE RECUPERACIÓN​
+10 
+6. EVALUACIÓN Y PUNTAJE​
+11 
+6.1 Presentación del CanSat ante jurados — 20 puntos​
+12 
+6.2 Diseño e innovación del CanSat — 20 puntos​
+12 
+6.3 Recuperación del CanSat — 10 puntos​
+13 
+6.4 Cumplimiento de Misión Principal — 20 puntos​
+13 
+6.5 Propuesta de Misión Secundaria — 15 puntos​
+13 
+6.6 Propuesta de Misión Secundaria — 15 puntos​
+14 
+7. DISPOSICIONES FINALES​
+14 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 15 
+
+                                                                 
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El presente documento tiene como objetivo establecer los lineamientos técnicos, operativos, 
+estructurales y de seguridad aplicables a las cargas útiles tipo CanSat utilizadas en el Concurso 
+Colombiano de Cohetería Deportiva (CCCD) 2026, con el fin de garantizar: 
+●​ La seguridad de las operaciones de vuelo y recuperación 
+●​ La uniformidad técnica entre los equipos participantes 
+●​ La correcta integración entre el vehículo lanzador y la carga útil 
+●​ La validez técnica y científica de las misiones desarrolladas 
+●​ La transparencia en los procesos de inspección y validación 
+●​ La promoción de habilidades en ingeniería aeroespacial, electrónica, programación, 
+telecomunicaciones y ciencias aplicadas. 
+La presente Guía CanSat CCCD 2026 forma parte integral del sistema normativo oficial del Concurso 
+Colombiano de Cohetería Deportiva, en conjunto con los documentos NSRT 2026, PIC 2026, CCRD 2026, 
+DCR 2026, DMP 2026, DCP 2026 y SPP 2026, y tendrá carácter vinculante para todos los equipos, jurados 
+y organizadores involucrados en categorías que incluyan cargas útiles tipo CanSat. 
+1.2 Alcance 
+La presente guía es aplicable exclusivamente a la edición 2026 del Concurso Colombiano de Cohetería 
+Deportiva (CCCD), en su versión nacional para la categoría Universitarios (Categoría 3). 
+Sus disposiciones serán de obligatorio cumplimiento para todos los equipos participantes que integren 
+cargas útiles tipo CanSat en las categorías correspondientes. 
+1.3 Definiciones 
+Se adoptan las siguientes definiciones para efectos de la presente guía y adaptadas al marco del CCCD 
+2026: 
+●​ CanSat: Carga útil miniaturizada con dimensiones similares a una lata de bebida, diseñada para 
+ejecutar una misión científica o tecnológica durante el vuelo.​
+ 
+●​ Telemetría: Transmisión inalámbrica de datos obtenidos por sensores o sistemas electrónicos 
+durante el vuelo.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 15 
+
+                                                                 
+●​ Estación Terrena: Sistema utilizado por el equipo para recibir, visualizar y almacenar la 
+información transmitida por el CanSat.​
+ 
+●​ Misión Primaria: Conjunto mínimo de objetivos obligatorios definidos por el concurso para 
+todos los CanSat participantes.​
+ 
+●​ Misión Secundaria: Objetivo experimental adicional propuesto libremente por cada equipo 
+participante. ​
+ 
+●​ Validación de Misión: Confirmación oficial de que la carga útil cumplió satisfactoriamente los 
+requisitos mínimos establecidos.​
+ 
+2. REQUISITOS GENERALES DEL CANSAT 
+La presente sección establece las condiciones técnicas mínimas obligatorias que deberán cumplir todas 
+las cargas útiles tipo CanSat participantes en el Concurso Colombiano de Cohetería Deportiva (CCCD) 
+2026. Estos requisitos tienen como finalidad garantizar la seguridad operacional, la compatibilidad con 
+los vehículos de lanzamiento, la viabilidad técnica de las misiones y la igualdad de condiciones entre los 
+equipos participantes. 
+Todos los sistemas, componentes y configuraciones utilizados por los equipos deberán ajustarse a las 
+disposiciones establecidas en esta guía y a los demás documentos normativos oficiales del CCCD 2026. 
+2.1 Dimensiones Generales 
+Con el fin de garantizar la compatibilidad entre las cargas útiles y los vehículos lanzadores, todos los 
+CanSat deberán respetar las siguientes restricciones dimensionales: 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 15 
+
+                                                                 
+2.2 Masa y Distribución Interna 
+La masa total del CanSat, incluyendo: 
+ 
+●​ Estructura 
+●​ Baterías 
+●​ Sensores 
+●​ Sistemas electrónicos 
+●​ Antenas 
+●​ Elementos experimentales 
+La masa total del CanSat, incluyendo todos los elementos estructurales, electrónicos y experimentales 
+integrados para la misión, no podrá exceder el límite máximo establecido en la sección 2.1 de la presente 
+guía. Para efectos de validación técnica, se considerará como masa total la correspondiente al sistema 
+completamente ensamblado. 
+Todos los componentes internos deberán estar correctamente asegurados mediante sistemas de fijación 
+mecánica apropiados, evitando desplazamientos, desprendimientos o impactos internos durante las 
+aceleraciones y desaceleraciones propias de la misión. 
+En caso de exceder el límite máximo permitido de masa, el CanSat no será autorizado para vuelo hasta 
+que el equipo realice las modificaciones necesarias y supere nuevamente la inspección técnica 
+correspondiente. 
+2.3 Materiales Permitidos 
+Se permite el uso de materiales comúnmente utilizados en aplicaciones educativas y aeroespaciales 
+experimentales, incluyendo: 
+●​ PLA 
+●​ PETG 
+●​ ABS 
+●​ Fibra de vidrio 
+●​ Fibra de carbono 
+●​ Aluminio 
+●​ Madera liviana 
+●​ Espumas de absorción de impacto 
+●​ Acrílicos 
+●​ Policarbonatos 
+Los materiales utilizados deberán ser compatibles con condiciones normales de vuelo y recuperación. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 15 
+
+                                                                 
+3. SISTEMA ELÉCTRICO Y ELECTRÓNICO 
+3.1 Alimentación Eléctrica 
+3.1.1 Baterías Prohibidas 
+●​ Baterías LiPo, debido a peligro de incendio en caso de impacto del vehículo de lanzamiento. 
+●​ Baterías de Li-Ion en empaque rectangular, debido a posibilidad de sobrecalentamiento 
+incontrolado. 
+3.1.1 Baterías Permitidas 
+●​ Baterías AA o AAA no recargables. 
+●​ Baterías 18650. 
+●​ Baterías Li-Ion en empaque cilindrico. 
+●​ Pilas de botón. 
+ 
+Los sistemas de alimentación eléctrica deberán estar calculados para proporcionar una duración de 
+mínimo 4 horas a cualquier CanSat. 
+3.2 Computadora de vuelo 
+Todo CanSat deberá incorporar una computadora de vuelo o sistema de control embebido encargado de 
+gestionar las funciones principales de la misión, incluyendo la adquisición, procesamiento y  
+almacenamiento de datos durante las diferentes fases del vuelo. Este sistema deberá ser capaz de operar 
+de manera autónoma desde el momento de activación previo al lanzamiento hasta la finalización de la 
+misión y recuperación de la carga útil. 
+La computadora de vuelo deberá garantizar el registro continuo y confiable de la información obtenida 
+por los sensores integrados, asegurando la integridad de los datos incluso en caso de pérdida temporal 
+de comunicación o fallos parciales de telemetría. 
+Asimismo, el sistema deberá contar con capacidad suficiente de almacenamiento, estabilidad operativa 
+frente a vibraciones y aceleraciones, y mecanismos adecuados para evitar pérdidas de información 
+ocasionadas por reinicios inesperados, interrupciones de energía o impactos durante el aterrizaje. 
+3.3 Sensores 
+El CanSat podrá incorporar los sensores, módulos y sistemas de adquisición de datos que el equipo 
+considere necesarios para el cumplimiento de su misión primaria y misión secundaria, siempre que estos 
+sean compatibles con las condiciones de seguridad, masa, dimensiones y operación establecidas en la 
+presente guía. Los equipos podrán integrar sensores ambientales, sistemas de navegación, módulos de 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 15 
+
+                                                                 
+posicionamiento global (GPS), cámaras, magnetómetros, sensores de gases, humedad, radiación, calidad 
+del aire u otros dispositivos orientados al desarrollo científico, tecnológico o experimental de la misión. 
+No obstante, todos los CanSat participantes deberán contar obligatoriamente, como mínimo, con: 
+●​ Unidad de Medición Inercial (IMU), capaz de registrar variables asociadas al movimiento y 
+orientación del sistema 
+●​ Sensor barométrico o altímetro, destinado a medir presión atmosférica y estimar altitud durante 
+el vuelo. 
+Los sensores deberán encontrarse correctamente integrados, protegidos y calibrados para soportar las 
+condiciones dinámicas del lanzamiento, ascenso, descenso y aterrizaje. Asimismo, los datos obtenidos 
+deberán ser registrados por la computadora de vuelo y almacenados adecuadamente para su posterior 
+análisis y validación por parte del Comité Técnico. 
+3.4 Telecomunicaciones 
+El uso de sistemas de telemetría y transmisión inalámbrica de datos será opcional para los equipos 
+participantes. Sin embargo, aquellos equipos que decidan implementar sistemas de comunicación 
+durante la misión podrán emplearlos para la transmisión en tiempo real de variables de vuelo, 
+información de sensores, datos de navegación, estados operacionales o cualquier otro parámetro 
+asociado a la misión del CanSat. 
+Cada equipo que desee incluir telecomunicaciones dentro de su misión, deberá contar con el transmisor 
+dentro del CanSat y su propia Estación Terrena. 
+Todos los sistemas de transmisión utilizados deberán cumplir obligatoriamente con las frecuencias, 
+niveles de potencia y condiciones de operación permitidas por la normativa colombiana vigente en 
+materia de telecomunicaciones y uso del espectro radioeléctrico. Será responsabilidad exclusiva de cada 
+equipo garantizar que sus dispositivos de comunicación operen dentro de los límites legales y técnicos 
+autorizados. 
+Con el fin de minimizar interferencias electromagnéticas entre equipos y garantizar una operación 
+ordenada durante la competencia, el Comité Técnico asignará previamente a cada equipo un 
+identificador o callsign oficial. Dicho identificador estará asociado a una frecuencia específica de 
+operación que deberá ser configurada obligatoriamente en el sistema de telemetría del CanSat y de la 
+estación terrena correspondiente. 
+Ningún equipo podrá modificar unilateralmente la frecuencia asignada durante las operaciones oficiales 
+del concurso. Asimismo, el Comité Técnico podrá solicitar pruebas previas de funcionamiento y 
+verificación de frecuencia durante la inspección técnica obligatoria. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 15 
+
+                                                                 
+Cualquier interferencia intencional, uso indebido del espectro o transmisión fuera de las frecuencias 
+autorizadas podrá derivar en penalizaciones, anulación de la misión o descalificación del equipo, 
+conforme a lo establecido en los reglamentos oficiales del CCCD 2026. 
+4. MISIONES 
+4.1 Misión Principal 
+Todos los equipos participantes deberán cumplir obligatoriamente una misión primaria mínima, 
+orientada a garantizar la adquisición básica de datos de vuelo y la validación funcional del CanSat 
+durante la misión. Esta misión primaria constituye el conjunto de capacidades esenciales que deberá 
+demostrar toda carga útil participante en el CCCD 2026. 
+Como mínimo, el CanSat deberá ser capaz de: 
+●​ Medir altitud o presión atmosférica 
+●​ Medir temperatura 
+●​ Medir aceleración en vuelo 
+●​ Registrar y almacenar datos de vuelo 
+●​ Operar de manera autónoma durante la misión 
+●​ Sobrevivir estructural y funcionalmente al aterrizaje. 
+Los datos obtenidos durante el vuelo deberán quedar almacenados localmente dentro del sistema de la 
+carga útil, de manera que puedan ser recuperados y verificados posteriormente por el Comité Técnico, 
+incluso en caso de pérdida parcial de comunicación o fallos de telemetría. 
+La misión primaria será considerada exitosa cuando el CanSat logre completar satisfactoriamente las 
+tareas mínimas definidas, manteniendo integridad estructural suficiente para la recuperación y 
+validación de los datos registrados. 
+4.2 Misión Secundaria 
+Además de la misión primaria obligatoria, cada equipo deberá proponer y desarrollar una misión 
+secundaria de carácter experimental, científico, tecnológico o educativo, definida autónomamente por 
+los participantes de acuerdo con los objetivos de su proyecto. 
+La misión secundaria podrá involucrar áreas como: 
+●​ Monitoreo ambiental 
+●​ Navegación (GPS) 
+●​ Captura y procesamiento de imágenes 
+●​ Inteligencia artificial 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 15 
+
+                                                                 
+●​ Experimentación científica 
+●​ Transmisión de datos 
+●​ Análisis atmosférico 
+●​ Cualquier otra aplicación compatible con los objetivos y condiciones del concurso. 
+Cada equipo será responsable de definir claramente: 
+●​ Objetivos de su misión 
+●​ Parámetros de funcionamiento 
+●​ Variables a medir 
+●​ Criterios de éxito 
+●​ Metodología de validación. 
+La evaluación de la misión secundaria se realizará considerando tanto la complejidad técnica de la 
+propuesta como el nivel de cumplimiento alcanzado durante la misión. En consecuencia, los equipos 
+podrán recibir diferentes niveles de puntuación dependiendo de: 
+●​ Grado de innovación 
+●​ Dificultad técnica 
+●​ Calidad de implementación 
+●​ Funcionalidad demostrada 
+●​ Validez de los datos obtenidos 
+●​ Cumplimiento efectivo de los objetivos definidos por el propio equipo. 
+El Comité Técnico y los jurados determinarán la puntuación correspondiente con base en la 
+documentación presentada, la evidencia de funcionamiento y los resultados observados durante la 
+competencia. 
+5. SISTEMA DE RECUPERACIÓN 
+El CanSat deberá permanecer unido al vehículo de lanzamiento durante todas las fases de la misión, 
+incluyendo ascenso, eyección, descenso y recuperación final. En ningún caso se permitirá la liberación 
+total o separación permanente de la carga útil respecto al cohete. 
+El CanSat podrá permanecer: 
+●​ Completamente dentro del fuselaje 
+●​ Parcialmente expuesto durante el descenso 
+●​ Completamente fuera del compartimiento principal tras la eyección 
+siempre que continúe unido estructuralmente al vehículo mediante el sistema de recuperación 
+autorizado. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 15 
+
+                                                                 
+Los equipos deberán garantizar que el método de anclaje utilizado soporte adecuadamente las cargas 
+mecánicas del vuelo y recuperación, evitando desprendimientos accidentales, colisiones peligrosas o 
+pérdida de componentes durante la misión. 
+La separación total del CanSat respecto al vehículo será considerada una falla crítica de recuperación y 
+podrá derivar en penalizaciones o invalidación de la misión, conforme a los criterios establecidos por el 
+Comité Técnico del CCCD 2026. 
+6. EVALUACIÓN Y PUNTAJE 
+La evaluación del CanSat dentro del CCCD 2026 se realizará mediante una rúbrica específica orientada a 
+valorar el desempeño técnico, científico y operativo de la carga útil desarrollada por cada equipo. Esta 
+evaluación complementa las disposiciones generales establecidas en el SPP 2026 y busca reconocer 
+tanto la calidad del diseño como el cumplimiento efectivo de la misión propuesta. 
+La puntuación total máxima para el componente CanSat será de 100 puntos, distribuidos de la siguiente 
+manera: 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 15 
+
+                                                                 
+6.1 Presentación del CanSat ante jurados — 20 puntos 
+Corresponde a la exposición técnica realizada por el equipo ante el panel oficial de jurados, en la cual 
+deberán presentar el diseño, arquitectura, funcionamiento, objetivos y resultados esperados de la carga 
+útil desarrollada. 
+La evaluación considerará aspectos como: 
+●​ Claridad y organización de la presentación 
+●​ Dominio técnico de los integrantes 
+●​ Capacidad para justificar decisiones de diseño 
+●​ Comprensión del funcionamiento del sistema 
+●​ Calidad visual del material de apoyo 
+●​ Explicación de sensores, electrónica y misión 
+●​ Capacidad de respuesta frente a preguntas técnicas 
+Se valorará especialmente la capacidad del equipo para comunicar de manera clara y fundamentada los 
+aspectos científicos y de ingeniería asociados al desarrollo del CanSat. 
+6.2 Diseño e innovación del CanSat — 20 puntos 
+Este ítem evalúa la calidad del diseño general de la carga útil, el nivel de desarrollo propio realizado por 
+el equipo y el grado de innovación incorporado en la solución propuesta. 
+La evaluación incluirá aspectos como: 
+●​ Diseño estructural 
+●​ Integración electrónica 
+●​ Organización interna 
+●​ Calidad de manufactura 
+●​ Optimización de masa y espacio 
+●​ Robustez del sistema 
+●​ Originalidad de la solución 
+●​ Nivel de complejidad técnica 
+●​ Creatividad aplicada al desarrollo de la misión 
+Asimismo, este puntaje considerará el nivel de desarrollo realizado directamente por el equipo 
+participante. Se valorará positivamente el diseño y fabricación propia de componentes, sistemas 
+electrónicos, software, estructuras y soluciones de ingeniería desarrolladas internamente. 
+El uso de kits comerciales, módulos prefabricados o soluciones completamente ensambladas no estará 
+prohibido; sin embargo, podrá disminuir la valoración en el componente de innovación y desarrollo 
+propio cuando reduzca significativamente la complejidad técnica asumida por el equipo. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 15 
+
+                                                                 
+Los jurados podrán considerar el equilibrio entre dificultad técnica, integración y aporte de ingeniería 
+realizado por los participantes. 
+6.3 Recuperación del CanSat — 10 puntos 
+Este ítem evalúa la capacidad del sistema para sobrevivir al vuelo y ser recuperado de manera segura y 
+funcional tras el aterrizaje. 
+La evaluación considerará: 
+●​ Integridad estructural posterior al vuelo 
+●​ Conservación de componentes electrónicos 
+●​ Protección adecuada de sensores y baterías 
+●​ Permanencia del CanSat unido al vehículo 
+●​ Capacidad de recuperación de los datos registrados 
+La pérdida total de la carga útil, desprendimientos estructurales severos o daños ocasionados por fallos 
+de integración podrán reducir significativamente la puntuación obtenida. 
+6.4 Cumplimiento de Misión Principal — 20 puntos  
+Corresponde a la evaluación del cumplimiento efectivo de las funciones mínimas obligatorias 
+establecidas para todos los CanSat participantes. La evaluación se realizará con base en: 
+●​ Evidencia técnica presentada 
+●​ Registros almacenados después del vuelo 
+●​ Funcionamiento comprobable de sensores 
+●​ Consistencia de los datos obtenidos 
+●​ Validación realizada por el Comité Técnico 
+El cumplimiento parcial de la misión podrá resultar en asignaciones proporcionales de puntaje. 
+6.5 Propuesta de Misión Secundaria — 15 puntos  
+Este ítem evalúa la calidad conceptual y técnica de la misión secundaria propuesta por el equipo. 
+Los jurados valorarán aspectos como: 
+●​ Claridad de objetivos 
+●​ Relevancia científica o tecnológica 
+●​ Nivel de dificultad 
+●​ Viabilidad técnica 
+●​ Originalidad de la propuesta 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 15 
+
+                                                                 
+●​ Metodología planteada 
+●​ Justificación experimental 
+●​ Aporte educativo o innovador del proyecto 
+La misión secundaria deberá encontrarse adecuadamente documentada y explicada tanto en el informe 
+técnico como durante la presentación ante jurados. 
+6.6 Propuesta de Misión Secundaria — 15 puntos  
+Corresponde a la evaluación del desempeño real de la misión secundaria durante el vuelo y recuperación 
+del CanSat. 
+La asignación del puntaje dependerá del grado de cumplimiento alcanzado respecto a los objetivos 
+definidos previamente por el equipo. 
+Se evaluará: 
+●​ Funcionamiento efectivo del sistema 
+●​ Calidad y validez de los datos obtenidos 
+●​ Estabilidad operativa 
+●​ Evidencia experimental 
+●​ Resultados obtenidos durante la misión. 
+Debido a que cada equipo podrá desarrollar misiones con diferentes niveles de complejidad, el Comité 
+Técnico y los jurados podrán considerar proporcionalmente la dificultad técnica de la propuesta al 
+momento de asignar la puntuación final.  
+El cumplimiento parcial de la misión secundaria podrá recibir puntuación proporcional según el nivel de 
+ejecución demostrado. 
+7. DISPOSICIONES FINALES 
+El Comité Nacional y el Comité Técnico del CCCD tendrán la autoridad para interpretar, complementar y 
+aplicar las disposiciones establecidas en esta guía, así como resolver cualquier situación no contemplada, 
+priorizando siempre la seguridad operacional, la equidad técnica y el correcto desarrollo de la 
+competencia. 
+Cualquier sistema, componente o procedimiento considerado inseguro o incompatible con las 
+condiciones del evento podrá ser restringido o rechazado por el Comité Técnico, aun cuando no se 
+encuentre explícitamente prohibido en este documento. 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 15 
+
+                                                                 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 15 de 15 
+

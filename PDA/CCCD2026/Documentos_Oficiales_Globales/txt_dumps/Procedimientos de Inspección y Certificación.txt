@@ -1,0 +1,646 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+                        
+ 
+Procedimiento de Inspección y Certificación - Concurso Colombiano de Cohetería Deportiva CCCD2026 
+SateLab - ALAS (Aerospace Latin American Suborbitals) © Todos los derechos reservados, 2026. 
+ 
+Aviso de Derechos de Autor y Propiedad Intelectual 
+Este documento y todo su contenido —incluyendo, pero no limitado a, textos, gráficos, imágenes y 
+diseño— están protegidos por derechos de autor y otras leyes de propiedad intelectual. Los derechos de 
+autor de este documento pertenecen a sus autores y están reservados. 
+Se prohíbe la reproducción, distribución, modificación, transmisión, publicación o uso de cualquier parte 
+de este documento sin el permiso expreso y por escrito de sus autores. El acceso y uso de este 
+documento se otorgan únicamente para fines personales y no comerciales. 
+Para solicitar permisos o licencias para el uso de este material, por favor contacte a sus autores. 
+Cualquier uso no autorizado puede constituir una violación de las leyes de derechos de autor y otras 
+leyes aplicables. 
+El incumplimiento de estas restricciones puede dar lugar a acciones legales y a la búsqueda de 
+compensación por daños. Agradecemos su respeto por los derechos de propiedad intelectual y por la 
+creatividad de los autores y creadores. 
+​
+​
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 2 de 15 
+
+                        
+Concurso Colombiano de Cohetería 
+Deportiva CCCD2026: 
+Procedimiento de Inspección y Certificación 
+ 
+ 
+ 
+1. INTRODUCCIÓN​
+4 
+1.1 Propósito​
+4 
+1.2 Alcance​
+4 
+1.3 Definiciones​
+5 
+2. PRINCIPIOS GENERALES DE INSPECCIÓN​
+6 
+3. DEFINICIÓN DE ROLES​
+7 
+3.1 Director de Lanzamiento (LD)​
+7 
+3.2 Oficial de Seguridad (RSO)​
+7 
+3.3 Oficial de Control de Lanzamiento (LCO)​
+8 
+4. ETAPAS DEL PROCEDIMIENTO DE INSPECCIÓN Y CERTIFICACIÓN​
+8 
+4.1 Verificación Documental​
+8 
+4.2 Inspección Técnica y de Seguridad​
+9 
+4.3 Registro de Observaciones y No Conformidades​
+10 
+4.4 Decisión de Certificación​
+10 
+4.5 Inspección Post-Vuelo​
+10 
+5. CRITERIOS DE APROBACIÓN Y RECHAZO​
+12 
+5.1 Requisitos obligatorios para certificación​
+12 
+5.2 Causas de no certificación​
+13 
+5.3 Certificación con observaciones​
+13 
+5.4 Re-inspección​
+13 
+6. DISPOSICIONES FINALES​
+14 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 3 de 15 
+
+                        
+1. INTRODUCCIÓN 
+1.1 Propósito 
+El Procedimiento de Inspección y Certificación (PIC) tiene como propósito establecer el marco técnico, 
+operativo y documental mediante el cual el Comité del Concurso Colombiano de Cohetería Deportiva 
+(CCCD 2026) verifica, inspecciona y certifica que los vehículos de lanzamiento, sus configuraciones y las 
+delegaciones participantes cumplen de manera integral con los requisitos técnicos, normativos y de 
+seguridad exigidos por el concurso antes de autorizar la realización de cualquier vuelo oficial. 
+El PIC define de forma clara y estandarizada las etapas de revisión, los criterios de evaluación, los roles 
+responsables y los registros obligatorios asociados al proceso de inspección técnica y certificación previa 
+al vuelo, garantizando: 
+●​ La aplicación uniforme de las normas técnicas y de seguridad establecidas en el Reglamento 
+General, la NSRT 2026 y los documentos oficiales del CCCD.​
+ 
+●​ La prevención de riesgos para los participantes, el personal organizador y el entorno operativo.​
+ 
+●​ La trazabilidad y validez documental de las decisiones de aprobación o no certificación, mediante 
+su registro en la Flight Card y su integración al Documento de Cumplimiento y Evaluación (DCE 
+2026).​
+ 
+●​ La transparencia, objetividad y consistencia en la autorización de vuelos y en la evaluación 
+posterior del desempeño de las delegaciones, conforme al Sistema de Puntuación y Premios (SPP 
+2026). 
+El cumplimiento del presente procedimiento es obligatorio para todas las delegaciones, comités, jurados 
+y personal involucrado en las actividades de inspección, certificación y lanzamiento del CCCD 2026, y 
+constituye un requisito indispensable para la validación de vuelos oficiales dentro del concurso. 
+1.2 Alcance 
+El presente Procedimiento de Inspección y Certificación (PIC) es aplicable a todas las delegaciones y 
+vehículos de lanzamiento participantes en el Concurso Colombiano de Cohetería Deportiva (CCCD 2026), 
+en cualquiera de sus categorías y modalidades. 
+El PIC regula de manera obligatoria la verificación documental, la inspección técnica, la evaluación de 
+seguridad y la certificación previa a cada vuelo oficial, como requisito indispensable para la autorización 
+de lanzamiento. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 4 de 15 
+
+                        
+El cumplimiento del presente procedimiento es de carácter obligatorio, y su incumplimiento dará lugar a 
+la no autorización del vuelo. 
+1.3 Definiciones 
+Para efectos del presente Procedimiento de Inspección y Certificación (PIC), se adoptan las siguientes 
+definiciones: 
+●​ Procedimiento de Inspección y Certificación (PIC): Documento operativo del Concurso 
+Colombiano de Cohetería Deportiva (CCCD 2026) que establece las etapas, criterios y registros 
+mediante los cuales se realiza la inspección técnica, la verificación de seguridad y la certificación 
+previa al vuelo de los vehículos de lanzamiento.​
+ 
+●​ Documento de Diseño, Construcción y Pruebas (DCP): Documento técnico normativo del CCCD 
+que define los requisitos obligatorios de diseño, construcción, integración y pruebas de los 
+vehículos de lanzamiento. El cumplimiento del DCP es de carácter obligatorio y constituye una 
+base fundamental de la inspección técnica, siendo verificado explícitamente durante el proceso 
+de certificación establecido en el PIC.​
+ 
+●​ Flight Card (Tarjeta de Vuelo): Documento técnico oficial del CCCD utilizado durante el proceso 
+de inspección y lanzamiento, en el cual se registran los datos esenciales del vehículo, su 
+configuración, las validaciones previas, la decisión de certificación y los resultados del vuelo. La 
+Flight Card constituye un registro obligatorio y vinculante para la autorización del vuelo y para la 
+evaluación posterior, y forma parte integral del Documento de Cumplimiento y Evaluación (DCE 
+2026).​
+ 
+●​ Certificación Previa al Vuelo: Decisión formal resultante del proceso de inspección técnica y de 
+seguridad mediante la cual se autoriza, condiciona o niega la realización de un vuelo oficial.​
+ 
+●​ Inspección Técnica: Proceso de verificación física y documental mediante el cual se evalúa el 
+cumplimiento del vehículo de lanzamiento con los requisitos establecidos en el DCP, la NSRT y los 
+demás documentos técnicos del CCCD.​
+ 
+●​ Inspección de Seguridad: Proceso de evaluación orientado a identificar y prevenir condiciones 
+de riesgo asociadas al vehículo, su configuración, el sistema de propulsión, el sistema de 
+recuperación y las condiciones del lanzamiento.​
+ 
+●​ No Conformidad: Cualquier desviación, incumplimiento o inconsistencia respecto a los requisitos 
+técnicos, constructivos, de seguridad o documentales establecidos en el DCP y en los 
+documentos normativos del CCCD.​
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 5 de 15 
+
+                        
+●​ Condición de Riesgo: Situación identificada durante la inspección que puede comprometer la 
+seguridad de las personas, las instalaciones o el desarrollo del concurso, y que puede dar lugar a 
+la no certificación del vuelo. 
+2. PRINCIPIOS GENERALES DE INSPECCIÓN 
+El proceso de inspección y certificación establecido en el presente Procedimiento de Inspección y 
+Certificación (PIC) se rige por los siguientes principios generales, que orientan todas las actuaciones del 
+Comité del CCCD durante la preparación, inspección y autorización de vuelos: 
+●​ Carácter preventivo y obligatorio: La inspección técnica y de seguridad tiene un carácter 
+preventivo, orientado a identificar y mitigar riesgos antes de la realización del vuelo. Todas las 
+delegaciones y vehículos de lanzamiento deben cumplir de manera obligatoria este 
+procedimiento; ningún vuelo oficial podrá ejecutarse sin haber completado el proceso de 
+inspección y certificación definido en el PIC.​
+ 
+●​ Inspección previa a cada vuelo: La inspección y certificación se realizará previa a cada vuelo 
+oficial, independientemente de inspecciones o certificaciones previas. Cualquier cambio en el 
+vehículo, su configuración, el sistema de propulsión o las condiciones del lanzamiento requerirá 
+una nueva inspección conforme a este procedimiento.​
+ 
+●​ Trazabilidad documental: Todo el proceso de inspección y certificación debe ser documentado 
+de manera completa y verificable y garantizando la trazabilidad. Estos registros constituyen 
+soporte oficial para la autorización de vuelos, la evaluación posterior y la toma de decisiones por 
+parte del Comité Nacional del CCCD.​
+ 
+●​ Autoridad exclusiva del comité inspector: La evaluación técnica, la verificación de seguridad y la 
+decisión de certificación son de competencia exclusiva de las instancias designadas por el CCCD. 
+Las decisiones adoptadas por el comité inspector son vinculantes y no pueden ser modificadas 
+por las delegaciones ni por personal no autorizado.​
+ 
+●​ Prioridad absoluta de la seguridad: En todas las fases del proceso, la seguridad de las personas, 
+el personal organizador, las instalaciones y el entorno operativo tiene prioridad absoluta. Ante 
+cualquier condición de riesgo identificada, el vuelo podrá ser suspendido, condicionado o no 
+certificado, aunque se cumplan otros criterios técnicos o reglamentarios. 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 6 de 15 
+
+                        
+3. DEFINICIÓN DE ROLES 
+Para efectos del presente Procedimiento de Inspección y Certificación (PIC), se establecen los siguientes 
+roles operativos y de seguridad, los cuales intervienen en las actividades de inspección, certificación y 
+lanzamiento dentro del Concurso Colombiano de Cohetería Deportiva (CCCD 2026): 
+3.1 Director de Lanzamiento (LD) 
+El Director de Lanzamiento (LD) es la autoridad responsable de la dirección general, coordinación y 
+supervisión administrativa de las operaciones de lanzamiento. Su función principal es garantizar que las 
+actividades de inspección, certificación y vuelo se desarrollen de manera organizada, conforme a los 
+procedimientos establecidos y dentro de las condiciones autorizadas por el CCCD. 
+Entre sus responsabilidades se incluyen, sin limitarse a ellas: 
+●​ Delimitar áreas operativas y perímetros de seguridad. 
+●​ Verificar autorización del propietario del terreno o administrador del sitio. 
+●​ Confirmar la coordinación aeronáutica requerida conforme a la normativa vigente. 
+●​ Designar y coordinar al personal operativo. 
+●​ Suspender el evento por razones logísticas, operativas o administrativas. 
+3.2 Oficial de Seguridad (RSO) 
+El Oficial de Seguridad (RSO) es la autoridad máxima en materia de seguridad del rango de lanzamiento y 
+tiene la responsabilidad de garantizar que todas las actividades se realicen sin poner en riesgo a las 
+personas, las instalaciones o el entorno. 
+Sus funciones principales incluyen: 
+●​ Supervisar el cumplimiento de las normas y protocolos de seguridad establecidos por el CCCD 
+durante las fases de inspección, preparación y lanzamiento.​
+ 
+●​ Evaluar de manera continua las condiciones del rango, el entorno y las operaciones en curso.​
+ 
+●​ Identificar, comunicar y gestionar condiciones de riesgo o situaciones inseguras.​
+ 
+●​ Designar al personal encargado de la inspección técnica y de seguridad de los vehículos de 
+lanzamiento.​
+ 
+●​ Ejercer la autoridad para detener, suspender o cancelar cualquier actividad de inspección o 
+lanzamiento cuando se identifique una condición insegura, independientemente del estado del 
+cronograma o del vuelo. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 7 de 15 
+
+                        
+3.3 Oficial de Control de Lanzamiento (LCO) 
+El Oficial de Control de Lanzamiento (LCO) es el responsable inmediato de la ejecución técnica del 
+lanzamiento, mediante la operación del sistema de control y activación de la ignición. 
+Sus responsabilidades incluyen: 
+●​ Operar el sistema de control de lanzamiento conforme a los procedimientos establecidos.​
+ 
+●​ Verificar, antes de iniciar la cuenta regresiva, que las condiciones de seguridad del rango han sido 
+confirmadas.​
+ 
+●​ Ejecutar la cuenta regresiva y la activación de la ignición únicamente cuando se cuenta con la 
+autorización correspondiente.​
+ 
+●​ Mantener comunicación constante con el Director de Lanzamiento y el Oficial de Seguridad 
+durante las operaciones de lanzamiento.​
+ 
+●​ Suspender la secuencia de lanzamiento ante cualquier alerta, condición insegura o indicación 
+emitida por las autoridades de seguridad. 
+4. ETAPAS DEL PROCEDIMIENTO DE INSPECCIÓN Y 
+CERTIFICACIÓN 
+El presente procedimiento establece las etapas secuenciales mediante las cuales se realiza la inspección 
+técnica, la evaluación de seguridad y la certificación previa al vuelo de los vehículos de lanzamiento del 
+CCCD 2026. Todas las etapas buscan garantizar que los vehículos y las delegaciones cumplan de manera 
+integral con los requisitos técnicos, normativos y de seguridad, minimizando riesgos y asegurando la 
+trazabilidad documental de las decisiones. 
+4.1 Verificación Documental 
+Antes de realizar cualquier inspección física, el comité inspector debe llevar a cabo una verificación 
+documental exhaustiva de la información proporcionada por la delegación. Esta etapa asegura que la 
+documentación esté completa, coherente y alineada con los criterios de diseño y construcción 
+previamente aprobados. La verificación incluye, como mínimo:
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 8 de 15 
+
+                        
+●​ Preliminary Design Review (PDR): revisión de la propuesta inicial de diseño, planos y 
+especificaciones técnicas.​
+ 
+●​ Critical Design Review (CDR) / Cuaderno de diseño: revisión del diseño final, incluyendo detalles 
+constructivos, materiales y configuraciones definitivas.​
+ 
+●​ Concordancia entre PDR y CDR: verificación de que los cambios realizados respecto a la fase 
+preliminar cumplen con las observaciones y recomendaciones del comité técnico.​
+ 
+●​ Reportes de progreso adicionales: cualquier informe, prueba o avance entregado por la 
+delegación que respalde la construcción y configuración final del vehículo.​
+ 
+●​ Flight Card: revisión de datos completos y consistentes del vehículo, incluyendo identificación, 
+configuración del motor, sistema de recuperación, condiciones de lanzamiento y validaciones 
+previas. 
+Esta verificación asegura que la información presentada por la delegación sea clara, verificable y 
+suficiente para respaldar la inspección física y la posterior decisión de certificación. Solo cuando toda la 
+documentación cumpla con los requisitos establecidos en el NSRT y el DCP, se procede a la inspección 
+técnica y de seguridad del vehículo. 
+4.2 Inspección Técnica y de Seguridad 
+La inspección técnica y de seguridad se realiza conjuntamente y tiene como objetivo verificar la 
+concordancia entre el vehículo real y las simulaciones, el diseño aprobado y los requisitos del DCP. 
+Durante esta etapa: 
+●​ El Comité Inspector junto con el RSO evalúan la estructura, configuración, estabilidad, sistema de 
+recuperación, relación empuje–peso y cualquier otro requisito técnico del DCP.​
+ 
+●​ Se verifica la coherencia física con las simulaciones y predicciones técnicas, garantizando que el 
+vehículo se comportará dentro de los parámetros seguros y esperados durante el vuelo.​
+ 
+●​ Cualquier desviación, riesgo o incumplimiento identificado es documentado de inmediato.​
+ 
+●​ El Comité Inspector junto con el RSO pueden pedir cualquier información a la delegación que sea 
+necesaria para verificar la seguridad del vehículo, como materiales, pegamentos, tipos de 
+recuperación o demás datos que el Comité considere deben ser tomados en cuenta. El no 
+proporcionar esta información solicitada por el Comité Inspector puede ser considerada motivo 
+de no autorización del vuelo. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 9 de 15 
+
+                        
+Esta etapa asegura que el vehículo cumpla de manera integral tanto los requisitos técnicos como los de 
+seguridad, antes de emitir cualquier decisión de certificación. 
+4.3 Registro de Observaciones y No Conformidades 
+Todos los hallazgos identificados durante la inspección se registran formalmente en la Flight Card. 
+El registro incluirá, como mínimo: 
+●​ Descripción de la observación o no conformidad.​
+ 
+●​ Clasificación del hallazgo (técnico, de seguridad o documental).​
+ 
+●​ Delegación responsable y persona encargada de la inspección.​
+ 
+●​ Acciones correctivas recomendadas, si aplica. 
+Este registro constituye soporte oficial para la toma de decisiones y la trazabilidad del proceso de 
+inspección. 
+4.4 Decisión de Certificación 
+Con base en la inspección y en los registros de observaciones: 
+●​ El comité inspector (LD, RSO y LCO) emite la decisión formal de certificación:​
+ 
+○​ Certificado: el vehículo cumple todos los requisitos y el vuelo puede realizarse.​
+ 
+○​ Certificado con observaciones: el vuelo puede realizarse, pero se deberán atender 
+restricciones o correcciones indicadas.​
+ 
+○​ No certificado: el vehículo no cumple los requisitos y el vuelo queda prohibido hasta que 
+se corrijan las no conformidades.​
+ 
+●​ La decisión se registra en la Flight Card, con firmas de los responsables para efectos de control, 
+evaluación y trazabilidad. 
+4.5 Inspección Post-Vuelo 
+La inspección Post-Vuelo se realiza una vez recuperado el vehículo y tiene como objetivo evaluar su 
+estado estructural y funcional después del lanzamiento, así como verificar el desempeño de los sistemas 
+críticos durante la misión. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 10 de 15 
+
+                        
+Durante esta etapa, el Comité Inspector, en conjunto con el RSO, examina el vehículo recuperado para 
+identificar posibles daños, fallas en los sistemas o desviaciones respecto al comportamiento esperado 
+según el diseño y las simulaciones presentadas por la delegación. 
+La inspección incluye, entre otros aspectos: 
+●​ Evaluación del estado estructural del vehículo, incluyendo fuselaje, uniones, aletas y 
+componentes principales.​
+ 
+●​ Verificación del funcionamiento del sistema de recuperación y del estado de sus componentes 
+(paracaídas, líneas, sistemas de eyección, entre otros).​
+ 
+●​ Identificación de daños ocasionados durante el vuelo, el despliegue de recuperación o el 
+aterrizaje. 
+Con base en los resultados de la inspección, el equipo de seguridad determinará la clasificación del 
+vuelo, utilizando los mismos criterios de certificación aplicados en la inspección previa: 
+●​ Vuelo certificado: el vehículo completó la misión y no presenta daños relevantes.​
+ 
+●​ Vuelo certificado con observaciones: el vuelo fue exitoso, pero se identifican daños menores o 
+aspectos que deben ser revisados o corregidos.​
+ 
+●​ Vuelo no certificado: se evidencian daños mayores, fallas críticas o comportamientos que 
+comprometen la seguridad o el cumplimiento de los objetivos del vuelo. 
+Los resultados de esta inspección se registrarán formalmente en la Flight Card, garantizando la 
+trazabilidad del desempeño del vehículo y proporcionando información relevante para la evaluación final 
+de la delegación. 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 11 de 15 
+
+                        
+5. CRITERIOS DE APROBACIÓN Y RECHAZO 
+El presente apartado establece los criterios mediante los cuales el comité inspector determina si un 
+vehículo de lanzamiento puede ser certificado, certificado con observaciones o no certificado, 
+garantizando la seguridad, el cumplimiento técnico y la trazabilidad documental en el CCCD 2026. 
+5.1 Requisitos obligatorios para certificación 
+Para que un vehículo de lanzamiento sea certificado, debe cumplir con los siguientes requisitos mínimos: 
+1.​ Concordancia documental:​
+ 
+○​ Presentación completa y coherente del PDR, CDR o Cuaderno de Diseño, reportes de 
+progreso y Flight Card.​
+ 
+○​ Cumplimiento de los requisitos de diseño y construcción según el DCP 2026 y la NSRT 
+2026.​
+ 
+2.​ Inspección técnica y de seguridad:​
+ 
+○​ Concordancia física con las simulaciones y diseños aprobados.​
+ 
+○​ Estabilidad estructural, correcta instalación del motor y sistema de recuperación 
+funcional.​
+ 
+○​ Cumplimiento de los procedimientos de seguridad en el rango y condiciones de 
+lanzamiento seguras.​
+ 
+3.​ No existencia de condiciones de riesgo críticas: Condiciones que puedan comprometer la 
+seguridad de los participantes, del personal o del entorno operativo.​
+ 
+4.​ Registro adecuado de la inspección:​
+ 
+○​ Todos los hallazgos, observaciones y resultados de la inspección están documentados en 
+la Flight Card. 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 12 de 15 
+
+                        
+5.2 Causas de no certificación 
+Un vehículo será no certificado si se identifica alguna de las siguientes condiciones: 
+●​ Desviaciones significativas entre la construcción real y las especificaciones del DCP o los diseños 
+aprobados.​
+ 
+●​ Fallas en los sistemas de recuperación, estabilidad o estructural que representen un riesgo para 
+la seguridad.​
+ 
+●​ Documentación incompleta, inconsistente o no verificada según los procedimientos del PIC.​
+ 
+●​ Condiciones de riesgo que no puedan ser mitigadas antes del lanzamiento.​
+ 
+●​ Incumplimiento de las normas de seguridad del CCCD 2026 durante la inspección. 
+5.3 Certificación con observaciones 
+Se podrá otorgar certificación con observaciones cuando el vehículo cumpla los requisitos obligatorios 
+mínimos, pero se detecten desviaciones menores que: 
+●​ No comprometan la seguridad del vuelo ni de las personas.​
+ 
+●​ Requieran acciones correctivas menores antes del lanzamiento.​
+ 
+●​ Deben quedar registradas en la Flight Card como observaciones oficiales. 
+5.4 Re-inspección 
+En caso de no certificación o de certificación con observaciones, se permitirá la reinspección bajo las 
+siguientes condiciones: 
+1.​ La delegación realiza las correcciones o ajustes necesarios sobre el vehículo, la documentación o 
+los sistemas de seguridad.​
+ 
+2.​ La reinspección se programa dentro del marco del concurso y bajo la supervisión de los 
+responsables del PIC.​
+ 
+3.​ Los resultados de la re-inspección se registran nuevamente en la Flight Card, determinando la 
+decisión final de certificación. 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 13 de 15 
+
+                        
+6. DISPOSICIONES FINALES 
+El presente Procedimiento de Inspección y Certificación (PIC) es obligatorio para todas las delegaciones y 
+personal involucrado en los lanzamientos del CCCD 2026. Ningún vehículo podrá ser lanzado sin haber 
+sido inspeccionado y certificado conforme a este procedimiento. 
+El Comité Nacional del CCCD tiene la autoridad final para interpretar y aplicar el PIC, validar registros, 
+autorizar vuelos y determinar medidas correctivas o sanciones en caso de incumplimiento. Sus 
+decisiones son vinculantes para todas las delegaciones y el personal del concurso. 
+Los registros de inspección, incluyendo la Flight Card y los informes de observaciones o no 
+conformidades, se integrarán como soporte oficial de trazabilidad, sirviendo para la asignación de 
+puntajes, la evaluación de desempeño y la documentación institucional. 
+Cualquier actualización del PIC deberá ser emitida oficialmente por el Comité Nacional del CCCD y 
+comunicada a todas las delegaciones. Su desconocimiento no exime de responsabilidad frente a las 
+decisiones o sanciones que determine el comité. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 14 de 15 
+
+                        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Medellín, Colombia 
+© 2026 
+Version: 1.0.0  ​
+​
+​
+​
+​
+​
+​
+​
+​
+​
+Página 15 de 15 
+
