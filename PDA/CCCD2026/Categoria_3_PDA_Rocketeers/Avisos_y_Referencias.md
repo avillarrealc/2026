@@ -33,6 +33,11 @@
 > **[COMPLETADO: 2026-09-21 12:32:34]**
 > Diligenciar el formulario correspondiente a la categoría: [https://forms.gle/WRggMzyRChvw5qHR7](https://forms.gle/WRggMzyRChvw5qHR7)
 
+> [!SUCCESS]
+> **MODELADO 3D Y PROTOCOLO DE OJIVA [COMPLETADO]**
+> Se completó el diseño de la Ojiva (Perfil Serie Haack, C=0) para vuelo transónico. Geometría extraída de OpenRocket (escala x1000) e importada a Fusion 360 como sólido. Se generó un protocolo técnico en `Documentos_Oficiales_Globales/Protocolo_Ojiva_OR_Fusion360.md`.
+
+
 > [!CAUTION]
 > **REGLAS SOBRE SISTEMAS DE CONTROL (Cat. 3 - Avanzados)**
 > En esta categoría el uso de sistemas de control es **opcional** y no afecta el puntaje. En caso de implementarse, debe cumplir:
