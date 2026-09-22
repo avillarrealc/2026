@@ -36,3 +36,4 @@
    - Cat2 Stars Reporte Progreso 1: https://forms.gle/1fq4DQ89jp4gdHe49
    - Cat3 Rocketeers Reporte Progreso 1: https://forms.gle/WRggMzyRChvw5qHR7
    - Plataforma educativa: https://academy.satelab.org/cccd/554e1756-bf1e-476a-88c8-49806d1acc21
+   - Acceso SateLab Academy: usuarios por equipo custodiados localmente en `PDA/CCCD2026/.credenciales_satelab.json` (no versionado, ignorado por Git). Actualizado 2026-09-22: Noctux Cat1, Stars Cat2 ID 211, Rocketeers Cat3 ID 310.

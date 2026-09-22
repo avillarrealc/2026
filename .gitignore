@@ -2,9 +2,8 @@
 Evaluación/
 Evaluacion/
 
-# Archivos temporales de sistema y editores
-.ipynb_checkpoints/
-Thumbs.db
-Desktop.ini
-.DS_Store
-*.tmp
+# Credenciales SateLab Academy CCCD2026 (no versionar, custodia local)
+PDA/CCCD2026/.credenciales_satelab.json
+PDA/CCCD2026/*credencial*
+PDA/CCCD2026/*credential*
+*.env
