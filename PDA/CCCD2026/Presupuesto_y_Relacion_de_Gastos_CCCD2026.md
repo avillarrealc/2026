@@ -68,7 +68,15 @@ Aquellos rubros con **[Valor por definir]** han sido declarados en el inventario
 
 ---
 
-## 🏛️ 4. Fuentes de Financiación Identificadas
+## 🖨️ 4. Automatización de Reportes (PDF)
+
+Para fines logísticos y de presentación, se ha desarrollado un script de extracción y generación automática de PDF:
+- **Script:** [`generate_pdf.py`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/generate_pdf.py) - Lee el archivo Excel maestro y extrae estrictamente las columnas *Ítem, Descripción, Cantidad y Total*.
+- **Reporte de Salida:** [`Presupuesto_Resumido.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Presupuesto_Resumido.pdf) - Documento en PDF con estética del "PDA CLUB", que suma automáticamente el Gran Total y formatea la descripción para los tres equipos.
+
+---
+
+## 🏛️ 5. Fuentes de Financiación Identificadas
 
 | Fuente de Financiación | Tipo de Recurso | Monto Estimado (COP) | Estado Actual |
 | :--- | :--- | :---: | :---: |
@@ -79,7 +87,7 @@ Aquellos rubros con **[Valor por definir]** han sido declarados en el inventario
 
 ---
 
-## 📌 5. Recomendaciones de Jorge Londoño / Asesoría Financiera
+## 📌 6. Recomendaciones de Jorge Londoño / Asesoría Financiera
 
 1. **Gestión Inmediata de Inscripción:** Priorizar el desembolso de los $ 900.000 de la categoría 2 (Stars) para garantizar su cupo oficial ante la organización.
 2. **Reserva de Finca:** Abonar al alquiler de la Finca en Santa Fe de Antioquia para congelar el precio de $ 3.000.000.
