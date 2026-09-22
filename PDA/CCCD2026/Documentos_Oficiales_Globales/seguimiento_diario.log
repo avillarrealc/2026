@@ -1,0 +1,43 @@
+﻿[2026-09-21 09:53:24] INICIO escaneo https://cccd.space/documentos
+[2026-09-21 09:53:24] Chunk remoto: Documentos-BcOgGePm.js
+[2026-09-21 09:53:24] Documentos remotos detectados: 8
+[2026-09-21 09:53:24] OK sin cambios: Reglamento General de Competencia CCCD 2026.pdf v1.0.0
+[2026-09-21 09:53:24] OK sin cambios: Motores Permitidos.pdf v1.0.0
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: DiseÃ±o ConstrucciÃ³n y Pruebas.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: DiseÃ±o ConstrucciÃ³n y Pruebas.pdf
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: Norma de Seguridad en CoheterÃ­a.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: Norma de Seguridad en CoheterÃ­a.pdf
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: Procedimientos de InspecciÃ³n y CertificaciÃ³n.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: Procedimientos de InspecciÃ³n y CertificaciÃ³n.pdf
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: Cumplimiento y EvaluaciÃ³n.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: Cumplimiento y EvaluaciÃ³n.pdf
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: CÃ³digo de Conducta y Responsabilidad de las Delegaciones.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: CÃ³digo de Conducta y Responsabilidad de las Delegaciones.pdf
+[2026-09-21 09:53:24] DOCUMENTO NUEVO: GuÃ­a CanSat.pdf
+[2026-09-21 09:53:24] ADVERTENCIA falta copia local: GuÃ­a CanSat.pdf
+[2026-09-21 09:53:24] EMAIL omitido: sin CCCD_SMTP_USER/CCCD_SMTP_PASS. Alerta conservada en archivo.
+[2026-09-21 09:53:24] RESULTADO: 6 cambios. Alerta: ALERTA_CAMBIO_2026-09-21_09-53.txt Email: SKIPPED_NO_CREDS
+[2026-09-21 09:56:09] INICIO escaneo https://cccd.space/documentos
+[2026-09-21 09:56:09] Chunk remoto: Documentos-BcOgGePm.js
+[2026-09-21 09:56:09] Documentos remotos detectados: 8
+[2026-09-21 09:56:09] OK sin cambios id=1 Reglamento General de Competencia CCCD 2026.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=3 Motores Permitidos.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=4 Diseno Construccion y Pruebas.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=5 Norma de Seguridad en Coheteria.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=7 Procedimientos de Inspeccion y Certificacion.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=8 Cumplimiento y Evaluacion.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=9 Codigo de Conducta y Responsabilidad de las Delegaciones.pdf v1.0.0
+[2026-09-21 09:56:09] OK sin cambios id=10 Guia CanSat.pdf v1.0.0
+[2026-09-21 09:56:09] RESULTADO: sin cambios. Local sincronizado.
+[2026-09-21 11:35:04] INICIO escaneo https://cccd.space/documentos
+[2026-09-21 11:35:04] Chunk remoto: Documentos-BcOgGePm.js
+[2026-09-21 11:35:04] Documentos remotos detectados: 8
+[2026-09-21 11:35:04] OK sin cambios id=1 Reglamento General de Competencia CCCD 2026.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=3 Motores Permitidos.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=4 Diseno Construccion y Pruebas.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=5 Norma de Seguridad en Coheteria.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=7 Procedimientos de Inspeccion y Certificacion.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=8 Cumplimiento y Evaluacion.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=9 Codigo de Conducta y Responsabilidad de las Delegaciones.pdf v1.0.0
+[2026-09-21 11:35:04] OK sin cambios id=10 Guia CanSat.pdf v1.0.0
+[2026-09-21 11:35:04] RESULTADO: sin cambios. Local sincronizado.

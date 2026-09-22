@@ -1,6 +1,6 @@
 # 05 Plan de Vuelo Seguridad y Checklist de Rampa - PDA Stars Cat 2
 
-**Ventana oficial:** 30 a 40 segundos totales. Altura objetivo 200 m con E12-4. Altímetro Jolly Logic o Estes.
+**Ventana oficial:** 30 a 40 segundos totales (confirmar aplicación en vuelos F15-4 con el revisor). Altura objetivo 300 m con F15-4 (ID 211). Altímetro Jolly Logic o Estes.
 **Lugar de práctica:** cancha o lote abierto en La Tablaza o La Estrella, sin techos, sin cables, con permiso del docente.
 
 ---
@@ -22,8 +22,8 @@ Sin jefe de misión nadie toca el cohete en rampa. Sin seguridad nadie se acerca
 
 Antes de salir al campo:
 
-- [ ] Peso total ___ g / 480 g y largo ___ cm / 60 cm anotados
-- [ ] Motor E12-4 guardado en tubo, ignitor aparte
+- [ ] Peso total ___ g / 650 g y largo ___ cm / 60 cm anotados
+- [ ] Motor F15-4 guardado en tubo, ignitor aparte
 - [ ] Altímetro Jolly Logic o Estes encendido y en cero
 - [ ] Carga útil prendida, guardando, led parpadeando
 - [ ] Paracaídas doblado, Nomex puesto, cordón libre
@@ -48,7 +48,7 @@ Si el paracaídas no abre, no lo atajen con el cuerpo. Dejen que caiga y corran 
 | Fecha y lugar | |
 | Viento y clima | |
 | Peso y largo verificados | ___ g, ___ cm |
-| Altura altímetro 1 | ___ m / objetivo 200 m, diferencia ___ m |
+| Altura altímetro 1 | ___ m / objetivo 300 m, diferencia ___ m |
 | Tiempo cronómetro 1 / 2 | ___ s / ___ s, promedio ___ s |
 | Recuperación | Óptima / parcial / sin apertura |
 | Estabilidad vista | Muy estable / media / inestable |

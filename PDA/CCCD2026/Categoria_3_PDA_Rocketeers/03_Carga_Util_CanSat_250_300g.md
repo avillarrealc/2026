@@ -1,6 +1,7 @@
 # 03 Carga Útil CanSat 250 a 300 g - PDA Rocketeers Cat 3
 
 **Regla oficial:** CanSat funcional tamaño lata, 250 a 300 g, diseñado y construido por el equipo. Se cuenta desde el primer diseño. Prohibidos animales vertebrados. Objetivos científicos, tecnológicos o de ingeniería.
+**Contradicción normativa registrada:** Guía CanSat v1.0.0 §2.1 (gráfico p5) admite 250-350 g, pero Guía Categoría Avanzados exige 250-300 g. Criterio operativo sin ambigüedad: máximo duro **300 g** (cumple ambos documentos). Rango 300-350 g queda vedado hasta aclaración escrita del revisor. Dimensiones máximas: 115 x 66 mm.
 
 ---
 
@@ -19,7 +20,7 @@ El CanSat es como una lonchera que se tira del bus en marcha: debe sobrevivir al
 | Estructura lata | Tubo impreso o lata protegida | 40 a 60 g |
 | Cerebro | ESP32 | 7 a 10 g |
 | Sensores | BMP280 + GPS + gas o partículas | 20 a 40 g |
-| Batería | LiPo 2S o 18650 según consumo | 40 a 70 g |
+| Batería | 18650 Li-Ion cilíndrica permitida (LiPo prohibida, Guía CanSat §3.1); autonomía mínima 4 h | 40 a 70 g |
 | Paracaídas propio del CanSat si aplica | Tela pequeña | 15 a 25 g |
 | Tornillos, espuma, cables | | 20 g |
 | **TOTAL CanSat** | **Debe dar 250 a 300 g** | **___ g** |

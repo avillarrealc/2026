@@ -22,17 +22,17 @@ Piensen en la carga como el pasajero del bus: debe ir amarrado, no gritar, no mo
 | Cerebro | ESP32 o Arduino Nano | 7 a 10 g | Lee sensores y guarda datos |
 | Sensor clima | BMP280 o DHT22 | 2 a 5 g | Temperatura, humedad, presión |
 | Guardado | MicroSD o memoria interna | 2 g | No perder datos si se apaga |
-| Batería | LiPo 1S 300 a 500 mAh | 8 a 14 g | Energía de a bordo |
+| Batería | 18650 o 2xAAA no recargables (LiPo prohibida, Sesión Informativa 1 §08) | 15 a 45 g | Energía de a bordo |
 | Cables y cinta | Jumpers cortos | 5 g | Conexiones sin enredos |
 | Estructura | Tubo o cajita impresa | 15 a 25 g | Que no se mueva en el vuelo |
-| Altímetro oficial | Jolly Logic o Estes | 10 a 12 g | Prueba oficial de 200 m |
+| Altímetro oficial | Jolly Logic o Estes | 10 a 12 g | Prueba oficial de 300 m |
 
-Todo esto sumado no puede pasar el total de 480 g del cohete completo. Pésenlo junto en la ficha 01.
+Todo esto sumado no puede pasar el total de 650 g del cohete completo. Pésenlo junto en la ficha 01.
 
 ## 3. Esquema de conexión para copiar
 
 ```
-Batería LiPo -> Cerebro ESP32 (VIN y GND)
+Batería permitida 18650 o 2xAAA -> Cerebro ESP32 (VIN y GND)
 BMP280 -> ESP32 (VCC 3V3, GND, SCL, SDA)
 MicroSD -> ESP32 (SPI)
 Altímetro Jolly Logic o Estes -> aparte con su espuma, sin cables compartidos

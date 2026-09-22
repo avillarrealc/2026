@@ -23,6 +23,7 @@ Confirmen con OpenRocket y cronómetro real desde 400 m. Tiempo largo de descens
 - Paracaídas en rollo, líneas peinadas.
 - Eyección con retardo 7 s del G80-7T. No la manipulen.
 - Prueba en tierra: debe salir en menos de 2 segundos al tirar.
+- Acopladores (DCP, Sesión Informativa 1 §05): los que se separan en recuperación exigen extensión mínima de 1 calibre a cada lado del punto de separación. Los que no se separan van con extensión máxima posible o 1 calibre, fijados con uniones mecánicas o adhesivos permanentes. Verificar con regla antes de cada vuelo.
 
 ## 3. Tabla de pruebas
 

@@ -2,30 +2,32 @@
 
 **Regla oficial:** paracaídas obligatorio. Puntaje: apertura óptima abre completo, parcial abre enredado pero frena, sin apertura cero puntos.
 **Meta de vuelo total:** 30 a 40 segundos. El paracaídas manda en ese tiempo.
+**Advertencia clase F:** con apogeo 300 m, el descenso a velocidades seguras (4 a 7 m/s) toma 45 a 70 s, fuera de la ventana 30-40 s. Confirmar con el revisor (Cano, Cat. 2) cómo aplica el criterio de tiempo en vuelos F15-4. Prioridad: recuperación segura con apertura óptima; volar lo más liviano posible.
 
 ---
 
 ## 1. Cómo elegir el tamaño sin adivinar
 
-Para 450 a 480 g necesitamos descenso entre 4 y 5 m/s. Más rápido rompe patas y carga. Más lento se lo lleva el viento y nos pasamos de 40 s.
+Para 600 a 650 g necesitamos descenso entre 4 y 5 m/s. Más rápido rompe patas y carga. Más lento se lo lleva el viento.
 
-Guía rápida con nuestro peso:
+Guía rápida con nuestro peso (estimaciones, verificar con cronómetro real):
 
-| Diámetro paracaídas | Descenso aprox con 465 g | Tiempo aprox desde 200 m | Sirve |
+| Diámetro paracaídas | Descenso aprox con 620 g | Tiempo descenso desde 300 m | Sirve |
 | :---: | :---: | :---: | :--- |
-| 60 cm | 5.5 m/s | 28 a 30 s más subida | Muy justo, riesgoso |
-| 75 cm | 4.5 m/s | 33 a 36 s más subida | Ideal para 30 a 40 s |
-| 90 cm | 3.5 m/s | 40 a 45 s más subida | Muy lento, se pasa del tiempo |
+| 60 cm | 6.5 m/s | ~46 s | Rápido, riesgoso |
+| 75 cm | 5.3 m/s | ~57 s | Seguro pero excede ventana 30-40 s |
+| 90 cm | 4.4 m/s | ~68 s | Muy lento, se pierde |
 
-Arranquen simulando con 75 cm en OpenRocket y ajusten según cronómetro real.
+Arranquen simulando con 75 cm en OpenRocket y ajusten según cronómetro real y lo que indique el revisor sobre la ventana de tiempo.
 
 ## 2. Armado que sí abre
 
 - Manta Nomex entre motor y paracaídas siempre. Sin manta el flamazo quema la tela.
 - Cordón de choque Kevlar de mínimo 2 metros, doblado en Z sin nudos duros.
 - Paracaídas doblado en rollo, no en bola. Las líneas estiradas sin enredos.
-- Carga de eyección del E12-4 con retardo 4 s. No la toquen ni la cambien.
+- Carga de eyección del F15-4 con retardo 4 s. No la toquen ni la cambien.
 - Prueba en tierra: metan todo, soplen por el tubo de montura o tiren del cordón. Debe salir suave en menos de 2 segundos.
+- Acopladores (DCP, Sesión Informativa 1 §05): los que se separan en recuperación exigen extensión mínima de 1 calibre (diámetro del fuselaje) a cada lado del punto de separación. Los que no se separan van con extensión máxima posible o 1 calibre, fijados con uniones mecánicas o adhesivos permanentes. Verificar con regla antes de cada vuelo.
 
 Es como doblar una sombrilla mojada: si la meten a la brava se traba. Si la enrollan con calma abre de una.
 

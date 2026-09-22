@@ -7,6 +7,14 @@
 
 ## 📌 Comunicados y Avisos Oficiales
 
+> [!WARNING]
+> **⚠️ CONTRADICCIÓN NORMATIVA MASA CANSAT (ACCIÓN REQUERIDA)**
+> Guía CanSat v1.0.0 §2.1 admite 250-350 g; Guía Categoría Avanzados exige 250-300 g. Criterio aplicado: máximo duro 300 g. Solicitar aclaración escrita al revisor (Fonseca) en asesorías 22 Sep-1 Oct.
+
+> [!IMPORTANT]
+> **MOTOR E ID DEFINITIVOS (circular 22-09-2026)**
+> PDA Rocketeers: motor **G80-7T**, **ID de Misión 310**. Confirma lo registrado en memorias. Sin cambios.
+
 > [!NOTE]
 > **ID DE MISIÓN OBLIGATORIO**
 > Se ha asignado oficialmente el Número de Equipo. Según la **Sección 3.2.8 del DCP**, este ID debe estar **físicamente grabado y visible** en la estructura exterior del cohete y la carga útil para los procesos de inspección técnica, validación de seguridad y operaciones en la zona de lanzamiento.
@@ -22,6 +30,7 @@
 
 > [!IMPORTANT]
 > **REPORTE DE PROGRESO 1 (Universitarios / Avanzados)**
+> **[COMPLETADO: 2026-09-21 12:32:34]**
 > Diligenciar el formulario correspondiente a la categoría: [https://forms.gle/WRggMzyRChvw5qHR7](https://forms.gle/WRggMzyRChvw5qHR7)
 
 > [!CAUTION]
@@ -51,3 +60,16 @@
 4. `4_Rubrica_Sistema_Puntuacion.pdf` — Rúbrica detallada con los aspectos, distribución de puntajes y criterios de evaluación de la competencia.
 5. `5_Calendario_Oficial.jpg` — Cronograma oficial inmodificable de entregables y actividades del certamen.
 6. `6_Guia_Categoria_Avanzados.pdf` — **[ESPECÍFICO CAT 3]** Requisitos, retos, medidas y restricciones oficiales para la categoría Universitarios / Avanzados.
+
+---
+
+## 📌 Sesión Informativa 1 (22-09-2026, grupo WhatsApp)
+
+Fuente: `Documentos_Oficiales_Globales/Sesion_Informativa_1_CCCD2026.md`.
+
+- **Calendario Cat. 3:** Reporte Progreso 1 (23 Sep) · Asesorías (22 Sep-1 Oct) · PDR (4 Oct) · Video Equipo (10 Oct) · Revisiones Técnicas Virtuales (12-22 Oct) · CDR (25 Oct) · Fotos Cohete (28 Oct) · Divulgación (1 Nov) · Concurso (6-8 Nov). Sin aplazamientos.
+- **Revisión técnica virtual:** exige mínimo 80% de avance físico/funcional; verificación en vivo de fuselaje, aletas, recuperación, carga útil, materiales y simulación. Revisor Cat. 3: Juan Sebastián Fonseca — TRA #36180 L1 (mismo contacto de aprobación de sistemas de control).
+- **Sistemas de control:** la sesión confirma permitido en Cat. 3 con los requisitos ya registrados arriba. Se mantiene la exigencia de aval escrito frente a DCP §3.3.1.
+- **Baterías CanSat:** prohibidas LiPo y Li-Ion rectangular; permitidas AA/AAA no recargables, 18650, Li-Ion cilíndricas, botón; autonomía mínima 4 h (Guía CanSat §3.1). Memoria `03` ya corregida a 18650.
+- **Acopladores:** 1 calibre mínimo a cada lado del punto de separación (ver `04`).
+- **ID y marcaciones:** etiqueta obligatoria (equipo, ID, institución, país, ciudad, contacto); etiqueta adicional vertical entre aletas con ID visible en contraste; longitud mínima 25 cm + sticker del concurso. Archivos: `Id_NombreDelEquipo_Entregable`.
