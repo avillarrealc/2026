@@ -32,6 +32,7 @@
 2. Para cada `link` en `/docs/*.pdf`, ejecutar `curl -sI https://cccd.space/docs/<encode>` y comparar `Content-Length`, `ETag` y `version`/`date` contra esta tabla.
 3. Criterio de actualización: cambio en `version`, `date`, `Content-Length` o `ETag` = descargar PDF, reemplazar en `Documentos_Oficiales_Globales/`, regenerar `txt_dumps/`, actualizar esta tabla con nueva fecha de verificación.
 4. Verificar también formularios de entrega por categoría (no están en `/documentos`):
+   - Cat1 Noctux Reporte Progreso 1: https://forms.gle/t2kAEV1NTeHhFJYW8 — **[COMPLETADO 2026-09-22, respuesta registrada verificada por captura]**
    - Cat2 Stars Reporte Progreso 1: https://forms.gle/1fq4DQ89jp4gdHe49
    - Cat3 Rocketeers Reporte Progreso 1: https://forms.gle/WRggMzyRChvw5qHR7
    - Plataforma educativa: https://academy.satelab.org/cccd/554e1756-bf1e-476a-88c8-49806d1acc21

@@ -76,4 +76,4 @@ Coincide con `5_Calendario_Oficial.jpg` archivado en cada categoría. Casos espe
 1. Baterías: Cat. 2 `03` y Cat. 3 `03` usaban LiPo (prohibida). Corregido a 18650 / AA-AAA permitidas.
 2. Acopladores: regla de 1 calibre agregada a `04` de Cat. 2 y Cat. 3.
 3. ID/marcaciones, calendario detallado, revisores y tipo de reporte agregados a `Avisos_y_Referencias.md` de las tres categorías.
-4. Pendiente: link de formulario Reporte de Progreso 1 para Cat. 1 (sesión lo exige para las 3 categorías; solo se conocen los de Cat. 2 y Cat. 3).
+4. Link de formulario Reporte de Progreso 1 para Cat. 1 confirmado 2026-09-22: https://forms.gle/t2kAEV1NTeHhFJYW8 — estado COMPLETADO (respuesta registrada). Cierra pendiente para las 3 categorías.
