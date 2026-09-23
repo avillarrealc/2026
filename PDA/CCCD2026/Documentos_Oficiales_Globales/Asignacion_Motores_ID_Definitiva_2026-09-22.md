@@ -5,6 +5,7 @@
 **Criterio de asignación:** número de participaciones previas en el CCCD. El motor asignado es referencia obligatoria para diseño, simulación, análisis de desempeño y planificación del vuelo.
 **Guía de referencia:** https://cccd.space/docs/Motores%20Permitidos.pdf
 **Nota de archivo:** este documento circula por WhatsApp, fuera de https://cccd.space/documentos; el escaneo diario 05:00/17:00 no lo cubre. Se archiva manualmente aquí.
+**Archivo PDF:** `Asignacion_Motores_ID_Definitiva_2026-09-22.pdf` en esta misma carpeta (generado 2026-09-22 desde transcripción verificada contra circular original; reemplazar por binario oficial al disponer de ruta de origen).
 
 ## Nuestros equipos
 
