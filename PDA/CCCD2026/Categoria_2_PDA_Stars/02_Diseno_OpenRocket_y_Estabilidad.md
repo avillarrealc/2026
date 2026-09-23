@@ -18,9 +18,10 @@ Ojo muchachos: simular es como ensayar la ruta del integrado en un mapa antes de
 
 ## 2. CG y CP explicado en una frase
 
-El CG es donde se equilibra el cohete en un dedo. El CP es donde empuja el aire. El CG debe ir adelante del CP mínimo un diámetro del tubo. Eso es 1 calibre. Lo ideal para nosotros es entre 1.5 y 2.5 calibres.
+El CG es donde se equilibra el cohete en un dedo. El CP es donde empuja el aire. El CG debe ir adelante del CP. **OJO: La norma oficial 2026 exige un MÍNIMO ESTRICTO de 2.0 calibres** para aprobar inspección. Lo ideal para nosotros es apuntar a entre 2.0 y 2.5 calibres.
 
-Si el margen da menos de 1, el cohete sale loco como trompo. Si da más de 3, va muy rígido y el viento lo acuesta. Apunten a 1.5 a 2.5.
+Si el margen da menos de 2.0, el cohete será rechazado por los jueces (inestable). Si da más de 3, va muy rígido y el viento lo acuesta (weathercocking). Apunten a 2.0 a 2.5.
+*Nota de Velocidad:* La Categoría 2 no exige abandonar la guía a 15 m/s. El motor F15-4 es lento (~10.6 m/s en simulación) pero legal. Ignoren la alerta roja de OpenRocket de baja velocidad en la guía, siempre que mantengamos el margen de 2.0 calibres.
 
 ## 3. Tabla de resultados que exige el jurado
 

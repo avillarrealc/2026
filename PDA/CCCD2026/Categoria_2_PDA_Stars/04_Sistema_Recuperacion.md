@@ -10,15 +10,15 @@
 
 Para 600 a 650 g necesitamos descenso entre 4 y 5 m/s. Más rápido rompe patas y carga. Más lento se lo lleva el viento.
 
-Guía rápida con nuestro peso (estimaciones, verificar con cronómetro real):
+Guía rápida tras Simulación 1 (300 m de apogeo):
 
-| Diámetro paracaídas | Descenso aprox con 620 g | Tiempo descenso desde 300 m | Sirve |
+| Diámetro paracaídas | Descenso aprox con 620 g | Tiempo total de vuelo simulado | Sirve |
 | :---: | :---: | :---: | :--- |
-| 60 cm | 6.5 m/s | ~46 s | Rápido, riesgoso |
-| 75 cm | 5.3 m/s | ~57 s | Seguro pero excede ventana 30-40 s |
-| 90 cm | 4.4 m/s | ~68 s | Muy lento, se pierde |
+| 75 cm | 5.3 m/s | ~65 s | Excede por mucho la ventana de 30-40 s |
+| 60 cm | 7.4 m/s | ~50 s | (Resultado Simulación 1) ¡Descalificado por tiempo! |
+| ~40 cm o spill hole | 9 a 10 m/s | ~38 a 40 s | **Ideal.** Baja rápido pero dentro del límite legal (11 m/s máx). |
 
-Arranquen simulando con 75 cm en OpenRocket y ajusten según cronómetro real y lo que indique el revisor sobre la ventana de tiempo.
+*Nota:* Debido al retardo corto (4s) y el tiempo límite (40s), el descenso **DEBE SER RÁPIDO**. Arranquen simulando con un paracaídas de 40 a 45 cm (o agreguen un agujero de derrame/spill hole) para que la velocidad de caída llegue a 9.5 m/s. Revisen que OpenRocket marque un tiempo de vuelo total cercano a 39 s.
 
 ## 2. Armado que sí abre
 
