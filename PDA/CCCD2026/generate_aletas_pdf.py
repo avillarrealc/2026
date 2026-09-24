@@ -6,22 +6,22 @@ from fpdf import FPDF
 data = [
     {
         "categoria": "Categoria 1",
-        "material": "Triplex Okume / Pino (3mm) + Laminado con Papel Kraft (Papering)",
-        "aplicacion": "Coheteria de baja potencia (Motores A - D). Sin uso de composites.",
+        "material": "Triplex Okume / Pino (2mm) + Laminado con Papel Kraft (Papering)",
+        "aplicacion": "Coheteria de baja potencia. Sin uso de composites.",
         "tienda": "La Tienda del Triplex\nhttps://latiendadeltriplex.com",
         "montaje": "Cortar aleta en triplex, lijar perfil aerodinamico. Aplicar pegamento PVA (Colbon) diluido y adherir papel Kraft/cartulina prensando entre superficies planas."
     },
     {
         "categoria": "Categoria 2",
-        "material": "Triplex Okume (3-4mm) + Laminado Fibra de Vidrio (Fiberglassing)",
-        "aplicacion": "Coheteria media/alta potencia (Motores E - G). Restriccion: Sin carbono.",
-        "tienda": "La Tienda del Triplex\nColfibras S.A.S (Insumos epoxi)",
-        "montaje": "Perfilado aerodinamico en el triplex. Adhesion al tubo motor. Laminado tip-to-tip con tela de fibra de vidrio (2oz - 4oz) y resina epoxica encapsulando la aleta."
+        "material": "Triplex Okume / Pino (4mm) - Madera Sellada",
+        "aplicacion": "Coheteria de potencia Categoría 2 (Motor F). Restriccion: Sin fibras de refuerzo.",
+        "tienda": "La Tienda del Triplex\nMonomerados",
+        "montaje": "Cortar en triplex calibre 4mm. Lijar perfil aerodinamico. Sellar madera con resina pura o laca (sin tela) y pegar con filetes epoxicos al fuselaje."
     },
     {
         "categoria": "Categoria 3",
-        "material": "Nucleo de Balso Aeromodelismo (2-3mm) + Sieles Fibra de Carbono",
-        "aplicacion": "Alta potencia y vuelos transonicos/supersonicos. Maxima rigidez.",
+        "material": "Nucleo de Balso Aeromodelismo (2-3mm) + Pieles Fibra de Carbono",
+        "aplicacion": "Coheteria de potencia Categoría 3 (Motor G). Maxima rigidez requerida.",
         "tienda": "Manolos Hobbies\nhttps://manoloshobbies.com\nKYM RC Models",
         "montaje": "Lijar perfil aerodinamico en balso crudo. Pegar al tubo. Laminado tip-to-tip envolvente usando tela de fibra de carbono para crear un sandwich estructural ligero."
     }

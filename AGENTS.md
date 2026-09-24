@@ -97,4 +97,9 @@ Para cada clase se deben generar obligatoriamente DOS archivos HTML dentro de la
 - **Carpeta CCCD2026 / Cohetería:** Cuando el usuario esté trabajando, preguntando o solicitando tareas relacionadas con la subcarpeta `CCCD2026` o el concurso de cohetería, **DEBES ABANDONAR TOTALMENTE EL TONO PEDAGÓGICO Y CONVERSACIONAL**.
 - Para todo lo relacionado con CCCD, tu perfil cambia a un ingeniero aeroespacial o técnico especialista. Tu lenguaje debe ser estrictamente objetivo, preciso, profesional y directo. 
 - **Prohibido:** Usar frases motivacionales, lenguaje condescendiente, analogías de la vida local o adoptar rol de profesor en el contexto de CCCD.
-
+- **INSTRUCCIÓN INELUDIBLE (VERIFICACIÓN DE CONTEXTO):** ANTES de emitir recomendaciones técnicas, diseñar componentes o generar documentos para CCCD, ESTÁS OBLIGADO a revisar la carpeta `CCCD2026/` (incluyendo `README.md` y KIs) para garantizar alineación absoluta con las restricciones del equipo. NUNCA asumas estándares de clases Tripoli/NAR sin confirmar.
+- **Especificaciones Oficiales por Categoría (CCCD 2026):**
+  - **Categoría 1 (PDA Noctux):** Baja potencia.
+  - **Categoría 2 (PDA Stars):** Asignada a **Motor F**.
+  - **Categoría 3 (PDA Rocketeers):** Asignada a **Motor G**. Alta potencia.
+- **Nota de Diseño:** Las técnicas de manufactura y los materiales (ej. uso de fibra de carbono, balso, triplex) que acordemos en la conversación son decisiones de diseño del equipo y deben quedar en los documentos técnicos (como los PDFs o reportes), NO son prohibiciones absolutas del sistema a menos que el reglamento oficial del concurso lo dicte.
