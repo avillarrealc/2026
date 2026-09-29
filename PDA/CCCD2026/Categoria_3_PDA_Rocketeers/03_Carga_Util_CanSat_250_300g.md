@@ -13,21 +13,29 @@
 
 El CanSat es como una lonchera que se tira del bus en marcha: debe sobrevivir al golpe, seguir hablando y no romper nada del bus.
 
-## 2. Partes y peso controlado al gramo
+## 2. Arquitectura Estructural (Diseño CAD V2)
+
+El diseño físico del CanSat está estandarizado paramétricamente en Fusion 360 bajo los siguientes constraints:
+- **Dimensiones Máximas:** Altura de 115 mm x OD 66 mm (zona de agarre superior).
+- **Mecanismo de Retención:** Roscas Trapezoidales (Tr64x4) sincronizadas arriba y abajo para anclaje a las matrices del cohete. Offset de -0.20 mm para tolerancia FDM.
+- **Ventilación y Telemetría:** Corte tipográfico "PDA" usando fuente Stencil (para evitar colapso de islas centrales) y exoesqueleto matriz hexagonal (Honeycomb/Isogrid) para alivio térmico, reducción de masa e ingreso de flujo de aire al sensor BMP280.
+- **Aviónica (PCB):** Ancho máximo interno admitido para electrónica es de **58 mm - 59 mm** (montaje vertical) fijado con encapsulado de espuma de poliuretano (Potting) para absorción de impactos.
+
+## 3. Partes y peso controlado al gramo
 
 | Parte | Ejemplo | Peso aprox |
 | :--- | :--- | :---: |
-| Estructura lata | Tubo impreso o lata protegida | 40 a 60 g |
+| Estructura CanSat | Chasis celular hexagonal impreso en PETG/ASA | 40 a 60 g |
 | Cerebro | ESP32 | 7 a 10 g |
 | Sensores | BMP280 + GPS + gas o partículas | 20 a 40 g |
 | Batería | 18650 Li-Ion cilíndrica permitida (LiPo prohibida, Guía CanSat §3.1); autonomía mínima 4 h | 40 a 70 g |
 | Paracaídas propio del CanSat si aplica | Tela pequeña | 15 a 25 g |
-| Tornillos, espuma, cables | | 20 g |
+| Tornillos, espuma (Potting), cables | | 20 g |
 | **TOTAL CanSat** | **Debe dar 250 a 300 g** | **___ g** |
 
 Si da menos de 250 g agreguen lastre útil: más batería o carcasa más fuerte. Si pasa de 300 g cambien batería y carcasa primero, nunca quiten sensores.
 
-## 3. Conexión guía
+## 4. Conexión guía
 
 ```
 Batería -> interruptor externo -> ESP32
@@ -40,7 +48,7 @@ Altímetro oficial -> fuera del CanSat, con su espuma propia
 
 Código mínimo: prende, pita, lee sensores, guarda con tiempo, transmite si es telemetría, parpadea. Prueba de 30 minutos en mesa sin apagarse.
 
-## 4. Guion de 5 minutos para jurados
+## 5. Guion de 5 minutos para jurados
 
 1. Misión en 30 segundos y por qué sirve a La Estrella.
 2. CanSat prendido leyendo en vivo en el PC.
@@ -50,7 +58,7 @@ Código mínimo: prende, pita, lee sensores, guarda con tiempo, transmite si es 
 
 Lleven impreso: esquema, código resumido, tabla de pruebas, peso con foto de balanza.
 
-## 5. Tabla de pruebas
+## 6. Tabla de pruebas
 
 | Fecha | Prueba | Resultado | Arreglo |
 | :--- | :--- | :--- | :--- |
