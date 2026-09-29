@@ -38,6 +38,7 @@
 3. `3_Asignacion_ID_Mision.pdf` — Comunicado oficial sobre el uso del Número de Equipo.
 4. `4_Rubrica_Sistema_Puntuacion.pdf` — Rúbrica detallada con los aspectos y criterios de evaluación. *(Recomendada lectura completa por todos los integrantes)*
 5. `5_Calendario_Oficial.jpg` — Cronograma de entregables inmodificable.
+6. `6_Guia_Categoria_Principiantes.pdf` — **[ESPECÍFICO CAT 1]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
 
 ---
 
