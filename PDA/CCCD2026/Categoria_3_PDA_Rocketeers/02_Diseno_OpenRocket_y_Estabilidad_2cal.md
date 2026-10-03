@@ -28,12 +28,15 @@ Trucos para subir estabilidad sin romper nada: ojiva más pesada adelante, aleta
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | v1 base | | | | | | |
 | v2 ajustada | | | | | | |
+| v_SIDERAL (03-Oct-26) | N/A | N/A | N/A | 65.7 (18.26 m/s) | 410.4 | Cumple apogeo (410m) y vel. riel (>55km/h) con G80T-7 |
 | v3 final 400 m | | | | | | |
 
 La v3 final debe mostrar en pantallazo: margen mayor a 2.0, velocidad mayor a 55, apogeo cerca de 400, relación 5:1 cumplida.
 
-## 4. Qué guardar
+## 4. Archivos y Entregables
 
+- `Diseno_SIDERAL.ork`: Modelo aerodinámico y distribución de masas integradas.
+- `Simulacion_SIDERAL.csv`: Exportación de telemetría simulada (Apogeo: 410.4m, Vel. riel: 18.26 m/s).
 - `PDA_Rocketeers_400m_G80.ork` final más copia v1.
 - Pantallazos: diseño con CG-CP, tabla de simulación con velocidad de riel, curva de vuelo.
 - Foto del cohete real junto al metro.

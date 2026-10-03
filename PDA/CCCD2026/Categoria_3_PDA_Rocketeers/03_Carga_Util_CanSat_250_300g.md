@@ -34,6 +34,7 @@ El diseño físico del CanSat está estandarizado paramétricamente en Fusion 36
 | **TOTAL CanSat** | **Debe dar 250 a 300 g** | **___ g** |
 
 Si da menos de 250 g agreguen lastre útil: más batería o carcasa más fuerte. Si pasa de 300 g cambien batería y carcasa primero, nunca quiten sensores.
+**Validación SIDERAL (03-Oct-26):** Revisar la masa de carga útil declarada en `Diseno_SIDERAL.ork` y asegurar que la masa de ensamblaje real del CanSat coincida para mantener el apogeo simulado de 410.4 m.
 
 ## 4. Conexión guía
 

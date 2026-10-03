@@ -11,7 +11,7 @@
 1. **Bases, Reglamentos y Convocatoria:**
    - Reglamentos oficiales de la TRA (Tripoli Rocketry Association) y Aerocivil.
    - Requisitos de categorías (Altitud, Carga útil / Huevonauta, etc.).
-   - Cronograma oficial y fechas de lanzamiento.
+   - [Cronograma Oficial y Estado de Entregables](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Cronograma_Estado_CCCD2026.md) (Ver para fechas actualizadas y estado de PDR/CDR).
 
 2. **Diseño, Aerodinámica y Simulación:**
    - Archivos y simulaciones en **OpenRocket / RockSim**.

@@ -8,6 +8,7 @@
 
 | Fecha | Lugar | Versión | Peso g / techo | Altura m / 400 | Vel riel | Recuperación | Estabilidad | Aprendimos |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
+| 03-Oct-26 | Simulación | v_SIDERAL | N/A | 410.4 m | 65.7 km/h | 6.55 m/s | N/A | Simulación base cumple métricas de apogeo y velocidad con G80T-7 |
 | | | v1 | | | | | | |
 | | | v2 | | | | | | |
 | | | v3 final | | | | | | |
