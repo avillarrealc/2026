@@ -30,9 +30,18 @@
 > La plataforma ya está operativa. Pueden ingresar utilizando las credenciales (usuario y contraseña) del líder del equipo.
 > **Aclaración sobre el avance:** El porcentaje de progreso corresponde a la cuenta del equipo, no de manera individual. Si un integrante completa un contenido, aparecerá como completado para los demás. Esto no afecta el proceso; cualquier integrante puede entrar a revisarlo nuevamente. Se sugiere estudiarlo y discutirlo en equipo.
 
-> [!WARNING]
-> **ETAPA DE EVALUACIÓN Y CALENDARIO INICIADA**
-> Con la publicación de la Rúbrica Oficial, el concurso ha comenzado su etapa de evaluación. El calendario adjunto es **definitivo e inmodificable**.
+> [!SUCCESS]
+> **VIDEO DEL EQUIPO (CAT. 2 - PDA STARS) [COMPLETADO: 2026-10-10 23:10]**
+> Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `211_PDAStars_VideoEquipo.mp4` (o `211_PDA_Stars_VideoEquipo.mp4`), cumpliendo especificaciones de la Rúbrica §3.4 (máx. 2 min, 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
+
+> [!CAUTION]
+> **⚠️ ZONAS DE RECUPERACIÓN Y RADIO LÍMITE DE 250 M [CIRCULAR OFICIAL 10-OCT-2026]**
+> El Comité Técnico emitió el documento oficial `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf`:
+> - **Regla de oro:** Todo cohete que aterrice fuera del **radio de 250 metros** será considerado **IRRECUPERABLE A EFECTOS DE LA COMPETENCIA**, anulando el puntaje del vuelo.
+> - La condición se juzga en el instante del aterrizaje, sin importar localización posterior.
+> - **Impacto crítico para PDA Stars (300 m apogeo con F15-4):**
+>   - Con descenso lento (4 a 5 m/s): Vientos de 3.5 a 5 m/s derivan el cohete entre 260 y 375 m (**DESCALIFICADO**).
+>   - Con nuestra línea base de descenso rápido (9.5 a 10 m/s): La deriva máxima a 5 m/s de viento es de **150 m** (margen de 100 m dentro del radio de 250 m), garantizando además cumplir la ventana de 30-40 s de tiempo total.
 
 ---
 
@@ -44,6 +53,7 @@
 4. `4_Rubrica_Sistema_Puntuacion.pdf` — Rúbrica detallada con los aspectos y criterios de evaluación.
 5. `5_Calendario_Oficial.jpg` — Cronograma de entregables inmodificable.
 6. `6_Guia_Categoria_Intermedios.pdf` — **[ESPECÍFICO CAT 2]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
+7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 250 m.
 
 ---
 

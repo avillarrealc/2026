@@ -15,9 +15,10 @@
 | Motor | Estes F15-4 de 29 mm, retardo 4 s. Verificar empaque al recibirlo | Guardar empaque y factura como prueba |
 | Altura objetivo | 300 m (clase F) | Solo vale el altímetro Jolly Logic o Estes |
 | Tiempo de vuelo | 30 a 40 s desde despegue hasta toque de suelo | Cronómetro de dos celulares a la vez |
-| Recuperación | Paracaídas que abra | Video del descenso completo |
+| Recuperación | Paracaídas obligatorio | Video del descenso completo |
+| Radio de recuperación | ≤ 250 m desde la rampa | Medición en terreno / Circular Zonas de Recuperación (10-10-2026) |
 
-Ojo muchachos: si nos pasamos de 650 g o medimos menos de 60 cm, nos descalifican antes de volar. Es como llegar sin uniforme a un partido final, no los dejan entrar.
+Ojo muchachos: si nos pasamos de 650 g, medimos menos de 60 cm o aterrizamos a más de 250 m de la rampa, el vuelo queda anulado y sin puntos.
 
 ## 2. Nuestro motor F15-4 explicado en sencillo
 

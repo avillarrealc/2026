@@ -8,7 +8,8 @@
 
 | Fecha | Lugar | Versión | Peso g / techo | Altura m / 400 | Vel riel | Recuperación | Estabilidad | Aprendimos |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
-| 03-Oct-26 | Simulación | v_SIDERAL | N/A | 410.4 m | 65.7 km/h | 6.55 m/s | N/A | Simulación base cumple métricas de apogeo y velocidad con G80T-7 |
+| 03-Oct-26 | Simulación | v_SIDERAL | N/A | 410.4 m | 65.7 km/h | 6.55 m/s | N/A | CSV anterior, reemplazado el 04-10-2026 |
+| 04-Oct-26 | Simulación | v_SIDERAL vigente (Diseño SIDERAL.ork) | 884 g | 409.5 m | 65.5 km/h (18.20 m/s) | 6.58 m/s despliegue, 6.95 suelo | 2.2 cal prom (1.91 riel) | Línea base PDR S6+S7, cordón 3.0 m |
 | | | v1 | | | | | | |
 | | | v2 | | | | | | |
 | | | v3 final | | | | | | |

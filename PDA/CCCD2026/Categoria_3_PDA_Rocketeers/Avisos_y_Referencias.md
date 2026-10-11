@@ -37,6 +37,10 @@
 > **MODELADO 3D Y PROTOCOLO DE OJIVA [COMPLETADO]**
 > Se completó el diseño de la Ojiva (Perfil Serie Haack, C=0) para vuelo transónico. Geometría extraída de OpenRocket (escala x1000) e importada a Fusion 360 como sólido. Se generó un protocolo técnico en `Documentos_Oficiales_Globales/Protocolo_Ojiva_OR_Fusion360.md`.
 
+> [!SUCCESS]
+> **VIDEO DEL EQUIPO [COMPLETADO: 2026-10-10 11:30]**
+> Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `310_PDARocketeers_VideoEquipo.mp4` (o `310_PDA_Rocketeers_VideoEquipo.mp4`), cumpliendo las especificaciones de la Rúbrica §3.4 (máximo 2 min, formato 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
+
 
 > [!CAUTION]
 > **REGLAS SOBRE SISTEMAS DE CONTROL (Cat. 3 - Avanzados)**
@@ -55,6 +59,13 @@
 > **ESTRATEGIA DE PUNTUACIÓN CANSAT (CARGA ÚTIL)**
 > Según la revisión de la *Guía CanSat*, el uso de módulos comerciales pre-fabricados (COTS) no está prohibido, pero **reducirá la calificación** en el ítem de innovación y desarrollo. Para asegurar el máximo puntaje, se recomienda el desarrollo de electrónica propia (diseño y fabricación de PCBs).
 
+> [!CAUTION]
+> **⚠️ ZONAS DE RECUPERACIÓN Y RADIO LÍMITE DE 400 M [CIRCULAR OFICIAL 10-OCT-2026]**
+> El Comité Técnico emitió el documento oficial `ZONAS DE RECUPERACIÓN CCCD2026 CAT 3.pdf`:
+> - **Regla de oro:** Todo cohete que aterrice fuera del **radio de 400 metros** será considerado **IRRECUPERABLE A EFECTOS DE LA COMPETENCIA**, anulando el puntaje del vuelo.
+> - La condición se determina en el instante exacto del aterrizaje, sin importar localización posterior.
+> - **Criterio de diseño para SIDERAL (409,5 m apogeo):** Con velocidad terminal de 6,95 m/s, ante viento máximo de 5 m/s la deriva estimada es de 288 m (margen positivo de 112 m). **Prohibido usar paracaídas que reduzcan el descenso a < 5,5 m/s**, pues con vientos superiores a 3,5 m/s el cohete sobrepasaría los 400 m.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -65,6 +76,7 @@
 4. `4_Rubrica_Sistema_Puntuacion.pdf` — Rúbrica detallada con los aspectos, distribución de puntajes y criterios de evaluación de la competencia.
 5. `5_Calendario_Oficial.jpg` — Cronograma oficial inmodificable de entregables y actividades del certamen.
 6. `6_Guia_Categoria_Avanzados.pdf` — **[ESPECÍFICO CAT 3]** Requisitos, retos, medidas y restricciones oficiales para la categoría Universitarios / Avanzados.
+7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 3.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 400 m.
 
 ---
 

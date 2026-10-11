@@ -25,9 +25,9 @@
 > La plataforma ya está operativa. Pueden ingresar utilizando las credenciales (usuario y contraseña) del líder del equipo.
 > **Aclaración sobre el avance:** El porcentaje de progreso corresponde a la cuenta del equipo, no de manera individual. Si un integrante completa un contenido, aparecerá como completado para los demás. Esto no afecta el proceso; cualquier integrante puede entrar a revisarlo nuevamente. Se sugiere estudiarlo y discutirlo en equipo.
 
-> [!WARNING]
-> **ETAPA DE EVALUACIÓN Y CALENDARIO INICIADA**
-> Con la publicación de la Rúbrica Oficial, el concurso ha comenzado su etapa de evaluación. El calendario adjunto es **definitivo e inmodificable**.
+> [!SUCCESS]
+> **VIDEO DEL EQUIPO (CAT. 1 - PDA NOCTUX) [COMPLETADO: 2026-10-10 23:00]**
+> Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `104_PDANoctux_VideoEquipo.mp4` (o `104_PDA_Noctux_VideoEquipo.mp4`), cumpliendo especificaciones de la Rúbrica §3.4 (máx. 2 min, 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
 
 ---
 
