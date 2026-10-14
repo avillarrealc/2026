@@ -86,8 +86,12 @@ El agente debe respetar rigurosamente los consensos de ingeniería alcanzados en
    - **Sándwich de Balso:** Material de referencia para aletas aligeradas con refuerzo exterior de velo de fibra de vidrio y resina epoxi.
    - **Materiales Descartados:** Se descartó técnicamente el uso de madera Calabo y Cartón Piedra para aletas debido a su alta densidad volumétrica, fragilidad por impacto y susceptibilidad a delaminación bajo esfuerzos cortantes transónicos.
 
-3. **Criterios de Estabilidad Aerodinámica:**
-   - Margen estático mínimo exigido entre el Centro de Presión ($CP$) y el Centro de Gravedad ($CG$): **1.5 a 2.0 calibres**, comprobado en OpenRocket tanto en condición de salida de rampa de lanzamiento como en el momento de agotamiento del propelente (*burnout*).
+3. **Criterios de Estabilidad Aerodinámica (Norma Oficial CCCD 2026):**
+   - **Margen Estático Mínimo Obligatorio:** **≥ 2.0 calibres** ($CP - CG \ge 2.0\text{ cal}$), verificado en OpenRocket.
+   - **Fundamento Normativo Oficial:**
+     - *Diseño Construcción y Pruebas (DCP 2026), Sección 3.1.1:* "Todos los vehículos de lanzamiento deben contar con una estabilidad mínima de 2 calibre."
+     - *Norma de Seguridad en Cohetería, Sección 4.3:* "La estabilidad mínima será de 2 calibres, entendida como la distancia entre CG y CP equivalente a dos veces el diámetro del fuselaje del cohete [...] cualquier cohete que no cumpla con esta estabilidad mínima será rechazado hasta que se realicen los ajustes necesarios."
+   - **Condiciones de Verificación:** Debe marcarse visiblemente en el fuselaje ($CG$ y $CP$) y validarse en OpenRocket tanto en condición de salida de riel (con velocidad ≥ 55 km/h) como en el momento de agotamiento del propelente (*burnout*).
 
 ---
 
