@@ -6,24 +6,24 @@ from fpdf import FPDF
 data = [
     {
         "categoria": "Categoria 1",
-        "material": "Triplex Okume / Pino (2mm) + Laminado con Papel Kraft (Papering)",
-        "aplicacion": "Coheteria de baja potencia. Sin uso de composites.",
-        "tienda": "La Tienda del Triplex\nhttps://latiendadeltriplex.com",
-        "montaje": "Cortar aleta en triplex, lijar perfil aerodinamico. Aplicar pegamento PVA (Colbon) diluido y adherir papel Kraft/cartulina prensando entre superficies planas."
+        "material": "Triplex Okume / Pino (2mm) + Papel Kraft (Papering)",
+        "aplicacion": "Coheteria baja potencia (PDA Noctux). Sin composites.",
+        "tienda": "La Tienda del Triplex (Itagui - Villa Paula)\nCra 42 # 46-317 / Cl 47 # 49-35",
+        "montaje": "Cortar aleta en triplex 2mm, perfilar borde de ataque/fuga. Aplicar PVA (Colbon) y adherir papel Kraft prensado plano."
     },
     {
         "categoria": "Categoria 2",
-        "material": "Triplex Okume / Pino (4mm) - Madera Sellada",
-        "aplicacion": "Coheteria de potencia Categoría 2 (Motor F). Restriccion: Sin fibras de refuerzo.",
-        "tienda": "La Tienda del Triplex\nMonomerados",
-        "montaje": "Cortar en triplex calibre 4mm. Lijar perfil aerodinamico. Sellar madera con resina pura o laca (sin tela) y pegar con filetes epoxicos al fuselaje."
+        "material": "Triplex Okume / Pino (3mm) - Madera Sellada",
+        "aplicacion": "Potencia Media (PDA Stars - Motor F15-4). Sin fibras.",
+        "tienda": "La Tienda del Triplex (Itagui)\nServicomercial Triplex (Itagui)",
+        "montaje": "Cortar en triplex 3mm. Lijar perfil aerodinamico. Sellar madera con laca/resina pura (sin tela) y fijar TTW con filetes epoxicos."
     },
     {
         "categoria": "Categoria 3",
-        "material": "Nucleo de Balso Aeromodelismo (2-3mm) + Pieles Fibra de Carbono",
-        "aplicacion": "Coheteria de potencia Categoría 3 (Motor G). Maxima rigidez requerida.",
-        "tienda": "Manolos Hobbies\nhttps://manoloshobbies.com\nKYM RC Models",
-        "montaje": "Lijar perfil aerodinamico en balso crudo. Pegar al tubo. Laminado tip-to-tip envolvente usando tela de fibra de carbono para crear un sandwich estructural ligero."
+        "material": "Nucleo Balso / Triplex (2-3mm) + Pieles Fibra Carbono",
+        "aplicacion": "Alta Potencia (PDA Rocketeers - Motor G80). Rigidez anti-flutter.",
+        "tienda": "Carbon Fiber Stocks (Sabaneta)\nArea Hobbies (Mayorca) / Sumiglas",
+        "montaje": "Perfilar nucleo (balso o triplex 2-3mm). Pegado TTW al tubo. Laminado Tip-to-Tip con tela fibra de carbono Twill 3K y resina epoxica."
     }
 ]
 
