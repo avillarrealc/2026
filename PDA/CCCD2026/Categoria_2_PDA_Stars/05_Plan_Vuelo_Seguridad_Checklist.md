@@ -29,11 +29,12 @@ Antes de salir al campo:
 - [ ] Paracaídas doblado, Nomex puesto, cordón libre
 - [ ] Baterías llenas, repuestos y cinta en caja
 - [ ] Dos cronómetros, cámara con memoria, metro y balanza
+- [ ] Guías de lanzamiento (lugs) verificadas con calibrador: Øint ≥ 7.0 mm (deslizamiento libre sin holgura excesiva)
 - [ ] Permiso del sitio, extintor, agua, botiquín, celulares con señal
 
 En rampa:
 
-1. Riel firme apuntando al cielo con máximo 5 grados de inclinación.
+1. Varilla de lanzamiento de 1.5 m (Ø 6.5 mm) firme, recta y limpia; probar que el cohete deslice suave por su propio peso. Rampa con máximo 5 grados de inclinación.
 2. Viento menor a 20 km/h. Si hay ráfagas que mueven camisas, se espera.
 3. Conectar ignitor al final, todos a 15 m, jefe grita: 5, 4, 3, 2, 1, fuego.
 4. Cronometristas arrancan al ver humo y paran al tocar pasto.

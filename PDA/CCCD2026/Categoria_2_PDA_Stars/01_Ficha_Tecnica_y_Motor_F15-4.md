@@ -17,8 +17,9 @@
 | Tiempo de vuelo | 40 a 50 s desde despegue hasta toque de suelo (motor F) | Cronómetro de dos celulares a la vez |
 | Recuperación | Paracaídas obligatorio | Video del descenso completo |
 | Radio de recuperación | ≤ 250 m desde la rampa | Medición en terreno / Circular Zonas de Recuperación (10-10-2026) |
+| Guía de lanzamiento | Varilla Ø 6.5 mm x 1500 mm (Lug interno ≥ 7.0 mm) | Calibrador pie de rey / Circular Guía de Lanzamiento Cat. 2 |
 
-Ojo muchachos: si nos pasamos de 650 g, medimos menos de 60 cm o aterrizamos a más de 250 m de la rampa, el vuelo queda anulado y sin puntos.
+Ojo muchachos: si nos pasamos de 650 g, medimos menos de 60 cm, la guía no desliza libremente en la varilla de 6.5 mm o aterrizamos a más de 250 m de la rampa, el vuelo queda anulado y sin puntos.
 
 ## 2. Nuestro motor F15-4 explicado en sencillo
 
@@ -44,7 +45,7 @@ Meta interna: dejar el cohete en **600 a 630 g** para tener colchón de 20 a 50 
 | 5 | Paracaídas + cordón + manta Nomex | ___ g | ___ g | ___ g | |
 | 6 | Carga útil electrónica con batería | ___ g | ___ g | ___ g | |
 | 7 | Altímetro Jolly Logic o Estes con sujeción | ___ g | ___ g | ___ g | |
-| 8 | Tornillería, pintura, guías de riel | ___ g | ___ g | ___ g | |
+| 8 | Tornillería, pintura, guías para varilla 6.5 mm (Øint ≥ 7.0 mm) | ___ g | ___ g | ___ g | |
 | 9 | Motor F15-4 | ___ g | ___ g | ___ g | |
 | | **TOTAL** | | | **___ g / 650 g** | |
 

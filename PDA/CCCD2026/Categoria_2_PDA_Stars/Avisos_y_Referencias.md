@@ -8,6 +8,17 @@
 ## 📌 Comunicados y Avisos Oficiales
 
 > [!IMPORTANT]
+> **ACTUALIZACIÓN OFICIAL: GUÍA DE LANZAMIENTO CAT. 2 Y VARILLA Ø 6.5 MM [OCTUBRE 2026]**
+> El Comité Técnico emitió el documento oficial `Guia_de_Lanzamiento_Categoria_2.pdf`:
+> - **Motivo de seguridad:** Se rediseñó la plataforma de lanzamiento de Categoría 2, actualizando la varilla cilíndrica de lanzamiento (*launch rod*).
+> - **Nuevas especificaciones oficiales obligatorias:**
+>   - **Diámetro de la varilla:** **$\varnothing 6.5\text{ mm}$** (tolerancia dimensional precisa).
+>   - **Longitud de la varilla:** **$1500\text{ mm}$** ($1.5\text{ metros}$).
+> - **Acción técnica mandatoria para PDA Stars:**
+>   - Todo soporte o guía de lanzamiento (*launch lug*) instalado en el fuselaje debe poseer un **diámetro interno mínimo de $\mathbf{7.0\text{ mm}}$** (radio interno $\ge 3.5\text{ mm}$) para garantizar que el cohete deslice suavemente por gravedad sin fricción ni riesgo de atascamiento (*rod binding*) en rampa.
+>   - En las simulaciones de OpenRocket, configurar la longitud de varilla en $1.5\text{ m}$.
+
+> [!IMPORTANT]
 > **ACTUALIZACIÓN OFICIAL: GUÍA CATEGORÍA INTERMEDIOS Y TIEMPO DE VUELO MOTOR F**
 > El Comité Técnico emitió la versión actualizada del documento oficial "Requisitos y retos – Categoría Intermedios" (`6_Guia_Categoria_Intermedios.pdf`).
 > - **Ajuste técnico crítico (p4 y p7):** Se especifica formalmente que el cohete deberá mantener un tiempo total de vuelo entre **40 a 50 segundos para motor F** (manteniendo 30 a 40 segundos exclusivamente para motor E).
@@ -73,6 +84,7 @@
 5. `5_Calendario_Oficial.jpg` — Cronograma de entregables inmodificable.
 6. `6_Guia_Categoria_Intermedios.pdf` — **[ESPECÍFICO CAT 2]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
 7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 250 m.
+8. `Guia_de_Lanzamiento_Categoria_2.pdf` — **[NUEVO OCT-2026]** Especificación técnica oficial de la varilla de lanzamiento (Ø 6.5 mm x 1500 mm) y requerimiento de ajuste de guías.
 
 ---
 
