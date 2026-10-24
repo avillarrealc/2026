@@ -66,6 +66,11 @@
 > - La condición se determina en el instante exacto del aterrizaje, sin importar localización posterior.
 > - **Criterio de diseño para SIDERAL (409,5 m apogeo):** Con velocidad terminal de 6,95 m/s, ante viento máximo de 5 m/s la deriva estimada es de 288 m (margen positivo de 112 m). **Prohibido usar paracaídas que reduzcan el descenso a < 5,5 m/s**, pues con vientos superiores a 3,5 m/s el cohete sobrepasaría los 400 m.
 
+> [!TIP]
+> **SOFTWARE OFICIAL DE DISEÑO DE PARACAÍDAS (ALAS / SATELAB) [09-OCT-2026]**
+> Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org).
+> - **Utilidad técnica:** Permite modelar el dosel (diámetro plano vs. inflado), área efectiva, líneas de suspensión, orificio de derrame (*spill hole*) y velocidad terminal ($V_t$). Utilizado para contrastar con OpenRocket y asegurar que SIDERAL mantenga una velocidad de descenso entre 6.0 y 7.0 m/s para no exceder los 400 m de radio límite.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta

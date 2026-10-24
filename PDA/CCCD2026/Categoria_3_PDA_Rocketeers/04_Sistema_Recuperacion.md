@@ -36,6 +36,7 @@ Matriz de radio de impacto para **Apogeo = 400 m** (documento oficial CCCD Cat 3
    - Masa total al toque de suelo: 827 g.
    - Velocidad terminal verificada: **6.95 m/s**.
    - Deriva máxima calculada con viento límite de 5 m/s (18 km/h): **288 metros** (holgura de 112 m dentro del perímetro legal de 400 m).
+   - **Validación geométrica oficial:** Dimensionamiento contrastado con el software oficial de la competencia [https://paracaidas.satelab.org](https://paracaidas.satelab.org) (ALAS / SateLab).
 
 ## 2. Armado y Enlace Mecánico con Motor G80T
 

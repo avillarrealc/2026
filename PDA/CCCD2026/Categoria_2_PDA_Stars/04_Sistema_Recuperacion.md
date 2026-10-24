@@ -37,6 +37,7 @@ Con la ventana oficial de **40 a 50 segundos** para motor F:
    - Velocidad de descenso objetivo: **7.5 a 8.2 m/s**.
    - Tiempo de vuelo total proyectado: **44 a 47 segundos** (centrado con holgura dentro de los 40–50 s).
    - Deriva máxima calculada ante viento de 5 m/s: **180 a 190 metros** (margen seguro de 60 a 70 m dentro del radio de 250 m).
+   - **Validación geométrica oficial:** Dimensionamiento contrastado con el software oficial de la competencia [https://paracaidas.satelab.org](https://paracaidas.satelab.org) (ALAS / SateLab).
 
 ## 2. Armado que sí abre
 

@@ -29,6 +29,10 @@
 > **VIDEO DEL EQUIPO (CAT. 1 - PDA NOCTUX) [COMPLETADO: 2026-10-10 23:00]**
 > Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `104_PDANoctux_VideoEquipo.mp4` (o `104_PDA_Noctux_VideoEquipo.mp4`), cumpliendo especificaciones de la Rúbrica §3.4 (máx. 2 min, 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
 
+> [!TIP]
+> **SOFTWARE OFICIAL DE DISEÑO DE PARACAÍDAS (ALAS / SATELAB) [09-OCT-2026]**
+> Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org), aplicable para el cálculo geométrico del dosel, líneas de suspensión y descenso suave del vehículo con la carga útil "El Huevonauta".
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta

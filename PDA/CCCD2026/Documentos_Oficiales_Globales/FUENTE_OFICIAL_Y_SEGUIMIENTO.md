@@ -57,4 +57,5 @@
   - Cat 2 Stars: `https://forms.gle/1fq4DQ89jp4gdHe49`
   - Cat 3 Rocketeers: `https://forms.gle/WRggMzyRChvw5qHR7`
 - **Plataforma Educativa SateLab Academy:** `https://academy.satelab.org/cccd/554e1756-bf1e-476a-88c8-49806d1acc21`
+- **Software Oficial de Diseño de Paracaídas (ALAS / SateLab):** `https://paracaidas.satelab.org`
 - **Credenciales y usuarios:** Custodiados en `PDA/CCCD2026/.credenciales_satelab.json` (Cat 1 Noctux, Cat 2 Stars ID 211, Cat 3 Rocketeers ID 310).
