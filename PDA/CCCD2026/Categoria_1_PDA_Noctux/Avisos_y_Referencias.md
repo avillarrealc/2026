@@ -38,6 +38,18 @@
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
 > - **Posición actual PDA Noctux:** **Puesto #7** (127 puntos acumulados: Reporte Progreso 1 = 40 pts, Video del Equipo = 87 pts). Próximo hito evaluable: Reporte Técnico (25-Oct).
 
+> [!CAUTION]
+> **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**
+> El Comité Técnico emitió la directriz oficial sobre fallas catastróficas del motor en rampa:
+> - **Definición y deslinde:** Ruptura del motor y daño estructural al vehículo. Corporación ALAS no asume responsabilidad civil ni técnica por defectos del motor atribuibles al fabricante.
+> - **Procedimiento de seguridad:** Suspensión inmediata de lanzamientos por el Oficial de Seguridad (RSO) para salvaguarda de personas.
+> - **Posibilidad de segundo vuelo:** El equipo podrá solicitar un segundo intento siempre que:
+>   1. El vehículo sea inspeccionado y declarado 100% apto y seguro por los técnicos.
+>   2. Se cumpla la totalidad de los requisitos de estabilidad y masa reglamentaria.
+>   3. Exista disponibilidad física de un motor compatible de reemplazo.
+>   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
+> - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -48,6 +60,7 @@
 4. `4_Rubrica_Sistema_Puntuacion.pdf` — Rúbrica detallada con los aspectos y criterios de evaluación. *(Recomendada lectura completa por todos los integrantes)*
 5. `5_Calendario_Oficial.jpg` — Cronograma de entregables inmodificable.
 6. `6_Guia_Categoria_Principiantes.pdf` — **[ESPECÍFICO CAT 1]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
+7. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 
 ---
 

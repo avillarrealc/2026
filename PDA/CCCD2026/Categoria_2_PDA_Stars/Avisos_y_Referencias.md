@@ -73,6 +73,18 @@
 >   - Video del Equipo: **90 / 100 pts** (Calificación sobresaliente).
 > - Diferencial de punta: A 1 punto del 2° puesto (Orión 25: 141 pts) y 7 puntos del líder (AstroComercial: 147 pts). Próximo hito: CDR (25-Oct).
 
+> [!CAUTION]
+> **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**
+> El Comité Técnico emitió la directriz oficial sobre fallas catastróficas del motor en rampa:
+> - **Definición y deslinde:** Ruptura del motor y daño estructural al vehículo. Corporación ALAS no asume responsabilidad civil ni técnica por defectos del motor atribuibles al fabricante.
+> - **Procedimiento de seguridad:** Suspensión inmediata de lanzamientos por el Oficial de Seguridad (RSO) para salvaguarda de personas.
+> - **Posibilidad de segundo vuelo:** El equipo podrá solicitar un segundo intento siempre que:
+>   1. El vehículo sea inspeccionado y declarado 100% apto y seguro por los técnicos.
+>   2. Se cumpla la totalidad de los requisitos de estabilidad y masa reglamentaria ($\le 650\text{ g}$, margen $\ge 2.0\text{ cal}$).
+>   3. Exista disponibilidad física de un motor compatible de reemplazo (F15-4).
+>   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
+> - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -85,6 +97,7 @@
 6. `6_Guia_Categoria_Intermedios.pdf` — **[ESPECÍFICO CAT 2]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
 7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 250 m.
 8. `Guia_de_Lanzamiento_Categoria_2.pdf` — **[NUEVO OCT-2026]** Especificación técnica oficial de la varilla de lanzamiento (Ø 6.5 mm x 1500 mm) y requerimiento de ajuste de guías.
+9. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 
 ---
 

@@ -48,6 +48,13 @@
    - Se detectó la integración del panel de escrutinio técnico en el dashboard de equipos para la verificación automática de archivos `.ork` (OpenRocket).
    - Valida: longitud total, masa máxima, estabilidad estática (rango de referencia en plataforma 1.50 - 2.50 cal; norma estricta CCCD ≥ 2.0 cal), motor asignado y parámetros de carga útil.
 
+4. **Circular Oficial: CATO - Consideraciones Técnicas y de Seguridad (Octubre 2026):**
+   - **Archivo:** `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` (81.397 bytes, MD5 `8bbbf4377e231188a7ea20661a58ce1a`).
+   - **Alcance reglamentario:** Define la falla catastrófica de motor en despegue (*Catastrophe At Take Off*).
+   - **Exoneración técnica:** La organización (Corporación ALAS) no asume responsabilidad civil ni técnica por defectos de manufactura interna o fallas del motor atribuibles al fabricante.
+   - **Procedimiento de emergencia:** Suspensión inmediata temporal de operaciones de lanzamiento por el RSO para salvaguarda de vidas humanas.
+   - **Protocolo de Segundo Vuelo:** Los equipos pueden solicitar un segundo vuelo si el cohete supera una nueva inspección técnica rigurosa, se mantiene la seguridad y existe disponibilidad de motor compatible de reemplazo. La autorización es potestad discrecional del RSO/Comité Técnico y no es automática.
+
 ---
 
 ## Canales y Enlaces Externos Asociados

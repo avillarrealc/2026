@@ -80,6 +80,18 @@
 >   - PDR (*Preliminary Design Review*): **48 / 50 pts** (Evaluación sobresaliente de ingeniería).
 > - Diferencial competitivo: A solo 3 puntos del 1° puesto (Spectro Rocket Team UdeA: 191 pts), superando a facultades de ingeniería de la Universidad Nacional, UPB, EMAVI y EIA-Hermes. Próximo hito: CDR (25-Oct).
 
+> [!CAUTION]
+> **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**
+> El Comité Técnico emitió la directriz oficial sobre fallas catastróficas del motor en rampa:
+> - **Definición y deslinde:** Ruptura del motor y daño estructural al vehículo. Corporación ALAS no asume responsabilidad civil ni técnica por defectos del motor atribuibles al fabricante.
+> - **Procedimiento de seguridad (Motor Clase G):** Suspensión inmediata de lanzamientos por el RSO para salvaguarda de vidas humanas. Perímetro de seguridad estricto de 20 m y espera mínima de 60 segundos antes de aproximación.
+> - **Posibilidad de segundo vuelo:** El equipo podrá solicitar un segundo intento siempre que:
+>   1. El vehículo sea inspeccionado y declarado 100% apto y estructuralmente seguro por los técnicos (Juan Sebastián Fonseca - TRA #36180 L1).
+>   2. Se cumpla la totalidad de los requisitos de estabilidad ($\ge 2.0\text{ cal}$), integridad del CanSat (250–300 g) y velocidad en riel ($\ge 55\text{ km/h}$).
+>   3. Exista disponibilidad física de un motor compatible de reemplazo (AeroTech G80).
+>   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
+> - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -91,6 +103,7 @@
 5. `5_Calendario_Oficial.jpg` — Cronograma oficial inmodificable de entregables y actividades del certamen.
 6. `6_Guia_Categoria_Avanzados.pdf` — **[ESPECÍFICO CAT 3]** Requisitos, retos, medidas y restricciones oficiales para la categoría Universitarios / Avanzados.
 7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 3.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 400 m.
+8. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 
 ---
 

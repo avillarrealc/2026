@@ -61,3 +61,24 @@ Si el paracaídas no abre, no lo atajen con el cuerpo. Dejen que caiga y corran 
 - Video del vuelo completo sin cortes.
 - Foto del altímetro marcando la altura justo al recuperar.
 - Reporte de anomalía si algo falló y cómo se arregló.
+
+## 5. Protocolo de Contingencia ante CATO (*Catastrophe At Take Off*) y Segundo Vuelo
+
+*Referencia oficial: Circular Técnica CATO - CCCD 2026 (Comité Técnico / Corporación ALAS).*
+
+### 5.1 Definición y Deslinde de Responsabilidad
+Un CATO es una falla catastrófica del motor cohete (ruptura estructural de la carcasa, expulsión anómala de tobera o sobrepresión interna) que provoca daños parciales o totales al vehículo en rampa o durante la fase inicial de ascenso. La organización no asume responsabilidad por defectos de fabricación del motor comercial (Estes F15-4).
+
+### 5.2 Acciones Inmediatas de Seguridad en Rampa
+1. **Suspensión de operaciones:** El Oficial de Seguridad de Rampa (RSO) ordenará inmediatamente el alto al fuego y suspenderá todos los lanzamientos.
+2. **Perímetro de seguridad (Mínimo 60 segundos):** Ningún integrante del equipo PDA Stars se acercará a la rampa hasta que el RSO confirme la extinción total de calor, gases residuales o posibles fragmentos incandescentes.
+3. **Control de conato de incendio:** El encargado de seguridad acudirá con el extintor de polvo químico seco / agua únicamente bajo orden expresa del RSO.
+
+### 5.3 Procedimiento Reglamentario para Solicitar Segundo Vuelo
+El equipo no queda automáticamente descalificado si el CATO es atribuible a falla del motor y podrá solicitar formalmente un segundo vuelo bajo las siguientes condiciones obligatorias:
+1. **Inspección técnica post-incidente:** El cohete debe ser examinado en la carpa de escrutinio. Se verificará que el fuselaje principal, mamparos de madera, guías de varilla de 6.5 mm y sistema de recuperación permanezcan íntegros.
+2. **Recertificación de aeronavegabilidad:** El personal técnico responsable del CCCD debe declarar el vehículo 100% apto y seguro.
+3. **Parámetros reglamentarios:** Se debe comprobar nuevamente el margen de estabilidad ($\ge 2.0\text{ cal}$) y masa máxima ($\le 650\text{ g}$).
+4. **Disponibilidad de motor de reemplazo:** Debe existir un motor compatible F15-4 disponible y asignado.
+5. **Decisión del RSO:** La autorización no es automática ni obligatoria para la organización; si existen riesgos de integridad, el cohete no podrá realizar un segundo intento.
+
