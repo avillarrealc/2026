@@ -2,7 +2,7 @@
 
 **Equipo:** PDA Stars - I.E. José Antonio Galán, La Estrella
 **Asignación definitiva (circular 22-09-2026):** Motor Estes F15-4, ID de Misión 211
-**Meta oficial:** 300 metros de altura (clase F, guía Cat. 2), entre 30 y 40 segundos de vuelo total
+**Meta oficial:** 300 metros de altura (clase F, guía Cat. 2), entre 40 y 50 segundos de vuelo total (actualización oficial guía p4 y p7)
 
 ---
 
@@ -14,7 +14,7 @@
 | Masa máxima | 650 g con motor F15-4 ya puesto (clase F, guía Cat. 2 p4) | Balanza gramera de cocina o del laboratorio, pesar 3 veces |
 | Motor | Estes F15-4 de 29 mm, retardo 4 s. Verificar empaque al recibirlo | Guardar empaque y factura como prueba |
 | Altura objetivo | 300 m (clase F) | Solo vale el altímetro Jolly Logic o Estes |
-| Tiempo de vuelo | 30 a 40 s desde despegue hasta toque de suelo | Cronómetro de dos celulares a la vez |
+| Tiempo de vuelo | 40 a 50 s desde despegue hasta toque de suelo (motor F) | Cronómetro de dos celulares a la vez |
 | Recuperación | Paracaídas obligatorio | Video del descenso completo |
 | Radio de recuperación | ≤ 250 m desde la rampa | Medición en terreno / Circular Zonas de Recuperación (10-10-2026) |
 

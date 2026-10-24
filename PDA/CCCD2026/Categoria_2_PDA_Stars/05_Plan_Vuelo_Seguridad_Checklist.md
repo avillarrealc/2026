@@ -1,6 +1,6 @@
 # 05 Plan de Vuelo Seguridad y Checklist de Rampa - PDA Stars Cat 2
 
-**Ventana oficial:** 30 a 40 segundos totales (confirmar aplicación en vuelos F15-4 con el revisor). Altura objetivo 300 m con F15-4 (ID 211). Altímetro Jolly Logic o Estes.
+**Ventana oficial:** **40 a 50 segundos totales** para motor F (actualización oficial guía Cat. 2 p4 y p7). Altura objetivo 300 m con F15-4 (ID 211). Altímetro Jolly Logic o Estes.
 **Lugar de práctica:** cancha o lote abierto en La Tablaza o La Estrella, sin techos, sin cables, con permiso del docente.
 
 ---

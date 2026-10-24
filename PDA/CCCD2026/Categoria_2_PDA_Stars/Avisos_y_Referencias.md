@@ -8,6 +8,12 @@
 ## 📌 Comunicados y Avisos Oficiales
 
 > [!IMPORTANT]
+> **ACTUALIZACIÓN OFICIAL: GUÍA CATEGORÍA INTERMEDIOS Y TIEMPO DE VUELO MOTOR F**
+> El Comité Técnico emitió la versión actualizada del documento oficial "Requisitos y retos – Categoría Intermedios" (`6_Guia_Categoria_Intermedios.pdf`).
+> - **Ajuste técnico crítico (p4 y p7):** Se especifica formalmente que el cohete deberá mantener un tiempo total de vuelo entre **40 a 50 segundos para motor F** (manteniendo 30 a 40 segundos exclusivamente para motor E).
+> - **Criterio de evaluación:** La precisión no altera la tabla de puntuaciones, pero define la ventana reglamentaria de descenso para PDA Stars (motor F15-4, altura objetivo 300 m). Permite dimensionar el paracaídas para una velocidad de descenso de 7.0 a 8.0 m/s sin riesgo de descalificación por aterrizar antes de 40 s ni exceder 50 s.
+
+> [!IMPORTANT]
 > **MOTOR E ID DEFINITIVOS (circular 22-09-2026)**
 > PDA - Stars: motor **F15-4**, **ID de Misión 211**. Esta circular reemplaza la del sábado y es la oficialmente establecida. Memorias 01, 02, 03, 04, 05 y 06 migradas de E12-4 a F15-4 (montura 29 mm, masa máxima 650 g, objetivo 300 m).
 > Discrepancia abierta: DMP v1.0.0 y guía Cat. 2 tabulan F15-6, no F15-4. Prevalece la circular por ser posterior y definitiva. Confirmar especificaciones del empaque al recibir el motor.

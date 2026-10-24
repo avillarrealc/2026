@@ -1,8 +1,8 @@
 # 04 Sistema de Recuperación con Paracaídas - PDA Stars Cat 2
 
 **Regla oficial:** paracaídas obligatorio. Puntaje: apertura óptima abre completo, parcial abre enredado pero frena, sin apertura cero puntos.
-**Meta de vuelo total:** 30 a 40 segundos. El paracaídas manda en ese tiempo.
-**Advertencia clase F:** con apogeo 300 m, el descenso a velocidades seguras (4 a 7 m/s) toma 45 a 70 s, fuera de la ventana 30-40 s. Confirmar con el revisor (Cano, Cat. 2) cómo aplica el criterio de tiempo en vuelos F15-4. Prioridad: recuperación segura con apertura óptima; volar lo más liviano posible.
+**Meta de vuelo total:** **40 a 50 segundos** para motor F (especificación oficial en guía Cat. 2 p4 y p7; 30 a 40 s exclusivo para motor E).
+**Resolución técnica clase F:** La actualización oficial de la guía resuelve la discrepancia técnica previa: con apogeo de 300 m y tiempo hasta apogeo/eyección de ~7.5 s, el tiempo de descenso disponible para situarse en la ventana reglamentaria es de **32.5 a 42.5 segundos**, lo que corresponde a una velocidad de descenso nominal de **7.0 a 8.5 m/s**.
 
 ---
 
@@ -24,20 +24,19 @@ Matriz de radio de impacto para **Apogeo = 300 m** (documento oficial CCCD Cat 2
 | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | **2 m/s** | 150 m | 300 m | 450 m | 600 m | 750 m | ❌ **CRÍTICO:** Viento ≥ 2 m/s descalifica |
 | **4 m/s** | 75 m | 150 m | 225 m | 300 m | 375 m | ❌ **CRÍTICO:** Viento ≥ 3.5 m/s descalifica |
-| **6 m/s** | 50 m | 100 m | 150 m | 200 m | 250 m | ⚠️ **AL LÍMITE:** A 5 m/s queda exacto en 250 m |
-| **8 m/s** | 37 m | 75 m | 112 m | 150 m | 187 m | ✅ **SEGURO:** Margen de 63 m a 5 m/s |
-| **9.5 a 10 m/s (LÍNEA BASE)** | **30 m** | **60 m** | **90 m** | **120 m** | **150 m** | ✅ **IDEAL:** Margen amplio de 100 m + cumple ventana 38-40 s |
+| **6 m/s** | 50 m | 100 m | 150 m | 200 m | 250 m | ⚠️ **AL LÍMITE:** A 5 m/s queda exacto en 250 m (T. total ~57 s, excede 50 s) |
+| **7.5 a 8.0 m/s (LÍNEA BASE REVISADA)** | **38 m** | **75 m** | **113 m** | **150 m** | **188 m** | ✅ **ÓPTIMO:** Margen de 62 m ante viento 5 m/s + Tiempo total ~45 s (centro de ventana 40–50 s) |
+| **9.0 a 9.5 m/s** | **32 m** | **63 m** | **95 m** | **126 m** | **158 m** | ✅ **SEGURO:** Margen de 92 m + Tiempo total ~39–41 s |
 
 ### Conclusión Técnica y Blindaje de Diseño:
-El límite de **250 metros de radio** valida y blinda técnicamente la decisión de descenso rápido para PDA Stars:
-1. Un paracaídas grande (60 a 75 cm) que descienda a 4–5 m/s causa **doble descalificación**:
-   - Excede la ventana de tiempo de vuelo reglamentaria (toma 50–65 s vs. 30–40 s permitidos).
-   - Con viento moderado de 3.5 a 5 m/s deriva entre 260 y 375 m, saliéndose del radio de 250 m (declarado irrecuperable).
-2. **Configuración definitiva obligatoria:**
-   - Paracaídas de **Ø 40 a 45 cm** (o campana con orificio de derrame / *spill hole*).
-   - Velocidad de descenso objetivo: **9.0 a 10.0 m/s** (dentro del límite de seguridad estructural de 11.0 m/s).
-   - Tiempo de vuelo total: **38 a 40 segundos**.
-   - Deriva máxima calculada ante viento de 5 m/s: **150 metros** (100 m de colchón dentro de los 250 m reglamentarios).
+Con la ventana oficial de **40 a 50 segundos** para motor F:
+1. Un paracaídas sobredimensionado (> 70 cm) que descienda a < 6 m/s causa **descalificación por tiempo** (toma > 55 s) y riesgo crítico de deriva fuera de los 250 m con viento moderado.
+2. Un descenso a > 10 m/s aterrizaría en < 38 s, quedando **descalificado por aterrizaje prematuro** (por debajo de los 40 s reglamentarios).
+3. **Configuración definitiva obligatoria:**
+   - Paracaídas de **Ø 45 a 50 cm** (nylon ripstop con cuerdas trenzadas).
+   - Velocidad de descenso objetivo: **7.5 a 8.2 m/s**.
+   - Tiempo de vuelo total proyectado: **44 a 47 segundos** (centrado con holgura dentro de los 40–50 s).
+   - Deriva máxima calculada ante viento de 5 m/s: **180 a 190 metros** (margen seguro de 60 a 70 m dentro del radio de 250 m).
 
 ## 2. Armado que sí abre
 

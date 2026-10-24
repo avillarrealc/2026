@@ -41,8 +41,8 @@
 ### Categoría 2 (PDA Stars)
 - **Motor asignado:** Motor F (Estes F15-4, 29 mm, ID 211).
 - **Zona de Recuperación (Circular 10-Oct):** Radio de impacto **≤ 250 m** (fuera = irrecuperable / anula vuelo).
-- **Tiempo de vuelo:** Ventana estricta de 30 a 40 s.
-- **Estrategia de Descenso:** Descenso rápido a 9.0–10.0 m/s (paracaídas Ø 40–45 cm o spill hole). Garantiza deriva ≤ 150 m a 5 m/s viento (dentro del radio de 250 m) y tiempo total ~39 s.
+- **Tiempo de vuelo:** Ventana estricta de **40 a 50 s** para motor F (actualización oficial de guía Intermedios p4 y p7).
+- **Estrategia de Descenso:** Descenso a **7.5–8.2 m/s** (paracaídas Ø 45–50 cm). Garantiza deriva ≤ 190 m a 5 m/s viento (margen seguro dentro del radio de 250 m) y tiempo total de vuelo en ~44 a 47 s (centro de la ventana reglamentaria).
 
 ### Categoría 1 (PDA Noctux)
 - **Nivel:** Baja potencia.
