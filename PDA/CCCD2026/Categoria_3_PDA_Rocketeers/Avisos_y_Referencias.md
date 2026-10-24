@@ -41,6 +41,14 @@
 > **VIDEO DEL EQUIPO [COMPLETADO: 2026-10-10 11:30]**
 > Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `310_PDARocketeers_VideoEquipo.mp4` (o `310_PDA_Rocketeers_VideoEquipo.mp4`), cumpliendo las especificaciones de la Rúbrica §3.4 (máximo 2 min, formato 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
 
+> [!SUCCESS]
+> **SEGUNDA REVISIÓN TÉCNICA VIRTUAL (CAT. 3 - PDA ROCKETEERS) [COMPLETADA Y APROBADA: 2026-10-19]**
+> El equipo sustentó ante el evaluador técnico oficial (Juan Sebastián Fonseca — TRA #36180 L1) la segunda revisión técnica virtual de control:
+> - **Dictamen oficial:** **Aprobado con éxito / Evaluación técnica sobresaliente.**
+> - **Aspectos auditados y certificados:** Avance físico y funcional superior al 80% del vehículo SIDERAL, integridad de fuselaje de 102 mm, ojiva Haack manufacturada en filamento ASA, aletas sándwich balso / PETG-CF, montura de motor 29 mm para AeroTech G80-7T, margen estático $\ge 2.0\text{ cal}$, velocidad en riel $\ge 55\text{ km/h}$, integración de bahía de aviónica y CanSat (250–300 g) con batería 18650, y sistema de recuperación calibrado a $\sim 6.95\text{ m/s}$ para aterrizaje dentro del radio de 400 m.
+> - **Próximo hito:** Entrega del documento oficial CDR (`310_PDARocketeers_CDR.pdf`, domingo 25 de octubre).
+
+
 
 > [!CAUTION]
 > **REGLAS SOBRE SISTEMAS DE CONTROL (Cat. 3 - Avanzados)**

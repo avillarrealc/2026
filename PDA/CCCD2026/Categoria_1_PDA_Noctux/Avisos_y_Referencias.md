@@ -29,6 +29,14 @@
 > **VIDEO DEL EQUIPO (CAT. 1 - PDA NOCTUX) [COMPLETADO: 2026-10-10 23:00]**
 > Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `104_PDANoctux_VideoEquipo.mp4` (o `104_PDA_Noctux_VideoEquipo.mp4`), cumpliendo especificaciones de la Rúbrica §3.4 (máx. 2 min, 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
 
+> [!SUCCESS]
+> **SEGUNDA REVISIÓN TÉCNICA VIRTUAL (CAT. 1 - PDA NOCTUX) [COMPLETADA Y APROBADA: 2026-10-23]**
+> El equipo sustentó ante el evaluador técnico oficial (Juan Guillermo Cano — TRA #41662 L1) la segunda revisión técnica virtual de avance:
+> - **Dictamen oficial:** **Aprobado con éxito / Evaluación técnica satisfactoria.**
+> - **Aspectos auditados y certificados:** Cumplimiento de avance físico superior al 80%, integridad del fuselaje, estabilidad pasiva del cohete, amortiguación de la cápsula "El Huevonauta" y dimensionamiento del paracaídas.
+> - **Próximo hito:** Entrega del Reporte Técnico (domingo 25 de octubre).
+
+
 > [!TIP]
 > **SOFTWARE OFICIAL DE DISEÑO DE PARACAÍDAS (ALAS / SATELAB) [09-OCT-2026]**
 > Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org), aplicable para el cálculo geométrico del dosel, líneas de suspensión y descenso suave del vehículo con la carga útil "El Huevonauta".

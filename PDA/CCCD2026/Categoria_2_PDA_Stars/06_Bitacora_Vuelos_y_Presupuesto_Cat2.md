@@ -15,6 +15,12 @@
 
 Cada fila lleva sus pruebas: pantallazo OpenRocket, foto de balanza, video del vuelo, lectura del altímetro. Sin foto es como si no hubiera pasado.
 
+### 1.1 Hitos y Revisiones Técnicas Oficiales (Staff CCCD)
+
+| Fecha | Hito / Instancia | Revisor Oficial | Estado / Resultado | Observaciones Técnicas Principales |
+| :---: | :--- | :--- | :---: | :--- |
+| **23-Oct-2026** | **Segunda Revisión Técnica Virtual** | Juan Guillermo Cano (TRA #41662 L1) | **Aprobada (Satisfactoria)** | Verificación física y funcional >80%. Fuselaje $\ge 60\text{ cm}$, montura 29 mm para F15-4, aletas trapezoidales, masa $\le 650\text{ g}$, margen estático $\ge 2.0\text{ cal}$. Adaptación a varilla $\varnothing 6.5\text{ mm}$ y sistema de paracaídas calibrado para 40–50 s. Habilitado para CDR (25-Oct). |
+
 ## 2. Gastos propios de PDA Stars
 
 Meta interna: altímetro Jolly Logic o Estes más 3 motores F15-4 para dos pruebas y vuelo oficial.

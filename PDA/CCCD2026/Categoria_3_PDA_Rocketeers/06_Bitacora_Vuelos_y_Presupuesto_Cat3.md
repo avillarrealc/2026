@@ -16,6 +16,12 @@
 
 Cada fila con pantallazo, foto de balanza, video y lectura de altímetro.
 
+### 1.1 Hitos y Revisiones Técnicas Oficiales (Staff CCCD)
+
+| Fecha | Hito / Instancia | Revisor Oficial | Estado / Resultado | Observaciones Técnicas Principales |
+| :---: | :--- | :--- | :---: | :--- |
+| **19-Oct-2026** | **Segunda Revisión Técnica Virtual** | Juan Sebastián Fonseca (TRA #36180 L1) | **Aprobada (Sobresaliente)** | Avance físico y funcional >80% de SIDERAL. Validación de fuselaje 102 mm, ojiva Haack ASA, aletas sándwich balso / PETG-CF, montura de motor 29 mm para AeroTech G80-7T, estabilidad estática $\ge 2.0\text{ cal}$, velocidad en riel $\ge 55\text{ km/h}$, aviónica/CanSat (250–300 g) con batería 18650 y paracaídas calibrado a $\sim 6.95\text{ m/s}$ para radio de 400 m. Habilitado para CDR (25-Oct). |
+
 ## 2. Gastos propios Rocketeers
 
 | Fecha | Factura | Qué compramos | Cant | Valor COP | Categoría 1-7 | Responsable |

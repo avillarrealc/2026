@@ -56,6 +56,14 @@
 > **VIDEO DEL EQUIPO (CAT. 2 - PDA STARS) [COMPLETADO: 2026-10-10 23:10]**
 > Material audiovisual oficial entregado y cargado en plataforma/Drive bajo la nomenclatura reglamentaria: `211_PDAStars_VideoEquipo.mp4` (o `211_PDA_Stars_VideoEquipo.mp4`), cumpliendo especificaciones de la Rúbrica §3.4 (máx. 2 min, 16:9, subtítulos en español sincronizados, límite 200 MB). Evaluado sobre 100 puntos.
 
+> [!SUCCESS]
+> **SEGUNDA REVISIÓN TÉCNICA VIRTUAL (CAT. 2 - PDA STARS) [COMPLETADA Y APROBADA: 2026-10-23]**
+> El equipo sustentó ante el evaluador técnico oficial (Juan Guillermo Cano — TRA #41662 L1) la segunda revisión técnica virtual de control y verificación de diseño:
+> - **Dictamen oficial:** **Aprobado con éxito / Evaluación técnica satisfactoria.**
+> - **Aspectos auditados y certificados:** Cumplimiento de avance físico y funcional (>80%), integridad del fuselaje ($\ge 60\text{ cm}$), montura 29 mm para motor Estes F15-4, aletas trapezoidales, masa total ($\le 650\text{ g}$), margen estático de estabilidad ($\ge 2.0\text{ cal}$), adaptación de guías para varilla de $\varnothing 6.5\text{ mm}$ y sistema de recuperación dimensionado para la ventana de 40 a 50 segundos.
+> - **Próximo hito:** Entrega del documento oficial CDR (`211_PDAStars_CDR.pdf`, domingo 25 de octubre).
+
+
 > [!CAUTION]
 > **⚠️ ZONAS DE RECUPERACIÓN Y RADIO LÍMITE DE 250 M [CIRCULAR OFICIAL 10-OCT-2026]**
 > El Comité Técnico emitió el documento oficial `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf`:

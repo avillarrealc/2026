@@ -19,7 +19,7 @@
 | **25 Sep - 3 Oct** | Asesorías Virtuales | Aplica | Aplica | Aplica | *Cerrado* |
 | **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica (48 pts)** | *Evaluado en plataforma* |
 | **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma* |
-| **12 - 22 de Octubre** | Revisiones Técnicas Virtuales | Aplica | Aplica | Aplica | Pendiente de asentamiento |
+| **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Aprobada (23-Oct)** | **Aprobada (19-Oct)** | **Completadas con éxito (100% aprobado)** |
 | **25 de Octubre** | Reporte Técnico | **Aplica** | - | - | En preparación |
 | **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica** | En preparación |
 | **28 de Octubre** | Fotografías del Cohete | Aplica | Aplica | Aplica | Pendiente |
