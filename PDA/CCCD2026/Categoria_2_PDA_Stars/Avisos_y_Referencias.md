@@ -47,7 +47,7 @@
 > - La condición se juzga en el instante del aterrizaje, sin importar localización posterior.
 > - **Impacto crítico para PDA Stars (300 m apogeo con F15-4):**
 >   - Con descenso lento (4 a 5 m/s): Vientos de 3.5 a 5 m/s derivan el cohete entre 260 y 375 m (**DESCALIFICADO**).
->   - Con nuestra línea base de descenso rápido (9.5 a 10 m/s): La deriva máxima a 5 m/s de viento es de **150 m** (margen de 100 m dentro del radio de 250 m), garantizando además cumplir la ventana de 30-40 s de tiempo total.
+>   - Con nuestra línea base revisada (7.5 a 8.2 m/s para ventana oficial de 40–50 s): La deriva máxima a 5 m/s de viento es de **180 a 190 m** (margen seguro de 60 a 70 m dentro del radio de 250 m), garantizando además un aterrizaje mucho más suave sin descalificación por tiempo ni por zona.
 
 ---
 
