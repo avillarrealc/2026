@@ -85,6 +85,21 @@
 >   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
 > - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
 
+> [!IMPORTANT]
+> **📋 PLANTILLA OFICIAL Y DIRECTRICES DE ENTREGA: CDR (CRITICAL DESIGN REVIEW) [OCT-2026]**
+> El Comité Técnico emitió la plantilla oficial del documento CDR para Categoría Intermedios:
+> - **Archivo plantilla:** `Plantilla CDR Intermedios.docx` (resguardada en la carpeta del equipo).
+> - **Reglas de integridad de la plantilla (Penalizaciones por incumplimiento):**
+>   - En la portada, sustituir estrictamente "000" por el **ID de Misión oficial: 211**.
+>   - **Prohibido** modificar los colores institucionales, fuentes, tamaños de encabezados, títulos o diseño general.
+>   - **Obligatorio** conservar sin excepción la totalidad de los 13 apartados originales de la tabla de contenidos. Se permite agregar tablas, subsecciones y diagramas complementarios sin alterar la estructura base.
+> - **Nomenclatura reglamentaria:** `211_PDAStars_CDR.pdf` (o `211_PDA_Stars_CDR.pdf`).
+> - **Plazos límite de entrega y escala de penalización:**
+>   - **Domingo 25 de octubre, hasta las 11:59 p. m.:** Entrega a tiempo, **sin penalización**.
+>   - **Lunes 26 de octubre, hasta las 11:59 p. m.:** Penalización de **-15 puntos**.
+>   - **Martes 27 de octubre, hasta las 11:59 p. m.:** Penalización de **-30 puntos**.
+>   - **Miércoles 28 de octubre en adelante:** **Plataforma cerrada**, no se admiten entregas extemporáneas (0 puntos en CDR).
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -98,6 +113,7 @@
 7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 2.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 250 m.
 8. `Guia_de_Lanzamiento_Categoria_2.pdf` — **[NUEVO OCT-2026]** Especificación técnica oficial de la varilla de lanzamiento (Ø 6.5 mm x 1500 mm) y requerimiento de ajuste de guías.
 9. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
+10. `Plantilla CDR Intermedios.docx` — **[PLANTILLA OFICIAL CDR]** Formato Word inalterable con la estructura obligatoria de 13 secciones para el Critical Design Review.
 
 ---
 

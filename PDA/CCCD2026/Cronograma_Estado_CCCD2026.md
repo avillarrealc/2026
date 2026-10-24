@@ -47,6 +47,12 @@
 
 ### Categoría 2 (PDA Stars)
 - **Motor asignado:** Motor F (Estes F15-4, 29 mm, ID 211).
+- **Entregable crítico CDR (Critical Design Review):**
+  - **Fecha límite oficial:** Domingo 25 de octubre, 11:59 p. m. (0 pts penalización).
+  - **Penalizaciones por extemporaneidad:** Lunes 26-Oct (-15 pts), Martes 27-Oct (-30 pts). Cierre definitivo posterior al martes 27-Oct.
+  - **Nomenclatura mandatoria:** `211_PDAStars_CDR.pdf` (o `211_PDA_Stars_CDR.pdf`). Incumplimiento acarrea descuento de puntos.
+  - **Plantilla oficial:** `Plantilla CDR Intermedios.docx`. Prohibido alterar colores, tipografías, encabezados o estructura base. Obligatorio conservar todos los apartados originales y reemplazar "000" por ID "211".
+- **Plataforma y Rampa (Circular Oct-2026):** Varilla cilíndrica de **$\varnothing 6.5\text{ mm} \times 1500\text{ mm}$**. Guías de lanzamiento (*launch lugs*) con diámetro interior $\ge 7.0\text{ mm}$ (modelo `.ork` actualizado a radio $3.6\text{ mm} = \varnothing 7.2\text{ mm}$).
 - **Zona de Recuperación (Circular 10-Oct):** Radio de impacto **≤ 250 m** (fuera = irrecuperable / anula vuelo).
 - **Tiempo de vuelo:** Ventana estricta de **40 a 50 s** para motor F (actualización oficial de guía Intermedios p4 y p7).
 - **Estrategia de Descenso:** Descenso a **7.5–8.2 m/s** (paracaídas Ø 45–50 cm). Garantiza deriva ≤ 190 m a 5 m/s viento (margen seguro dentro del radio de 250 m) y tiempo total de vuelo en ~44 a 47 s (centro de la ventana reglamentaria).
