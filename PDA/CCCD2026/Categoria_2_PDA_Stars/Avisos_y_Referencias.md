@@ -54,6 +54,14 @@
 >   - Con descenso lento (4 a 5 m/s): Vientos de 3.5 a 5 m/s derivan el cohete entre 260 y 375 m (**DESCALIFICADO**).
 >   - Con nuestra línea base revisada (7.5 a 8.2 m/s para ventana oficial de 40–50 s): La deriva máxima a 5 m/s de viento es de **180 a 190 m** (margen seguro de 60 a 70 m dentro del radio de 250 m), garantizando además un aterrizaje mucho más suave sin descalificación por tiempo ni por zona.
 
+> [!NOTE]
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
+> - **Posición actual PDA Stars:** **Puesto #3 Nacional (Zona de Podio)** con **140 puntos** acumulados:
+>   - Reporte Progreso 1: **50 / 50 pts** (Puntaje perfecto).
+>   - Video del Equipo: **90 / 100 pts** (Calificación sobresaliente).
+> - Diferencial de punta: A 1 punto del 2° puesto (Orión 25: 141 pts) y 7 puntos del líder (AstroComercial: 147 pts). Próximo hito: CDR (25-Oct).
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta

@@ -71,6 +71,15 @@
 > Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org).
 > - **Utilidad técnica:** Permite modelar el dosel (diámetro plano vs. inflado), área efectiva, líneas de suspensión, orificio de derrame (*spill hole*) y velocidad terminal ($V_t$). Utilizado para contrastar con OpenRocket y asegurar que SIDERAL mantenga una velocidad de descenso entre 6.0 y 7.0 m/s para no exceder los 400 m de radio límite.
 
+> [!NOTE]
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
+> - **Posición actual PDA Rocketeers:** **Puesto #4 Nacional (Categoría Universitarios / Avanzados)** con **188 puntos** acumulados:
+>   - Reporte Progreso 1: **45 / 50 pts**.
+>   - Video del Equipo: **95 / 100 pts** (Puntaje élite nacional).
+>   - PDR (*Preliminary Design Review*): **48 / 50 pts** (Evaluación sobresaliente de ingeniería).
+> - Diferencial competitivo: A solo 3 puntos del 1° puesto (Spectro Rocket Team UdeA: 191 pts), superando a facultades de ingeniería de la Universidad Nacional, UPB, EMAVI y EIA-Hermes. Próximo hito: CDR (25-Oct).
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta

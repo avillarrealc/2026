@@ -58,4 +58,8 @@
   - Cat 3 Rocketeers: `https://forms.gle/WRggMzyRChvw5qHR7`
 - **Plataforma Educativa SateLab Academy:** `https://academy.satelab.org/cccd/554e1756-bf1e-476a-88c8-49806d1acc21`
 - **Software Oficial de Diseño de Paracaídas (ALAS / SateLab):** `https://paracaidas.satelab.org`
+- **Plataforma Oficial de Puntuaciones y Clasificación en Vivo:** `https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21`
+  - *Cat 3 (Universitarios):* **#4 Nacional** — PDA Rocketeers (188 pts: Progreso 1: 45, Video: 95, PDR: 48).
+  - *Cat 2 (Intermedios):* **#3 Nacional** — PDA - Stars (140 pts: Progreso 1: 50, Video: 90).
+  - *Cat 1 (Principiantes):* **#7 Nacional** — PDA Noctux (127 pts: Progreso 1: 40, Video: 87).
 - **Credenciales y usuarios:** Custodiados en `PDA/CCCD2026/.credenciales_satelab.json` (Cat 1 Noctux, Cat 2 Stars ID 211, Cat 3 Rocketeers ID 310).

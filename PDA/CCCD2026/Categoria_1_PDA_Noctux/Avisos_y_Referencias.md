@@ -33,6 +33,11 @@
 > **SOFTWARE OFICIAL DE DISEÑO DE PARACAÍDAS (ALAS / SATELAB) [09-OCT-2026]**
 > Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org), aplicable para el cálculo geométrico del dosel, líneas de suspensión y descenso suave del vehículo con la carga útil "El Huevonauta".
 
+> [!NOTE]
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
+> - **Posición actual PDA Noctux:** **Puesto #7** (127 puntos acumulados: Reporte Progreso 1 = 40 pts, Video del Equipo = 87 pts). Próximo hito evaluable: Reporte Técnico (25-Oct).
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta

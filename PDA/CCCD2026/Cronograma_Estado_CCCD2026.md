@@ -9,20 +9,27 @@
 
 ---
 
-## Cronograma Oficial CCCD 2026
+## Cronograma Oficial CCCD 2026 y Calificaciones Registradas
 
-| Fecha límite | Entregable / Actividad | Cat 1 (Noctux) | Cat 2 (Stars) | Cat 3 (Rocketeers) | Estado Actual |
+**Plataforma oficial de puntuación en vivo:** [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
+
+| Fecha límite | Entregable / Actividad | Cat 1 (Noctux) | Cat 2 (Stars) | Cat 3 (Rocketeers) | Estado y Calificación Oficial |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| **23 de Septiembre** | Reporte de Progreso 1 | Aplica | Aplica | Aplica | *Completado* |
+| **23 de Septiembre** | Reporte de Progreso 1 | Aplica (**40 pts**) | Aplica (**50 pts**) | Aplica (**45 pts**) | *Evaluado en plataforma* |
 | **25 Sep - 3 Oct** | Asesorías Virtuales | Aplica | Aplica | Aplica | *Cerrado* |
-| **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica** | *Completado* (Integrado con `Diseno_SIDERAL.ork`) |
-| **10 de Octubre** | Video del Equipo | Aplica | Aplica | Aplica | *Completado (100 %)* — Cat 1 (`104`), Cat 2 (`211`), Cat 3 (`310`) entregados |
-| **12 - 22 de Octubre** | Revisiones Técnicas Virtuales | Aplica | Aplica | Aplica | Pendiente |
-| **25 de Octubre** | Reporte Técnico | **Aplica** | - | - | Pendiente |
-| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica** | Pendiente |
+| **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica (48 pts)** | *Evaluado en plataforma* |
+| **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma* |
+| **12 - 22 de Octubre** | Revisiones Técnicas Virtuales | Aplica | Aplica | Aplica | Pendiente de asentamiento |
+| **25 de Octubre** | Reporte Técnico | **Aplica** | - | - | En preparación |
+| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica** | En preparación |
 | **28 de Octubre** | Fotografías del Cohete | Aplica | Aplica | Aplica | Pendiente |
 | **1 de Noviembre** | Divulgación (Redes Sociales) | Aplica | Aplica | Aplica | Pendiente |
-| **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial** |
+| **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |
+
+### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento):
+- **Categoría 3 (Universitarios / Avanzados):** **Puesto #4 Nacional** — `PDA Rocketeers` con **188 pts** (Progreso 1: 45, Video: 95, PDR: 48). A solo 3 puntos del primer puesto nacional (Spectro UdeA: 191 pts).
+- **Categoría 2 (Intermedios):** **Puesto #3 Nacional (Zona de Podio)** — `PDA - Stars` con **140 pts** (Progreso 1: 50, Video: 90). A 1 punto del 2° (Orión 25: 141 pts) y 7 puntos del 1° (AstroComercial: 147 pts).
+- **Categoría 1 (Principiantes):** **Puesto #7 Nacional** — `PDA Noctux` con **127 pts** (Progreso 1: 40, Video: 87).
 
 *Nota: No se aplazará ninguna actividad ni fecha límite establecida sin previo aviso al Comité Técnico.*
 
