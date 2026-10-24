@@ -1,4 +1,4 @@
-﻿[2026-09-21 09:53:24] INICIO escaneo https://cccd.space/documentos
+[2026-09-21 09:53:24] INICIO escaneo https://cccd.space/documentos
 [2026-09-21 09:53:24] Chunk remoto: Documentos-BcOgGePm.js
 [2026-09-21 09:53:24] Documentos remotos detectados: 8
 [2026-09-21 09:53:24] OK sin cambios: Reglamento General de Competencia CCCD 2026.pdf v1.0.0
@@ -41,3 +41,15 @@
 [2026-09-21 11:35:04] OK sin cambios id=9 Codigo de Conducta y Responsabilidad de las Delegaciones.pdf v1.0.0
 [2026-09-21 11:35:04] OK sin cambios id=10 Guia CanSat.pdf v1.0.0
 [2026-09-21 11:35:04] RESULTADO: sin cambios. Local sincronizado.
+[2026-10-23 22:52:00] INICIO escaneo https://cccd.space/documentos
+[2026-10-23 22:52:00] Chunk remoto: Documentos-_zf7UjRB.js
+[2026-10-23 22:52:00] Documentos remotos detectados: 8
+[2026-10-23 22:52:00] OK sin cambios: Reglamento General de Competencia CCCD 2026.pdf (995588 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Codigo de Conducta y Responsabilidad de las Delegaciones.pdf (985014 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Motores Permitidos.pdf (3325111 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Diseno Construccion y Pruebas.pdf (1242574 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Norma de Seguridad en Coheteria.pdf (1093234 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Procedimientos de Inspeccion y Certificacion.pdf (1014632 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Cumplimiento y Evaluacion.pdf (938997 bytes)
+[2026-10-23 22:52:00] OK sin cambios: Guia CanSat.pdf (1336874 bytes)
+[2026-10-23 22:52:00] RESULTADO: sin cambios. Local sincronizado.
