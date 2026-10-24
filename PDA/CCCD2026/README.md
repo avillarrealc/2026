@@ -28,6 +28,11 @@
    - Cargas de eyección, temporización y redundancia.
    - Checklists de seguridad y procedimientos pre-lanzamiento en rampa.
 
-5. **Bitácoras y Gestión de Equipo:**
+5. **Manufactura Aditiva (3D) y Laminación FDM:**
+   - [Guía Maestra de Manufactura 3D y Laminación CCCD 2026](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Guia_Maestra_Manufactura_3D_y_Laminacion_CCCD2026.md) (Índice de sesiones, matriz de materiales y parámetros de laminador).
+   - [Guía Cura 4.13 (Español) - Acople y Ojiva ASA (PDF)](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Guia_Cura_Espanol_Acople_y_Ojiva_ASA.pdf) y script de compilación [generate_cura_espanol_pdf.py](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/generate_cura_espanol_pdf.py).
+   - [Directorio Técnico de Proveedores de Materiales](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Directorio_Proveedores_Materiales_CCCD2026.pdf) y [Procedimiento de Perfilado de Aletas](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Procedimiento_Perfilado_Aletas_CCCD2026.pdf).
+
+6. **Bitácoras y Gestión de Equipo:**
    - Actas de pruebas estáticas de motores.
-   - Formularios de inscripción y control de presupuesto.
+   - Formularios de inscripción y [Presupuesto Consolidado CCCD 2026](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Presupuesto_y_Relacion_de_Gastos_CCCD2026.md).

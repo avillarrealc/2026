@@ -93,6 +93,15 @@ El agente debe respetar rigurosamente los consensos de ingeniería alcanzados en
      - *Norma de Seguridad en Cohetería, Sección 4.3:* "La estabilidad mínima será de 2 calibres, entendida como la distancia entre CG y CP equivalente a dos veces el diámetro del fuselaje del cohete [...] cualquier cohete que no cumpla con esta estabilidad mínima será rechazado hasta que se realicen los ajustes necesarios."
    - **Condiciones de Verificación:** Debe marcarse visiblemente en el fuselaje ($CG$ y $CP$) y validarse en OpenRocket tanto en condición de salida de riel (con velocidad ≥ 55 km/h) como en el momento de agotamiento del propelente (*burnout*).
 
+4. **Manufactura Aditiva y Laminación FDM (Parámetros Validados y Prohibiciones de Radiofrecuencia):**
+   - **Material Oficial de Ojiva y Acoples (Cat 3):** Filamento **ASA** obligatorio (HDT ~100 °C, tenacidad ante shock de eyección de 12-15 G y 100% permeable a RF).
+   - **Parámetros Validados en Cura 4.13:** Consulta obligatoria de [Guia_Maestra_Manufactura_3D_y_Laminacion_CCCD2026.md](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Guia_Maestra_Manufactura_3D_y_Laminacion_CCCD2026.md) y [Guia_Cura_Espanol_Acople_y_Ojiva_ASA.pdf](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Guia_Cura_Espanol_Acople_y_Ojiva_ASA.pdf).
+   - **Directivas Técnicas de Laminación:**
+     - Costura Z estrictamente **Alineada o Atrás Oculta** (prohibida costura aleatoria para evitar micro-abultamientos y fisuras).
+     - Ojiva 102 mm: 4 líneas de pared (0.45 mm ancho -> 100% sólida de 1.2 mm), cono hueco sin relleno, relleno giroide 40-50% solo en punta sólida ($Z > 200\text{ mm}$), bloqueador cilíndrico interno de soporte.
+     - Acople SIDERAL: 5 líneas de pared (asa de 8 mm 100% maciza), orden de pared de adentro hacia afuera, 6 capas sup / 5 inf (piso de 1 mm macizo), soporte tocando placa con $Z\text{-distance} = 0.20-0.22\text{ mm}$.
+     - Impresora Sunlu T3: Operación obligatoria en cabina térmica pasiva precalentada a 40-50 °C (cama a 100 °C durante 15-20 min), garganta bimetálica *all-metal* para 245-250 °C y fijador polimérico PEI.
+
 ---
 
 # GESTIÓN DE ENTREGABLES
