@@ -56,6 +56,7 @@
 - **Zona de Recuperación (Circular 10-Oct):** Radio de impacto **≤ 250 m** (fuera = irrecuperable / anula vuelo).
 - **Tiempo de vuelo:** Ventana estricta de **40 a 50 s** para motor F (actualización oficial de guía Intermedios p4 y p7).
 - **Estrategia de Descenso:** Descenso a **7.5–8.2 m/s** (paracaídas Ø 45–50 cm). Garantiza deriva ≤ 190 m a 5 m/s viento (margen seguro dentro del radio de 250 m) y tiempo total de vuelo en ~44 a 47 s (centro de la ventana reglamentaria).
+- **Carga Útil (Guía Oficial 25-Oct):** Masa máxima $\mathbf{\le 60\text{ g}}$, autonomía $\mathbf{\ge 4\text{ h}}$, switch accesible externamente en rampa y retención estructural obligatoria (prohibida eyección libre).
 
 ### Categoría 1 (PDA Noctux)
 - **Nivel:** Baja potencia.

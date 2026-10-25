@@ -43,7 +43,7 @@ Meta interna: dejar el cohete en **600 a 630 g** para tener colchón de 20 a 50 
 | 3 | Aletas x3 o x4 con pegante | ___ g | ___ g | ___ g | |
 | 4 | Montura y retén de motor 29 mm | ___ g | ___ g | ___ g | |
 | 5 | Paracaídas + cordón + manta Nomex | ___ g | ___ g | ___ g | |
-| 6 | Carga útil electrónica con batería | ___ g | ___ g | ___ g | |
+| 6 | Carga útil electrónica con batería (límite oficial $\le 60\text{ g}$) | ___ g | ___ g | ___ g | |
 | 7 | Altímetro Jolly Logic o Estes con sujeción | ___ g | ___ g | ___ g | |
 | 8 | Tornillería, pintura, guías para varilla 6.5 mm (Øint ≥ 7.0 mm) | ___ g | ___ g | ___ g | |
 | 9 | Motor F15-4 | ___ g | ___ g | ___ g | |

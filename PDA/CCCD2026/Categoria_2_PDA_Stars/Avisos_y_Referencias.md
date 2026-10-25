@@ -8,6 +8,16 @@
 ## 📌 Comunicados y Avisos Oficiales
 
 > [!IMPORTANT]
+> **ACTUALIZACIÓN OFICIAL: GUÍA CARGA ÚTIL INTERMEDIOS 2026 [25-OCT-2026]**
+> El Comité Técnico emitió el documento oficial `Guia_Carga_Util_Intermedios_2026.pdf` (Versión 1.0.0, ALAS - SateLab):
+> - **Masa máxima permitida:** **$\mathbf{\le 60\text{ g}}$** para la carga útil completamente ensamblada (estructura, electrónica, sensores y batería).
+> - **Autonomía eléctrica obligatoria:** Cálculo y duración mínima de **$\mathbf{\ge 4\text{ horas}}$** continuas de operación.
+> - **Baterías permitidas vs prohibidas:** Prohibidas celdas LiPo y Li-Ion planas rectangulares. Permitidas AA/AAA no recargables, 18650, Li-Ion cilíndricas, 9V y pilas de botón. *(Nota técnica: 18650 y 9V pesan ~45 g, por lo que se recomienda 2xAAA alcalinas de ~23 g o celda Li-Ion cilíndrica 14500 de ~19.5 g para no violar el techo de 60 g).*
+> - **Sistema de Switches:** Switch externo mandatorio para activación en rampa de lanzamiento sin desmontar componentes.
+> - **Sistema de Retención:** Prohibición estricta de separación total o eyección libre. La carga útil debe permanecer mecánicamente unida al cohete en todas las fases de vuelo y recuperación.
+> - **Materiales autorizados:** PLA, PETG, ABS y Fibra de vidrio.
+
+> [!IMPORTANT]
 > **ACTUALIZACIÓN OFICIAL: GUÍA DE LANZAMIENTO CAT. 2 Y VARILLA Ø 6.5 MM [OCTUBRE 2026]**
 > El Comité Técnico emitió el documento oficial `Guia_de_Lanzamiento_Categoria_2.pdf`:
 > - **Motivo de seguridad:** Se rediseñó la plataforma de lanzamiento de Categoría 2, actualizando la varilla cilíndrica de lanzamiento (*launch rod*).
@@ -122,6 +132,7 @@
 8. `Guia_de_Lanzamiento_Categoria_2.pdf` — **[NUEVO OCT-2026]** Especificación técnica oficial de la varilla de lanzamiento (Ø 6.5 mm x 1500 mm) y requerimiento de ajuste de guías.
 9. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 10. `Plantilla CDR Intermedios.docx` — **[PLANTILLA OFICIAL CDR]** Formato Word inalterable con la estructura obligatoria de 13 secciones para el Critical Design Review.
+11. `Guia_Carga_Util_Intermedios_2026.pdf` — **[NUEVO 25-OCT-2026]** Especificación técnica oficial de carga útil (masa $\le 60\text{ g}$, autonomía $\ge 4\text{ h}$, switch externo y retención estructural obligatoria).
 
 ---
 
