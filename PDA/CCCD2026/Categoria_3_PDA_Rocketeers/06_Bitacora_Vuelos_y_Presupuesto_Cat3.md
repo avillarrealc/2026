@@ -9,7 +9,8 @@
 | Fecha | Lugar | Versión | Peso g / techo | Altura m / 400 | Vel riel | Recuperación | Estabilidad | Aprendimos |
 | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- | :--- |
 | 03-Oct-26 | Simulación | v_SIDERAL | N/A | 410.4 m | 65.7 km/h | 6.55 m/s | N/A | CSV anterior, reemplazado el 04-10-2026 |
-| 04-Oct-26 | Simulación | v_SIDERAL vigente (Diseño SIDERAL.ork) | 884 g | 409.5 m | 65.5 km/h (18.20 m/s) | 6.58 m/s despliegue, 6.95 suelo | 2.2 cal prom (1.91 riel) | Línea base PDR S6+S7, cordón 3.0 m |
+| 04-Oct-26 | Simulación | v_SIDERAL línea base PDR | 884 g | 409.5 m | 65.5 km/h (18.20 m/s) | 6.58 m/s despliegue, 6.95 suelo | 2.2 cal prom (1.91 riel) | Línea base PDR S6+S7, cordón 3.0 m |
+| 25-Oct-26 | Simulación | v_SIDERAL calibrada CDR (`Diseño SIDERAL.ork`) | 896 g (despegue) / 824 g (descenso) | 397.8 m | 63.1 km/h (17.53 m/s) | 7.65 m/s despliegue, 7.06 suelo | 2.20 cal burnout (1.91 salida riel) | Calibración final con componentes físicos (ojiva ASA 87.88g, acoplador 104g, CanSat 274g, motor G80-7T). Apogeo a solo 2.2 m del objetivo (400 m). |
 | | | v1 | | | | | | |
 | | | v2 | | | | | | |
 | | | v3 final | | | | | | |
@@ -21,6 +22,7 @@ Cada fila con pantallazo, foto de balanza, video y lectura de altímetro.
 | Fecha | Hito / Instancia | Revisor Oficial | Estado / Resultado | Observaciones Técnicas Principales |
 | :---: | :--- | :--- | :---: | :--- |
 | **19-Oct-2026** | **Segunda Revisión Técnica Virtual** | Juan Sebastián Fonseca (TRA #36180 L1) | **Aprobada (Sobresaliente)** | Avance físico y funcional >80% de SIDERAL. Validación de fuselaje 102 mm, ojiva Haack ASA, aletas sándwich balso / PETG-CF, montura de motor 29 mm para AeroTech G80-7T, estabilidad estática $\ge 2.0\text{ cal}$, velocidad en riel $\ge 55\text{ km/h}$, aviónica/CanSat (250–300 g) con batería 18650 y paracaídas calibrado a $\sim 6.95\text{ m/s}$ para radio de 400 m. Habilitado para CDR (25-Oct). |
+| **25-Oct-2026** | **Critical Design Review (CDR)** | Staff Técnico CCCD / Plataforma | **Desarrollado (59 págs)** | Documento formal `310_PDARocketeers_CDR.pdf` consolidado bajo formato AIAA / LaTeX. Cubre diseño definitivo, calibración de masas, telemetría LoRa 915 MHz, filtro EKF, paracaídas Ø 70 cm con derrame de 7 cm, análisis de seguridad y pruebas en tierra. |
 
 ## 2. Gastos propios Rocketeers
 

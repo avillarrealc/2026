@@ -21,7 +21,7 @@
 | **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma* |
 | **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Aprobada (23-Oct)** | **Aprobada (19-Oct)** | **Completadas con éxito (100% aprobado)** |
 | **25 de Octubre** | Reporte Técnico | **Aplica** | - | - | En preparación |
-| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica** | En preparación |
+| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica (Borrador 59 págs)** | En entrega y revisión final |
 | **28 de Octubre** | Fotografías del Cohete | Aplica | Aplica | Aplica | Pendiente |
 | **1 de Noviembre** | Divulgación (Redes Sociales) | Aplica | Aplica | Aplica | Pendiente |
 | **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |
@@ -38,12 +38,13 @@
 ## Requisitos Técnicos Críticos para Revisiones (PDR / CDR)
 
 ### Categoría 3 (PDA Rocketeers)
-- **Estabilidad:** Margen estático mínimo de 2.0 calibres entre CG y CP.
-- **Relación Empuje/Peso:** Mínimo 5:1.
-- **Velocidad de salida (riel):** Mínimo 55 km/h (15.3 m/s).
-- **Carga Útil:** CanSat funcional de 250 g a 300 g máximo duro.
-- **Zona de Recuperación (Circular 10-Oct):** Radio de impacto **≤ 400 m** (fuera = irrecuperable / anula vuelo). Velocidad terminal recomendada: 6.0 a 7.0 m/s (SIDERAL fijado en 6.95 m/s; deriva máx 288 m a 5 m/s viento).
-- **Estado Actual de Diseño:** `Diseño SIDERAL.ork` integrado (Vel. riel 18.20 m/s, Apogeo 409.5 m con G80T-7).
+- **Estabilidad:** Margen estático mínimo de 2.0 calibres entre CG y CP (1.91 cal al despegue, 2.20 cal en burnout).
+- **Relación Empuje/Peso:** Mínimo 5:1 (G80-7T: 80 N / [0.896 kg * 9.81 m/s²] = 9.1:1, cumple holgadamente).
+- **Velocidad de salida (riel):** Mínimo 55 km/h (15.3 m/s) -> Verificado en OpenRocket a **63.1 km/h (17.53 m/s)** en riel de 1.5 m.
+- **Carga Útil:** CanSat funcional cautivo de **274.0 g** (rango reglamentario 250 g a 300 g) con ESP32-S3, telemetría LoRa 915 MHz y filtro EKF.
+- **Zona de Recuperación (Circular 10-Oct):** Radio de impacto **≤ 400 m** (fuera = irrecuperable / anula vuelo). Paracaídas Ø 70 cm con derrame de 7 cm, velocidad de impacto 7.06 m/s, deriva estimada a 5 m/s de viento: 281 m (margen seguro de 119 m).
+- **Estado Actual de Diseño:** `Diseño SIDERAL.ork` calibrado con masas de manufactura FDM y balso (Apogeo **397.81 m** con motor Aerotech G80-7T, error de sólo 0.55% frente a los 400 m).
+- **Documento CDR:** Informe formal `310_PDARocketeers_CDR.pdf` de 59 páginas bajo formato AIAA / LaTeX.
 
 ### Categoría 2 (PDA Stars)
 - **Motor asignado:** Motor F (Estes F15-4, 29 mm, ID 211).

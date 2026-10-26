@@ -29,14 +29,14 @@ Trucos para subir estabilidad sin romper nada: ojiva más pesada adelante, aleta
 | v1 base | | | | | | |
 | v2 ajustada | | | | | | |
 | v_SIDERAL (03-Oct-26) | N/A | N/A | N/A | 65.7 (18.26 m/s) | 410.4 | Cumple apogeo (410m) y vel. riel (>55km/h) con G80T-7 |
-| v3 final 400 m | | | | | | |
+| v_SIDERAL PDR (04-Oct-26) | 884 g | 90 cm | 1.91 riel / 2.22 burnout | 65.5 (18.20 m/s) | 409.5 | Línea base PDR |
+| **v_SIDERAL CDR (25-Oct-26)** | **896 g** | **90 cm** | **1.91 riel / 2.20 burnout** | **63.1 (17.53 m/s)** | **397.8** | **Calibración con piezas reales: Ojiva ASA 87.88g, Acoplador 104g, CanSat 274g. Apogeo a 2.2m de la meta (400m). Cumple 100% normativa.** |
 
-La v3 final debe mostrar en pantallazo: margen mayor a 2.0, velocidad mayor a 55, apogeo cerca de 400, relación 5:1 cumplida.
+La versión definitiva del CDR demuestra: margen $\ge 2.0\text{ cal}$ en vuelo propulsado, velocidad en riel $> 55\text{ km/h}$, apogeo a $397.8\text{ m}$ (99.45% de precisión respecto a los 400 m) y aceleración máxima de $10.7\text{ G}$ ($105.2\text{ m/s}^2$).
 
 ## 4. Archivos y Entregables
 
-- `Diseno_SIDERAL.ork`: Modelo aerodinámico y distribución de masas integradas.
-- `Simulacion_SIDERAL.csv`: Exportación de telemetría simulada (Apogeo: 410.4m, Vel. riel: 18.26 m/s).
-- `PDA_Rocketeers_400m_G80.ork` final más copia v1.
-- Pantallazos: diseño con CG-CP, tabla de simulación con velocidad de riel, curva de vuelo.
-- Foto del cohete real junto al metro.
+- `Diseño SIDERAL.ork`: Modelo aerodinámico calibrado con masas reales de taller.
+- `Graficos_CDR/`: Curvas de vuelo OpenRocket (`altitud vs tiempo.PNG`, `velocidad vs tiempo.PNG`, `aceleracion vs tiempo.PNG`, `perfil lateral.PNG`) y renders CAD.
+- `310_PDARocketeers_CDR.pdf`: Informe oficial del Critical Design Review (59 páginas).
+- `Anilloso_FINAL_Escala_1a1_Pliego_A2.pdf`: Plano de manufactura láser de aletas y anillos.

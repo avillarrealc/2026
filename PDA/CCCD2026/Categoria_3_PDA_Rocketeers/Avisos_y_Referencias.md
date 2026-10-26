@@ -100,6 +100,27 @@
 >   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
 > - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
 
+> [!IMPORTANT]
+> **ENTREGABLE CRÍTICO: CRITICAL DESIGN REVIEW (CDR) CAT 3 [25-OCT-2026]**
+> Se recibió la plantilla oficial `Plantilla CDR Avanzados.docx` y el equipo consolidó el informe técnico formal `310_PDARocketeers_CDR.pdf` (59 páginas, formato AIAA / LaTeX).
+> - **Fecha límite de entrega:** Domingo 25 de octubre de 2026, 11:59 p. m. (0 pts de penalización).
+> - **Penalizaciones por extemporaneidad:** Lunes 26-Oct (-15 pts), Martes 27-Oct (-30 pts). Posterior al martes 27-Oct la plataforma cierra y el puntaje es 0.
+> - **Nomenclatura obligatoria:** `310_PDARocketeers_CDR.pdf`.
+> - **Estructura oficial exigida (13 secciones):**
+>   1. Parche de Misión
+>   2. Equipo de Misión
+>   3. Objetivos de Misión
+>   4. Requerimientos y Restricciones
+>   5. Cronograma de Trabajo
+>   6. Análisis de Diseño del Cohete (SIDERAL)
+>   7. Simulación de Vuelo (OpenRocket)
+>   8. Construcción y Manufactura
+>   9. Paracaídas y Sistema de Recuperación
+>   10. Carga Útil (CanSat AeroBio / EKF / Sensores / Baterías Ni-MH 3.6V / LoRa)
+>   11. Pruebas en Tierra
+>   12. Seguridad y Mitigación de Riesgos
+>   13. Referencias (Formato AIAA)
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -112,6 +133,10 @@
 6. `6_Guia_Categoria_Avanzados.pdf` — **[ESPECÍFICO CAT 3]** Requisitos, retos, medidas y restricciones oficiales para la categoría Universitarios / Avanzados.
 7. `ZONAS DE RECUPERACIÓN CCCD2026 CAT 3.pdf` — **[NUEVO 10-OCT-2026]** Documento oficial con modelos de deriva por viento y radio límite de 400 m.
 8. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
+9. `Plantilla CDR Avanzados.docx` — **[PLANTILLA OFICIAL CDR 25-OCT-2026]** Estructura y lineamientos institucionales para el Critical Design Review.
+10. `310_PDARocketeers_CDR.pdf` — **[BORRADOR TÉCNICO CDR]** Documento de 59 páginas desarrollado por el equipo para la entrega final.
+11. `Anilloso FINAL.dxf` / `Anilloso_FINAL_Escala_1a1_Pliego_A2.pdf` — Planos de manufactura 1:1 de aletas y anillos de centrado en pliego A2.
+12. `Diseño SIDERAL.ork` — Modelo OpenRocket actualizado y calibrado con pesos reales de manufactura.
 
 ---
 

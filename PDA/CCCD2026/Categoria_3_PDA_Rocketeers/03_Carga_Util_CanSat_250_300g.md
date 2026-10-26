@@ -21,20 +21,21 @@ El diseño físico del CanSat está estandarizado paramétricamente en Fusion 36
 - **Ventilación y Telemetría:** Corte tipográfico "PDA" usando fuente Stencil (para evitar colapso de islas centrales) y exoesqueleto matriz hexagonal (Honeycomb/Isogrid) para alivio térmico, reducción de masa e ingreso de flujo de aire al sensor BMP280.
 - **Aviónica (PCB):** Ancho máximo interno admitido para electrónica es de **58 mm - 59 mm** (montaje vertical) fijado con encapsulado de espuma de poliuretano (Potting) para absorción de impactos.
 
-## 3. Partes y peso controlado al gramo
-
-| Parte | Ejemplo | Peso aprox |
+## 3. Partes y peso controlado al gramo (Medición Definitiva CDR)
+ 
+| Parte | Especificación Técnica | Peso medido real |
 | :--- | :--- | :---: |
-| Estructura CanSat | Chasis celular hexagonal impreso en PETG/ASA | 40 a 60 g |
-| Cerebro | ESP32 | 7 a 10 g |
-| Sensores | BMP280 + GPS + gas o partículas | 20 a 40 g |
-| Batería | 18650 Li-Ion cilíndrica permitida (LiPo prohibida, Guía CanSat §3.1); autonomía mínima 4 h | 40 a 70 g |
-| Paracaídas propio del CanSat si aplica | Tela pequeña | 15 a 25 g |
-| Tornillos, espuma (Potting), cables | | 20 g |
-| **TOTAL CanSat** | **Debe dar 250 a 300 g** | **___ g** |
+| Estructura y tapas CanSat | Carcasa celular hexagonal ASA / PETG, roscas Tr64x4 | 54.0 g |
+| Aviónica principal | ESP32-S3 Dual Core + IMU + Barómetro DPS310 + INA219 | 18.5 g |
+| Módulo LoRa y Antena | Transceptor SX1262 915 MHz + antena helicoidal | 12.0 g |
+| Módulo GNSS / GPS | Receptor GPS con antena cerámica | 14.5 g |
+| Baterías | 3 celdas Ni-MH cilíndricas 1.2 V 2200 mAh en serie (3.6 V) | 88.5 g |
+| Regulador y Step-Up | Módulo elevador DC-DC a 5V con filtrado capacitivo | 9.5 g |
+| Semillas y biomaterial | Cápsulas de siembra aérea AeroBio Estrella | 25.0 g |
+| Hardware, Potting y cables | Espuma de absorción, conectores JST y tornillería | 52.0 g |
+| **TOTAL CanSat MEDIDO** | **Rango reglamentario: 250.0 a 300.0 g** | **274.0 g** |
 
-Si da menos de 250 g agreguen lastre útil: más batería o carcasa más fuerte. Si pasa de 300 g cambien batería y carcasa primero, nunca quiten sensores.
-**Validación SIDERAL (03-Oct-26):** Revisar la masa de carga útil declarada en `Diseno_SIDERAL.ork` y asegurar que la masa de ensamblaje real del CanSat coincida para mantener el apogeo simulado de 410.4 m.
+*El CanSat cumple holgadamente con el rango reglamentario (274.0 g vs límite de 300.0 g, margen de 26 g). Permanece cautivo dentro del fuselaje fijado por los anillos internos de centrado sin eyección libre.*
 
 ## 4. Conexión guía
 
