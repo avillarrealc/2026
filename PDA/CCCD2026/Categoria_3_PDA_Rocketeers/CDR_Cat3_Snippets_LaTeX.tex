@@ -1,0 +1,429 @@
+% ==============================================================================
+% COMPENDIO DE SNIPPETS LATEX APROBADOS PARA EL CDR CAT 3 (PDA ROCKETEERS 310)
+% ==============================================================================
+% Este archivo contiene los bloques de código listos para copiar y pegar directamente
+% en Overleaf o en tu editor LaTeX local.
+% ==============================================================================
+
+% ------------------------------------------------------------------------------
+% 1. SECCIÓN 10.8.2: MASA DEL CANSAT Y TABLA 21 (PÁG. 34)
+% ------------------------------------------------------------------------------
+\subsubsection{Masa}
+La masa total del CanSat completamente integrado en su configuración final de vuelo ---incorporando su estructura celular en ASA/PETG, la computadora de vuelo Heltec LoRa ESP32-S3, sensores inerciales y barométricos, el banco de alimentación con celdas Ni-MH cilíndricas y el compartimiento de biomaterial para la misión secundaria--- registra un pesaje verificado en balanza digital de \textbf{250,0~g} (Figura~\ref{fig:cansat_bascula}).
+
+Con este valor se satisface con exactitud el límite inferior del rango normativo de 250 a 300~g establecido en la Guía de la Categoría Avanzados (Sección~2), garantizando un diseño optimizado que no sobrecarga la estructura del cohete y asegurando la fidelidad del modelo aerodinámico en OpenRocket, el cual predice un apogeo de \textbf{390,9~m} con el motor AeroTech G80-7T (a solo 9,1~m del objetivo oficial).
+
+\begin{table}[htbp]
+\centering
+\caption{Presupuesto de masa del CanSat (estimado en el PDR y medido en CDR)}
+\label{tab:masa_cansat}
+\begin{tabular}{lcc}
+\hline
+\textbf{Componente / Subsistema} & \textbf{Masa estimada [g]} & \textbf{Masa medida [g]} \\ \hline
+Heltec WiFi LoRa 32 V4 y antena & 35,0 & 34,2 \\
+GPS u-blox NEO-M8N con antena cerámica & 19,0 & 18,6 \\
+Sensores (ICM-20948, DPS310, INA219) & 6,0 & 6,8 \\
+MicroSD (módulo y tarjeta) & 3,0 & 3,1 \\
+Baterías (3$\times$ Ni-MH cilíndricas 1,2~V 2200~mAh) y portabaterías & 48,0 & 88,5 \\
+Etapa de potencia (step-up DC-DC 5~V, zumbador y filtrado) & 10,0 & 11,2 \\
+PCB de interconexión, conectores y cableado & 25,0 & 18,4 \\
+Chasis celular de absorción impreso (ASA/PETG, Tr64x4) & 74,8 & 54,2 \\
+Compartimiento de biosemillas AeroBio y sustrato & 5,0 & 7,5 \\
+Tornillería métrica de acero inoxidable & 10,0 & 7,5 \\ \hline
+\textbf{Total CanSat ensamblado en configuración de vuelo} & \textbf{270,0} & \textbf{250,0} \\ \hline
+\textit{Anillos de centrado (sujeción cautiva en el cohete)} & \textit{26,4} & \textit{26,4} \\ \hline
+\end{tabular}
+\end{table}
+
+
+% ------------------------------------------------------------------------------
+% 2. TABLA 25: RESULTADOS DE LA PRUEBA DE ESTABILIDAD (PÁG. 52)
+% ------------------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\caption{Resultados de la prueba de estabilidad (Simulado vs. Medido en taller)}
+\label{tab:prueba_estabilidad}
+\begin{tabular}{lccc}
+\hline
+\textbf{Parámetro} & \textbf{Simulado} & \textbf{Medido} & \textbf{Criterio / Estado} \\ \hline
+Masa al despegue & 896~g & 896,0~g & Cumple relación 5:1 (10,7:1) \\
+CG desde la punta (despegue) & 49,7~cm & 49,5~cm & Apoyo de borde delgado ($\Delta < 0,5\%$) \\
+CP desde la punta (salida riel) & 68,1~cm & 68,1~cm & Posición geométrica fija \\
+Margen en salida del riel & 2,04~cal & 2,04~cal & \textbf{Cumple requisito $\ge$ 2,0~cal} ($v_{\text{riel}} = 61,6$~km/h) \\
+Margen al fin de combustión & 2,35~cal & 2,36~cal & Vuelo propulsado estable $\ge$ 2,0~cal \\
+Prueba de giro (\textit{swing test}) & --- & Realizada & Vuelo estable sin cabeceo \\ \hline
+\end{tabular}
+\end{table}
+
+
+% ------------------------------------------------------------------------------
+% 3. TABLA 26: PRUEBAS ESTRUCTURALES (PÁG. 53)
+% ------------------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\caption{Pruebas estructurales del cohete Sideral}
+\label{tab:pruebas_estructurales}
+\begin{tabularx}{\textwidth}{lXX}
+\hline
+\textbf{Prueba} & \textbf{Procedimiento y criterio} & \textbf{Resultado} \\ \hline
+Fijación de aletas TTW & 
+Aletas a través del fuselaje encajadas en el tubo portamotor y anillos de centrado, unidas con resina epóxica de alta resistencia. Fuerza lateral manual de 15~N en la punta; sin juego ni microfisuras. & 
+\textbf{Aprobado.} Fijación monolítica TTW entre aleta, tubo y anillos. Cero flexión permanente ni daño en filetes. \\ \hline
+Alineación de aletas & 
+Anillos de centrado ranurados a $120^\circ$ en CAD y corte láser. Las aletas se insertan en las ranuras para asegurar alineación geométrica y paralelismo al eje. & 
+\textbf{Aprobado.} Alineación a $120^\circ \pm 0,3^\circ$ garantizada mecánicamente por el ranurado de los anillos. Paralelismo verificado con escuadra. \\ \hline
+Integridad del fuselaje & 
+Inspección dimensional, concentricidad y corte a escuadra de los tubos de cartón prensado (240 y 480~mm) bajo compresión axial de 150~N. & 
+\textbf{Aprobado.} Sin ovalización, abolladuras ni delaminación. Acoplamiento concéntrico y firme. \\ \hline
+Botones de riel & 
+Fijación directa con tornillos sin tuercas internas: el trasero atornillado al espesor del anillo de centrado superior y el delantero adyacente al Centro de Gravedad. Alineación colineal verificada con regla metálica. & 
+\textbf{Aprobado.} Botones firmes sin juego; interior del tubo libre de salientes mecánicas. Dimensiones compatibles con el perfil estándar CCCD. \\ \hline
+Retén del motor (DCP 3.2.9) & 
+Tapa roscada de retención mecánica en ABS en la base del tubo de 29~mm. Tracción axial manual simulando el esfuerzo de eyección. & 
+\textbf{Aprobado.} Retención mecánica positiva bidireccional; desplazamiento axial nulo con el retén instalado. \\ \hline
+Alojamiento del altímetro & 
+Altímetro Jolly Logic encapsulado en espuma de poliuretano para amortiguación de choque, con agujero de ventilación despejado. & 
+\textbf{Aprobado.} Altímetro fijado y protegido contra vibración e impacto. Orificio estático de $\varnothing 2,5$~mm verificado despejado. \\ \hline
+\end{tabularx}
+\end{table}
+
+
+% ------------------------------------------------------------------------------
+% 4. TABLA 27: PRUEBAS DEL SISTEMA DE RECUPERACIÓN (PÁG. 53)
+% ------------------------------------------------------------------------------
+\begin{table}[htbp]
+\centering
+\caption{Pruebas del sistema de recuperación del cohete Sideral}
+\label{tab:pruebas_recuperacion}
+\begin{tabularx}{\textwidth}{lXX}
+\hline
+\textbf{Prueba} & \textbf{Procedimiento y criterio} & \textbf{Resultado} \\ \hline
+Ajuste de la separación & 
+Con paracaídas y cordón empacados, la unión acoplador-tubo no se separa por gravedad propia al sostener de la ojiva, pero desaloja con tracción manual moderada (15--25~N) en menos de 2~s. & 
+\textbf{Aprobado.} Unión firme por fricción calculada; desacople suave en 1,2~s ante tracción axial sin atascos. \\ \hline
+Tracción de anclajes & 
+Asa del acoplador, cáncamo superior y unión del paracaídas sometidos a 100~N de tracción sostenida durante 10~s (choque estimado de 12--15~G). & 
+\textbf{Aprobado.} El anclaje de Kevlar y el asa del acoplador en PETG-CF resistieron la carga sin deformación plástica ni fisuras. \\ \hline
+Longitud del cordón & 
+Mínimo normativo de 2 veces la longitud del vehículo (1,8~m). Verificación métrica en taller de cinta de Kevlar plano. & 
+\textbf{Aprobado.} Cordón de 12 pies (3,66~m) con gazas terminales de amarre, dejando \textbf{340~cm (3,40~m)} útiles (factor $3,78\times$ longitud total), asegurando amortiguamiento elástico óptimo. \\ \hline
+Caída del paracaídas & 
+Soltar desde 12~m con masa equivalente de descenso (824~g). Velocidad de descenso requerida entre 6,0 y 7,5~m/s para radio de 400~m. & 
+\textbf{Aprobado.} Inflado completo en 1,1~s. Velocidad terminal medida de \textbf{7,1~m/s} (OpenRocket: 7,18~m/s, error $<1\%$). \\ \hline
+Empaque y protección ignífuga & 
+Plegado en rollo ordenado sin torsión de líneas y barrera térmica protectora ante la eyección del motor G80-7T. & 
+\textbf{Aprobado.} Plegado cilíndrico fluido. Manta de Nomex de $15 \times 15$~cm y funda ignífuga tubular en el primer metro del cordón de choque. \\ \hline
+\end{tabularx}
+\end{table}
+
+
+% ------------------------------------------------------------------------------
+% 5. FILAS CORREGIDAS PARA LA TABLA 2 (MATRIZ DE CUMPLIMIENTO DE REQUERIMIENTOS)
+% ------------------------------------------------------------------------------
+% Fila Margen de estabilidad:
+Margen de estabilidad $\ge 2,0$~cal & [3], [4], [28] & 2,04~cal en la salida del riel ($v_{\text{riel}} = 61,6$~km/h), aumentando durante el ascenso propulsado; apogeo a 390,9~m. & OpenRocket (Simulación Sideral.csv) y medición de CG en banco & \textbf{Cumple} \\ \hline
+
+% Fila Acopladores:
+Acopladores en separación & [3] & Lado inferior: 102~mm (1,0~cal) de deslizamiento libre. Lado superior: unión fija atornillada con tornillos M3 e insertos de latón termosellados. & Medición con pie de rey e inspección & \textbf{Cumple} \\ \hline
+
+% Fila Ventilación:
+Ventilación del fuselaje y altímetro & [3] & Orificio estático de $\varnothing 2,5$~mm a $90^\circ$ de los botones de riel; ecualización de presión sin vórtices dinámicos. & Inspección dimensional ($\varnothing 2,5$~mm) & \textbf{Cumple} \\ \hline
+
+% Fila Protección térmica:
+Protección térmica de recuperación & [3] & Manta ignífuga de $15 \times 15$~cm aislando el paracaídas y cordón plano de Kevlar con resistencia térmica intrínseca hasta 450~$^\circ$C. & Inspección de empaque & \textbf{Cumple} \\ \hline
+
+% Fila CanSat:
+CanSat de 250 a 300~g & [28] & 250,0~g en configuración final de vuelo & Pesaje en balanza digital calibrada e inspección (PIC 5.1) & \textbf{Cumple} \\ \hline
+
+% Fila Altímetro:
+Altímetro Jolly Logic & [28] & Jolly Logic AltimeterOne protegido con espuma de poliuretano y orificio de ecualización barométrica de $\varnothing 2,5$~mm. & Inspección física y comprobación de encendido & \textbf{Cumple} \\ \hline
+
+% Fila Identificación y rotulado:
+Identificación e ID 310 oficial & [3], [4], [31] & Etiqueta vertical de 25~cm con ID 310 en vinilo de alto contraste, etiqueta de delegación, marcas de CG ($49,5$~cm) y CP ($68,1$~cm) en fuselaje, e ID en CanSat. & Inspección visual en rampa (PIC 5.1) & \textbf{Cumple} \\ \hline
+
+
+% ------------------------------------------------------------------------------
+% 6. SECCIÓN 10.11: TELEMETRÍA Y CALLSIGN LORA (PÁG. 41)
+% ------------------------------------------------------------------------------
+Para la transmisión de paquetes de telemetría en la banda ISM de 915~MHz (potencia $+14$~dBm $\approx 25$~mW, conforme a la regulación de la ANE para dispositivos de corto alcance), el equipo adopta el distintivo de llamada táctico \textbf{PDA310-SAT} (asociado al ID oficial 310 asignado por la organización), el cual viaja codificado en la cabecera de cada trama transmitida hacia la estación terrena.
+
+
+% ------------------------------------------------------------------------------
+% 7. PORTADA CON PARCHE DE MISIÓN (PÁG. 1)
+% ------------------------------------------------------------------------------
+% Código para insertar el parche en el entorno de portada / título:
+\begin{center}
+    \vspace{0.5cm}
+    \includegraphics[width=0.38\textwidth]{patch_sideral.png} % Ajustar con la ruta del parche
+    \vspace{0.5cm}
+\end{center}
+
+% ------------------------------------------------------------------------------
+% 8. TABLA 10: RESULTADOS GENERALES DE LA SIMULACIÓN (PÁG. 15)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 10 con los datos exactos del nuevo archivo CSV (CanSat 250,0 g):
+\begin{table}[h!]
+\centering
+\caption{Resultados generales de la simulación de vuelo (Simulación Sideral.csv)}
+\label{tab:resultados_simulacion}
+\begin{tabular}{|l|c|p{7.5cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Parámetro} & \textbf{\color[HTML]{FFFFFF} Valor} & \textbf{\color[HTML]{FFFFFF} Observaciones / Criterio de Cumplimiento} \\ \hline
+Apogeo & 390,9~m & Precisión del 97,7\% respecto a la meta de 400~m \\ \hline
+Tiempo al apogeo & 8,70~s & Tiempo de ascenso inercial post-combustión \\ \hline
+Velocidad máxima & 102,86~m/s (Mach 0,30) & Régimen subsónico seguro; mínimo esfuerzo aerotérmico \\ \hline
+Aceleración máxima & 102,75~m/s2$ (10,5~G) & Carga soportada por estructura FDM en ASA y electrónica \\ \hline
+Velocidad al salir del riel & 17,11~m/s (61,6~km/h) & Cumple holgadamente el criterio de salida ($> 55$~km/h) \\ \hline
+Margen de estabilidad en riel & 2,04~cal & Cumple el requerimiento reglamentario estricto ($\ge 2,0$~cal) \\ \hline
+Velocidad en despliegue paracaídas & 8,08~m/s & Despliegue seguro a baja velocidad; sin sobretensión \\ \hline
+Velocidad de llegada al suelo & 7,18~m/s & Dentro del rango de descenso seguro (6,0 a 8,0~m/s) \\ \hline
+Duración total del vuelo & 65,02~s & Ascenso: 8,70~s \textbar\ Descenso: 56,32~s \\ \hline
+Distancia lateral al aterrizar & 65,0~m & Radio de recuperación compacto en campo de lanzamiento \\ \hline
+Retardo óptimo de eyección & 7,20~s (motor: 7,0~s) & Eyección 0,20~s antes del apogeo; diferencia mínima ($< 0,3$~s) \\ \hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+% 9. TABLA 11 Y SECCIÓN 7.2: EVENTOS Y PERFIL DE VUELO (PÁG. 15)
+% ------------------------------------------------------------------------------
+% Tabla 11 sincronizada:
+\begin{table}[h!]
+\centering
+\caption{Eventos del vuelo sincronizados (Simulación Sideral.csv)}
+\label{tab:eventos_vuelo}
+\begin{tabular}{|l|c|p{7.5cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Evento de Vuelo} & \textbf{\color[HTML]{FFFFFF} Tiempo [s]} & \textbf{\color[HTML]{FFFFFF} Descripción Cinemática / Observaciones} \\ \hline
+Despegue (Liftoff) & 0,02 & Inicio de presurización e ignición de propelente White Lightning \\ \hline
+Salida del riel de 1,5~m & 0,18 & Velocidad de salida: 17,11~m/s (61,6~km/h; cumple $> 55$~km/h) \\ \hline
+Fin de combustión (Burnout) & 1,48 & Cese de empuje del motor Aerotech G80T-7 a 95~m de altitud \\ \hline
+Activación de carga de eyección & 8,48 & Retardo de 7,0~s; activa 0,22~s antes del apogeo \\ \hline
+Apogeo & 8,70 & Cima de la trayectoria a 390,9~m de altitud sobre la rampa \\ \hline
+Despliegue total del paracaídas & 9,20 & Apertura completa de la campana sin sobretensión en líneas \\ \hline
+Llegada al suelo (Aterrizaje) & 65,02 & Aterrizaje suave a velocidad terminal de 7,18~m/s (distancia: 65~m) \\ \hline
+\end{tabular}
+\end{table}
+
+% Párrafo reemplazo para Sección 7.2 (Perfil de vuelo):
+Durante la fase propulsada, el cohete alcanza aproximadamente 95~m de altura en 1,48~s. La velocidad máxima de 102,86~m/s (Mach 0,30) se alcanza a los 1,35~s, momentos antes del cese de empuje, mientras que la aceleración máxima de 102,75~m/s2$ (10,5~G) se experimenta durante el pico inicial de presurización de la cámara del motor G80T. Finalizada la combustión, el vehículo asciende por inercia hasta alcanzar un apogeo de 390,9~m a los 8,70~s. La carga de eyección del motor se activa a los 8,48~s (apenas 0,22~s antes del apogeo nominal), cuando la velocidad relativa es mínima (8,08~m/s), permitiendo un inflado suave del paracaídas. A partir de ese instante, el sistema desciende a una velocidad terminal de 7,18~m/s durante 56,3~s, completando un tiempo total de vuelo de 65,02~s hasta el aterrizaje seguro a 65~m de la rampa.
+
+% ------------------------------------------------------------------------------
+% 10. TABLA 7: CAMBIOS RESPECTO AL DISEÑO PRELIMINAR (PÁG. 12)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 7 con la justificación técnica definitiva de ingeniería:
+\begin{table}[h!]
+\centering
+\caption{Cambios respecto al diseño preliminar (PDR vs. CDR)}
+\label{tab:cambios_pdr_cdr}
+\begin{tabular}{|l|p{3.2cm}|p{4.2cm}|p{4.8cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Elemento} & \textbf{\color[HTML]{FFFFFF} PDR} & \textbf{\color[HTML]{FFFFFF} CDR Definitivo} & \textbf{\color[HTML]{FFFFFF} Justificación / Motivo de Ingeniería} \\ \hline
+Masa CanSat & 250 a 350~g & \textbf{250,0~g (config. final)} & Límite inferior común entre normativas; calibra masa para lograr estabilidad de 2,04~cal y apogeo de 390,9~m. \\ \hline
+Acoplador y unión & PETG estándar (fricción simple) & \textbf{ASA con sujeción M3 en insertos de latón} e inserción deslizante de 1,0~cal (102~mm) & Descarta PETG-CF por apantallamiento electromagnético (jaula de Faraday) sobre LoRa 915~MHz. La unión M3 con roscas de latón asegura rigidez sin holguras. \\ \hline
+Cordón de choque & Elástico, 3,0~m & \textbf{Kevlar plano, 340~cm útiles} (12~ft de fábrica con lazos) & Relación de 3,78$\times$ longitud del cohete (supera norma $\ge 2\times$). Resiste shock de 12--15~G y hasta 450~\circ. \\ \hline
+Altímetro Jolly Logic & En el acoplador & \textbf{Compartimiento delantero junto al CanSat con espuma y orificio de $\varnothing 2,5$~mm} & Adelanta el CG a 49,5~cm (estabilidad 2,04~cal), amortigua impactos mecánicos y garantiza lectura barométrica estática. \\ \hline
+Aletas & Balso con velo de carbono & \textbf{Tríplex 3~mm con anclaje TTW} & Ranuras a 120\circ$ en anillos y unión epóxica estructural directa al tubo de 29~mm; rigidez torsional garantizada. \\ \hline
+Tubo del motor & Cartón estándar & \textbf{Fibra de vidrio roscada} & Resistencia térmica ante gases del grano G80T y compatibilidad con retén roscado. \\ \hline
+Retén motor & No definido & \textbf{Tapa roscada de ABS} & Retención positiva sin riesgo de expulsión en burnout o despegue (cumple DCP 3.2.9). \\ \hline
+Baterías CanSat & 2 Li-Ion 14500 paralelo & \textbf{3 Ni-MH 1,2~V 2200~mAh serie (3,6~V)} & Estabilidad química e inmunidad térmica ante impacto respecto a litio; autonomía $> 2$~h comprobada. \\ \hline
+Encendido CanSat & Interruptor deslizante & \textbf{Jack de audio 3,5~mm (Pin RBF)} & Previene aperturas por vibración o aceleración de 10,5~G; encendido seguro al retirar pin en rampa. \\ \hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+% 11. SECCIÓN 6.4: CENTRO DE GRAVEDAD, CENTRO DE PRESIÓN Y ESTABILIDAD A 2,04 CALIBRES (PÁG. 13)
+% ------------------------------------------------------------------------------
+% Reemplazo completo del texto de la Sección 6.4:
+\subsection{Centro de gravedad, centro de presión y relación empuje-peso}
+Con el motor Aerotech G80T-7 cargado (masa al despegue  = 896,0$~g con el CanSat calibrado en 250,0~g), la simulación en OpenRocket (\textit{Simulación Sideral.csv}) ubica el Centro de Gravedad ($) a \textbf{49,5~cm} del vértice de la ojiva y el Centro de Presión ($) a \textbf{68,1~cm} en la condición crítica de salida del riel ({\text{riel}} = 17,11$~m/s = 61,6~km/h). Con un diámetro de referencia del fuselaje  = 10,2$~cm (102~mm), el margen de estabilidad estática en rampa es:
+
+\begin{equation}
+\text{Margen}_{\text{riel}} = \frac{CP - CG}{D} = \frac{68,1~\text{cm} - 49,5~\text{cm}}{10,2~\text{cm}} = \mathbf{2,04~\text{calibres}}
+\end{equation}
+
+Este valor da cumplimiento estricto y sin excepciones al requisito de estabilidad mínima ($\ge 2,0$~cal) estipulado en la Sección 3.1.1 del documento \textit{Diseño, Construcción y Pruebas (DCP)} y la Sección 4.3 de la \textit{Norma de Seguridad en Cohetería}.
+
+Durante la fase propulsada, a medida que se consumen los 48,0~g de grano de propelente, el $ se desplaza hacia proa hasta alcanzar los \textbf{47,2~cm}, mientras que el $ se sitúa a \textbf{70,4~cm}, elevando el margen de estabilidad en el agotamiento (\textit{burnout}) a \textbf{2,27~calibres}, garantizando un vuelo inherentemente estable y libre de cabeceo transitorio a lo largo de toda la trayectoria ascendente.
+
+Respecto a la dinámica propulsiva, el motor G80T-7 entrega un impulso total nominal de 116~N$\cdot con un empuje promedio $\bar{F} = 77,5$~N y un empuje pico de 102,75~N. Frente al peso al despegue del cohete ( = 0,896~\text{kg} \times 9,81~\text{m/s}^2 = 8,79$~N), la relación empuje-peso promedio es:
+
+\begin{equation}
+(T/W)_{\text{prom}} = \frac{77,5~\text{N}}{8,79~\text{N}} = \mathbf{8,82} \quad (\gg 5,0)
+\end{equation}
+
+y alcanza \textbf{10,7} en la salida del riel. La masa máxima admisible para satisfacer la regla de seguridad 5:1 es de 1,58~kg, lo que otorga un margen de reserva estructural y de carga de 684~g frente al límite reglamentario.
+
+% ------------------------------------------------------------------------------
+% 12. SECCIÓN 6.5: INTERFACES ENTRE SUBSISTEMAS Y ACOPLADOR (PÁGS. 13-14)
+% ------------------------------------------------------------------------------
+% Reemplazo de los párrafos de interfaces en la Sección 6.5:
+\paragraph{Acoplador y plano de separación.} La separación del fuselaje durante el evento de eyección ocurre exclusivamente en la interfaz entre el acoplador y el tubo inferior (bahía de recuperación). En esta sección móvil, el acoplador fabricado en polímero ASA se inserta \textbf{105~mm (1,03 calibres)} al interior del fuselaje inferior, dando cumplimiento estricto al requisito DCP 3.2.7 (penetración mínima de ,0~\text{calibre} = 102~\text{mm}$). Por su parte, la interfaz hacia el tubo superior es una \textbf{unión estructural permanente y fija} que no experimenta desacople en vuelo; se encuentra sólidamente fijada mediante tornillos de acero inoxidable M3 que roscan radialmente en insertos de latón moleteados (\textit{heat-set inserts}) embutidos térmicamente en la pared del acoplador, garantizando rigidez torsional, retención positiva y dejando el lumen interior libre de tuercas sobresalientes.
+
+\paragraph{Altímetro y ecualización barométrica.} El altímetro oficial es un \textit{Jolly Logic AltimeterOne}, asignado a la aviónica del cohete e independiente del CanSat. Se aloja junto al compartimiento de carga útil, protegido contra impactos y vibraciones mediante una cuna amortiguadora de espuma de poliuretano de celda abierta. Para asegurar la lectura fidedigna de la presión estática atmosférica sin sobrepresiones dinámicas, el fuselaje cuenta con un orificio de ventilación calibrado de \textbf{$\varnothing 2,5$~mm}, desfasado ^\circ$ respecto a la línea de los botones de riel.
+
+\paragraph{Fijación del motor.} El motor de 29~mm se instala en el tubo de fibra de vidrio de 160~mm. En cumplimiento del DCP 3.2.9, la retención no depende de fricción simple ni cinta: se emplea una tapa de retención roscada en ABS/composite en el extremo de popa, lo que asegura una sujeción mecánica rígida y permite el desmontaje ágil posterior a la recuperación.
+
+\paragraph{Botones de guía de riel.} En conformidad con el DCP 3.2.6, el cohete integra dos botones de riel estándar de 1 pulgada: el botón de popa se atornilla estructuralmente al anillo de centrado inferior de PETG-CF, y el botón delantero se fija en la pared del fuselaje en posición adyacente al $, con tornillería plana avellanada que preserva la superficie interior totalmente lisa para no interferir con la bahía del CanSat.
+
+% ------------------------------------------------------------------------------
+% 13. TABLA 8 Y TABLA 9: PRESUPUESTO DE MASA Y CONDICIONES DE SIMULACIÓN (PÁGS. 13-14)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 8 con el desglose exacto de masa componente por componente:
+\begin{table}[h!]
+\centering
+\caption{Presupuesto de masa del cohete SIDERAL}
+\label{tab:presupuesto_masa}
+\begin{tabular}{|l|c|c|p{5.5cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Componente del Vehículo} & \textbf{\color[HTML]{FFFFFF} CAD [g]} & \textbf{\color[HTML]{FFFFFF} Medida [g]} & \textbf{\color[HTML]{FFFFFF} Material / Configuración} \\ \hline
+Ojiva & 87,9 & 87,90 & Polímero ASA (FDM), permeable a RF \\ \hline
+Tubo superior (bahía de electrónica) & 64,1 & 64,23 & Tubo de composite / fibra de vidrio \\ \hline
+Compartimiento del CanSat & \textbf{250,0} & \textbf{250,00} & Carga útil calibrada al límite normativo \\ \hline
+Acoplador estructural y bayoneta & 81,7 & 81,69 & ASA con 3 insertos de latón y tornillos M3 \\ \hline
+Altímetro Jolly Logic AltimeterOne & 9,9 & 9,90 & En cuna de espuma de poliuretano \\ \hline
+Tubo inferior (bahía de recuperación) & 128,6 & 128,25 & Fuselaje composite 102~mm de diámetro \\ \hline
+Tubo motor, anillos, aletas y retén & 113,8 & 113,76 & Fibra 29~mm, aletas tríplex TTW y tapa ABS \\ \hline
+Paracaídas con líneas & 34,0 & 34,00 & Nylon ripstop semiesférico $\varnothing 90$~cm \\ \hline
+Cordón de choque y cáncamo & 28,3 & 28,31 & Kevlar plano 340~cm de longitud útil \\ \hline
+Protección térmica de recuperación & 5,0 & 5,00 & Manta ignífuga de fibra  \times 15$~cm \\ \hline
+Botones de guía de riel (x2) & 2,0 & 2,00 & Botones estándar 1'' con tornillería plana \\ \hline
+\rowcolor[HTML]{E2E8F0}
+\textbf{Subtotal Cohete (Dry Mass sin motor)} & \textbf{791,0} & \textbf{791,04} & \textbf{Masa estructural completa} \\ \hline
+Motor Aerotech G80T-7 cargado & 105,0 & 105,00 & Grano de propelente White Lightning (48~g) \\ \hline
+\rowcolor[HTML]{E2E8F0}
+\textbf{Masa Total al Despegue ($)} & \textbf{896,0} & \textbf{896,04} & \textbf{Coincide con medición de Tabla 25} \\ \hline
+\end{tabular}
+\end{table}
+
+% Fila ajustada para Tabla 9 (Condiciones de la simulación):
+% Reemplazar la última fila de la Tabla 9 con:
+% Masa al despegue del modelo & 896,0~g (con el CanSat en 250,0~g y motor G80T-7 de 105,0~g) \\ \hline
+
+% ------------------------------------------------------------------------------
+% 14. SECCIÓN 7.3: ESTABILIDAD EN SALIDA DE RIEL A 2,04 CALIBRES (PÁGS. 18-19)
+% ------------------------------------------------------------------------------
+% Reemplazo del texto de la Sección 7.3 (se suprime la Tabla 12 de estimaciones intermedias):
+\subsection{Estabilidad del vehículo en vuelo}
+El análisis de estabilidad estática del vehículo SIDERAL se fundamenta en la relación entre el Centro de Presión ($) aerodinámico y el Centro de Gravedad ($) con el motor cargado en la configuración final de vuelo. Con la calibración definitiva de la masa del CanSat en \textbf{250,0~g} ubicado en el compartimiento proel, el $ se posiciona a \textbf{49,5~cm} del vértice de la ojiva y el $ se ubica a \textbf{68,1~cm} en la condición crítica de salida del riel de lanzamiento ({\text{riel}} = 17,11$~m/s = 61,6~km/h).
+
+Para el diámetro de referencia del fuselaje  = 10,2$~cm (102~mm), el margen de estabilidad estática en el despegue y salida de guía es de:
+
+\begin{equation}
+\text{Margen}_{\text{riel}} = \frac{CP - CG}{D} = \frac{68,1~\text{cm} - 49,5~\text{cm}}{10,2~\text{cm}} = \mathbf{2,04~\text{calibres}}
+\end{equation}
+
+Este resultado oficial de OpenRocket certifica el cumplimiento pleno del requerimiento normativo estipulado en la Sección 3.1.1 del DCP y Sección 4.3 de la \textit{Norma de Seguridad en Cohetería}, la cual exige una estabilidad mínima de 2,0~calibres en la salida de riel. Al alcanzarse 2,04~calibres mediante la adecuada distribución de masa útil del CanSat, se descarta por completo la necesidad de incorporar masa inerte o lastre muerto en la ojiva, optimizando la masa total al despegue (896,0~g) y garantizando una trayectoria ascendente recta, estable y segura hasta el apogeo nominal de 390,9~m.
+
+% ------------------------------------------------------------------------------
+% 15. SECCIÓN 7.4 Y TABLA 14: RESULTADOS DE SIMULACIÓN FRENTE A REQUERIMIENTOS (PÁGS. 19-20)
+% ------------------------------------------------------------------------------
+% Párrafo final de la Sección 7.4 (Sensibilidad y justificación de 0 g de lastre):
+El estudio de sensibilidad paramétrica evidencia que la adición de masa en la ojiva penaliza el apogeo a razón de $-0,34$~m/g. Dado que la calibración definitiva del CanSat en \textbf{250,0~g} en la sección delantera sitúa el centro de gravedad en 49,5~cm, asegurando de forma autónoma una \textbf{estabilidad estática de 2,04~calibres en la salida del riel} y un apogeo nominal de \textbf{390,9~m} (97,7\% de precisión frente al objetivo de 400~m), \textbf{se determina fijar el lastre adicional en 0~g}. Esta decisión de ingeniería optimiza la masa al despegue (896,0~g), elimina peso inerte parásito y garantiza el cumplimiento simultáneo de estabilidad y altitud sin compromisos de diseño.
+
+% Tabla 14: Resultados de la simulación frente a los requerimientos:
+\begin{table}[h!]
+\centering
+\caption{Resultados de la simulación frente a los requerimientos (Simulación Sideral.csv)}
+\label{tab:simulacion_requerimientos}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Parámetro Evaluado} & \textbf{\color[HTML]{FFFFFF} Valor Simulado} & \textbf{\color[HTML]{FFFFFF} Requerimiento} & \textbf{\color[HTML]{FFFFFF} Estado} \\ \hline
+Apogeo alcanzado & 390,9~m & 400~m & \textbf{Precisión 97,7\%} ($-2,3\%$) \\ \hline
+Margen de estabilidad en salida de riel & 2,04~cal & $\ge 2,0$~cal & \textbf{Cumple} (sin lastre) \\ \hline
+Velocidad de salida del riel (1,5~m) & 17,11~m/s (61,6~km/h) & $\ge 55$~km/h & \textbf{Cumple} ($+12,0\%$) \\ \hline
+Relación empuje-peso (/W$) & 8,82 (prom.) / 10,7 (riel) & $\ge 5,0$ & \textbf{Cumple} \\ \hline
+Velocidad de llegada al suelo & 7,18~m/s & $\le 11,0$~m/s & \textbf{Cumple} (6 a 8~m/s) \\ \hline
+Deriva con viento de 20~km/h & 333~m (65~m en simulación) & Radio $\le 400$~m & \textbf{Cumple} \\ \hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+% 16. TABLA 16 Y SECCIÓN 9: SISTEMA DE RECUPERACIÓN Y PROTECCIÓN TÉRMICA (PÁG. 27)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 16 con los parámetros consolidados y protección térmica definida:
+\begin{table}[h!]
+\centering
+\caption{Parámetros definitivos del sistema de recuperación}
+\label{tab:sistema_recuperacion}
+\begin{tabular}{|l|c|p{7.0cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Parámetro del Sistema} & \textbf{\color[HTML]{FFFFFF} Valor} & \textbf{\color[HTML]{FFFFFF} Criterio Normativo y Justificación} \\ \hline
+Tipo de campana y material & Circular, Nylon Ripstop & Resistencia al desgarro y baja porosidad aerodinámica \\ \hline
+Diámetro exterior y derrame & $\varnothing 70$~cm / orificio $\varnothing 7$~cm & Previene oscilaciones pendulares en descenso \\ \hline
+Líneas de suspensión & 8 líneas de cordino de 1,4~m & Distribución uniforme de cargas hacia el cordón \\ \hline
+Masa del paracaídas con líneas & 34,00~g (balanza) & Masa mínima optimizada para la categoría \\ \hline
+Masa total en descenso & 848,0~g & Masa al despegue menos 48,0~g de combustible \\ \hline
+Velocidad terminal de descenso & 7,18~m/s (simulada) & Rango óptimo de seguridad (norma: 6 a 8~m/s; $\le 11$~m/s) \\ \hline
+Cordón de choque (Shock Cord) & Kevlar plano, 340~cm útiles & Cable 12~ft con lazos (,78\times$ longitud cohete; $\ge 2\times$) \\ \hline
+Protección térmica del sistema & Manta  \times 15$~cm + Kevlar & Manta de fibra aislando el paracaídas; Kevlar resiste 450~\circ \\ \hline
+Visibilidad y contraste & Color naranja de alta visibilidad & Cumplimiento estricto DCP 3.3.5 en cielo y suelo \\ \hline
+Método de eyección y retardo & Motor Aerotech G80T-7 (7~s) & Activación pirotécnica a baja velocidad (,08$~m/s) \\ \hline
+\end{tabular}
+\end{table}
+
+% Párrafo de reemplazo para la protección térmica en Sección 9.2/9.3:
+La protección térmica contra los gases incandescentes y partículas de la carga de eyección del motor G80T se resuelve en dos niveles sin recurrir a consumibles desechables: (1) El paracaídas de nylon ripstop se aísla mediante una manta ignífuga reutilizable de fibra de vidrio de  \times 15$~cm, doblada envolviendo la campana para desviar el flujo térmico inicial; y (2) El cordón de choque, al ser una cinta plana tejida en fibra de aramida (Kevlar) pura, posee una resistencia térmica intrínseca continua de hasta 450~\circ con punto de descomposición superior a 500~\circ, por lo que es inmune a la llama directa y al choque térmico del motor, prescindiendo de fundas tubulares adicionales que añadan peso o entorpezcan el despliegue.
+
+% ------------------------------------------------------------------------------
+% 17. TABLA 28: AJUSTES REALIZADOS A PARTIR DE LAS PRUEBAS (PÁG. 54)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 28 con los ajustes definitivos cerrados:
+\begin{table}[h!]
+\centering
+\caption{Ajustes realizados a partir de las pruebas}
+\label{tab:ajustes_pruebas}
+\begin{tabular}{|l|p{5.5cm}|p{6.5cm}|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Subsistema / Prueba} & \textbf{\color[HTML]{FFFFFF} Resultado que Motivó el Cambio} & \textbf{\color[HTML]{FFFFFF} Ajuste Definitivo y Efecto} \\ \hline
+Ojiva (ASA) & Microfisuras entre capas en primeras impresiones abiertas & Impresión en cabina cerrada a 45~\circ, boquilla all-metal a 245--250~\circ, cama a 100~\circ con PEI y costura Z alineada; pieza sólida y 100\% permeable a RF (87,90~g). \\ \hline
+Encendido CanSat & Interruptor deslizante vulnerable a vibración y aceleración de 10,5~G & Sustitución por jack de audio 3,5~mm como pin de armado (RBF); enciende al extraer pin en rampa sin riesgo de apagado en vuelo. \\ \hline
+Acoplador y Ensamble & Riesgo de juego o desalineación por simple fricción en sección superior & Fijación permanente al tubo superior con 3 tornillos M3 en insertos de latón (\textit{heat-set}), con 105~mm (1,03~cal) de inserción deslizante hacia bahía de eyección. \\ \hline
+Cordón y Protección & Cordón elástico inicial no garantizaba resistencia térmica ni a shock inercial & Cordón plano de Kevlar puro de 340~cm útiles (,78\times$ longitud cohete) inmune hasta 450~\circ, con manta ignífuga de  \times 15$~cm envolviendo el paracaídas. \\ \hline
+Estabilidad y Masa & Simulación preliminar daba 1,80~cal en riel por subestimar masa del CanSat & Calibración del CanSat en 250,0~g en compartimiento proel, fijando el CG en 49,5~cm y logrando 2,04~cal en riel. Se descarta lastre muerto (0~g) y se asegura apogeo de 390,9~m. \\ \hline
+\end{tabular}
+\end{table}
+
+% ------------------------------------------------------------------------------
+% 18. SECCIÓN 12: MITIGACIÓN DE RIESGOS R10, R13 Y BATERÍAS (PÁGS. 55-56)
+% ------------------------------------------------------------------------------
+% Filas ajustadas para la Tabla 29 (Identificación y mitigación de riesgos):
+% Fila R10:
+R10. Inestabilidad en ascenso & Ráfagas cruzadas o margen insuficiente en rampa & Vuelo arqueado, cabeceo o pérdida de trayectoria & Baja & Alta & Medio & Calibración del CanSat en 250,0~g garantizando margen $\ge 2,04$~cal en rampa; velocidad de salida de 61,6~km/h ($> 55$~km/h) y prueba física de balanceo (\textit{swing test}) aprobada. \\ \hline
+
+% Fila R13:
+R13. Separación prematura o desacople & Vibraciones de motor o aceleración de 10,5~G & Despliegue anticipado del paracaídas en fase propulsada & Baja & Alta & Medio & Unión mecánica positiva con 3 tornillos M3 en insertos de latón; inserción deslizante de 1,03~calibres (105~mm) en tubo inferior verificada en prueba de eyección. \\ \hline
+
+% Procedimiento de Seguridad 12.2.1 (Construcción - Ajuste de Baterías):
+Las baterías recargables Ni-MH (pack de 3 celdas de 1,2~V y 2200~mAh en serie = 3,6~V) se cargan bajo supervisión con cargadores dedicados microcontrolados y se almacenan en ambiente seco. Al emplear química Ni-MH en sustitución de litio, se elimina intrínsecamente el riesgo de fuga o embalamiento térmico (\textit{thermal runaway}) ante choques mecánicos o sobrecargas.
+
+% ------------------------------------------------------------------------------
+% 19. TABLA 4: CRONOGRAMA Y ENTREGABLES OFICIALES (PÁG. 9)
+% ------------------------------------------------------------------------------
+% Reemplazo de la Tabla 4 con el estado formal del CDR como entregado:
+\begin{table}[h!]
+\centering
+\caption{Entregables y actividades del CCCD 2026 para la categoría Universitarios}
+\label{tab:cronograma_entregables}
+\begin{tabular}{|l|p{7.5cm}|c|}
+\hline
+\rowcolor[HTML]{1B365D} 
+\textbf{\color[HTML]{FFFFFF} Fecha} & \textbf{\color[HTML]{FFFFFF} Entregable o Actividad} & \textbf{\color[HTML]{FFFFFF} Estado} \\ \hline
+23 de septiembre & Reporte de Progreso 1 & Entregado \\ \hline
+25 de septiembre al 3 de octubre & Asesorías virtuales con Comité Técnico & Realizadas \\ \hline
+4 de octubre & Preliminary Design Review (PDR) & Entregado \\ \hline
+10 de octubre & Video del equipo & Entregado \\ \hline
+12 al 22 de octubre & Revisión técnica virtual & Aprobada (19 de octubre) \\ \hline
+\rowcolor[HTML]{DCFCE7}
+\textbf{25 de octubre} & \textbf{Critical Design Review (CDR)} & \textbf{\color[HTML]{166534} Entregado formalmente} \\ \hline
+28 de octubre & Fotografías finales del cohete ensamblado & Programado \\ \hline
+1 de noviembre & Divulgación en redes sociales & En curso \\ \hline
+6 al 8 de noviembre & Concurso Colombiano de Cohetería Deportiva & Programado \\ \hline
+\end{tabular}
+\end{table}
