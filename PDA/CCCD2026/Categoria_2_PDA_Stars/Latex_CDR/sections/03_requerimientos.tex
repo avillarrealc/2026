@@ -1,0 +1,36 @@
+\section{Requerimientos y Restricciones}
+
+El diseño, construcción, simulación y operación del cohete PDA STARS se rigen estrictamente por los reglamentos oficiales de la Categoría 2 (Intermedios) del CCCD 2026, el Documento de Diseño, Construcción y Pruebas (DCP) y la Norma de Seguridad en Cohetería Deportiva (NSRT).
+
+\subsection{Requerimientos de la Misión}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Cota de Altura Objetivo:} Alcanzar un apogeo vertical lo más cercano posible a exactamente \textbf{300 metros} sobre el nivel del terreno de lanzamiento.
+    \item \textbf{Ventana de Tiempo de Vuelo:} Mantener una duración total de vuelo (desde la ignición hasta el aterrizaje) comprendida entre \textbf{40 y 50 segundos}, correspondiente a la exigencia oficial para cohetes propulsados por motores de clase F.
+    \item \textbf{Recuperación Íntegra en Zona Segura:} El vehículo debe desplegar su paracaídas tras el apogeo y aterrizar completamente intacto dentro del radio de exclusión oficial de \textbf{250 metros} alrededor de la rampa de lanzamiento.
+\end{itemize}
+
+\subsection{Requerimientos del Sistema}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Dimensiones Estructurales:} Longitud total de \textbf{68,5 cm} (685 mm) y diámetro exterior de fuselaje de \textbf{66,0 mm} (correspondiente al tubo comercial Kraft BT-80).
+    \item \textbf{Masa de Vuelo:} Masa total del cohete en rampa estimada en \textbf{528 gramos} (con motor cargado e instrumentación a bordo), no excediendo el límite estructural máximo de 650 g establecido para la categoría.
+    \item \textbf{Módulos Intercambiables:} Arquitectura seccionada en tres cuerpos acoplables: ojiva desmontable, contenedor cilíndrico de electrónica/carga útil y fuselaje propulsor principal.
+\end{itemize}
+
+\subsection{Requerimientos de Propulsión y Carga Útil}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Motor Oficial Homologado:} Uso exclusivo del motor comercial de combustible sólido \textbf{Estes F15-4} (diámetro 29 mm, longitud 114 mm, impulso total 49,6 N·s, retardo de eyección de 4 segundos).
+    \item \textbf{Masa de Carga Útil:} Carga útil científica experimental con una masa de exactamente \textbf{60,0 gramos}, cumpliendo de manera estricta con la restricción de masa $\le 60\text{ g}$.
+    \item \textbf{Medición Atmosférica e Inercial:} La carga útil debe registrar autónomamente perfiles de presión barométrica, altitud relativa calculada, temperatura ambiental y aceleración en 3 ejes a una frecuencia mínima de 10 Hz, con almacenamiento local en tarjeta microSD y respaldo no volátil en EEPROM.
+\end{itemize}
+
+\subsection{Requerimientos de Estructura y Aerodinámica}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Estabilidad Aerodinámica Pasiva:} Margen estático mínimo obligatorio de \textbf{2,00 calibres} en la rampa de lanzamiento ($CP - CG \ge 13,2\text{ cm}$) conforme a la Sección 3.1.1 del DCP y Sección 4.3 de la NSRT.
+    \item \textbf{Selección de Materiales Aprobados:} Fuselaje en tubo Kraft enrollado en espiral, ojiva en filamento PETG estándar (para garantizar permeabilidad electromagnética y evitar jaulas de Faraday), aletas y anillos de centrado en filamento PETG reforzado con fibra de carbono (PETG-CF) para máxima rigidez torsional.
+\end{itemize}
+
+\subsection{Restricciones Operativas y de Seguridad}
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Guía de Rampa:} Despegue desde varilla estándar de \textbf{1,5 metros} de longitud y $\varnothing 6,5\text{ mm}$ (1/4 in). La velocidad al abandonar la guía debe superar los \textbf{10,0 m/s} (36 km/h) para garantizar control aerodinámico inmediato.
+    \item \textbf{Seguridad de Ignición:} Sistema de encendido eléctrico operado a distancia con llave física de enclavamiento, señal acústica previa de 5 segundos y radio de seguridad mínimo de \textbf{15 metros}.
+\end{itemize}

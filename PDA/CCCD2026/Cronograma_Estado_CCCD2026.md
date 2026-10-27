@@ -21,7 +21,7 @@
 | **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma* |
 | **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Aprobada (23-Oct)** | **Aprobada (19-Oct)** | **Completadas con éxito (100% aprobado)** |
 | **25 de Octubre** | Reporte Técnico | **Aplica** | - | - | En preparación |
-| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica** | **Aplica (Borrador 59 págs)** | En entrega y revisión final |
+| **25 de Octubre** | Critical Design Review (CDR) | - | **Completado (211_PDAStars_CDR.pdf, 33 págs)** | **Aplica (Borrador 59 págs)** | Entregado en plataforma / Respaldo sincronizado |
 | **28 de Octubre** | Fotografías del Cohete | Aplica | Aplica | Aplica | Pendiente |
 | **1 de Noviembre** | Divulgación (Redes Sociales) | Aplica | Aplica | Aplica | Pendiente |
 | **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |

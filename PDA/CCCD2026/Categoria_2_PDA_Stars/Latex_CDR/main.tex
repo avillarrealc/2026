@@ -1,0 +1,149 @@
+\documentclass[11pt,letterpaper]{article}
+
+% --- PAQUETES FUNDAMENTALES ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+% --- CONFIGURACIÓN DE PÁGINA ---
+\geometry{
+    top=2.5cm,
+    bottom=2.5cm,
+    left=2.5cm,
+    right=2.5cm,
+    headheight=15pt,
+    footskip=1.2cm
+}
+
+% --- COLORES CORPORATIVOS CCCD / IEJAGA ---
+\definecolor{navyiejaga}{RGB}{28,69,135}    % #1C4587
+\definecolor{darkslate}{RGB}{38,50,56}     % #263238
+\definecolor{rojorocket}{RGB}{194,24,91}    % #C2185B
+\definecolor{verdecumple}{RGB}{46,125,50}   % #2E7D32
+\definecolor{grisclaro}{RGB}{245,247,250}   % #F5F7FA
+\definecolor{bordeazul}{RGB}{160,185,220}
+
+% --- ESTILO DE TÍTULOS ---
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{navyiejaga}\centering}{\thesection.}{0.5em}{\MakeUppercase}
+  [\vspace{0.1cm}\titlerule]
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\color{navyiejaga}}{\thesubsection.}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\small\bfseries\color{navyiejaga}}{\thesubsubsection.}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{14pt}{8pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+
+% --- ENCABEZADOS Y PIES DE PÁGINA ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray}\textbf{CCCD 2026} --- Concurso Colombiano de Cohetería Deportiva}
+\fancyhead[R]{\small\color{navyiejaga}\textbf{Equipo 211: PDA Stars}}
+\fancyfoot[L]{\small\color{gray}Critical Design Review (CDR) --- Categoría 2 (Intermedios)}
+\fancyfoot[R]{\small\bfseries\color{navyiejaga}\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- HIPERVÍNCULOS ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=navyiejaga,
+    citecolor=navyiejaga,
+    urlcolor=navyiejaga,
+    pdftitle={Critical Design Review - Equipo 211 PDA Stars - CCCD 2026},
+    pdfauthor={I.E. José Antonio Galán - Semillero PDA},
+    pdfsubject={Cohete Deportivo PDA Stars - Categoría 2 (Motor F15-4)}
+}
+
+% --- COMANDO PARA ESPACIO DE FOTOS FALTANTES (PLACEHOLDER) ---
+\newcommand{\placeholderbox}[2]{%
+  \begin{figure}[H]
+    \centering
+    \begin{tcolorbox}[width=0.92\linewidth, colback=grisclaro, colframe=navyiejaga!60!black, boxrule=1pt, arc=3pt, halign=center, valign=center]
+      \vspace{0.3cm}
+      {\color{navyiejaga}\normalsize\bfseries\textsf{[ESPACIO RESERVADO PARA REGISTRO FOTOGRÁFICO / EVIDENCIA EN TALLER]}}\\[0.2cm]
+      {\small\color{darkslate}#2}\\[0.2cm]
+      {\scriptsize\color{gray}\textit{(Para insertar la imagen definitiva en el código fuente, reemplace este entorno por el archivo fotográfico correspondiente en la carpeta figures/)}}
+      \vspace{0.3cm}
+    \end{tcolorbox}
+    \vspace{-0.2cm}
+    \caption{#2}
+  \end{figure}
+}
+
+% --- RUTA DE IMÁGENES ---
+\graphicspath{{figures/}}
+
+\begin{document}
+
+% 0. PORTADA
+\input{sections/00_portada.tex}
+\newpage
+
+% ÍNDICE GENERAL
+{
+  \hypersetup{linkcolor=darkslate}
+  \tableofcontents
+  \newpage
+  \listoffigures
+  \vspace{0.5cm}
+  \listoftables
+}
+\newpage
+
+% 1. PARCHE DE MISIÓN
+\input{sections/01_parche.tex}
+
+% 2. EQUIPO DE MISIÓN
+\input{sections/02_equipo.tex}
+
+% 3. REQUERIMIENTOS Y RESTRICCIONES
+\input{sections/03_requerimientos.tex}
+
+% 4. CRONOGRAMA DE TRABAJO
+\input{sections/04_cronograma.tex}
+
+% 5. ANÁLISIS DE DISEÑO DEL COHETE
+\input{sections/05_analisis_diseno.tex}
+
+% 6. SIMULACIÓN DE VUELO
+\input{sections/06_simulacion_vuelo.tex}
+
+% 7. CONSTRUCCIÓN Y MANUFACTURA
+\input{sections/07_construccion_manufactura.tex}
+
+% 8. PARACAÍDAS Y SISTEMA DE RECUPERACIÓN
+\input{sections/08_sistema_recuperacion.tex}
+
+% 9. CARGA ÚTIL
+\input{sections/09_carga_util.tex}
+
+% 10. PRUEBAS EN TIERRA
+\input{sections/10_pruebas_tierra.tex}
+
+% 11. SEGURIDAD Y MITIGACIÓN DE RIESGOS
+\input{sections/11_seguridad_riesgos.tex}
+
+% 12. REFERENCIAS
+\input{sections/12_referencias.tex}
+
+\end{document}

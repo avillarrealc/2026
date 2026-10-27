@@ -1,0 +1,57 @@
+\section{Seguridad y Mitigación de Riesgos}
+
+La seguridad operativa constituye el eje transversal del proyecto PDA STARS. Se implementó una matriz formal de gestión de riesgos basada en las normas de la Tripoli Rocketry Association (TRA) y la National Association of Rocketry (NAR), complementada con procedimientos de verificación obligatoria en rampa coordinados por el Oficial de Seguridad (RSO).
+
+\subsection{Matriz de Identificación, Evaluación y Mitigación de Riesgos}
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabularx}{\linewidth}{p{2.8cm}p{2.8cm}ccX}
+\toprule
+\rowcolor{navyiejaga!15}
+\textbf{Riesgo Identificado} & \textbf{Causa Potencial} & \textbf{Nivel Inicial} & \textbf{Nivel Residual} & \textbf{Medida de Mitigación Implementada} \\
+\midrule
+\textbf{Ignición accidental del motor en rampa} & Descarga electrostática o conexión errónea del ignitor & Crítico & Bajo & Uso obligatorio de llave de seguridad en la estación de ignición a 15 m. Inserción del ignitor únicamente en rampa por el RSO tras despejar el área. \\
+\rowcolor{grisclaro}
+\textbf{Falla en el despliegue del paracaídas} & Quemadura por gases de eyección o atascamiento en el tubo & Crítico & Bajo & Uso de manta térmica Nomex ignífuga de 15x15 cm, verificación de holgura suave de la ojiva ($0,2\text{ mm}$) y pruebas previas de eyección neumática. \\
+\textbf{Inestabilidad aerodinámica en vuelo} & $CG$ retrasado respecto al $CP$ o flexión de aletas & Crítico & Bajo & Validación estricta de margen estático $\ge 2,00\text{ calibres}$ en OpenRocket, recorte de cartón y Swing Test. Aletas fabricadas en PETG-CF rígido. \\
+\rowcolor{grisclaro}
+\textbf{Deriva excesiva fuera de zona ($R > 250\text{ m}$)} & Viento fuerte en altura o paracaídas sobredimensionado & Alto & Bajo & Calibración del paracaídas a 40 cm ($v_{\text{term}} = 8,00\text{ m/s}$) para aterrizar dentro de los 40-50 s (47,86 s simulados). Monitoreo de anemómetro en tierra antes del despegue. \\
+\textbf{Desprendimiento de carga útil en shock} & Falla del anclaje mecánico en la apertura & Alto & Bajo & Ojal de retención macizo integrado en la carcasa PETG probado a 250 N, atado permanentemente al cordón principal de Kevlar de 3,6 m. \\
+\rowcolor{grisclaro}
+\textbf{Apagado de aviónica por vibración} & Falso contacto en la batería por shock de aceleración & Medio & Bajo & Soporte de batería NiMH soldado y asegurado mecánicamente, circuito en PCB CNC y amortiguación interna con espuma EVA. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de identificación, evaluación y control de riesgos operacionales de PDA STARS.}
+\label{tab:matriz_riesgos}
+\end{table}
+
+\subsection{Procedimientos Operativos de Seguridad (Checklist de Rampa)}
+El Oficial de Seguridad (RSO) debe ejecutar y registrar en la bitácora la siguiente secuencia de verificación obligatoria antes de autorizar cualquier lanzamiento:
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Inspección Previa en Mesa de Armado:}
+    \begin{itemize}
+        \item Verificar integridad del fuselaje Kraft BT-80 y ausencia de fisuras en las uniones epóxicas de las tres aletas.
+        \item Comprobar holgura de acople de la ojiva (debe deslizar suavemente por gravedad invertida con ligera fricción controlada).
+        \item Verificar el trenzado de las 8 líneas de suspensión del paracaídas y anclaje firme del cordón de Kevlar a la bahía de carga útil.
+        \item Enrollar la manta Nomex cubriendo el paracaídas e insertarlo sin torsión en el fuselaje.
+    \end{itemize}
+    \item \textbf{Verificación de Aviónica y Carga Útil:}
+    \begin{itemize}
+        \item Energizar la carga útil Seeeduino XIAO, constatar los destellos LED indicadores de calibración y cierre del archivo microSD.
+        \item Verificar voltaje de batería ($\ge 3,6\text{ V}$) y asegurar la fijación de la bahía con los tornillos de retención.
+    \end{itemize}
+    \item \textbf{Montaje y Aseguramiento en Rampa:}
+    \begin{itemize}
+        \item Deslizar el cohete sobre la varilla de lanzamiento de 1,5 m ($\varnothing 6,5\text{ mm}$), comprobando recorrido libre y verticalidad.
+        \item Insertar el motor Estes F15-4 en el tubo portamotor y asegurar el retén roscado inferior.
+        \item Asegurar que la llave de seguridad del controlador de ignición permanezca en posesión exclusiva del RSO.
+    \end{itemize}
+    \item \textbf{Protocolo de Ignición y Conteo:}
+    \begin{itemize}
+        \item Verificar despeje de la zona en un radio mínimo de 15 metros alrededor de la rampa.
+        \item Medir velocidad del viento con anemómetro de tierra (suspender si el viento sostenido excede los 5,0 m/s).
+        \item Inserción del ignitor comercial por el RSO y conexión de pinzas cocodrilo con polaridad correcta.
+        \item Inserción de la llave de seguridad en la estación de ignición, activación de señal acústica de alerta y conteo regresivo audible de 5 segundos.
+    \end{itemize}
+\end{enumerate}
