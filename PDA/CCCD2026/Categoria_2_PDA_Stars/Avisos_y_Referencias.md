@@ -144,15 +144,17 @@
 11. `Guia_Carga_Util_Intermedios_2026.pdf` — **[NUEVO 25-OCT-2026]** Especificación técnica oficial de carga útil (masa $\le 60\text{ g}$, autonomía $\ge 4\text{ h}$, switch externo y retención estructural obligatoria).
 12. `Plantilla_Formato_Estetica_Cohete.docx` — Plantilla oficial Word de la organización para el Reto Estética Visual.
 13. `211_PDAStars_Estetica.docx` — Formato oficial diligenciado con fundamentación técnica y estética de PDA STARS (Cat 2).
+14. `Consentimiento_Participacion_CCCD2026.pdf` — Formato obligatorio de exoneración, tratamiento de datos y póliza SATELAB (subir firmado a Drive `Documentos`).
 
 ---
 
-## 📌 Sesión Informativa 1 (22-09-2026, grupo WhatsApp)
+## 📌 Sesión Informativa y Circulares Técnicas (WhatsApp ALAS)
 
-Fuente: `Documentos_Oficiales_Globales/Sesion_Informativa_1_CCCD2026.md`.
+Fuente: `Documentos_Oficiales_Globales/Sesion_Informativa_1_CCCD2026.md` y circulares oficiales del certamen.
 
-- **Calendario Cat. 2:** Reporte Progreso 1 (23 Sep) · Asesorías (22 Sep-1 Oct) · Video Equipo (10 Oct) · Revisiones Técnicas Virtuales (12-22 Oct) · CDR (25 Oct) · Fotos Cohete (28 Oct) · Divulgación (1 Nov) · Concurso (6-8 Nov). Sin aplazamientos. Cat. 2 no presenta PDR.
+- **Calendario Cat. 2:** Reporte Progreso 1 (23 Sep) · Asesorías (22 Sep-1 Oct) · Video Equipo (10 Oct) · Revisiones Técnicas Virtuales (12-22 Oct) · CDR (25 Oct) · Estética Visual (30 Oct) · Divulgación (1 Nov) · Concurso (6-8 Nov). Cat. 2 no presenta PDR.
 - **Revisión técnica virtual:** exige mínimo 80% de avance físico/funcional; verificación en vivo de fuselaje, aletas, recuperación, carga útil, materiales y simulación. Revisor Cat. 1 y 2: Juan Guillermo Cano — TRA #41662 L1.
 - **Baterías carga útil:** prohibidas LiPo y Li-Ion rectangular; permitidas AA/AAA no recargables, 18650, Li-Ion cilíndricas, botón. Memoria `03` ya corregida a 18650/2xAAA.
 - **Acopladores:** 1 calibre mínimo a cada lado del punto de separación (ver `04`).
-- **ID y marcaciones:** etiqueta obligatoria (equipo, ID, institución, país, ciudad, contacto); etiqueta adicional vertical entre aletas con ID visible en contraste; longitud mínima 15 cm + sticker del concurso. Archivos: `Id_NombreDelEquipo_Entregable`.
+- **ID y marcaciones (Circular 27-Oct):** ID vertical en fuselaje con longitud mínima **$\ge 15\text{ cm}$** en alto contraste; etiqueta en aleta con medidas libres (imagen referencial) conteniendo: ID (211), Nombre de equipo, Institución (I.E. José Antonio Galán), País/Ciudad (Colombia - La Estrella) y Contacto.
+- **Consentimiento de Participación (Circular 28-Oct):** Obligatorio para todos los integrantes. Menores de edad con firma de acudiente en Sección 6. Cargar escaneado/digital en Drive de la institución → subcarpeta `Documentos`. Cobertura de póliza: 6-Nov (inauguración) y 7-Nov (lanzamiento).

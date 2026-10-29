@@ -80,15 +80,17 @@
 7. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 8. `Plantilla_Formato_Estetica_Cohete.docx` — Plantilla oficial Word de la organización para el Reto Estética Visual.
 9. `104_PDANoctux_Estetica.docx` — Formato oficial diligenciado con fundamentación técnica y estética de PDA NOCTUX (Cat 1).
+10. `Consentimiento_Participacion_CCCD2026.pdf` — Formato obligatorio de exoneración, tratamiento de datos y póliza SATELAB (subir firmado a Drive `Documentos`).
 
 ---
 
-## 📌 Sesión Informativa 1 (22-09-2026, grupo WhatsApp)
+## 📌 Sesión Informativa y Circulares Técnicas (WhatsApp ALAS)
 
-Fuente: `Documentos_Oficiales_Globales/Sesion_Informativa_1_CCCD2026.md`.
+Fuente: `Documentos_Oficiales_Globales/Sesion_Informativa_1_CCCD2026.md` y circulares oficiales del certamen.
 
-- **Calendario Cat. 1:** Reporte Progreso 1 (23 Sep) · Asesorías (22 Sep-1 Oct) · Video Equipo (10 Oct) · Revisiones Técnicas Virtuales (12-22 Oct) · Reporte Técnico (25 Oct) · Fotos Cohete (28 Oct) · Divulgación (1 Nov) · Concurso (6-8 Nov). Sin aplazamientos.
+- **Calendario Cat. 1:** Reporte Progreso 1 (23 Sep) · Asesorías (22 Sep-1 Oct) · Video Equipo (10 Oct) · Revisiones Técnicas Virtuales (12-22 Oct) · Reporte Técnico (25 Oct) · Estética Visual (30 Oct) · Divulgación (1 Nov) · Concurso (6-8 Nov).
 - **Reporte Progreso 1:** registra estado inicial + OpenRocket inicial; pendientes/estimados permitidos. **Link confirmado 2026-09-22: https://forms.gle/t2kAEV1NTeHhFJYW8 — estado COMPLETADO.**
 - **Entregable de diseño:** Reporte Técnico (Cat. 1 no presenta PDR/CDR).
 - **Revisión técnica virtual:** exige mínimo 80% de avance físico/funcional; verificación en vivo de fuselaje, aletas, recuperación, carga útil, materiales y simulación. Revisor Cat. 1 y 2: Juan Guillermo Cano — TRA #41662 L1.
-- **ID y marcaciones:** etiqueta obligatoria (equipo, ID, institución, país, ciudad, contacto); etiqueta adicional vertical entre aletas con ID visible en contraste; longitud mínima 10 cm + sticker del concurso. Archivos: `Id_NombreDelEquipo_Entregable`.
+- **ID y marcaciones (Circular 27-Oct):** ID vertical en fuselaje con longitud mínima **$\ge 10\text{ cm}$** en alto contraste; etiqueta en aleta con medidas libres (imagen referencial) conteniendo: ID (104), Nombre de equipo, Institución (I.E. José Antonio Galán), País/Ciudad (Colombia - La Estrella) y Contacto.
+- **Consentimiento de Participación (Circular 28-Oct):** Obligatorio para todos los integrantes. Menores de edad con firma de acudiente en Sección 6. Cargar escaneado/digital en Drive de la institución → subcarpeta `Documentos`. Cobertura de póliza: 6-Nov (inauguración) y 7-Nov (lanzamiento).

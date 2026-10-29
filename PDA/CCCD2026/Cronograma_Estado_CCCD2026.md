@@ -84,3 +84,33 @@
 ### Categoría 1 (PDA Noctux)
 - **Nivel:** Baja potencia.
 - **Reporte Técnico:** **Completado y radicado a tiempo el 25 de Octubre (0 pts penalización)**. Sin requisito de CDR formal.
+
+---
+
+## Requisitos de Seguridad, Marcación e Ingreso al Concurso Presencial (6-8 Nov)
+
+### 🏷️ Marcación y Rotulación de Vehículos (Circular Oficial 27-Oct)
+- **ID vertical en el fuselaje:** Ubicado entre dos aletas, visible y en contraste cromático neto:
+  - **Categoría 1 (PDA Noctux - ID 104):** Longitud mínima **$\ge 10\text{ cm}$**.
+  - **Categoría 2 (PDA Stars - ID 211):** Longitud mínima **$\ge 15\text{ cm}$**.
+  - **Categoría 3 (PDA Rocketeers - ID 310):** Longitud mínima **$\ge 25\text{ cm}$**.
+- **Etiqueta informativa en la aleta:** No exige medidas específicas fijas (la infografía oficial es referencial). Debe ser visible, contrastar con la aleta e incluir estrictamente 5 campos:
+  1. ID del equipo (`104`, `211` o `310`)
+  2. Nombre del equipo (`PDA Noctux`, `PDA - Stars` o `PDA Rocketeers`)
+  3. Institución educativa (`I.E. José Antonio Galán`)
+  4. País y ciudad (`Colombia - La Estrella, Antioquia`)
+  5. Forma de contacto (correo del docente / asesor técnico)
+- **Referencia gráfica:** [`Documentos_Oficiales_Globales/Rotulacion_ID_y_Etiqueta_Aleta.jpg`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Documentos_Oficiales_Globales/Rotulacion_ID_y_Etiqueta_Aleta.jpg).
+
+### 📄 Consentimiento de Participación y Póliza de Seguro (Circular Oficial 28-Oct)
+- **Documento base:** [`Documentos_Oficiales_Globales/Consentimiento_Participacion_CCCD2026.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Documentos_Oficiales_Globales/Consentimiento_Participacion_CCCD2026.pdf).
+- **Ubicación obligatoria en Google Drive:** Carpeta institucional `I.E. José Antonio Galán` → Subcarpeta **`Documentos`**.
+- **Carácter obligatorio:** Aplica al **100% de los participantes** de cada equipo (estudiantes y docentes/mentores). La cantidad de documentos cargados (firmados digitalmente o escaneados) debe coincidir con el total de acreditados.
+- **Instrucciones de diligenciamiento:**
+  - *Mayores de edad:* Diligencian y firman Secciones 1 a 5 (Sección 6 se deja en blanco).
+  - *Menores de 18 años:* Diligencian Secciones 1 a 5 y **obligatoriamente la Sección 6** firmada por padre, madre o representante legal.
+- **Alcance de la Póliza Colectiva de Accidentes Personales (SATELAB):**
+  - **Viernes 6 de noviembre (Inauguración Aburrá Sur):** Cobertura activa para todos los participantes acreditados.
+  - **Sábado 7 de noviembre (Lanzamientos Santa Fe de Antioquia):** Cobertura activa exclusivamente para competidores de **Categoría 1 y Categoría 2**.
+  - **Domingo 8 de noviembre (Lanzamientos Santa Fe de Antioquia):** Cobertura activa exclusivamente para competidores de **Categoría 3**.
+  - *Condición de público general:* Quienes asistan en días distintos a la fecha de lanzamiento de su categoría lo hacen en calidad de observadores, debiendo respaldarse en su afiliación a EPS o póliza estudiantil institucional.

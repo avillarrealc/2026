@@ -61,6 +61,16 @@
    - **Motivo técnico:** Tiempo adicional posterior a revisiones técnicas y CDR para consolidación estructural y acabado del vehículo.
    - **Rúbrica aplicable:** Sistema de Puntuación SPP 2026, Sección 3.5 (100 puntos y selección para Premio STEAM de Artes).
 
+6. **Circular Técnica: Rotulación de ID Vertical y Etiqueta de Aleta (27-Oct-2026):**
+   - **Aclaración oficial:** Las dimensiones de la etiqueta en la aleta no son fijas ni milimétricas (imagen de referencia). Debe contrastar y contener: ID, nombre del equipo, institución, país/ciudad y contacto.
+   - **Longitudes mínimas del ID vertical en fuselaje:** Cat 1 (Noctux): $\ge 10\text{ cm}$; Cat 2 (Stars): $\ge 15\text{ cm}$; Cat 3 (Rocketeers): $\ge 25\text{ cm}$.
+
+7. **Circular Administrativa y Legal: Consentimiento de Participación y Póliza (28-Oct-2026):**
+   - **Archivo oficial:** `Consentimiento_Participacion_CCCD2026.pdf` (SATELAB).
+   - **Radicación:** En Google Drive institucional → subcarpeta `Documentos`.
+   - **Requisito obligatorio:** 100% de los participantes de los tres equipos deben firmarlo (física o digitalmente). Menores de edad exigen firma de representante legal en Sección 6.
+   - **Póliza de seguro colectivo SATELAB:** Cobertura 6-Nov para todos; 7-Nov para Cat 1 y 2; 8-Nov para Cat 3.
+
 ---
 
 ## Canales y Enlaces Externos Asociados
