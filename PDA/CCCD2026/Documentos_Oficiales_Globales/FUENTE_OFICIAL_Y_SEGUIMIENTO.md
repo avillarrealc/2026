@@ -55,6 +55,12 @@
    - **Procedimiento de emergencia:** Suspensión inmediata temporal de operaciones de lanzamiento por el RSO para salvaguarda de vidas humanas.
    - **Protocolo de Segundo Vuelo:** Los equipos pueden solicitar un segundo vuelo si el cohete supera una nueva inspección técnica rigurosa, se mantiene la seguridad y existe disponibilidad de motor compatible de reemplazo. La autorización es potestad discrecional del RSO/Comité Técnico y no es automática.
 
+5. **Circular Oficial: Ampliación de Plazo — Reto 'Estética del Cohete' (28-Oct a 30-Oct-2026):**
+   - **Alcance reglamentario:** Aplica a las 3 categorías (Principiantes, Intermedios y Avanzados).
+   - **Plazo modificado:** Se oficializa el **viernes 30 de octubre de 2026** como fecha límite de entrega (fecha original: 28 de octubre).
+   - **Motivo técnico:** Tiempo adicional posterior a revisiones técnicas y CDR para consolidación estructural y acabado del vehículo.
+   - **Rúbrica aplicable:** Sistema de Puntuación SPP 2026, Sección 3.5 (100 puntos y selección para Premio STEAM de Artes).
+
 ---
 
 ## Canales y Enlaces Externos Asociados

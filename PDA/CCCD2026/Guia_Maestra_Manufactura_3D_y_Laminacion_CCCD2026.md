@@ -77,7 +77,7 @@ Configuraciones validadas para boquilla de **0.40 mm** en impresora **Sunlu T3**
 | **Temperatura placa (cama)** | 100 °C continuo | 100 °C continuo | 75 °C - 80 °C | 60 °C continuo |
 | **Flujo de filamento** | 100 % | 100 % | 95 % a 100 % | 105 % (sobreextrusión) |
 | **Velocidad de impresión** | 45 mm/s (Pared: 25 mm/s) | 45 mm/s (Pared: 25 mm/s) | 40 mm/s | 35 mm/s |
-| **Retracción (Bowden Sunlu T3)**| 5.0 mm a 40 mm/s | 5.0 mm a 40 mm/s | 4.5 mm a 35 mm/s | 4.0 mm a 40 mm/s |
+| **Retracción (Garganta Bimetálica)**| 2.5 mm a 40 mm/s | 2.5 mm a 40 mm/s | 2.5 mm a 35 mm/s | 2.0 mm a 40 mm/s |
 | **Salto en Z al retraer** | Marcado (0.20 mm) | Marcado (0.20 mm) | Desmarcado | Desmarcado |
 | **Velocidad de ventilador** | 0-10% (30% escalón Z=45) | 10 % a 15 % máx | 20 % a 30 % | 50 % a 100 % |
 | **Generar soporte** | Tocando placa (escalón Z=45) | Tocando placa (vientre asa) | No requerido | No requerido |
@@ -90,5 +90,5 @@ Configuraciones validadas para boquilla de **0.40 mm** en impresora **Sunlu T3**
 
 ## 4. DIRECTIVAS OBLIGATORIAS DE TALLER (SUNLU T3)
 1.  **Cabina Térmica:** Queda prohibido imprimir piezas de ASA con la Sunlu T3 destapada. Se debe usar cabina cerrada y precalentar la cama a $100^\circ\text{C}$ durante $15-20\text{ minutos}$ antes de iniciar para estabilizar la cámara entre $40^\circ\text{C}$ y $50^\circ\text{C}$.
-2.  **Garganta Bimetálica (*All-Metal*):** Requerida para sostener de forma segura los $245-250^\circ\text{C}$ de extrusión sin degradar el tubo de teflón interno.
+2.  **Garganta Bimetálica (*All-Metal*):** Requerida para sostener de forma segura los $245-250^\circ\text{C}$ de extrusión sin degradar el tubo de teflón interno. **Restricción de retracción:** Reducir estrictamente la distancia de retracción en Cura a un rango de $2.0 - 2.8\text{ mm}$ (límite crítico $\le 3.0\text{ mm}$) a $35-45\text{ mm/s}$. Retracciones $\ge 4.0\text{ mm}$ arrastran polímero fundido al cuello frío de metal, generando taponamiento irreversible (*heat creep clog*), especialmente severo en PLA+.
 3.  **Desmolde de Soportes en el Asa:** Retirar los soportes inferiores del asa de anclaje con bisturí o pinza fina. Prohibido el uso de alicates de corte que muerdan o rayen el cuerpo cilíndrico de $8\text{ mm}$ (evita concentradores de esfuerzo en eyección).
