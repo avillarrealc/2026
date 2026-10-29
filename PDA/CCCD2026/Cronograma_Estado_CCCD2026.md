@@ -22,14 +22,21 @@
 | **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Aprobada (23-Oct)** | **Aprobada (19-Oct)** | **Completadas con éxito (100% aprobado)** |
 | **25 de Octubre** | Reporte Técnico | **Completado a tiempo** (25-Oct) | - | - | *Entregado a tiempo (0 pts penalización)* |
 | **25 de Octubre** | Critical Design Review (CDR) | - | **Completado (-15 pts)** (26-Oct, tardío 1 día) | **Completado a tiempo** (25-Oct, 310_PDARocketeers_CDR.pdf) | *Cat 3 a tiempo (0 pts) / Cat 2 con penalización (-15 pts)* |
-| **30 de Octubre** | Reto “Estética del Cohete” (Fotografías) | Aplica | Aplica | Aplica | **Prórroga oficial concedida** (Fecha anterior: 28-Oct). En preparación fotográfica y acabado aeronáutico. |
+| **30 de Octubre** | Reto “Estética del Cohete” | Aplica | Aplica | Aplica | **En preparación (Drive: `Reto Estética Visual`)**. 5-7 fotos HD + Formato Word diligenciado por equipo. |
 | **1 de Noviembre** | Divulgación (Redes Sociales) | Aplica | Aplica | Aplica | Pendiente |
 | **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |
 
-### 📢 Circular Oficial: Ampliación de Plazo — Reto 'Estética del Cohete' (28-Oct -> 30-Oct)
+### 📢 Circular Oficial: Reto 'Estética del Cohete' — Requisitos y Ampliación al 30-Oct
 - **Fecha anterior programada:** Miércoles 28 de octubre de 2026.
-- **Nueva fecha límite oficial:** **Viernes 30 de octubre de 2026**.
-- **Justificación del Comité Técnico:** Finalización de revisiones técnicas virtuales y entrega del CDR, concediendo tiempo adicional a las delegaciones para consolidar la construcción del vehículo y atender ajustes estructurales necesarios.
+- **Nueva fecha límite oficial:** **Viernes 30 de octubre de 2026 (11:59 p. m.)**.
+- **Canal de radicación oficial:** Carpeta de Google Drive de la institución (`I.E. José Antonio Galán`) → Subcarpeta obligatoria: **`Reto Estética Visual`**.
+- **Entregables obligatorios por equipo:**
+  1. **Registro fotográfico:** Entre **5 y 7 fotografías** de alta calidad (enfoque nítido, iluminación controlada y fondo limpio/neutro) con el cohete **100% terminado**. Debe incluir vista general del ensamble completo y planos de detalle desde diferentes ángulos (ojiva, fuselaje, aletas, librea gráfica y rotulado técnico).
+  2. **Formato oficial diligenciado:** Documento oficial `ID_Equipo_Estetica.docx` (5 preguntas técnicas de concepto, colores, materiales, técnicas e identidad institucional).
+- **Archivos generados y validados en el repositorio:**
+  - *Cat 1 (Principiantes - ID 104):* [`104_PDANoctux_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_1_PDA_Noctux/104_PDANoctux_Estetica.docx)
+  - *Cat 2 (Intermedios - ID 211):* [`211_PDAStars_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/211_PDAStars_Estetica.docx)
+  - *Cat 3 (Universitarios - ID 310):* [`310_PDARocketeers_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/310_PDARocketeers_Estetica.docx)
 - **Criterios de Evaluación Oficiales (Sistema de Puntuación SPP 2026, Sección 3.5):**
   - **Puntaje:** Hasta **100 puntos** en todas las categorías (Principiante, Intermedio y Avanzado) + Selección para el **Premio STEAM en Artes**.
   - **Aspectos evaluados:**
@@ -37,7 +44,7 @@
     2. *Esquema de colores:* Selección, combinación y distribución con atractivo y coherencia visual.
     3. *Identidad y originalidad:* Creatividad, diferenciación frente a otros vehículos y representatividad de la delegación (IEJAGA / PDA).
     4. *Justificación del diseño:* Argumentación de la selección de formas, librea, colores y logotipos.
-    5. *Calidad de los acabados:* Limpieza, ausencia de marcas de manufactura, pintura uniforme automotriz, rotulado aeronáutico reglamentario (ID de misión y marcas de CG/CP).
+    5. *Calidad de los acabados:* Limpieza, ausencia de marcas de manufactura, pintura uniforme automotriz, rotulado aeronáutico reglamentario (ID de misión vertical y marcas de CG/CP).
 - **Procedimiento técnico de taller:** Conforme al `Manual_Posprocesado_y_Acabado_Aeronautico_CCCD2026.pdf`, se aprovecha la ventana extendida para concluir lijado progresivo, aplicación de masilla plástica liviana, imprimación bicapa, esmalte automotriz, rotulación vinílica y captura fotográfica en alta resolución con fondo neutro.
 
 ### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento):

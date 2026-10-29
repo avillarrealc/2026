@@ -58,6 +58,15 @@
 >   4. La autorización no es automática ni obligatoria; prima la decisión técnica del RSO.
 > - Documento oficial de consulta: `Documentos_Oficiales_Globales/CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf`.
 
+> [!IMPORTANT]
+> **🎨 RETO ESTÉTICA DEL COHETE (CAT. 1 - PDA NOCTUX) [30-OCT-2026 23:59]**
+> - **Plazo oficial ampliado:** Viernes 30 de octubre de 2026 a las 11:59 p. m.
+> - **Ubicación de radicación:** Drive institucional (`I.E. José Antonio Galán`) → Subcarpeta: **`Reto Estética Visual`**.
+> - **Entregables:**
+>   1. **5 a 7 fotografías de alta resolución** (enfoque nítido, iluminación neutra, fondo limpio) del cohete PDA NOCTUX completamente terminado (vista de conjunto + detalles de ojiva portahuevo, fuselaje, aletas en balsa, ID `104` y marcas de $CG$).
+>   2. **Formato oficial diligenciado:** [`104_PDANoctux_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_1_PDA_Noctux/104_PDANoctux_Estetica.docx).
+> - **Evaluación:** Hasta 100 puntos (Rúbrica SPP §3.5) + Elegibilidad automática al **Premio STEAM en Artes**.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -69,6 +78,8 @@
 5. `5_Calendario_Oficial.jpg` — Cronograma de entregables inmodificable.
 6. `6_Guia_Categoria_Principiantes.pdf` — **[ESPECÍFICO CAT 1]** Requisitos, retos, medidas y restricciones oficiales para la categoría.
 7. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
+8. `Plantilla_Formato_Estetica_Cohete.docx` — Plantilla oficial Word de la organización para el Reto Estética Visual.
+9. `104_PDANoctux_Estetica.docx` — Formato oficial diligenciado con fundamentación técnica y estética de PDA NOCTUX (Cat 1).
 
 ---
 

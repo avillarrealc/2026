@@ -118,6 +118,15 @@
 >   - **Martes 27 de octubre, hasta las 11:59 p. m.:** Penalización de **-30 puntos**.
 >   - **Miércoles 28 de octubre en adelante:** **Plataforma cerrada**, no se admiten entregas extemporáneas (0 puntos en CDR).
 
+> [!IMPORTANT]
+> **🎨 RETO ESTÉTICA DEL COHETE (CAT. 2 - PDA STARS) [30-OCT-2026 23:59]**
+> - **Plazo oficial ampliado:** Viernes 30 de octubre de 2026 a las 11:59 p. m.
+> - **Ubicación de radicación:** Drive institucional (`I.E. José Antonio Galán`) → Subcarpeta: **`Reto Estética Visual`**.
+> - **Entregables:**
+>   1. **5 a 7 fotografías de alta resolución** (enfoque nítido, iluminación neutra, fondo limpio) del cohete PDA STARS completamente terminado (vista de conjunto + detalles de ojiva PLA+, fuselaje de 29 mm, aletas en balsa sellada, ID `211` y marcas de $CG/CP$).
+>   2. **Formato oficial diligenciado:** [`211_PDAStars_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/211_PDAStars_Estetica.docx).
+> - **Evaluación:** Hasta 100 puntos (Rúbrica SPP §3.5) + Elegibilidad automática al **Premio STEAM en Artes**.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -133,6 +142,8 @@
 9. `CATO - CONSIDERACIONES TÉCNICAS Y DE SEGURIDAD.pdf` — **[NORMA GLOBAL OCT-2026]** Protocolo oficial ante fallas de motor y condiciones para solicitar segundo vuelo (custodiado en `Documentos_Oficiales_Globales/`).
 10. `Plantilla CDR Intermedios.docx` — **[PLANTILLA OFICIAL CDR]** Formato Word inalterable con la estructura obligatoria de 13 secciones para el Critical Design Review.
 11. `Guia_Carga_Util_Intermedios_2026.pdf` — **[NUEVO 25-OCT-2026]** Especificación técnica oficial de carga útil (masa $\le 60\text{ g}$, autonomía $\ge 4\text{ h}$, switch externo y retención estructural obligatoria).
+12. `Plantilla_Formato_Estetica_Cohete.docx` — Plantilla oficial Word de la organización para el Reto Estética Visual.
+13. `211_PDAStars_Estetica.docx` — Formato oficial diligenciado con fundamentación técnica y estética de PDA STARS (Cat 2).
 
 ---
 

@@ -121,6 +121,15 @@
 >   12. Seguridad y Mitigación de Riesgos
 >   13. Referencias (Formato AIAA)
 
+> [!IMPORTANT]
+> **🎨 RETO ESTÉTICA DEL COHETE (CAT. 3 - PDA ROCKETEERS) [30-OCT-2026 23:59]**
+> - **Plazo oficial ampliado:** Viernes 30 de octubre de 2026 a las 11:59 p. m.
+> - **Ubicación de radicación:** Drive institucional (`I.E. José Antonio Galán`) → Subcarpeta: **`Reto Estética Visual`**.
+> - **Entregables:**
+>   1. **5 a 7 fotografías de alta resolución** (enfoque nítido, iluminación neutra, fondo limpio) del cohete SIDERAL completamente terminado (vista de conjunto + detalles de ojiva ASA, fuselaje, aletas en balso/fibra, ID `310` y marcas de $CG/CP$).
+>   2. **Formato oficial diligenciado:** [`310_PDARocketeers_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/310_PDARocketeers_Estetica.docx).
+> - **Evaluación:** Hasta 100 puntos (Rúbrica SPP §3.5) + Elegibilidad automática al **Premio STEAM en Artes**.
+
 ---
 
 ## 📂 Archivos de Referencia Anexos en esta Carpeta
@@ -137,6 +146,8 @@
 10. `310_PDARocketeers_CDR.pdf` — **[BORRADOR TÉCNICO CDR]** Documento de 59 páginas desarrollado por el equipo para la entrega final.
 11. `Anilloso FINAL.dxf` / `Anilloso_FINAL_Escala_1a1_Pliego_A2.pdf` — Planos de manufactura 1:1 de aletas y anillos de centrado en pliego A2.
 12. `Diseño SIDERAL.ork` — Modelo OpenRocket actualizado y calibrado con pesos reales de manufactura.
+13. `Plantilla_Formato_Estetica_Cohete.docx` — Plantilla oficial Word de la organización para el Reto Estética Visual.
+14. `310_PDARocketeers_Estetica.docx` — Formato oficial diligenciado con fundamentación técnica y estética de SIDERAL (Cat 3).
 
 ---
 
