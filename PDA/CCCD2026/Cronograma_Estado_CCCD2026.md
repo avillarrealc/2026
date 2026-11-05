@@ -1,6 +1,6 @@
 # Cronograma y Estado de Entregables - CCCD 2026
 
-**Última actualización:** 29 de Octubre de 2026 (07:50)
+**Última actualización:** 4 de Noviembre de 2026 (20:00)
 
 ## Categorías y Equipos IEJAGA
 - **Categoría 1 (Principiantes):** PDA Noctux (Baja potencia)
@@ -18,39 +18,18 @@
 | **23 de Septiembre** | Reporte de Progreso 1 | Aplica (**40 pts**) | Aplica (**50 pts**) | Aplica (**45 pts**) | *Evaluado en plataforma* |
 | **25 Sep - 3 Oct** | Asesorías Virtuales | Aplica | Aplica | Aplica | *Cerrado* |
 | **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica (48 pts)** | *Evaluado en plataforma* |
-| **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma* |
-| **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Aprobada (23-Oct)** | **Aprobada (19-Oct)** | **Completadas con éxito (100% aprobado)** |
-| **25 de Octubre** | Reporte Técnico | **Completado a tiempo** (25-Oct) | - | - | *Entregado a tiempo (0 pts penalización)* |
-| **25 de Octubre** | Critical Design Review (CDR) | - | **Completado (-15 pts)** (26-Oct, tardío 1 día) | **Completado a tiempo** (25-Oct, 310_PDARocketeers_CDR.pdf) | *Cat 3 a tiempo (0 pts) / Cat 2 con penalización (-15 pts)* |
-| **30 de Octubre** | Reto “Estética del Cohete” | Aplica | Aplica | Aplica | **En preparación (Drive: `Reto Estética Visual`)**. 5-7 fotos HD + Formato Word diligenciado por equipo. |
-| **1 de Noviembre** | Divulgación (Redes Sociales) | Aplica | Aplica | Aplica | Pendiente |
+| **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma. Devoluciones formales archivadas para Cat 2 (90/100) y Cat 3 (95/100)* |
+| **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Apto con Correcciones (23-Oct)** | **Aprobada (19-Oct)** | *Completadas. Cat 2 con reporte oficial de correcciones obligatorias (launch lugs, paracaídas, switch, aletas)* |
+| **25 de Octubre** | Reporte Técnico | **Aplica (75 pts)** (25-Oct) | - | - | *Evaluado en plataforma* |
+| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica (85 pts)** (26-Oct, con -15 pts penalización) | **Completado a tiempo** (25-Oct, 310_PDARocketeers_CDR.pdf) | *Cat 2 evaluado en 85 pts / Cat 3 pendiente publicación nota CDR* |
+| **30 de Octubre** | Reto “Estética del Cohete” | **Aplica (96 pts)** | **Aplica (84 pts)** | **Aplica (89 pts)** | *Evaluado en plataforma. Devoluciones archivadas para Cat 2 (84/100) y Cat 3 (89/100)* |
+| **1 de Noviembre** | Divulgación (Redes Sociales) | Pendiente calificación | Pendiente calificación | **Aplica (100 pts)** | *Evaluado en plataforma. Calificación perfecta 100/100 archivada* |
 | **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |
 
-### 📢 Circular Oficial: Reto 'Estética del Cohete' — Requisitos y Ampliación al 30-Oct
-- **Fecha anterior programada:** Miércoles 28 de octubre de 2026.
-- **Nueva fecha límite oficial:** **Viernes 30 de octubre de 2026 (11:59 p. m.)**.
-- **Canal de radicación oficial:** Carpeta de Google Drive de la institución (`I.E. José Antonio Galán`) → Subcarpeta obligatoria: **`Reto Estética Visual`**.
-- **Entregables obligatorios por equipo:**
-  1. **Registro fotográfico:** Entre **5 y 7 fotografías** de alta calidad (enfoque nítido, iluminación controlada y fondo limpio/neutro) con el cohete **100% terminado**. Debe incluir vista general del ensamble completo y planos de detalle desde diferentes ángulos (ojiva, fuselaje, aletas, librea gráfica y rotulado técnico).
-  2. **Formato oficial diligenciado:** Documento oficial `ID_Equipo_Estetica.docx` (5 preguntas técnicas de concepto, colores, materiales, técnicas e identidad institucional).
-- **Archivos generados y validados en el repositorio:**
-  - *Cat 1 (Principiantes - ID 104):* [`104_PDANoctux_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_1_PDA_Noctux/104_PDANoctux_Estetica.docx)
-  - *Cat 2 (Intermedios - ID 211):* [`211_PDAStars_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/211_PDAStars_Estetica.docx)
-  - *Cat 3 (Universitarios - ID 310):* [`310_PDARocketeers_Estetica.docx`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/310_PDARocketeers_Estetica.docx)
-- **Criterios de Evaluación Oficiales (Sistema de Puntuación SPP 2026, Sección 3.5):**
-  - **Puntaje:** Hasta **100 puntos** en todas las categorías (Principiante, Intermedio y Avanzado) + Selección para el **Premio STEAM en Artes**.
-  - **Aspectos evaluados:**
-    1. *Diseño y apariencia general:* Armonía de forma, proporciones, acabados y presentación visual.
-    2. *Esquema de colores:* Selección, combinación y distribución con atractivo y coherencia visual.
-    3. *Identidad y originalidad:* Creatividad, diferenciación frente a otros vehículos y representatividad de la delegación (IEJAGA / PDA).
-    4. *Justificación del diseño:* Argumentación de la selección de formas, librea, colores y logotipos.
-    5. *Calidad de los acabados:* Limpieza, ausencia de marcas de manufactura, pintura uniforme automotriz, rotulado aeronáutico reglamentario (ID de misión vertical y marcas de CG/CP).
-- **Procedimiento técnico de taller:** Conforme al `Manual_Posprocesado_y_Acabado_Aeronautico_CCCD2026.pdf`, se aprovecha la ventana extendida para concluir lijado progresivo, aplicación de masilla plástica liviana, imprimación bicapa, esmalte automotriz, rotulación vinílica y captura fotográfica en alta resolución con fondo neutro.
-
-### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento):
-- **Categoría 3 (Universitarios / Avanzados):** **Puesto #4 Nacional** — `PDA Rocketeers` con **188 pts** (Progreso 1: 45, Video: 95, PDR: 48). A solo 3 puntos del primer puesto nacional (Spectro UdeA: 191 pts).
-- **Categoría 2 (Intermedios):** **Puesto #3 Nacional (Zona de Podio)** — `PDA - Stars` con **140 pts** (Progreso 1: 50, Video: 90). A 1 punto del 2° (Orión 25: 141 pts) y 7 puntos del 1° (AstroComercial: 147 pts).
-- **Categoría 1 (Principiantes):** **Puesto #7 Nacional** — `PDA Noctux` con **127 pts** (Progreso 1: 40, Video: 87).
+### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento al 04-Nov):
+- **Categoría 3 (Universitarios / Avanzados):** **Puesto #4 Nacional** — `PDA Rocketeers` con **377 pts** (Progreso 1: 45, PDR: 48, Video: 95, Estética: 89, Divulgación: 100). A solo 6 puntos del líder universitario nacional (Deméter EIA: 383 pts), 4 puntos de Spectro UdeA (381 pts) y 3 puntos de SpaceTech Pollux UniAndes (380 pts).
+- **Categoría 2 (Intermedios):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA - Stars` con **309 pts** (Progreso 1: 50, Video: 90, CDR: 85, Estética: 84). A solo 2 puntos del líder (Malok Space: 311 pts).
+- **Categoría 1 (Principiantes):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA Noctux` con **298 pts** (Progreso 1: 40, Video: 87, Informe Técnico: 75, Estética: 96). A 15 puntos del líder (Copetonautas: 313 pts).
 
 *Nota: No se aplazará ninguna actividad ni fecha límite establecida sin previo aviso al Comité Técnico.*
 

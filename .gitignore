@@ -17,3 +17,7 @@ Desktop.ini
 *.class
 __pycache__/
 *.pyc
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.pptx

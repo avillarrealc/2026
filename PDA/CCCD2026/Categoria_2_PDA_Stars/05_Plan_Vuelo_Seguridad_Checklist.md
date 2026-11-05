@@ -20,6 +20,15 @@ Sin jefe de misión nadie toca el cohete en rampa. Sin seguridad nadie se acerca
 
 ## 2. Checklist de rampa, léanlo en voz alta
 
+### 2.1 Condiciones Críticas de Autorización de Vuelo (Auditoría Oficial CCCD 2026 - Apto con Correcciones)
+*Referencia: `Reporte técnico PDA Stars (ID 211).pdf`.* Para que los jueces autoricen el vuelo en rampa es **estrictamente obligatorio** validar en taller:
+- [ ] **[CRÍTICA] Launch lugs nuevos instalados:** Sustituir los lugs de 6.0 mm por tubos con $\varnothing_{int} \ge 7.0\text{ mm}$ alineados. Probar deslizamiento suave por gravedad en varilla de 6.5 mm.
+- [ ] **[CRÍTICA] Paracaídas y cordón completo:** Paracaídas terminado (color llamativo, descenso 7.5 a 8 m/s para ventana de 40 a 50 s). Todas las partes (cuerpo, nariz y carga útil) ancladas firmemente al cordón de choque tubular/Kevlar.
+- [ ] **[ALTA] Pegado epóxico de aletas:** Aletas de PETG-CF unidas con resina epoxi y filetes estructurales en la raíz (aprobadas formalmente por el Comité Técnico).
+- [ ] **[ALTA] Ajuste mecánico de la nariz:** Hombro ajustado para que no cabecee ni se separe en ascenso aerodinámico, pero deslice sin atascarse ante la presión de eyección del motor F15-4.
+- [ ] **[ALTA] Switch externo instalado:** Interruptor exterior instalado y cableado a la carga útil (56.7 g), permitiendo activación segura en rampa sin abrir el fuselaje.
+- [ ] **[ALERTA DE ESTABILIDAD]:** Medir físicamente el $CG$ con el cohete 100% terminado y motor cargado: comprobar que el margen estático permanezca en $\ge 2.0\text{ cal}$ (la auditoría reportó 2.05 calibres; no permitir que descienda).
+
 Antes de salir al campo:
 
 - [ ] Peso total ___ g / 650 g y largo ___ cm / 60 cm anotados

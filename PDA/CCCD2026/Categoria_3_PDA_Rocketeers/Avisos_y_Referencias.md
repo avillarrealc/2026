@@ -80,13 +80,33 @@
 > - **Utilidad técnica:** Permite modelar el dosel (diámetro plano vs. inflado), área efectiva, líneas de suspensión, orificio de derrame (*spill hole*) y velocidad terminal ($V_t$). Utilizado para contrastar con OpenRocket y asegurar que SIDERAL mantenga una velocidad de descenso entre 6.0 y 7.0 m/s para no exceder los 400 m de radio límite.
 
 > [!NOTE]
-> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 04-NOV-2026]**
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
-> - **Posición actual PDA Rocketeers:** **Puesto #4 Nacional (Categoría Universitarios / Avanzados)** con **188 puntos** acumulados:
+> - **Posición actual PDA Rocketeers:** **Puesto #4 Nacional (Categoría Universitarios / Avanzados)** con **377 puntos** acumulados (5 de 12 parámetros evaluados):
 >   - Reporte Progreso 1: **45 / 50 pts**.
 >   - Video del Equipo: **95 / 100 pts** (Puntaje élite nacional).
 >   - PDR (*Preliminary Design Review*): **48 / 50 pts** (Evaluación sobresaliente de ingeniería).
-> - Diferencial competitivo: A solo 3 puntos del 1° puesto (Spectro Rocket Team UdeA: 191 pts), superando a facultades de ingeniería de la Universidad Nacional, UPB, EMAVI y EIA-Hermes. Próximo hito: CDR (25-Oct).
+>   - Estética del Cohete: **89 / 100 pts** (Evaluación oficial Jurado 1 — archivo: `PDA ROCKETEERS - Jurado 1.pdf`).
+>   - Divulgación: **100 / 100 pts** (Calificación perfecta — archivo: `Divulgacion_PDA_Rocketeers.pdf`).
+> - Diferencial competitivo: A solo 6 puntos del líder universitario nacional (Deméter - EIA: 383 pts), a 4 puntos de Spectro Rocket Team (UdeA: 381 pts) y a 3 puntos de SpaceTech Pollux (UniAndes: 380 pts), superando a SpaceTech Castor (UniAndes: 375), GIDA Rocketry (UNAL Bogotá: 374), Oxypogon (374) y HERMES (EIA: 370).
+> - Parámetros pendientes por calificar en plataforma: CDR (pendiente nota oficial), Presentación ante jurados, Altitud de Vuelo (Motor G), Carga Útil CanSat, Despliegue de Paracaídas y Estado Final.
+
+> [!SUCCESS]
+> **DEVOLUCIONES OFICIALES RECIBIDAS (VIDEO, ESTÉTICA Y DIVULGACIÓN) [04-NOV-2026]**
+> 1. **Calificación del Video de Equipo:** **95 / 100** (Archivo respaldado: [`310 - PDA Rocketeers.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/310%20-%20PDA%20Rocketeers.pdf)).
+>    - *Claridad y narrativa (20/20 - PUNTUACIÓN PERFECTA):* Apertura cinematográfica («Misión Sideral»), trayectoria histórica en el certamen, presentación de integrantes con aportes y misión secundaria con semillas.
+>    - *Calidad técnica (19/20):* Nivel de producción cinematográfico, cámara estable, audio limpio con solapa, planos de apoyo de simulación y electrónica CanSat.
+>    - *Contenido técnico (18/20):* Explicación sólida de simulación, ciencia de materiales, CanSat, estación terrena y manufactura aditiva. Recomendación: mencionar valores numéricos esperados de apogeo, estabilidad y descenso.
+>    - *Creatividad y originalidad (19/20):* Identidad visual muy cuidada, diseño de parche, camisetas e investigación secundaria de semillas.
+>    - *Identidad del equipo (19/20):* Cada miembro presenta su rol técnico a cámara con solidez e identidad institucional.
+>    - Requisitos de entrega: 100% de cumplimiento (1:59.5 de 2:00, 16:9, 197.4 MB, entregado a tiempo el 10-Oct 11:24 a.m.).
+> 2. **Divulgación:** Calificación perfecta **100 / 100** (5 ítems de 20 pts marcados con "Sí": Se entiende, Se ve y se oye bien, Muestra al equipo trabajando, Es creativo, Es auténtico). Archivo respaldado: [`Divulgacion_PDA_Rocketeers.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/Divulgacion_PDA_Rocketeers.pdf).
+> 3. **Estética del Cohete (Jurado 1):** Calificación **89 / 100** (Archivo respaldado: [`PDA ROCKETEERS - Jurado 1.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_3_PDA_Rocketeers/PDA%20ROCKETEERS%20-%20Jurado%201.pdf)).
+>    - *Diseño y apariencia general (18/20):* Destaca minimalismo, estrella de 4 puntas, líneas hacia ojiva y nombre SIDERAL. Recomendación: desarrollar visualmente más la mitad inferior del cuerpo.
+>    - *Esquema de colores (18/20):* Paleta sobria (negro, azul y blanco), ojiva clara y aletas coherentes.
+>    - *Identidad y originalidad (19/20):* Concepto sólido uniendo La Estrella y espacio sideral. Recomendación: ampliar tamaño del escudo del equipo para visualización a distancia.
+>    - *Justificación del diseño (19/20):* Justificación completa y coherente con el vehículo real. Recomendación: depurar leyendas sueltas en entregables futuros.
+>    - *Calidad de los acabados (15/20):* Gráficos nítidos y alineados. Recomendación de taller: mejorar acabado de aletas (se trasluce veta de balso y borde azul irregular), sellar y pintar unión aleta-fuselaje y cuidar banda de unión central.
 
 > [!CAUTION]
 > **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**

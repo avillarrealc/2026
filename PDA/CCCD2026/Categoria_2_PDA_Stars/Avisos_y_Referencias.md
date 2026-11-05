@@ -83,13 +83,51 @@
 >   - Con descenso lento (4 a 5 m/s): Vientos de 3.5 a 5 m/s derivan el cohete entre 260 y 375 m (**DESCALIFICADO**).
 >   - Con nuestra línea base revisada (7.5 a 8.2 m/s para ventana oficial de 40–50 s): La deriva máxima a 5 m/s de viento es de **180 a 190 m** (margen seguro de 60 a 70 m dentro del radio de 250 m), garantizando además un aterrizaje mucho más suave sin descalificación por tiempo ni por zona.
 
+> [!WARNING]
+> **REPORTE TÉCNICO OFICIAL DE INSPECCIÓN (PDA STARS ID 211) — DICTAMEN: APTO CON CORRECCIONES [04-NOV-2026]**
+> Archivo respaldado: [`Reporte técnico PDA Stars (ID 211).pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/Reporte%20t%C3%A9cnico%20PDA%20Stars%20(ID%20211).pdf)
+> - **Estado oficial:** **APTO CON CORRECCIONES**. El cohete tiene masas reales y buen diseño aerodinámico. Podrá recibir la autorización final de vuelo una vez subsanada la lista de chequeo en taller.
+> - **Parámetros verificados conformes:**
+>   - Masa total con motor F15-4: **444 g** (masas reales) vs. máx. 650 g (**CUMPLE**).
+>   - Longitud total: **68.5 cm** vs. mín. 60 cm (**CUMPLE**).
+>   - Masa de la carga útil: **56.7 g** vs. máx. 60 g (**CUMPLE**).
+>   - Materiales: **Cero piezas en PLA** (**CUMPLE**). El Comité confirmó formalmente que **las aletas impresas en 3D (PETG-CF) SÍ están permitidas**, condicionadas a excelente impresión sin microfisuras y pegado estructural robusto.
+>   - Altímetro: Espacio y orificio de ventilación previstos (**CUMPLE**).
+>   - Simulación: Desarrollada bajo condiciones reales de vuelo (**CUMPLE**).
+>   - Retención de motor: Platina de acero galvanizado (**CUMPLE**, se sugiere anillo retenedor de respaldo).
+> - **Condiciones obligatorias para autorización final de vuelo en rampa:**
+>   1. **[CRÍTICA] Launch lugs incompatibles:** Los tubos guía instalados tienen diámetro interno de 6 mm y la nueva varilla oficial de lanzamiento mide 6.5 mm. **No entran en la varilla**. Deben sustituirse por guías con diámetro interno $\ge 7.0\text{ mm}$ alineadas al eje longitudinal del fuselaje y verificadas con varilla física.
+>   2. **[CRÍTICA] Paracaídas y cordón incompleto:** Paracaídas no terminado y partes sin conectar al cordón de choque. Riesgo de piezas sueltas y 0 pts en recuperación. Terminar confección (color visible, descenso calibrado a 7.5–8.0 m/s) y anclar sólidamente cuerpo, nariz y carga útil.
+>   3. **[ALTA] Fijación de aletas:** Pegar aletas de PETG-CF al cuerpo con resina epóxica de alta resistencia y filetes estructurales de refuerzo en la raíz.
+>   4. **[ALTA] Acople de ojiva:** Ajustar la fricción del hombro de la nariz para que no se separe durante el ascenso por presión dinámica, pero deslice libremente con la deflagración de eyección.
+>   5. **[ALTA] Switch externo:** Instalar interruptor exterior accesible con el cohete montado en rampa y protegido contra conmutación accidental.
+>   6. **[ALERTA DE ESTABILIDAD]:** El margen verificado es de **2.05 calibres** (límite reglamentario $\ge 2.0\text{ cal}$). Al pegar las aletas, instalar switch y ensamblar paracaídas completo, es mandatorio recalcular y verificar físicamente que el $CG$ no se desplace hacia popa dejando el margen en $< 2.0\text{ cal}$.
+
+> [!SUCCESS]
+> **DEVOLUCIONES OFICIALES RECIBIDAS: VIDEO Y ESTÉTICA (PDA STARS ID 211) [04-NOV-2026]**
+> 1. **Calificación del Video de Equipo:** **90 / 100** (Archivo respaldado: [`211 - PDA Stars.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/211%20-%20PDA%20Stars.pdf)).
+>    - *Claridad y narrativa (18/20):* Estructura clara presentando a los 6 integrantes en primera persona con sus roles específicos.
+>    - *Calidad técnica (18/20):* Muy buena edición, logo constante, subtítulos legibles y audio nítido.
+>    - *Contenido técnico (16/20):* Buen vocabulario técnico (CG, CP, margen, simulación). Recomendación: incluir capturas visuales de pantalla del software de simulación.
+>    - *Creatividad y originalidad (18/20):* Cuidada identidad visual, justificación del parche y narrativa consistente.
+>    - *Identidad del equipo (20/20 - PUNTUACIÓN PERFECTA):* Los 6 integrantes hablando a cámara con roles específicos (ingeniera, diseñadora, comunicaciones, contador y dos líderes).
+>    - Requisitos de entrega: Todos cumplidos al 100% (1:34.9, 16:9, a tiempo).
+> 2. **Calificación del Reto Estética del Cohete:** **84 / 100** (Archivo respaldado: [`10_PDA_Stars_Estetica.pdf`](file:///d:/Documentos/IEJAGA/2026/PDA/CCCD2026/Categoria_2_PDA_Stars/10_PDA_Stars_Estetica.pdf)).
+>    - *Diseño y apariencia general (17/20):* Concepto geométrico con estrella de 6 puntas y franjas en V. Recomendación: dar más presencia al nombre STELLARIS y logo del equipo.
+>    - *Esquema de colores (18/20):* Paleta azul, blanco y negro bien distribuida con sensación de movimiento.
+>    - *Identidad y originalidad (18/20):* Estrella de 6 puntas representa a la mascota y a los 6 integrantes.
+>    - *Justificación del diseño (18/20):* Explicación sólida del azul y blanco. Recomendación: justificar el negro como color predominante.
+>    - *Calidad de los acabados (13/20):* Bordes definidos en franjas. Recomendación crítica de taller: lograr acabado negro más uniforme sin rayones ni marcas claras, limpiar la raíz de las aletas con el fuselaje y asegurar iluminación neutra y enfoque nítido en el registro fotográfico.
+
 > [!NOTE]
-> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 04-NOV-2026]**
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
-> - **Posición actual PDA Stars:** **Puesto #3 Nacional (Zona de Podio)** con **140 puntos** acumulados:
+> - **Posición actual PDA Stars:** **Puesto #2 Nacional (Zona de Podio / Subcampeón Transitorio)** con **309 puntos** acumulados (4 de 11 parámetros evaluados):
 >   - Reporte Progreso 1: **50 / 50 pts** (Puntaje perfecto).
 >   - Video del Equipo: **90 / 100 pts** (Calificación sobresaliente).
-> - Diferencial de punta: A 1 punto del 2° puesto (Orión 25: 141 pts) y 7 puntos del líder (AstroComercial: 147 pts). Próximo hito: CDR (25-Oct).
+>   - Critical Design Review (CDR): **85 / 100 pts** (Refleja la penalización oficial de -15 pts por entrega 26-Oct).
+>   - Reto Estética del Cohete: **84 / 100 pts**.
+> - Diferencial de punta: A solo 2 puntos del líder nacional (Malok Space - Cosmo School: 311 pts) y superando a AstroComercial (307 pts) y Orión 25 (300 pts). Pendientes por calificar: Divulgación, Presentación ante jurados, Altitud de Vuelo, Carga Útil, Paracaídas y Estado Final.
 
 > [!CAUTION]
 > **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**

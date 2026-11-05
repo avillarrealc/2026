@@ -42,9 +42,14 @@
 > Carlos Pineda (Corporación ALAS) facilitó a los equipos el software de dimensionamiento aerodinámico de paracaídas: [https://paracaidas.satelab.org](https://paracaidas.satelab.org), aplicable para el cálculo geométrico del dosel, líneas de suspensión y descenso suave del vehículo con la carga útil "El Huevonauta".
 
 > [!NOTE]
-> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS)**
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 04-NOV-2026]**
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
-> - **Posición actual PDA Noctux:** **Puesto #7** (127 puntos acumulados: Reporte Progreso 1 = 40 pts, Video del Equipo = 87 pts). Próximo hito evaluable: Reporte Técnico (25-Oct).
+> - **Posición actual PDA Noctux:** **Puesto #2 Nacional (Zona de Podio / Subcampeón Transitorio)** con **298 puntos** acumulados (4 de 10 parámetros evaluados):
+>   - Reporte Progreso 1: **40 / 50 pts**.
+>   - Video del Equipo: **87 / 100 pts**.
+>   - Informe Técnico: **75 / 100 pts**.
+>   - Reto Estética del Cohete: **96 / 100 pts** (¡Puntaje casi perfecto en acabados y diseño!).
+> - Diferencial de punta: A 15 puntos del líder (Copetonautas: 313 pts) y superando a Delta Trajectory (296 pts) e Icarus (295 pts). Pendientes: Divulgación, Presentación ante jurados, Altitud de Vuelo, Carga Útil (Huevonauta), Paracaídas y Estado Final.
 
 > [!CAUTION]
 > **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**
