@@ -80,16 +80,18 @@
 > - **Utilidad técnica:** Permite modelar el dosel (diámetro plano vs. inflado), área efectiva, líneas de suspensión, orificio de derrame (*spill hole*) y velocidad terminal ($V_t$). Utilizado para contrastar con OpenRocket y asegurar que SIDERAL mantenga una velocidad de descenso entre 6.0 y 7.0 m/s para no exceder los 400 m de radio límite.
 
 > [!NOTE]
-> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 04-NOV-2026]**
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 05-NOV-2026]**
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
-> - **Posición actual PDA Rocketeers:** **Puesto #4 Nacional (Categoría Universitarios / Avanzados)** con **377 puntos** acumulados (5 de 12 parámetros evaluados):
+> - **Posición actual PDA Rocketeers:** **Puesto #4 Nacional (Categoría Universitarios / Avanzados)** con **427 puntos** acumulados (6 de 12 parámetros evaluados):
 >   - Reporte Progreso 1: **45 / 50 pts**.
+>   - PDR (*Preliminary Design Review*): **48 / 50 pts** (96% de efectividad).
+>   - CDR (*Critical Design Review*): **50 / 50 pts** (**¡Puntaje perfecto 100%!** Documento AIAA/LaTeX formal calificado con la máxima nota).
 >   - Video del Equipo: **95 / 100 pts** (Puntaje élite nacional).
->   - PDR (*Preliminary Design Review*): **48 / 50 pts** (Evaluación sobresaliente de ingeniería).
 >   - Estética del Cohete: **89 / 100 pts** (Evaluación oficial Jurado 1 — archivo: `PDA ROCKETEERS - Jurado 1.pdf`).
 >   - Divulgación: **100 / 100 pts** (Calificación perfecta — archivo: `Divulgacion_PDA_Rocketeers.pdf`).
-> - Diferencial competitivo: A solo 6 puntos del líder universitario nacional (Deméter - EIA: 383 pts), a 4 puntos de Spectro Rocket Team (UdeA: 381 pts) y a 3 puntos de SpaceTech Pollux (UniAndes: 380 pts), superando a SpaceTech Castor (UniAndes: 375), GIDA Rocketry (UNAL Bogotá: 374), Oxypogon (374) y HERMES (EIA: 370).
-> - Parámetros pendientes por calificar en plataforma: CDR (pendiente nota oficial), Presentación ante jurados, Altitud de Vuelo (Motor G), Carga Útil CanSat, Despliegue de Paracaídas y Estado Final.
+> - Rendimiento en fase previa documental/virtual: **427 / 450 pts (94.88%)**.
+> - Diferencial competitivo de punta: A solo 5 puntos del líder universitario nacional (Deméter - EIA: 432 pts), a 4 puntos de Spectro Rocket Team (UdeA: 431 pts) y a 2 puntos de SpaceTech Pollux (UniAndes: 429 pts), superando a SpaceTech Castor (UniAndes: 424), Oxypogon (422), GIDA Rocketry (UNAL Bogotá) y HERMES (EIA).
+> - Parámetros pendientes por calificar en campo (Santa Fe de Antioquia): Presentación ante jurados, Altitud de Vuelo (Motor G), Carga Útil CanSat, Despliegue de Paracaídas y Estado Final.
 
 > [!SUCCESS]
 > **DEVOLUCIONES OFICIALES RECIBIDAS (VIDEO, ESTÉTICA Y DIVULGACIÓN) [04-NOV-2026]**

@@ -120,14 +120,15 @@
 >    - *Calidad de los acabados (13/20):* Bordes definidos en franjas. Recomendación crítica de taller: lograr acabado negro más uniforme sin rayones ni marcas claras, limpiar la raíz de las aletas con el fuselaje y asegurar iluminación neutra y enfoque nítido en el registro fotográfico.
 
 > [!NOTE]
-> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 04-NOV-2026]**
+> **TABLERO DE CALIFICACIONES EN VIVO (CCCD PUNTOS) [ACTUALIZADO: 05-NOV-2026]**
 > Resultados oficiales consultables en: [https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21](https://puntos.cccd.space/public/live/554e1756-bf1e-476a-88c8-49806d1acc21)
-> - **Posición actual PDA Stars:** **Puesto #2 Nacional (Zona de Podio / Subcampeón Transitorio)** con **309 puntos** acumulados (4 de 11 parámetros evaluados):
+> - **Posición actual PDA Stars:** **Puesto #2 Nacional (Zona de Podio / Subcampeón Transitorio)** con **409 puntos** acumulados (5 de 11 parámetros evaluados):
 >   - Reporte Progreso 1: **50 / 50 pts** (Puntaje perfecto).
+>   - Divulgación Científica: **100 / 100 pts** (**¡Puntaje perfecto!**).
 >   - Video del Equipo: **90 / 100 pts** (Calificación sobresaliente).
->   - Critical Design Review (CDR): **85 / 100 pts** (Refleja la penalización oficial de -15 pts por entrega 26-Oct).
+>   - Critical Design Review (CDR): **85 / 100 pts** (Computa penalización de -15 pts por entrega 26-Oct).
 >   - Reto Estética del Cohete: **84 / 100 pts**.
-> - Diferencial de punta: A solo 2 puntos del líder nacional (Malok Space - Cosmo School: 311 pts) y superando a AstroComercial (307 pts) y Orión 25 (300 pts). Pendientes por calificar: Divulgación, Presentación ante jurados, Altitud de Vuelo, Carga Útil, Paracaídas y Estado Final.
+> - Diferencial de punta: A solo 2 puntos del líder nacional (Malok Space - Cosmo School: 411 pts) y superando a Orión 25 (400 pts) y AstroComercial (397 pts). Pendientes por calificar en campo: Presentación ante jurados, Altitud de Vuelo (Motor F), Carga Útil, Paracaídas y Estado Final.
 
 > [!CAUTION]
 > **⚠️ CATO (Catastrophe At Take Off) Y PROTOCOLO DE SEGUNDO VUELO [CIRCULAR OFICIAL OCT-2026]**

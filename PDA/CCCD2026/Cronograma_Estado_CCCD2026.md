@@ -1,6 +1,6 @@
 # Cronograma y Estado de Entregables - CCCD 2026
 
-**Última actualización:** 4 de Noviembre de 2026 (20:00)
+**Última actualización:** 5 de Noviembre de 2026 (15:35)
 
 ## Categorías y Equipos IEJAGA
 - **Categoría 1 (Principiantes):** PDA Noctux (Baja potencia)
@@ -17,19 +17,19 @@
 | :--- | :--- | :---: | :---: | :---: | :--- |
 | **23 de Septiembre** | Reporte de Progreso 1 | Aplica (**40 pts**) | Aplica (**50 pts**) | Aplica (**45 pts**) | *Evaluado en plataforma* |
 | **25 Sep - 3 Oct** | Asesorías Virtuales | Aplica | Aplica | Aplica | *Cerrado* |
-| **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica (48 pts)** | *Evaluado en plataforma* |
+| **4 de Octubre** | Preliminary Design Review (PDR) | - | - | **Aplica (48 pts)** | *Evaluado en plataforma (48/50)* |
 | **10 de Octubre** | Video del Equipo | Aplica (**87 pts**) | Aplica (**90 pts**) | Aplica (**95 pts**) | *Evaluado en plataforma. Devoluciones formales archivadas para Cat 2 (90/100) y Cat 3 (95/100)* |
 | **12 - 23 de Octubre** | Revisiones Técnicas Virtuales | **Aprobada (23-Oct)** | **Apto con Correcciones (23-Oct)** | **Aprobada (19-Oct)** | *Completadas. Cat 2 con reporte oficial de correcciones obligatorias (launch lugs, paracaídas, switch, aletas)* |
 | **25 de Octubre** | Reporte Técnico | **Aplica (75 pts)** (25-Oct) | - | - | *Evaluado en plataforma* |
-| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica (85 pts)** (26-Oct, con -15 pts penalización) | **Completado a tiempo** (25-Oct, 310_PDARocketeers_CDR.pdf) | *Cat 2 evaluado en 85 pts / Cat 3 pendiente publicación nota CDR* |
+| **25 de Octubre** | Critical Design Review (CDR) | - | **Aplica (85 pts)** (26-Oct, con -15 pts penalización) | **Aplica (50 pts)** (25-Oct, 310_PDARocketeers_CDR.pdf) | *Evaluado en plataforma. Cat 3 obtiene puntaje perfecto (50/50, 100% de la fase CDR)* |
 | **30 de Octubre** | Reto “Estética del Cohete” | **Aplica (96 pts)** | **Aplica (84 pts)** | **Aplica (89 pts)** | *Evaluado en plataforma. Devoluciones archivadas para Cat 2 (84/100) y Cat 3 (89/100)* |
-| **1 de Noviembre** | Divulgación (Redes Sociales) | Pendiente calificación | Pendiente calificación | **Aplica (100 pts)** | *Evaluado en plataforma. Calificación perfecta 100/100 archivada* |
+| **1 de Noviembre** | Divulgación (Redes Sociales) | **Aplica (100 pts)** | **Aplica (100 pts)** | **Aplica (100 pts)** | *Evaluado en plataforma. ¡Pleno perfecto de 100/100 para los 3 equipos de la IEJAGA!* |
 | **6 - 8 de Noviembre**| Concurso Colombiano de Cohetería | Aplica | Aplica | Aplica | **Evento Presencial (Santa Fe de Antioquia)** |
 
-### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento al 04-Nov):
-- **Categoría 3 (Universitarios / Avanzados):** **Puesto #4 Nacional** — `PDA Rocketeers` con **377 pts** (Progreso 1: 45, PDR: 48, Video: 95, Estética: 89, Divulgación: 100). A solo 6 puntos del líder universitario nacional (Deméter EIA: 383 pts), 4 puntos de Spectro UdeA (381 pts) y 3 puntos de SpaceTech Pollux UniAndes (380 pts).
-- **Categoría 2 (Intermedios):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA - Stars` con **309 pts** (Progreso 1: 50, Video: 90, CDR: 85, Estética: 84). A solo 2 puntos del líder (Malok Space: 311 pts).
-- **Categoría 1 (Principiantes):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA Noctux` con **298 pts** (Progreso 1: 40, Video: 87, Informe Técnico: 75, Estética: 96). A 15 puntos del líder (Copetonautas: 313 pts).
+### 🏆 Posiciones Actuales en Tabla General en Vivo (Top Pre-Lanzamiento al 05-Nov):
+- **Categoría 3 (Universitarios / Avanzados):** **Puesto #4 Nacional** — `PDA Rocketeers` con **427 pts** (Progreso 1: 45, PDR: 48, CDR: 50, Video: 95, Estética: 89, Divulgación: 100). A solo 5 puntos del líder universitario nacional (Deméter EIA: 432 pts), a 4 puntos de Spectro UdeA (431 pts) y a 2 puntos de SpaceTech Pollux UniAndes (429 pts). ¡Fase previa virtual completada al 100% con 427 de 450 puntos posibles (94.9%)!
+- **Categoría 2 (Intermedios):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA - Stars` con **409 pts** (Progreso 1: 50, Video: 90, CDR: 85, Estética: 84, Divulgación: 100). A solo 2 puntos del líder (Malok Space: 411 pts).
+- **Categoría 1 (Principiantes):** **Puesto #2 Nacional (Zona de Podio y Subcampeonato Transitorio)** — `PDA Noctux` con **398 pts** (Progreso 1: 40, Video: 87, Informe Técnico: 75, Estética: 96, Divulgación: 100). A 15 puntos del líder (Copetonautas: 413 pts).
 
 *Nota: No se aplazará ninguna actividad ni fecha límite establecida sin previo aviso al Comité Técnico.*
 

@@ -24,3 +24,8 @@ __pycache__/
 ~$*.doc
 ~$*.xlsx
 ~$*.pptx
+
+# Archivos de manufactura 3D pesados y pruebas locales
+*.gcode
+PDA/CCCD2026/scratch/
+

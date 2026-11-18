@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Impresión de Stickers Oficiales Cat 3 (6x6 cm) — PDA Rocketeers ID 310</title>
+  <style>
+    @page {
+      size: letter portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      background-color: #f1f5f9;
+      color: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Barra de control para pantalla (se oculta al imprimir) */
+    .no-print {
+      background: #1e293b;
+      color: #fff;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .no-print h1 {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .no-print .subtitle {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background: #475569;
+    }
+    .btn-secondary:hover {
+      background: #334155;
+    }
+
+    /* Contenedor de la hoja Carta */
+    .sheet-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .letter-page {
+      width: 215.9mm;
+      min-height: 279.4mm;
+      height: 279.4mm;
+      background: #ffffff;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      page-break-after: always;
+    }
+
+    .print-header-info {
+      position: absolute;
+      top: 10mm;
+      left: 17.95mm;
+      right: 17.95mm;
+      display: flex;
+      justify-content: space-between;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 7pt;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Cuadrícula 3x4 de 6x6 cm */
+    .grid-container {
+      width: 180mm;
+      height: 240mm;
+      display: grid;
+      grid-template-columns: repeat(3, 60mm);
+      grid-template-rows: repeat(4, 60mm);
+    }
+
+    /* Celda exterior de 6x6 cm (60x60 mm) */
+    .sticker-cell {
+      width: 60mm;
+      height: 60mm;
+      padding: 4.5mm;
+      border: 0.2mm dashed #cbd5e1; /* Línea guía de corte fina */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+    }
+
+    /* Marco redondeado interior del sticker (51x51 mm) */
+    .sticker-inner {
+      width: 51mm;
+      height: 51mm;
+      border: 1.6mm solid #000000;
+      border-radius: 7mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1.2mm;
+      padding: 2mm 1mm;
+    }
+
+    .line-title {
+      font-size: 11.5pt;
+      line-height: 1.05;
+      letter-spacing: 0.1px;
+    }
+
+    .line-school {
+      font-size: 11.0pt;
+      line-height: 1.05;
+    }
+
+    .line-loc {
+      font-size: 11.0pt;
+      line-height: 1.05;
+    }
+
+    .line-motor {
+      font-size: 11.0pt;
+      line-height: 1.05;
+    }
+
+    .line-cat {
+      font-size: 11.5pt;
+      line-height: 1.05;
+      letter-spacing: 0.2px;
+    }
+
+    .line-email {
+      font-size: 10.0pt;
+      line-height: 1.05;
+      letter-spacing: -0.1px;
+    }
+
+    .line-phone {
+      font-size: 12.5pt;
+      line-height: 1.05;
+      letter-spacing: 0.3px;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .sheet-wrapper {
+        padding: 0 !important;
+      }
+      .letter-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 215.9mm !important;
+        height: 279.4mm !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <div>
+      <h1>CCCD 2026 — Planilla de Impresión de Stickers Oficiales (Cat 3: PDA Rocketeers ID 310)</h1>
+      <div class="subtitle">Tamaño real: 6 x 6 cm (60 x 60 mm) | Hoja Carta Adhesiva (12 unidades por pliego)</div>
+    </div>
+    <div class="btn-group">
+      <button class="btn" onclick="window.print()">🖨️ Imprimir (Ctrl + P)</button>
+    </div>
+  </div>
+
+  <div class="sheet-wrapper">
+    <div class="letter-page">
+      <div class="print-header-info">
+        <span>CCCD 2026 | CAT 3: PDA ROCKETEERS (ID 310) — 12 STICKERS 6x6 CM</span>
+        <span>Ajuste de Impresora: Escala 100% / Tamaño Real (Desactivar 'Ajustar a página')</span>
+      </div>
+
+      <div class="grid-container">
+        <!-- Generación de 12 stickers idénticos -->
+        <script>
+          const content = `
+            <div class="sticker-cell">
+              <div class="sticker-inner">
+                <div class="line-title">PDA ROCKETEERS - ID 310</div>
+                <div class="line-school">I.E. JOSÉ ANTONIO GALÁN</div>
+                <div class="line-loc">COLOMBIA - LA ESTRELLA</div>
+                <div class="line-motor">MOTOR: G80-7T (29 mm)</div>
+                <div class="line-cat">AVANZADOS</div>
+                <div class="line-email">pdarocketeers@jaga.edu.co</div>
+                <div class="line-phone">+57 313 7034500</div>
+              </div>
+            </div>
+          `;
+          for (let i = 0; i < 12; i++) {
+            document.write(content);
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
